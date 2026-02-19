@@ -23,14 +23,21 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
   ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const messagesContainerRef = useRef<HTMLDivElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
+    const container = messagesContainerRef.current
+    if (!container) return
+
+    container.scrollTo({
+      top: container.scrollHeight,
+      behavior,
+    })
   }
 
   useEffect(() => {
-    scrollToBottom()
+    scrollToBottom(messages.length > 1 ? 'smooth' : 'auto')
   }, [messages])
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -114,7 +121,7 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-6 space-y-4">
         <AnimatePresence>
           {messages.map((message, index) => (
             <motion.div
