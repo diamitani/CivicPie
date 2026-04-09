@@ -36,18 +36,18 @@ export default function Home() {
                 Meet CivicGuide
               </h2>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Your personal AI assistant for navigating Chicago politics. Ask questions
-                in plain English and get instant, accurate answers about your ward,
-                meetings, voting records, and how to make your voice heard.
+                Your civic copilot for staying informed locally. Ask CivicGuide what matters
+                in your ward, then subscribe to digests about meetings, elections, candidates,
+                volunteer opportunities, and neighborhood civic news.
               </p>
 
               <ul className="space-y-4 mb-8">
                 {[
-                  'Find your ward by address',
-                  'Get meeting schedules and agendas',
-                  'Understand voting records',
-                  'Learn about local initiatives',
-                  'Discover ways to get involved',
+                  'Sign up for updates in your area',
+                  'Choose daily, weekly, monthly, or event-driven digests',
+                  'Track meetings, elections, and civic opportunities',
+                  'Ask source-backed questions about your community',
+                  'Stay connected without the noise of a social network',
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-700">
                     <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
@@ -61,10 +61,10 @@ export default function Home() {
               </ul>
 
               <Link
-                href="/chat"
+                href="/updates"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-2xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25"
               >
-                Try CivicGuide
+                Join for Updates
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
@@ -93,26 +93,26 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">
-              Ready to Get Involved?
+              Ready to Build Your Civic Feed?
             </h2>
             <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Democracy works best when everyone participates. Start exploring your ward,
-              connect with your alderperson, and make your voice heard in Chicago.
+              Pick your ward, choose your topics, and get a cleaner stream of civic information
+              about the place you actually live.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/wards"
+                href="/updates"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-900 font-semibold rounded-2xl hover:bg-blue-50 transition-colors shadow-xl"
               >
-                Explore All 50 Wards
+                Start Your Subscription
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="/chat"
+                href="/community"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-2xl border border-white/20 hover:bg-white/20 transition-colors"
               >
                 <Sparkles className="w-5 h-5" />
-                Ask CivicGuide
+                Explore Community
               </Link>
             </div>
           </motion.div>
@@ -131,7 +131,7 @@ export default function Home() {
                 <span className="font-serif text-lg font-semibold text-white">CivicPie</span>
               </div>
               <p className="text-sm">
-                Empowering Chicago residents with accessible civic information and AI-powered engagement tools.
+                Personalized civic updates, source-backed AI, and neighborhood-level public-interest signals for Chicago residents.
               </p>
             </div>
 
@@ -139,8 +139,9 @@ export default function Home() {
               <h4 className="text-white font-semibold mb-4">Explore</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/wards" className="hover:text-white transition-colors">All Wards</Link></li>
-                <li><Link href="/aldermen" className="hover:text-white transition-colors">Aldermen</Link></li>
+                <li><Link href="/community" className="hover:text-white transition-colors">Community Feed</Link></li>
                 <li><Link href="/meetings" className="hover:text-white transition-colors">Meetings</Link></li>
+                <li><Link href="/updates" className="hover:text-white transition-colors">Updates</Link></li>
                 <li><Link href="/chat" className="hover:text-white transition-colors">CivicGuide AI</Link></li>
               </ul>
             </div>

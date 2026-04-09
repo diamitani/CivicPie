@@ -1,66 +1,43 @@
 'use client'
 
+import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Navigation } from '@/components/layout/Navigation'
-import { Calendar, MapPin, Clock, FileText, Video } from 'lucide-react'
+import { Calendar, ExternalLink, Mail, Phone, Search } from 'lucide-react'
+import { CHICAGO_WARDS } from '@/lib/ward-data'
 
-const upcomingMeetings = [
+const citywideMeetingSources = [
   {
-    id: 1,
-    title: 'City Council Meeting',
-    date: '2024-03-15',
-    time: '10:00 AM',
-    location: 'City Hall - 121 N LaSalle St',
-    type: 'city-council',
-    description: 'Regular city council session with voting on ordinances and resolutions.',
-    hasVideo: true,
+    title: 'Chicago City Clerk eLMS',
+    description: 'Agendas, minutes, legislation, and official city council records.',
+    url: 'https://chicityclerkelms.chicago.gov/',
   },
   {
-    id: 2,
-    title: 'Budget Committee Hearing',
-    date: '2024-03-18',
-    time: '9:00 AM',
-    location: 'City Hall - 121 N LaSalle St',
-    type: 'committee',
-    description: 'Public hearing on the proposed city budget.',
-    hasAgenda: true,
-  },
-  {
-    id: 3,
-    title: '43rd Ward Community Meeting',
-    date: '2024-03-20',
-    time: '7:00 PM',
-    location: 'Lincoln Park Library',
-    type: 'ward',
-    description: 'Monthly ward meeting with updates on local initiatives.',
-  },
-]
-
-const pastMeetings = [
-  {
-    id: 4,
-    title: 'Transportation Committee',
-    date: '2024-02-28',
-    time: '10:00 AM',
-    location: 'City Hall',
-    type: 'committee',
-    hasMinutes: true,
-  },
-  {
-    id: 5,
-    title: '32nd Ward Town Hall',
-    date: '2024-02-25',
-    time: '6:30 PM',
-    location: 'Ward Office',
-    type: 'town-hall',
+    title: 'Chicago City Council',
+    description: 'Official city government entry point for council information and ward details.',
+    url: 'https://www.chicago.gov/city/en/about/wards.html',
   },
 ]
 
 export default function MeetingsPage() {
+  const [query, setQuery] = useState('')
+
+  const filteredWards = useMemo(() => {
+    const value = query.trim().toLowerCase()
+    if (!value) return CHICAGO_WARDS
+    return CHICAGO_WARDS.filter((ward) => {
+      return (
+        ward.ward.toString() === value ||
+        ward.alderperson.toLowerCase().includes(value) ||
+        ward.neighborhoods.some((neighborhood) => neighborhood.toLowerCase().includes(value))
+      )
+    })
+  }, [query])
+
   return (
     <main className="min-h-screen bg-slate-50">
       <Navigation />
-      
+
       <section className="pt-32 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -73,128 +50,103 @@ export default function MeetingsPage() {
               Public Meetings
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
-              Meeting Calendar
+              Official Meeting Channels
             </h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Stay informed about upcoming ward meetings, city council sessions, 
-              and committee hearings. All meetings are open to the public.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Instead of showing fake calendars, Civic Pie points you to the official places where ward meetings,
+              agendas, hearings, and neighborhood notices are actually published.
             </p>
           </motion.div>
 
-          {/* Upcoming Meetings */}
-          <div className="mb-16">
-            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-6">Upcoming Meetings</h2>
-            <div className="space-y-4">
-              {upcomingMeetings.map((meeting) => (
-                <motion.div
-                  key={meeting.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-                    {/* Date Badge */}
-                    <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-blue-600 flex flex-col items-center justify-center text-white">
-                      <span className="text-xs uppercase font-medium">
-                        {new Date(meeting.date).toLocaleDateString('en-US', { month: 'short' })}
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="space-y-6">
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+                <h2 className="font-serif text-2xl font-bold text-slate-900">Citywide official sources</h2>
+                <div className="mt-6 space-y-4">
+                  {citywideMeetingSources.map((source) => (
+                    <a
+                      key={source.title}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-300 hover:shadow-md"
+                    >
+                      <h3 className="font-semibold text-slate-900">{source.title}</h3>
+                      <p className="mt-2 text-sm text-slate-600">{source.description}</p>
+                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-600">
+                        Open source
+                        <ExternalLink className="h-4 w-4" />
                       </span>
-                      <span className="text-2xl font-bold">
-                        {new Date(meeting.date).getDate()}
-                      </span>
-                    </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
 
-                    {/* Content */}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-slate-900">{meeting.title}</h3>
-                        <span className={`px-2 py-0.5 text-xs rounded-full ${
-                          meeting.type === 'city-council' ? 'bg-purple-100 text-purple-700' :
-                          meeting.type === 'committee' ? 'bg-amber-100 text-amber-700' :
-                          'bg-green-100 text-green-700'
-                        }`}>
-                          {meeting.type.replace('-', ' ')}
-                        </span>
-                      </div>
-                      
-                      <p className="text-slate-600 mb-2">{meeting.description}</p>
-                      
-                      <div className="flex flex-wrap gap-4 text-sm text-slate-500">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {meeting.time}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {meeting.location}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex gap-2">
-                      {meeting.hasAgenda && (
-                        <button className="flex items-center gap-1 px-3 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm hover:bg-slate-200 transition-colors">
-                          <FileText className="w-4 h-4" />
-                          Agenda
-                        </button>
-                      )}
-                      {meeting.hasVideo && (
-                        <button className="flex items-center gap-1 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm hover:bg-blue-200 transition-colors">
-                          <Video className="w-4 h-4" />
-                          Watch Live
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+              <div className="rounded-3xl bg-slate-900 p-8 text-white shadow-xl">
+                <h2 className="font-serif text-2xl font-bold">Best subscription topics for meetings</h2>
+                <ul className="mt-6 space-y-3 text-sm text-slate-200">
+                  <li>Meeting notices and agenda updates</li>
+                  <li>Public hearing changes and comment opportunities</li>
+                  <li>Ward office bulletins and newsletter posts</li>
+                  <li>Event-driven alerts for date or location changes</li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          {/* Past Meetings */}
-          <div>
-            <h2 className="font-serif text-2xl font-bold text-slate-900 mb-6">Past Meetings</h2>
-            <div className="space-y-4">
-              {pastMeetings.map((meeting) => (
-                <motion.div
-                  key={meeting.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 opacity-75"
-                >
-                  <div className="flex items-center gap-6">
-                    <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-slate-200 flex flex-col items-center justify-center text-slate-600">
-                      <span className="text-xs uppercase font-medium">
-                        {new Date(meeting.date).toLocaleDateString('en-US', { month: 'short' })}
-                      </span>
-                      <span className="text-2xl font-bold">
-                        {new Date(meeting.date).getDate()}
-                      </span>
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <h2 className="font-serif text-2xl font-bold text-slate-900">Ward meeting directory</h2>
+                  <p className="mt-2 text-slate-600">
+                    Search your ward to find the official site, contact email, and ward office phone.
+                  </p>
+                </div>
+                <div className="relative w-full max-w-md">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                  <input
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    placeholder="Search by ward, alderperson, or neighborhood"
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-slate-900 outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {filteredWards.map((ward) => (
+                  <div key={ward.ward} className="rounded-2xl border border-slate-200 p-5">
+                    <p className="text-sm font-semibold text-slate-900">Ward {ward.ward}</p>
+                    <p className="mt-1 text-sm text-slate-600">{ward.alderperson}</p>
+                    <p className="mt-3 text-xs uppercase tracking-wide text-slate-500">
+                      {ward.neighborhoods.slice(0, 3).join(' • ')}
+                    </p>
+
+                    <div className="mt-4 space-y-2 text-sm">
+                      {ward.website ? (
+                        <a
+                          href={ward.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Official ward site
+                        </a>
+                      ) : (
+                        <p className="text-slate-500">No dedicated ward website listed. Contact the office directly.</p>
+                      )}
+                      <a href={`mailto:${ward.email}`} className="flex items-center gap-2 text-slate-600 hover:text-slate-900">
+                        <Mail className="h-4 w-4" />
+                        {ward.email}
+                      </a>
+                      <a href={`tel:${ward.wardPhone}`} className="flex items-center gap-2 text-slate-600 hover:text-slate-900">
+                        <Phone className="h-4 w-4" />
+                        {ward.wardPhone}
+                      </a>
                     </div>
-
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-slate-900">{meeting.title}</h3>
-                      <div className="flex gap-4 text-sm text-slate-500 mt-1">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {meeting.time}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          {meeting.location}
-                        </span>
-                      </div>
-                    </div>
-
-                    {meeting.hasMinutes && (
-                      <button className="flex items-center gap-1 px-3 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm hover:bg-slate-200 transition-colors">
-                        <FileText className="w-4 h-4" />
-                        Minutes
-                      </button>
-                    )}
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -22,8 +22,8 @@ const exampleQuestions = [
     questions: [
       'Who is my alderman?',
       'How do I contact my alderman?',
-      'What committees are they on?',
-      "What's their voting record?",
+      'What neighborhoods are in my ward?',
+      'Where can I verify official ward information?',
     ],
   },
   {
@@ -69,8 +69,8 @@ export default function ChatPage() {
               Ask CivicGuide
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Get instant answers about Chicago's wards, aldermen, meetings, and civic processes. 
-              CivicGuide uses AI to help you navigate local government.
+              Get source-aware answers about Chicago wards, meetings, elections, city services, and how to get involved.
+              CivicGuide is designed to point you back to official public sources whenever the stakes are high.
             </p>
           </motion.div>
         </div>
@@ -131,9 +131,8 @@ export default function ChatPage() {
                     How it Works
                   </h3>
                   <p className="text-sm text-blue-700 leading-relaxed">
-                    CivicGuide searches through public records, meeting minutes, 
-                    and official sources to provide accurate, up-to-date answers 
-                    about Chicago civic life.
+                    CivicGuide combines structured ward data with official civic sources.
+                    When exact dates or filings matter, it should direct you to the primary public record.
                   </p>
                 </div>
               </motion.div>

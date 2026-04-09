@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
       // Fallback to local responses when no API key is configured
       return NextResponse.json({
         message: getFallbackResponse(message, wardId),
-        sources: [],
+        sources: buildSources(wardId),
         model: 'fallback',
       })
     }
@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
       // If Kimi fails, return a graceful fallback
       return NextResponse.json({
         message: getFallbackResponse(message, wardId),
-        sources: [],
+        sources: buildSources(wardId),
         model: 'fallback',
         _kimiError: kimiRes.status,
       })
@@ -107,6 +107,16 @@ function buildSources(wardId?: number) {
       title: 'Chicago Data Portal',
       url: 'https://data.cityofchicago.org/resource/htai-wnw4.json',
       snippet: 'Official ward office data',
+    },
+    {
+      title: 'Chicago Board of Elections',
+      url: 'https://chicagoelections.gov/',
+      snippet: 'Official election and voter information',
+    },
+    {
+      title: 'Chicago City Clerk eLMS',
+      url: 'https://chicityclerkelms.chicago.gov/',
+      snippet: 'Official meeting agendas and legislative records',
     },
   ]
 
@@ -158,7 +168,7 @@ function getFallbackResponse(query: string, wardId?: number): string {
 
   // General (non-ward-specific) responses
   if (q.includes('election') || q.includes('vote') || q.includes('register')) {
-    return `For Chicago election information:\n\n- **Check registration**: chicagoelections.gov/your-voter-information\n- **Find your polling place**: Same link above\n- **Board of Elections**: chicagoelections.gov\n- **Next municipal election**: February 2027\n\nAll alderpersons serve 4-year terms (current term: May 2023 – May 2027).`
+    return `For Chicago election information:\n\n- **Check registration**: chicagoelections.gov/your-voter-information\n- **Find your polling place**: Same link above\n- **Board of Elections**: chicagoelections.gov\n- **Municipal election cycle**: 2027\n\nPlease verify exact dates, filing deadlines, and ballot details with the Chicago Board of Elections because they can change.`
   }
 
   if (q.includes('311') || q.includes('pothole') || q.includes('report') || q.includes('complaint') || q.includes('service')) {

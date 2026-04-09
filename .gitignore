@@ -37,3 +37,6 @@ htmlcov/
 *.temp
 .cache/
 .vercel
+frontend/.local-dev/
+frontend/tsconfig.tsbuildinfo
+backend/data/weekly_sync/
