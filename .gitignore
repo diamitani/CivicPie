@@ -26,6 +26,9 @@ Thumbs.db
 /data/scraped/
 /data/cache/
 *.log
+*.db
+*.sqlite
+*.sqlite3
 
 # Testing
 .coverage
