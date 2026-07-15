@@ -39,6 +39,7 @@ class IngestedRecord:
     fec_id: Optional[str] = None
     votesmart_id: Optional[int] = None
     icpsr_id: Optional[int] = None
+    fjc_id: Optional[str] = None
     google_civic_id: Optional[str] = None
     extra_ids: dict = field(default_factory=dict)
 
@@ -48,6 +49,8 @@ class IngestedRecord:
     jurisdiction_ocd_id: Optional[str] = None
     jurisdiction_state_code: Optional[str] = None
     jurisdiction_parent_ocd_id: Optional[str] = None
+    jurisdiction_website: Optional[str] = None
+    jurisdiction_extra_data: Optional[dict] = None
 
     # District (optional, created if missing)
     district_name: Optional[str] = None

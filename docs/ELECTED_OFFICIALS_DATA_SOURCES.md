@@ -20,7 +20,7 @@ This document is the working map of every API, dataset, and scrape target we nee
 | U.S. Senate | 100 | `unitedstates/congress-legislators` (CC0, GitHub) | Implemented (`congress_legislators`) |
 | U.S. House | 435 | Same | Implemented |
 | DC, PR, GU, AS, VI, MP delegates | 6 | Same (`legislators-current.yaml`) | Implemented |
-| Federal judiciary (Art. III) | ~870 | Federal Judicial Center JSON dump | Planned |
+| Federal judiciary (Art. III) | ~870 | Federal Judicial Center CSV | Implemented (`federal_judiciary`) |
 
 **Key APIs:**
 - **Congress.gov API** (api.congress.gov) — bills, votes, statements; key required, free
@@ -33,9 +33,9 @@ This document is the working map of every API, dataset, and scrape target we nee
 | Role | Count | Source | Status |
 |---|---|---|---|
 | Governor | 50 | Hand-curated seed | Implemented (`state_executives`) |
+| Attorney General | 50 | Hand-curated seed (NAAG-verified) | Implemented (`state_executives`) |
 | Lt. Governor | 45 | NLGA roster (scrape) | Planned |
 | Secretary of State | 47 | NASS roster | Planned |
-| Attorney General | 50 | NAAG directory | Planned |
 | State Treasurer / Comptroller | ~50 | NAST directory | Planned |
 | State Auditor | ~50 | NSAA roster | Planned |
 | Insurance / Agriculture / Education Commissioners | ~70 | NASCO, NAIC, NASDA, CCSSO directories | Planned |
@@ -105,6 +105,11 @@ All 50 states + DC + PR via **OpenStates v3** — Implemented (`openstates`).
 ---
 
 ## Tier 2 — County (~58,000 officials)
+
+**Jurisdiction hierarchy is seeded** via `census_counties` — all ~3,143 U.S. counties
+and county-equivalents (parishes, boroughs, census areas) come from the Census
+Bureau's `national_county` file with FIPS codes and OCD IDs.  Officials attach
+to these jurisdictions during subsequent per-state ingestion.
 
 ### Universal county roles
 

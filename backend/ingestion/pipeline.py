@@ -22,8 +22,10 @@ from backend.db import SessionLocal
 from backend.db.models import IngestionRun
 from backend.ingestion.base import BaseIngestor
 from backend.ingestion.upsert import upsert_term
+from backend.ingestion.sources.census_counties import CensusCountiesIngestor
 from backend.ingestion.sources.congress_legislators import CongressLegislatorsIngestor
 from backend.ingestion.sources.federal_executive import FederalExecutiveIngestor
+from backend.ingestion.sources.federal_judiciary import FederalJudiciaryIngestor
 from backend.ingestion.sources.google_civic import GoogleCivicIngestor
 from backend.ingestion.sources.openstates import OpenStatesIngestor
 from backend.ingestion.sources.state_executives import StateExecutivesIngestor
@@ -33,15 +35,18 @@ log = logging.getLogger(__name__)
 REGISTRY: dict[str, type[BaseIngestor]] = {
     CongressLegislatorsIngestor.key: CongressLegislatorsIngestor,
     FederalExecutiveIngestor.key: FederalExecutiveIngestor,
+    FederalJudiciaryIngestor.key: FederalJudiciaryIngestor,
     StateExecutivesIngestor.key: StateExecutivesIngestor,
     OpenStatesIngestor.key: OpenStatesIngestor,
     GoogleCivicIngestor.key: GoogleCivicIngestor,
+    CensusCountiesIngestor.key: CensusCountiesIngestor,
 }
 
 # Sources that are run by default in the Tier-1 pipeline.
 TIER_1_DEFAULTS = [
     CongressLegislatorsIngestor.key,
     FederalExecutiveIngestor.key,
+    FederalJudiciaryIngestor.key,
     StateExecutivesIngestor.key,
     OpenStatesIngestor.key,
 ]

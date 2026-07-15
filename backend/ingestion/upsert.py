@@ -28,16 +28,18 @@ from backend.models.official import GovernmentLevel
 
 log = logging.getLogger(__name__)
 
-UpsertResult = Tuple[OfficialTerm, str]  # (term, "inserted" | "updated")
+UpsertResult = Tuple[Optional[OfficialTerm], str]  # (term|None, "inserted" | "updated")
 
 
-def _get_or_create_jurisdiction(session: Session, record: IngestedRecord) -> Jurisdiction:
+def _get_or_create_jurisdiction(
+    session: Session, record: IngestedRecord
+) -> Tuple[Jurisdiction, bool]:
     if record.jurisdiction_ocd_id:
         existing = session.scalar(
             select(Jurisdiction).where(Jurisdiction.ocd_id == record.jurisdiction_ocd_id)
         )
         if existing:
-            return existing
+            return existing, False
 
     existing = session.scalar(
         select(Jurisdiction).where(
@@ -47,7 +49,7 @@ def _get_or_create_jurisdiction(session: Session, record: IngestedRecord) -> Jur
         )
     )
     if existing:
-        return existing
+        return existing, False
 
     parent = None
     if record.jurisdiction_parent_ocd_id:
@@ -61,10 +63,12 @@ def _get_or_create_jurisdiction(session: Session, record: IngestedRecord) -> Jur
         level=record.jurisdiction_level,
         state_code=record.jurisdiction_state_code,
         parent_id=parent.id if parent else None,
+        website=record.jurisdiction_website,
+        extra_data=record.jurisdiction_extra_data or None,
     )
     session.add(jurisdiction)
     session.flush()
-    return jurisdiction
+    return jurisdiction, True
 
 
 def _get_or_create_district(
@@ -160,6 +164,8 @@ def _find_person(
         id_filters.append(Person.votesmart_id == record.votesmart_id)
     if record.icpsr_id:
         id_filters.append(Person.icpsr_id == record.icpsr_id)
+    if record.fjc_id:
+        id_filters.append(Person.fjc_id == record.fjc_id)
 
     for filt in id_filters:
         existing = session.scalar(select(Person).where(filt))
@@ -177,13 +183,18 @@ def _find_person(
             return match
 
     if office is not None and record.full_name:
-        existing_term = session.scalar(
-            select(OfficialTerm)
-            .where(OfficialTerm.office_id == office.id, OfficialTerm.is_current.is_(True))
-            .order_by(OfficialTerm.start_date.desc().nullslast())
-        )
-        if existing_term and existing_term.person.full_name == record.full_name:
-            return existing_term.person
+        # Judiciary and other multi-seat benches have several concurrent terms
+        # at a single office row -- scan them all for a name match rather than
+        # picking the most recent one.
+        existing_terms = session.scalars(
+            select(OfficialTerm).where(
+                OfficialTerm.office_id == office.id,
+                OfficialTerm.is_current.is_(True),
+            )
+        ).all()
+        for term in existing_terms:
+            if term.person.full_name == record.full_name:
+                return term.person
 
     return None
 
@@ -213,6 +224,7 @@ def _upsert_person(
         "fec_id",
         "votesmart_id",
         "icpsr_id",
+        "fjc_id",
         "google_civic_id",
     ):
         value = getattr(record, attr)
@@ -231,8 +243,15 @@ def _upsert_person(
 def upsert_term(
     session: Session, record: IngestedRecord, run: Optional[IngestionRun] = None
 ) -> UpsertResult:
-    jurisdiction = _get_or_create_jurisdiction(session, record)
+    """Upsert a full (jurisdiction, district, office, person, term) chain.
+
+    Records with no `office_title` are treated as jurisdiction-only seeds
+    (used by e.g. the county-jurisdiction seeder). They short-circuit after
+    resolving the jurisdiction and district and return (None, action)."""
+    jurisdiction, juris_created = _get_or_create_jurisdiction(session, record)
     district = _get_or_create_district(session, jurisdiction, record)
+    if not record.office_title:
+        return None, "inserted" if juris_created else "updated"
     office = _get_or_create_office(session, jurisdiction, district, record)
     person = _upsert_person(session, record, office=office)
 

@@ -184,6 +184,7 @@ class Person(Base, TimestampMixin):
     fec_id: Mapped[Optional[str]] = mapped_column(String(32), index=True)
     votesmart_id: Mapped[Optional[int]] = mapped_column(Integer, unique=True)
     icpsr_id: Mapped[Optional[int]] = mapped_column(Integer, unique=True)
+    fjc_id: Mapped[Optional[str]] = mapped_column(String(32), unique=True, index=True)
     google_civic_id: Mapped[Optional[str]] = mapped_column(String(128), index=True)
 
     extra_ids: Mapped[Optional[dict]] = mapped_column(JSON)
