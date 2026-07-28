@@ -25,53 +25,27 @@ export default function HomePage() {
     setLoading(true);
     setError(null);
 
-    try {
-      // First try the geocoding API
-      const res = await fetch('/api/geocode', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ address: q }),
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        if (data.ward) {
-          setWardId(String(data.ward));
-          setView('ward');
-          return;
-        }
-      }
-
-      // Fallback: try to extract a ward number from the query
+    // Simple local matching for static export (API routes not available in static mode)
+    const lower = q.toLowerCase();
+    if (lower.includes('60660') || lower.includes('60640') || lower.includes('edgewater') || lower.includes('andersonville')) {
+      setWardId('48');
+    } else if (lower.includes('60622') || lower.includes('wicker')) {
+      setWardId('1');
+    } else if (lower.includes('60642') || lower.includes('ukrainian')) {
+      setWardId('2');
+    } else if (lower.includes('60615') || lower.includes('hyde')) {
+      setWardId('5');
+    } else {
+      // Try extracting a ward number
       const wardMatch = q.match(/(\d+)/);
       if (wardMatch && parseInt(wardMatch[1]) >= 1 && parseInt(wardMatch[1]) <= 50) {
         setWardId(wardMatch[1]);
-        setView('ward');
-        return;
-      }
-
-      // Simple ZIP/neighborhood matching
-      const lower = q.toLowerCase();
-      if (lower.includes('60660') || lower.includes('60640') || lower.includes('edgewater') || lower.includes('andersonville')) {
-        setWardId('48');
-      } else if (lower.includes('60622') || lower.includes('wicker')) {
-        setWardId('1');
-      } else if (lower.includes('60615') || lower.includes('hyde')) {
-        setWardId('5');
-      } else if (lower.includes('60642') || lower.includes('ukrainian')) {
-        setWardId('2');
       } else {
-        // Default to 48th Ward demo for v1
-        setWardId('48');
+        setWardId('48'); // Default to 48th Ward demo
       }
-      setView('ward');
-    } catch (err) {
-      // Fallback to 48th Ward
-      setWardId('48');
-      setView('ward');
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
+    setView('ward');
   };
 
   const handleDetectLocation = () => {

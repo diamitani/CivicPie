@@ -33,26 +33,26 @@ export function WardView({ wardId, onBack }: { wardId: string; onBack: () => voi
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`/api/ward/${wardId}`);
-      if (!res.ok) throw new Error('Failed to load ward data');
-      const json = await res.json();
+      // Static export: load from public/data/ JSON files
+      const [wardRes, dirRes] = await Promise.all([
+        fetch('/data/ward_data.json'),
+        fetch('/data/ward_directory.json'),
+      ]);
+      if (!wardRes.ok) throw new Error('Failed to load ward data');
+      const wardJson = await wardRes.json();
+      const dirJson = dirRes.ok ? await dirRes.json() : null;
 
-      if (json.ward) {
-        setWardData(json.ward);
-        setDirectory(json.directory || null);
-        if (json.ward.districtMeta?.id) {
-          document.title = `CivicPie — ${json.ward.districtMeta.name || `Ward ${wardId}`}`;
-        }
-      } else {
-        setWardData(json);
-        setDirectory(json.directory || null);
+      setWardData(wardJson);
+      setDirectory(dirJson);
+      if (wardJson.districtMeta?.name) {
+        document.title = `CivicPie — ${wardJson.districtMeta.name}`;
       }
     } catch (err: any) {
       setError(err.message || 'Failed to load ward data');
     } finally {
       setLoading(false);
     }
-  }, [wardId]);
+  }, []);
 
   useEffect(() => { loadData(); }, [loadData]);
 
