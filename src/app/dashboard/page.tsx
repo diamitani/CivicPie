@@ -1,6 +1,6 @@
 'use client';
 
-import { PieLogo } from '@/components/Logo';
+import { Landmark } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
@@ -12,7 +12,9 @@ export default function DashboardPage() {
       <aside className="w-[260px] bg-navy flex flex-col border-r border-white/[0.06] flex-shrink-0">
         <div className="p-6 border-b border-white/[0.06]">
           <div className="flex items-center gap-2.5">
-            <PieLogo size={22} />
+            <div className="w-5.5 h-5.5 rounded-md bg-gradient-to-br from-[#E8A030] to-[#F5BE6A] flex items-center justify-center">
+            <Landmark className="w-3.5 h-3.5 text-[#001B3D]" />
+          </div>
             <div>
               <div className="font-display text-lg font-black text-white tracking-[-0.5px] leading-none">
                 Civic<span className="text-[#C41230]">Pie</span>

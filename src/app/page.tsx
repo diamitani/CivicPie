@@ -95,6 +95,27 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
 // HERO
 // ════════════════════════════════════════════════════════════════
 function Hero() {
+  const [zip, setZip] = useState('');
+
+  const handleSearch = (e?: React.FormEvent) => {
+    e?.preventDefault();
+    const q = (zip || '').trim().toLowerCase();
+    if (!q) return;
+    // ZIP → district routing
+    if (q.includes('60660') || q.includes('60640') || q.includes('edgewater') || q.includes('andersonville')) {
+      window.location.href = '/ward/chicago-48';
+    } else if (/60\d{3}/.test(q) || q.includes('chicago') || q.includes('illinois')) {
+      window.location.href = '/state/illinois';
+    } else if (q.includes('100') || q.includes('new york') || q.includes('nyc')) {
+      window.location.href = '/state/new-york';
+    } else if (q.includes('900') || q.includes('california') || q.includes('los angeles')) {
+      window.location.href = '/state/california';
+    } else if (q.includes('texas')) {
+      window.location.href = '/state/texas';
+    } else {
+      window.location.href = `/state/${q.replace(/\s+/g, '-')}`;
+    }
+  };
   return (
     <section className="min-h-screen bg-navy relative overflow-hidden flex flex-col justify-center">
       {/* Grid texture */}
