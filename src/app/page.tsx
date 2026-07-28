@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { PieLogo, CivicPieWordmark } from '@/components/Logo';
+import { PieLogo } from '@/components/Logo';
+import FindYourReps from '@/components/FindYourReps';
 
 export default function LandingPage() {
   const navRef = useRef<HTMLElement>(null);
@@ -30,6 +31,7 @@ export default function LandingPage() {
       <Hero />
       <StatsRibbon />
       <TrustBar />
+      <FindYourRepsSection />
       <HowItWorks />
       <Manifesto />
       <Features />
@@ -242,6 +244,31 @@ function StatsRibbon() {
         ))}
       </div>
     </div>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════
+// FIND YOUR REPS
+// ════════════════════════════════════════════════════════════════
+function FindYourRepsSection() {
+  return (
+    <section className="py-20 px-10 bg-[#FAFAF8] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#001B3D]/3 blur-3xl pointer-events-none" />
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="reveal">
+          <p className="section-eyebrow" style={{ textAlign: 'center' }}>Free Civic Lookup</p>
+          <h2 className="font-display text-[clamp(28px,4vw,42px)] font-black tracking-[-1px] text-[#001B3D] leading-[1.1] mb-3">
+            Find Your <em className="text-[#C41230] not-italic">Representatives</em>
+          </h2>
+          <p className="font-serif text-lg text-[#6B7280] leading-relaxed mb-10 max-w-xl mx-auto">
+            Type any address, ZIP code, or state to instantly see who represents you — from city council to Congress.
+          </p>
+        </div>
+        <div className="reveal">
+          <FindYourReps />
+        </div>
+      </div>
+    </section>
   );
 }
 
