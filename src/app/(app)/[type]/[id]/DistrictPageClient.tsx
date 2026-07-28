@@ -14,6 +14,7 @@ import {
   DistrictType,
   DISTRICT_TYPE_LABELS,
 } from '@/lib/district';
+import { VoterRegistrationCard, ElectionAlertSignup, ElectionUrgencyBanner } from '@/components/ElectionFeatures';
 
 type TabId = 'overview' | 'events' | 'elections' | 'officials' | 'meetings' | 'grants' | 'volunteer';
 
@@ -99,9 +100,10 @@ export default function DistrictPageClient() {
           </div>
           <aside className="lg:w-80 flex-shrink-0">
             <div className="lg:sticky lg:top-20 space-y-6">
+              <VoterRegistrationCard stateAbbr={data.stateAbbr} stateName={data.state} />
               <SidebarStats data={data} />
               <SidebarOfficials data={data} />
-              <SidebarRegistration data={data} />
+              <ElectionAlertSignup />
             </div>
           </aside>
         </div>
