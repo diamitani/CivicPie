@@ -1,0 +1,1397 @@
+{
+  "generated_at": "2026-07-15T18:37:34.061820+00:00",
+  "version": "2.0.0",
+  "sources": [
+    "FEC",
+    "Ballotpedia",
+    "BallotReady",
+    "State Election Boards"
+  ],
+  "candidates": [
+    {
+      "name": "Tommy Tuberville",
+      "party": "Republican",
+      "state": "AL",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6AL00233"
+    },
+    {
+      "name": "Dan Sullivan",
+      "party": "Republican",
+      "state": "AK",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6AK00101"
+    },
+    {
+      "name": "Tom Cotton",
+      "party": "Republican",
+      "state": "AR",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6AR00137"
+    },
+    {
+      "name": "John Hickenlooper",
+      "party": "Democratic",
+      "state": "CO",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8CO00597"
+    },
+    {
+      "name": "Chris Coons",
+      "party": "Democratic",
+      "state": "DE",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0DE00092"
+    },
+    {
+      "name": "Jon Ossoff",
+      "party": "Democratic",
+      "state": "GA",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0GA00180"
+    },
+    {
+      "name": "Joni Ernst",
+      "party": "Republican",
+      "state": "IA",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S4IA00129"
+    },
+    {
+      "name": "Jim Risch",
+      "party": "Republican",
+      "state": "ID",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8ID00092"
+    },
+    {
+      "name": "Dick Durbin",
+      "party": "Democratic",
+      "state": "IL",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6IL00151"
+    },
+    {
+      "name": "Roger Marshall",
+      "party": "Republican",
+      "state": "KS",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0KS00134"
+    },
+    {
+      "name": "Daniel Cameron",
+      "party": "Republican",
+      "state": "KY",
+      "office": "Senate",
+      "status": "Open Seat",
+      "source": "",
+      "candidate_id": "S2KY00012"
+    },
+    {
+      "name": "Bill Cassidy",
+      "party": "Republican",
+      "state": "LA",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6LA00168"
+    },
+    {
+      "name": "Ed Markey",
+      "party": "Democratic",
+      "state": "MA",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6MA00241"
+    },
+    {
+      "name": "Susan Collins",
+      "party": "Republican",
+      "state": "ME",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6ME00159"
+    },
+    {
+      "name": "Gary Peters",
+      "party": "Democratic",
+      "state": "MI",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S2MI00422"
+    },
+    {
+      "name": "Tina Smith",
+      "party": "Democratic",
+      "state": "MN",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8MN00578"
+    },
+    {
+      "name": "Cindy Hyde-Smith",
+      "party": "Republican",
+      "state": "MS",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8MS00241"
+    },
+    {
+      "name": "Steve Daines",
+      "party": "Republican",
+      "state": "MT",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S2MT00097"
+    },
+    {
+      "name": "Thom Tillis",
+      "party": "Republican",
+      "state": "NC",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S4NC00162"
+    },
+    {
+      "name": "Pete Ricketts",
+      "party": "Republican",
+      "state": "NE",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S2NE00150"
+    },
+    {
+      "name": "Jeanne Shaheen",
+      "party": "Democratic",
+      "state": "NH",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8NH00205"
+    },
+    {
+      "name": "Cory Booker",
+      "party": "Democratic",
+      "state": "NJ",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S4NJ00388"
+    },
+    {
+      "name": "Ben Ray Lujan",
+      "party": "Democratic",
+      "state": "NM",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0NM00097"
+    },
+    {
+      "name": "Markwayne Mullin",
+      "party": "Republican",
+      "state": "OK",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S2OK00311"
+    },
+    {
+      "name": "Jeff Merkley",
+      "party": "Democratic",
+      "state": "OR",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8OR00207"
+    },
+    {
+      "name": "Jack Reed",
+      "party": "Democratic",
+      "state": "RI",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S6RI00163"
+    },
+    {
+      "name": "Lindsey Graham",
+      "party": "Republican",
+      "state": "SC",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0SC00148"
+    },
+    {
+      "name": "Mike Rounds",
+      "party": "Republican",
+      "state": "SD",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S4SD00197"
+    },
+    {
+      "name": "Bill Hagerty",
+      "party": "Republican",
+      "state": "TN",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0TN00201"
+    },
+    {
+      "name": "John Cornyn",
+      "party": "Republican",
+      "state": "TX",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S2TX00106"
+    },
+    {
+      "name": "Mark Warner",
+      "party": "Democratic",
+      "state": "VA",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S8VA00093"
+    },
+    {
+      "name": "Shelley Moore Capito",
+      "party": "Republican",
+      "state": "WV",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S4WV00147"
+    },
+    {
+      "name": "Cynthia Lummis",
+      "party": "Republican",
+      "state": "WY",
+      "office": "Senate",
+      "status": "Incumbent",
+      "source": "",
+      "candidate_id": "S0WY00136"
+    }
+  ],
+  "polling_places": [
+    {
+      "state": "AL",
+      "polling_hours": "7:00 AM - 7:00 PM",
+      "early_voting": "Varies by county",
+      "vote_by_mail": "Excuse required",
+      "registration_deadline": "15 days before election",
+      "lookup_url": "https://www.sos.alabama.gov/alabama-votes"
+    },
+    {
+      "state": "AK",
+      "polling_hours": "7:00 AM - 8:00 PM",
+      "early_voting": "15 days before election",
+      "vote_by_mail": "No-excuse absentee",
+      "registration_deadline": "30 days before election",
+      "lookup_url": "https://www.elections.alaska.gov/"
+    },
+    {
+      "state": "AZ",
+      "polling_hours": "6:00 AM - 7:00 PM",
+      "early_voting": "27 days before election",
+      "vote_by_mail": "No-excuse, permanent list",
+      "registration_deadline": "29 days before election",
+      "lookup_url": "https://azsos.gov/elections"
+    },
+    {
+      "state": "CA",
+      "polling_hours": "7:00 AM - 8:00 PM",
+      "early_voting": "29 days before election",
+      "vote_by_mail": "All voters receive mail ballot",
+      "registration_deadline": "15 days before election (same-day conditional)",
+      "lookup_url": "https://www.sos.ca.gov/elections"
+    },
+    {
+      "state": "CO",
+      "polling_hours": "7:00 AM - 7:00 PM",
+      "early_voting": "15 days before election",
+      "vote_by_mail": "All-mail election state",
+      "registration_deadline": "Election Day (same-day registration)",
+      "lookup_url": "https://www.sos.state.co.us/pubs/elections/"
+    },
+    {
+      "state": "FL",
+      "polling_hours": "7:00 AM - 7:00 PM",
+      "early_voting": "10 days before election",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "29 days before election",
+      "lookup_url": "https://dos.myflorida.com/elections/"
+    },
+    {
+      "state": "GA",
+      "polling_hours": "7:00 AM - 7:00 PM",
+      "early_voting": "3 weeks before election",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "29 days before election",
+      "lookup_url": "https://sos.ga.gov/elections"
+    },
+    {
+      "state": "IL",
+      "polling_hours": "6:00 AM - 7:00 PM",
+      "early_voting": "40 days before election",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "28 days before election (grace period available)",
+      "lookup_url": "https://www.elections.il.gov/"
+    },
+    {
+      "state": "MI",
+      "polling_hours": "7:00 AM - 8:00 PM",
+      "early_voting": "9 days before election",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "15 days before election (same-day available)",
+      "lookup_url": "https://www.michigan.gov/sos/elections"
+    },
+    {
+      "state": "NY",
+      "polling_hours": "6:00 AM - 9:00 PM",
+      "early_voting": "10 days before election",
+      "vote_by_mail": "Excuse required",
+      "registration_deadline": "25 days before election",
+      "lookup_url": "https://www.elections.ny.gov/"
+    },
+    {
+      "state": "OH",
+      "polling_hours": "6:30 AM - 7:30 PM",
+      "early_voting": "28 days before election",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "30 days before election",
+      "lookup_url": "https://www.ohiosos.gov/elections/"
+    },
+    {
+      "state": "PA",
+      "polling_hours": "7:00 AM - 8:00 PM",
+      "early_voting": "No early voting (mail ballot only)",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "15 days before election",
+      "lookup_url": "https://www.pa.gov/en/agencies/vote.html"
+    },
+    {
+      "state": "TX",
+      "polling_hours": "7:00 AM - 7:00 PM",
+      "early_voting": "17 days before election",
+      "vote_by_mail": "Excuse required",
+      "registration_deadline": "30 days before election",
+      "lookup_url": "https://www.votetexas.gov/"
+    },
+    {
+      "state": "WI",
+      "polling_hours": "7:00 AM - 8:00 PM",
+      "early_voting": "14 days before election",
+      "vote_by_mail": "No-excuse",
+      "registration_deadline": "20 days before election (Election Day available)",
+      "lookup_url": "https://elections.wi.gov/"
+    }
+  ],
+  "election_dates": [
+    {
+      "date": "2026-03-03",
+      "event": "Super Tuesday Primaries",
+      "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+    },
+    {
+      "date": "2026-03-17",
+      "event": "Primary Elections",
+      "states": "AZ, FL, IL, OH"
+    },
+    {
+      "date": "2026-04-28",
+      "event": "Primary Elections",
+      "states": "PA, DE, CT, RI, NY, MD, WI"
+    },
+    {
+      "date": "2026-05-19",
+      "event": "Primary Elections",
+      "states": "KY, OR, GA, ID"
+    },
+    {
+      "date": "2026-06-02",
+      "event": "Primary Elections",
+      "states": "MT, NJ, NM, SD, IA, MS, CA"
+    },
+    {
+      "date": "2026-06-23",
+      "event": "Primary/Runoff Elections",
+      "states": "CO, NY, OK, SC, UT, VA"
+    },
+    {
+      "date": "2026-08-04",
+      "event": "Primary Elections",
+      "states": "MI, MO, KS, WA"
+    },
+    {
+      "date": "2026-08-11",
+      "event": "Primary Elections",
+      "states": "MN, WI, CT, VT"
+    },
+    {
+      "date": "2026-09-01",
+      "event": "Primary Elections",
+      "states": "MA, DE, NH, RI"
+    },
+    {
+      "date": "2026-11-03",
+      "event": "2026 MIDTERM GENERAL ELECTION",
+      "states": "ALL 50 STATES"
+    },
+    {
+      "date": "2026-12-08",
+      "event": "Runoff Elections",
+      "states": "GA, LA, MS (if needed)"
+    }
+  ],
+  "by_state": {
+    "AL": {
+      "candidates": [
+        {
+          "name": "Tommy Tuberville",
+          "party": "Republican",
+          "state": "AL",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6AL00233"
+        }
+      ],
+      "polling": {
+        "state": "AL",
+        "polling_hours": "7:00 AM - 7:00 PM",
+        "early_voting": "Varies by county",
+        "vote_by_mail": "Excuse required",
+        "registration_deadline": "15 days before election",
+        "lookup_url": "https://www.sos.alabama.gov/alabama-votes"
+      },
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        }
+      ]
+    },
+    "AK": {
+      "candidates": [
+        {
+          "name": "Dan Sullivan",
+          "party": "Republican",
+          "state": "AK",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6AK00101"
+        }
+      ],
+      "polling": {
+        "state": "AK",
+        "polling_hours": "7:00 AM - 8:00 PM",
+        "early_voting": "15 days before election",
+        "vote_by_mail": "No-excuse absentee",
+        "registration_deadline": "30 days before election",
+        "lookup_url": "https://www.elections.alaska.gov/"
+      },
+      "dates": []
+    },
+    "AR": {
+      "candidates": [
+        {
+          "name": "Tom Cotton",
+          "party": "Republican",
+          "state": "AR",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6AR00137"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        }
+      ]
+    },
+    "CO": {
+      "candidates": [
+        {
+          "name": "John Hickenlooper",
+          "party": "Democratic",
+          "state": "CO",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8CO00597"
+        }
+      ],
+      "polling": {
+        "state": "CO",
+        "polling_hours": "7:00 AM - 7:00 PM",
+        "early_voting": "15 days before election",
+        "vote_by_mail": "All-mail election state",
+        "registration_deadline": "Election Day (same-day registration)",
+        "lookup_url": "https://www.sos.state.co.us/pubs/elections/"
+      },
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        },
+        {
+          "date": "2026-06-23",
+          "event": "Primary/Runoff Elections",
+          "states": "CO, NY, OK, SC, UT, VA"
+        }
+      ]
+    },
+    "DE": {
+      "candidates": [
+        {
+          "name": "Chris Coons",
+          "party": "Democratic",
+          "state": "DE",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0DE00092"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-04-28",
+          "event": "Primary Elections",
+          "states": "PA, DE, CT, RI, NY, MD, WI"
+        },
+        {
+          "date": "2026-09-01",
+          "event": "Primary Elections",
+          "states": "MA, DE, NH, RI"
+        }
+      ]
+    },
+    "GA": {
+      "candidates": [
+        {
+          "name": "Jon Ossoff",
+          "party": "Democratic",
+          "state": "GA",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0GA00180"
+        }
+      ],
+      "polling": {
+        "state": "GA",
+        "polling_hours": "7:00 AM - 7:00 PM",
+        "early_voting": "3 weeks before election",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "29 days before election",
+        "lookup_url": "https://sos.ga.gov/elections"
+      },
+      "dates": [
+        {
+          "date": "2026-05-19",
+          "event": "Primary Elections",
+          "states": "KY, OR, GA, ID"
+        },
+        {
+          "date": "2026-12-08",
+          "event": "Runoff Elections",
+          "states": "GA, LA, MS (if needed)"
+        }
+      ]
+    },
+    "IA": {
+      "candidates": [
+        {
+          "name": "Joni Ernst",
+          "party": "Republican",
+          "state": "IA",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S4IA00129"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "ID": {
+      "candidates": [
+        {
+          "name": "Jim Risch",
+          "party": "Republican",
+          "state": "ID",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8ID00092"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-05-19",
+          "event": "Primary Elections",
+          "states": "KY, OR, GA, ID"
+        }
+      ]
+    },
+    "IL": {
+      "candidates": [
+        {
+          "name": "Dick Durbin",
+          "party": "Democratic",
+          "state": "IL",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6IL00151"
+        }
+      ],
+      "polling": {
+        "state": "IL",
+        "polling_hours": "6:00 AM - 7:00 PM",
+        "early_voting": "40 days before election",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "28 days before election (grace period available)",
+        "lookup_url": "https://www.elections.il.gov/"
+      },
+      "dates": [
+        {
+          "date": "2026-03-17",
+          "event": "Primary Elections",
+          "states": "AZ, FL, IL, OH"
+        }
+      ]
+    },
+    "KS": {
+      "candidates": [
+        {
+          "name": "Roger Marshall",
+          "party": "Republican",
+          "state": "KS",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0KS00134"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-08-04",
+          "event": "Primary Elections",
+          "states": "MI, MO, KS, WA"
+        }
+      ]
+    },
+    "KY": {
+      "candidates": [
+        {
+          "name": "Daniel Cameron",
+          "party": "Republican",
+          "state": "KY",
+          "office": "Senate",
+          "status": "Open Seat",
+          "source": "",
+          "candidate_id": "S2KY00012"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-05-19",
+          "event": "Primary Elections",
+          "states": "KY, OR, GA, ID"
+        }
+      ]
+    },
+    "LA": {
+      "candidates": [
+        {
+          "name": "Bill Cassidy",
+          "party": "Republican",
+          "state": "LA",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6LA00168"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-12-08",
+          "event": "Runoff Elections",
+          "states": "GA, LA, MS (if needed)"
+        }
+      ]
+    },
+    "MA": {
+      "candidates": [
+        {
+          "name": "Ed Markey",
+          "party": "Democratic",
+          "state": "MA",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6MA00241"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        },
+        {
+          "date": "2026-09-01",
+          "event": "Primary Elections",
+          "states": "MA, DE, NH, RI"
+        }
+      ]
+    },
+    "ME": {
+      "candidates": [
+        {
+          "name": "Susan Collins",
+          "party": "Republican",
+          "state": "ME",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6ME00159"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        }
+      ]
+    },
+    "MI": {
+      "candidates": [
+        {
+          "name": "Gary Peters",
+          "party": "Democratic",
+          "state": "MI",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S2MI00422"
+        }
+      ],
+      "polling": {
+        "state": "MI",
+        "polling_hours": "7:00 AM - 8:00 PM",
+        "early_voting": "9 days before election",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "15 days before election (same-day available)",
+        "lookup_url": "https://www.michigan.gov/sos/elections"
+      },
+      "dates": [
+        {
+          "date": "2026-08-04",
+          "event": "Primary Elections",
+          "states": "MI, MO, KS, WA"
+        }
+      ]
+    },
+    "MN": {
+      "candidates": [
+        {
+          "name": "Tina Smith",
+          "party": "Democratic",
+          "state": "MN",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8MN00578"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        },
+        {
+          "date": "2026-08-11",
+          "event": "Primary Elections",
+          "states": "MN, WI, CT, VT"
+        }
+      ]
+    },
+    "MS": {
+      "candidates": [
+        {
+          "name": "Cindy Hyde-Smith",
+          "party": "Republican",
+          "state": "MS",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8MS00241"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "MT": {
+      "candidates": [
+        {
+          "name": "Steve Daines",
+          "party": "Republican",
+          "state": "MT",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S2MT00097"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "NC": {
+      "candidates": [
+        {
+          "name": "Thom Tillis",
+          "party": "Republican",
+          "state": "NC",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S4NC00162"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        }
+      ]
+    },
+    "NE": {
+      "candidates": [
+        {
+          "name": "Pete Ricketts",
+          "party": "Republican",
+          "state": "NE",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S2NE00150"
+        }
+      ],
+      "polling": {},
+      "dates": []
+    },
+    "NH": {
+      "candidates": [
+        {
+          "name": "Jeanne Shaheen",
+          "party": "Democratic",
+          "state": "NH",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8NH00205"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-09-01",
+          "event": "Primary Elections",
+          "states": "MA, DE, NH, RI"
+        }
+      ]
+    },
+    "NJ": {
+      "candidates": [
+        {
+          "name": "Cory Booker",
+          "party": "Democratic",
+          "state": "NJ",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S4NJ00388"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "NM": {
+      "candidates": [
+        {
+          "name": "Ben Ray Lujan",
+          "party": "Democratic",
+          "state": "NM",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0NM00097"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "OK": {
+      "candidates": [
+        {
+          "name": "Markwayne Mullin",
+          "party": "Republican",
+          "state": "OK",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S2OK00311"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        },
+        {
+          "date": "2026-06-23",
+          "event": "Primary/Runoff Elections",
+          "states": "CO, NY, OK, SC, UT, VA"
+        }
+      ]
+    },
+    "OR": {
+      "candidates": [
+        {
+          "name": "Jeff Merkley",
+          "party": "Democratic",
+          "state": "OR",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8OR00207"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-05-19",
+          "event": "Primary Elections",
+          "states": "KY, OR, GA, ID"
+        }
+      ]
+    },
+    "RI": {
+      "candidates": [
+        {
+          "name": "Jack Reed",
+          "party": "Democratic",
+          "state": "RI",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S6RI00163"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-04-28",
+          "event": "Primary Elections",
+          "states": "PA, DE, CT, RI, NY, MD, WI"
+        },
+        {
+          "date": "2026-09-01",
+          "event": "Primary Elections",
+          "states": "MA, DE, NH, RI"
+        }
+      ]
+    },
+    "SC": {
+      "candidates": [
+        {
+          "name": "Lindsey Graham",
+          "party": "Republican",
+          "state": "SC",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0SC00148"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-23",
+          "event": "Primary/Runoff Elections",
+          "states": "CO, NY, OK, SC, UT, VA"
+        }
+      ]
+    },
+    "SD": {
+      "candidates": [
+        {
+          "name": "Mike Rounds",
+          "party": "Republican",
+          "state": "SD",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S4SD00197"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "TN": {
+      "candidates": [
+        {
+          "name": "Bill Hagerty",
+          "party": "Republican",
+          "state": "TN",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0TN00201"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        }
+      ]
+    },
+    "TX": {
+      "candidates": [
+        {
+          "name": "John Cornyn",
+          "party": "Republican",
+          "state": "TX",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S2TX00106"
+        }
+      ],
+      "polling": {
+        "state": "TX",
+        "polling_hours": "7:00 AM - 7:00 PM",
+        "early_voting": "17 days before election",
+        "vote_by_mail": "Excuse required",
+        "registration_deadline": "30 days before election",
+        "lookup_url": "https://www.votetexas.gov/"
+      },
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        }
+      ]
+    },
+    "VA": {
+      "candidates": [
+        {
+          "name": "Mark Warner",
+          "party": "Democratic",
+          "state": "VA",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S8VA00093"
+        }
+      ],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        },
+        {
+          "date": "2026-06-23",
+          "event": "Primary/Runoff Elections",
+          "states": "CO, NY, OK, SC, UT, VA"
+        }
+      ]
+    },
+    "WV": {
+      "candidates": [
+        {
+          "name": "Shelley Moore Capito",
+          "party": "Republican",
+          "state": "WV",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S4WV00147"
+        }
+      ],
+      "polling": {},
+      "dates": []
+    },
+    "WY": {
+      "candidates": [
+        {
+          "name": "Cynthia Lummis",
+          "party": "Republican",
+          "state": "WY",
+          "office": "Senate",
+          "status": "Incumbent",
+          "source": "",
+          "candidate_id": "S0WY00136"
+        }
+      ],
+      "polling": {},
+      "dates": []
+    },
+    "AZ": {
+      "candidates": [],
+      "polling": {
+        "state": "AZ",
+        "polling_hours": "6:00 AM - 7:00 PM",
+        "early_voting": "27 days before election",
+        "vote_by_mail": "No-excuse, permanent list",
+        "registration_deadline": "29 days before election",
+        "lookup_url": "https://azsos.gov/elections"
+      },
+      "dates": [
+        {
+          "date": "2026-03-17",
+          "event": "Primary Elections",
+          "states": "AZ, FL, IL, OH"
+        }
+      ]
+    },
+    "CA": {
+      "candidates": [],
+      "polling": {
+        "state": "CA",
+        "polling_hours": "7:00 AM - 8:00 PM",
+        "early_voting": "29 days before election",
+        "vote_by_mail": "All voters receive mail ballot",
+        "registration_deadline": "15 days before election (same-day conditional)",
+        "lookup_url": "https://www.sos.ca.gov/elections"
+      },
+      "dates": [
+        {
+          "date": "2026-03-03",
+          "event": "Super Tuesday Primaries",
+          "states": "AL, AR, CA, CO, ME, MA, MN, NC, OK, TN, TX, VT, VA"
+        },
+        {
+          "date": "2026-06-02",
+          "event": "Primary Elections",
+          "states": "MT, NJ, NM, SD, IA, MS, CA"
+        }
+      ]
+    },
+    "FL": {
+      "candidates": [],
+      "polling": {
+        "state": "FL",
+        "polling_hours": "7:00 AM - 7:00 PM",
+        "early_voting": "10 days before election",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "29 days before election",
+        "lookup_url": "https://dos.myflorida.com/elections/"
+      },
+      "dates": [
+        {
+          "date": "2026-03-17",
+          "event": "Primary Elections",
+          "states": "AZ, FL, IL, OH"
+        }
+      ]
+    },
+    "NV": {
+      "candidates": [],
+      "polling": {},
+      "dates": []
+    },
+    "NY": {
+      "candidates": [],
+      "polling": {
+        "state": "NY",
+        "polling_hours": "6:00 AM - 9:00 PM",
+        "early_voting": "10 days before election",
+        "vote_by_mail": "Excuse required",
+        "registration_deadline": "25 days before election",
+        "lookup_url": "https://www.elections.ny.gov/"
+      },
+      "dates": [
+        {
+          "date": "2026-04-28",
+          "event": "Primary Elections",
+          "states": "PA, DE, CT, RI, NY, MD, WI"
+        },
+        {
+          "date": "2026-06-23",
+          "event": "Primary/Runoff Elections",
+          "states": "CO, NY, OK, SC, UT, VA"
+        }
+      ]
+    },
+    "OH": {
+      "candidates": [],
+      "polling": {
+        "state": "OH",
+        "polling_hours": "6:30 AM - 7:30 PM",
+        "early_voting": "28 days before election",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "30 days before election",
+        "lookup_url": "https://www.ohiosos.gov/elections/"
+      },
+      "dates": [
+        {
+          "date": "2026-03-17",
+          "event": "Primary Elections",
+          "states": "AZ, FL, IL, OH"
+        }
+      ]
+    },
+    "PA": {
+      "candidates": [],
+      "polling": {
+        "state": "PA",
+        "polling_hours": "7:00 AM - 8:00 PM",
+        "early_voting": "No early voting (mail ballot only)",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "15 days before election",
+        "lookup_url": "https://www.pa.gov/en/agencies/vote.html"
+      },
+      "dates": [
+        {
+          "date": "2026-04-28",
+          "event": "Primary Elections",
+          "states": "PA, DE, CT, RI, NY, MD, WI"
+        }
+      ]
+    },
+    "WA": {
+      "candidates": [],
+      "polling": {},
+      "dates": [
+        {
+          "date": "2026-08-04",
+          "event": "Primary Elections",
+          "states": "MI, MO, KS, WA"
+        }
+      ]
+    },
+    "WI": {
+      "candidates": [],
+      "polling": {
+        "state": "WI",
+        "polling_hours": "7:00 AM - 8:00 PM",
+        "early_voting": "14 days before election",
+        "vote_by_mail": "No-excuse",
+        "registration_deadline": "20 days before election (Election Day available)",
+        "lookup_url": "https://elections.wi.gov/"
+      },
+      "dates": [
+        {
+          "date": "2026-04-28",
+          "event": "Primary Elections",
+          "states": "PA, DE, CT, RI, NY, MD, WI"
+        },
+        {
+          "date": "2026-08-11",
+          "event": "Primary Elections",
+          "states": "MN, WI, CT, VT"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1626 @@
+{
+  "districtMeta": {
+    "id": "48thward",
+    "name": "48th Ward",
+    "city": "Chicago",
+    "state": "Illinois",
+    "stateAbbr": "IL",
+    "slug": "illinois/chicago/48thward",
+    "tagline": "Edgewater & Andersonville — Chicago's North Side",
+    "alderman": "Alderwoman Leni Manaa-Hoppenworth",
+    "description": "The 48th Ward Civic Data Platform is a resident-focused resource for navigating local government, discovering neighborhood institutions, and participating in the decision-making process. Explore our community directory, track local legislation, and get involved in your ward.",
+    "population": "55,000+",
+    "neighborhoods": [
+      "Edgewater",
+      "Andersonville",
+      "Lakewood-Balmoral",
+      "Bryn Mawr Historic District",
+      "Magnolia Glen"
+    ],
+    "totalEntities": 982,
+    "boundaries": {
+      "north": "Devon Avenue",
+      "south": "Foster Avenue (approx)",
+      "east": "Lake Michigan",
+      "west": "Clark Street / Ravenswood (approx)",
+      "mapUrl": "https://www.chicago.gov/content/dam/city/depts/doit/general/WardMaps/Ward48.pdf"
+    },
+    "wardOffice": {
+      "address": "6012 N Broadway, Chicago, IL 60660",
+      "phone": "(773) 784-5277",
+      "email": "info@the48thward.org",
+      "website": "https://the48thward.org",
+      "hours": "Monday–Friday, 9:00 AM – 5:00 PM"
+    },
+    "serviceLinks": {
+      "serviceRequest": "https://www.the48thward.org/service-request",
+      "chi311": "https://311.chicago.gov/",
+      "newsletter": "https://mailchi.mp/the48thward/newsletter-signup",
+      "calendar": "https://www.the48thward.org/calendar"
+    },
+    "participatoryBudgeting": {
+      "totalBudget": "$1,000,000",
+      "specialProjects": "$800,000",
+      "repairs": "$200,000",
+      "totalVotes2026": 1277,
+      "winners2026": [
+        "School Pedestrian Safety",
+        "Project Sidewalk (Accessibility Improvements)",
+        "Swift Nature Play Area",
+        "Lakefront Trail Placemaking",
+        "Residential Pedestrian Safety (Bump-outs)",
+        "Public Art & Murals"
+      ]
+    }
+  },
+  "officials": [
+    {
+      "id": "leni-manaa-hoppenworth",
+      "name": "Leni Manaa-Hoppenworth",
+      "title": "48th Ward Alderwoman",
+      "level": "City",
+      "body": "Chicago City Council",
+      "party": "Nonpartisan",
+      "since": "2023",
+      "photo": null,
+      "contact": {
+        "phone": "(773) 784-5277",
+        "email": "info@the48thward.org",
+        "office": "6012 N Broadway, Chicago, IL 60660",
+        "website": "https://the48thward.org"
+      },
+      "keyIssues": [
+        "Pedestrian Safety & Vision Zero",
+        "Affordable Housing & Broadway Upzoning",
+        "Participatory Budgeting",
+        "Small Business Support",
+        "Public Transit Infrastructure",
+        "Environmental Sustainability"
+      ],
+      "achievements": [
+        "Zero pedestrian fatalities in the ward (2024–2026)",
+        "Secured $1.08M for 6 new Accessible Pedestrian Signals (APS)",
+        "Passed \"ICE On Notice\" Executive Order support (2026)",
+        "Bryn Mawr Historic District Landmark Status Initiative"
+      ],
+      "bio": "Alderwoman Leni Manaa-Hoppenworth represents the 48th Ward on the Chicago City Council. She leads with a focus on transparency, community engagement, and data-driven governance, including the ward's innovative Participatory Budgeting program."
+    },
+    {
+      "id": "brandon-johnson",
+      "name": "Brandon Johnson",
+      "title": "Mayor of Chicago",
+      "level": "City",
+      "body": "City of Chicago",
+      "party": "Democratic",
+      "since": "2023",
+      "contact": {
+        "phone": "(312) 744-3300",
+        "website": "https://www.chicago.gov/city/en/depts/mayor.html"
+      },
+      "keyIssues": [
+        "Public Safety",
+        "Economic Development",
+        "Housing",
+        "Youth Investment"
+      ]
+    },
+    {
+      "id": "kelly-cassidy",
+      "name": "Kelly Cassidy",
+      "title": "State Representative — 14th District",
+      "level": "State",
+      "body": "Illinois General Assembly — House",
+      "party": "Democratic",
+      "contact": {
+        "phone": "(773) 784-2002",
+        "website": "https://repcassidy.com"
+      },
+      "keyIssues": [
+        "Criminal Justice Reform",
+        "Education Funding",
+        "LGBTQ+ Rights",
+        "Healthcare Access"
+      ]
+    },
+    {
+      "id": "mike-simmons",
+      "name": "Mike Simmons",
+      "title": "State Senator — 7th District",
+      "level": "State",
+      "body": "Illinois General Assembly — Senate",
+      "party": "Democratic",
+      "contact": {
+        "phone": "(773) 769-1717",
+        "website": "https://senatorsimmons.com"
+      },
+      "keyIssues": [
+        "Climate Action",
+        "Health Equity",
+        "Immigration Reform",
+        "Housing Rights"
+      ]
+    },
+    {
+      "id": "jan-schakowsky",
+      "name": "Jan Schakowsky",
+      "title": "U.S. Representative — 9th District",
+      "level": "Federal",
+      "body": "U.S. House of Representatives",
+      "party": "Democratic",
+      "contact": {
+        "phone": "(773) 506-7100",
+        "website": "https://schakowsky.house.gov"
+      },
+      "keyIssues": [
+        "Consumer Protection",
+        "Healthcare Reform",
+        "Social Security Protection",
+        "Immigration"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "ward-night-may-2026",
+      "title": "Ward Night with Alderwoman Leni",
+      "date": "2026-05-04",
+      "time": "6:00 PM — 8:00 PM",
+      "location": "48th Ward Office, 6012 N Broadway",
+      "category": "Community Meeting",
+      "description": "Join your neighbors to discuss zoning, development, housing, and infrastructure. Ward Nights occur on the 1st and 3rd Monday of each month.",
+      "recurring": true,
+      "link": "https://the48thward.org/ward-nights",
+      "tags": [
+        "governance",
+        "community",
+        "open-forum"
+      ]
+    },
+    {
+      "id": "bryn-mawr-landmark-presentation",
+      "title": "Bryn Mawr Historic District Presentation",
+      "date": "2026-05-12",
+      "time": "1:00 PM",
+      "location": "Commission on Chicago Landmarks (Online/In-person)",
+      "category": "Civic Planning",
+      "description": "Preliminary landmark designation report presentation for the Bryn Mawr Historic District.",
+      "link": "https://the48thward.org/blog/bryn-mawr-landmarking",
+      "tags": [
+        "preservation",
+        "zoning",
+        "history"
+      ]
+    },
+    {
+      "id": "street-sweeping-2026",
+      "title": "Street Sweeping Active",
+      "date": "2026-04-01",
+      "endDate": "2026-11-30",
+      "location": "48th Ward Wide",
+      "category": "City Services",
+      "description": "Chicago's street sweeping season is in full effect. Check your section schedule to avoid fines.",
+      "link": "https://the48thward.org/blog/street-sweeping",
+      "tags": [
+        "infrastructure",
+        "parking"
+      ]
+    },
+    {
+      "id": "construction-season-2026",
+      "title": "Spring Construction & Resurfacing",
+      "date": "2026-04-15",
+      "endDate": "2026-06-30",
+      "location": "Various Ward Streets",
+      "category": "Infrastructure",
+      "description": "Annual street and alley resurfacing projects. Includes ADA ramp upgrades and utility work.",
+      "link": "https://the48thward.org/blog/2026-construction",
+      "tags": [
+        "construction",
+        "infrastructure"
+      ]
+    }
+  ],
+  "agencies": [
+    {
+      "id": "ward-48-office",
+      "name": "48th Ward Office",
+      "type": "Ward Office",
+      "level": "Local",
+      "description": "The primary contact point for 48th Ward residents for city services, zoning, and neighborhood issues. Alderwoman Leni Manaa-Hoppenworth holds regular Ward Nights for constituent meetings.",
+      "address": "6012 N Broadway, Chicago, IL 60660",
+      "phone": "(773) 784-5277",
+      "email": "info@the48thward.org",
+      "website": "https://the48thward.org",
+      "services": [
+        "Service Requests",
+        "Zoning Changes",
+        "Participatory Budgeting",
+        "Block Party Permits",
+        "Ward Nights",
+        "Constituent Casework"
+      ]
+    },
+    {
+      "id": "edgewater-chamber",
+      "name": "Edgewater Chamber of Commerce",
+      "type": "Business",
+      "level": "Local",
+      "description": "Supporting the growth and success of Edgewater businesses through advocacy, marketing, and networking. Manages the Edgewater Special Service Area.",
+      "website": "https://www.edgewater.org/",
+      "services": [
+        "Business Advocacy",
+        "Neighborhood Marketing",
+        "Local Events",
+        "Small Biz Resources",
+        "SSA Programs"
+      ]
+    },
+    {
+      "id": "andersonville-chamber",
+      "name": "Andersonville Chamber of Commerce",
+      "type": "Business",
+      "level": "Local",
+      "description": "Promoting local and independent businesses in the Andersonville neighborhood. Produces the Midsommarfest and Andersonville Crawl events.",
+      "website": "https://www.andersonville.org/",
+      "services": [
+        "Commercial Corridor Development",
+        "Special Service Area (SSA) Management",
+        "Business Directory",
+        "Community Events"
+      ]
+    },
+    {
+      "id": "chi-311",
+      "name": "City of Chicago 311",
+      "type": "City Service",
+      "level": "City",
+      "description": "Non-emergency city services platform for reporting issues and requesting services anywhere in Chicago.",
+      "phone": "311",
+      "website": "https://311.chicago.gov",
+      "services": [
+        "Potholes",
+        "Street Light Outages",
+        "Tree Trimming",
+        "Garbage Pick-up",
+        "Graffiti Removal",
+        "Rodent Baiting"
+      ]
+    },
+    {
+      "id": "chicago-dept-buildings",
+      "name": "Chicago Dept. of Buildings",
+      "type": "City Department",
+      "level": "City",
+      "description": "Issues building permits and conducts inspections to ensure safe construction and code compliance across Chicago.",
+      "phone": "(312) 744-3449",
+      "website": "https://www.chicago.gov/city/en/depts/bldgs.html",
+      "services": [
+        "Building Permits",
+        "Inspection Scheduling",
+        "Code Violation Complaints",
+        "Certificate of Occupancy",
+        "Contractor License Lookup"
+      ]
+    },
+    {
+      "id": "chicago-dept-housing",
+      "name": "Chicago Dept. of Housing",
+      "type": "City Department",
+      "level": "City",
+      "description": "Develops and preserves affordable housing, provides rental and homeownership assistance, and enforces tenant protections.",
+      "phone": "(312) 744-3653",
+      "website": "https://www.chicago.gov/city/en/depts/doh.html",
+      "services": [
+        "Affordable Housing Programs",
+        "Emergency Rental Assistance",
+        "Homebuyer Assistance",
+        "Landlord-Tenant Mediation",
+        "Housing Code Complaints"
+      ]
+    },
+    {
+      "id": "cdot",
+      "name": "Chicago Dept. of Transportation (CDOT)",
+      "type": "City Department",
+      "level": "City",
+      "description": "Plans and maintains Chicago's streets, sidewalks, traffic signals, and bike infrastructure. Key partner for ward pedestrian safety projects.",
+      "phone": "(312) 744-3600",
+      "website": "https://www.chicago.gov/city/en/depts/cdot.html",
+      "services": [
+        "Pothole Repair",
+        "Sidewalk Repair",
+        "Traffic Signal Requests",
+        "Street Resurfacing",
+        "Bike Lane Projects",
+        "ADA Curb Cuts"
+      ]
+    },
+    {
+      "id": "cta",
+      "name": "Chicago Transit Authority (CTA)",
+      "type": "City Service",
+      "level": "City",
+      "description": "Operates the Red Line (Lawrence, Berwyn, Bryn Mawr, Thorndale, Granville stops serve the 48th Ward) plus bus routes including the 151, 136, and 147.",
+      "phone": "(888) 968-7282",
+      "website": "https://www.transitchicago.com",
+      "services": [
+        "Ventra Card",
+        "Trip Planning",
+        "Reduced Fare Programs",
+        "Accessibility Services",
+        "Service Alerts",
+        "Lost & Found"
+      ]
+    },
+    {
+      "id": "cps",
+      "name": "Chicago Public Schools (CPS)",
+      "type": "City Department",
+      "level": "City",
+      "description": "Administers public K–12 education in Chicago, including Senn High School (IB World School) and multiple elementary schools serving 48th Ward families.",
+      "phone": "(773) 553-1000",
+      "website": "https://www.cps.edu",
+      "services": [
+        "School Enrollment",
+        "Special Education Services",
+        "Free/Reduced Lunch",
+        "School Choice Applications",
+        "Student Discipline Appeals",
+        "Parent Portal"
+      ]
+    },
+    {
+      "id": "chicago-park-district",
+      "name": "Chicago Park District",
+      "type": "City Department",
+      "level": "City",
+      "description": "Manages Edgewater's lakefront parks, Berger Park, Margate Park, and Clarendon Park, providing recreation programming for all ages.",
+      "phone": "(312) 742-7529",
+      "website": "https://www.chicagoparkdistrict.com",
+      "services": [
+        "Park Programs & Classes",
+        "Facility Rentals",
+        "Summer Camps",
+        "Senior Programs",
+        "Fitness Centers",
+        "Lakefront Access"
+      ]
+    },
+    {
+      "id": "chicago-public-health",
+      "name": "Chicago Dept. of Public Health (CDPH)",
+      "type": "City Department",
+      "level": "City",
+      "description": "Provides disease surveillance, environmental health enforcement, and community health programs for Chicago residents.",
+      "phone": "(312) 744-8775",
+      "website": "https://www.chicago.gov/city/en/depts/cdph.html",
+      "services": [
+        "Immunizations",
+        "Lead Inspection Complaints",
+        "Food Poisoning Reports",
+        "Environmental Health Complaints",
+        "STI Testing Referrals",
+        "Mental Health Navigation"
+      ]
+    },
+    {
+      "id": "mopd",
+      "name": "Mayor's Office for People with Disabilities (MOPD)",
+      "type": "City Department",
+      "level": "City",
+      "description": "Advocates for the rights and inclusion of Chicagoans with disabilities, providing services, resources, and ADA compliance enforcement.",
+      "phone": "(312) 744-7050",
+      "website": "https://www.chicago.gov/city/en/depts/mopd.html",
+      "services": [
+        "ADA Complaint Filing",
+        "Disability Benefits Assistance",
+        "Assistive Technology Loans",
+        "Home Modification Referrals",
+        "Sign Language Interpreter Referrals"
+      ]
+    },
+    {
+      "id": "chicago-city-clerk",
+      "name": "Chicago City Clerk",
+      "type": "City Department",
+      "level": "City",
+      "description": "Official record-keeper for the City of Chicago. Issues vehicle stickers, dog licenses, and business licenses, and maintains City Council documents.",
+      "phone": "(312) 744-6861",
+      "website": "https://www.chicityclerk.com",
+      "services": [
+        "Vehicle City Sticker",
+        "Dog License",
+        "Business License (Basic)",
+        "Voter Registration",
+        "FOIA Requests",
+        "City Council Records"
+      ]
+    },
+    {
+      "id": "chicago-ig",
+      "name": "City of Chicago Inspector General (OIG)",
+      "type": "City Department",
+      "level": "City",
+      "description": "Independent watchdog that investigates fraud, waste, abuse, and misconduct by City employees and contractors.",
+      "phone": "(773) 478-7799",
+      "website": "https://igchicago.org",
+      "services": [
+        "Fraud & Misconduct Complaints",
+        "Whistleblower Protection",
+        "Government Efficiency Reports",
+        "Anonymous Tips"
+      ]
+    },
+    {
+      "id": "chicago-fire-dept",
+      "name": "Chicago Fire Department",
+      "type": "City Department",
+      "level": "City",
+      "description": "Provides emergency fire suppression, emergency medical services, and fire prevention programs. Engine 78 and Truck 14 serve the 48th Ward area.",
+      "phone": "911 (Emergency) / (312) 744-6666 (Non-emergency)",
+      "website": "https://www.chicago.gov/city/en/depts/cfd.html",
+      "services": [
+        "Fire & Medical Emergency Response",
+        "Fire Prevention Inspections",
+        "Smoke Detector Program",
+        "Carbon Monoxide Alarm Program",
+        "Community Paramedicine"
+      ]
+    },
+    {
+      "id": "cpd-20th-district",
+      "name": "Chicago Police — 20th District (Rogers Park)",
+      "type": "City Department",
+      "level": "City",
+      "description": "The 20th Police District (Lakeview/Edgewater) serves the 48th Ward. Hosts CAPS (Community Alternative Policing Strategy) beat meetings.",
+      "phone": "(312) 742-8714",
+      "address": "5400 N Lincoln Ave, Chicago, IL 60625",
+      "website": "https://www.chicago.gov/city/en/depts/cpd/supp_info/district_19.html",
+      "services": [
+        "Emergency Response (call 911)",
+        "CAPS Beat Meetings",
+        "Crime Reporting",
+        "Police Reports",
+        "Restraining Order Assistance",
+        "Crime Prevention Programs"
+      ]
+    },
+    {
+      "id": "cook-county-assessor",
+      "name": "Cook County Assessor",
+      "type": "County Agency",
+      "level": "County",
+      "description": "Determines the assessed value of all properties in Cook County for property tax purposes. Administers homeowner, senior, and disability exemptions.",
+      "phone": "(312) 443-7550",
+      "address": "118 N Clark St, Chicago, IL 60602",
+      "website": "https://www.cookcountyassessor.com",
+      "services": [
+        "Homeowner Exemption",
+        "Senior Exemption",
+        "Property Tax Appeal",
+        "Property Value Lookup",
+        "Disability Exemption",
+        "Veterans Exemption"
+      ]
+    },
+    {
+      "id": "cook-county-clerk",
+      "name": "Cook County Clerk (Elections)",
+      "type": "Elections",
+      "level": "County",
+      "description": "Administers elections, voter registration, and early voting for Cook County residents outside the City of Chicago. Also maintains vital records (birth, death, marriage certificates).",
+      "phone": "(312) 603-5656",
+      "address": "69 W Washington St, Chicago, IL 60602",
+      "website": "https://www.cookcountyclerk.com",
+      "services": [
+        "Voter Registration",
+        "Early Voting Locations",
+        "Election Results",
+        "Vital Records (Birth/Death/Marriage)",
+        "Notary Public Services"
+      ]
+    },
+    {
+      "id": "cook-county-sheriff",
+      "name": "Cook County Sheriff",
+      "type": "County Agency",
+      "level": "County",
+      "description": "Provides law enforcement for unincorporated Cook County and operates the Cook County Jail. Also serves civil court orders throughout the county.",
+      "phone": "(773) 674-7000",
+      "website": "https://www.cookcountysheriff.org",
+      "services": [
+        "Court Order Service",
+        "Eviction Enforcement",
+        "Jail Inmate Lookup",
+        "Warrant Search",
+        "FOID Card Assistance"
+      ]
+    },
+    {
+      "id": "stroger-hospital",
+      "name": "Cook County Health — John H. Stroger Jr. Hospital",
+      "type": "Health",
+      "level": "County",
+      "description": "The county's flagship public hospital providing comprehensive care regardless of ability to pay. The CountyCare Medicaid managed care plan is administered here.",
+      "phone": "(312) 864-6000",
+      "address": "1969 Ogden Ave, Chicago, IL 60612",
+      "website": "https://cookcountyhealth.org",
+      "services": [
+        "Emergency Care",
+        "Primary & Specialty Care",
+        "CountyCare Enrollment",
+        "Behavioral Health",
+        "Pharmacy",
+        "Sliding-Scale Fees"
+      ]
+    },
+    {
+      "id": "cook-county-legal-aid",
+      "name": "Cook County Legal Aid for Housing & Debt",
+      "type": "Social Services",
+      "level": "County",
+      "description": "Provides free legal assistance to low-income Cook County residents facing eviction, foreclosure, or debt collection.",
+      "phone": "(855) 956-5763",
+      "website": "https://www.cookcountylegalaid.org",
+      "services": [
+        "Eviction Defense",
+        "Foreclosure Prevention",
+        "Debt Collection Defense",
+        "Housing Court Representation",
+        "Legal Advice Line"
+      ]
+    },
+    {
+      "id": "cook-county-commissioner",
+      "name": "Cook County Commissioner — 8th District",
+      "type": "County Agency",
+      "level": "County",
+      "description": "The Cook County Board of Commissioners sets the county budget and policy. The 8th District includes much of the 48th Ward area.",
+      "phone": "(312) 603-4108",
+      "website": "https://www.cookcountygov.com/portal/server.pt/community/board_of_commissioners/258",
+      "services": [
+        "Constituent Services",
+        "County Budget Feedback",
+        "Community Grants",
+        "Senior Services Navigation",
+        "Veterans Services"
+      ]
+    },
+    {
+      "id": "il-secretary-of-state",
+      "name": "Illinois Secretary of State",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Handles driver's licenses, vehicle registration, business entity filings, and administers the state library system.",
+      "phone": "(800) 252-8980",
+      "website": "https://www.ilsos.gov",
+      "services": [
+        "Driver's License & ID",
+        "Vehicle Registration & Title",
+        "Business Registration (LLC/Corp)",
+        "Notary Public Commission",
+        "Voter Registration",
+        "State Library Services"
+      ]
+    },
+    {
+      "id": "ides",
+      "name": "Illinois Dept. of Employment Security (IDES)",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Administers unemployment insurance benefits and workforce development programs for Illinois workers.",
+      "phone": "(800) 244-5631",
+      "website": "https://ides.illinois.gov",
+      "services": [
+        "Unemployment Insurance Claims",
+        "Job Search Resources",
+        "Employer Layoff Reporting",
+        "UI Appeals",
+        "Work Authorization Verification"
+      ]
+    },
+    {
+      "id": "idhs",
+      "name": "Illinois Dept. of Human Services (IDHS)",
+      "type": "Social Services",
+      "level": "State",
+      "description": "Administers SNAP, cash assistance, child care, and community-based social services for Illinois families in need.",
+      "phone": "(800) 843-6154",
+      "website": "https://www.dhs.state.il.us",
+      "services": [
+        "SNAP (Food Stamps)",
+        "Cash Assistance (TANF)",
+        "Child Care Assistance (CCAP)",
+        "Refugee Resettlement",
+        "Substance Use Treatment",
+        "Domestic Violence Services"
+      ]
+    },
+    {
+      "id": "il-hfs",
+      "name": "Illinois Healthcare & Family Services (HFS) — Medicaid",
+      "type": "Health",
+      "level": "State",
+      "description": "Administers the Illinois Medicaid program (All Kids, FamilyCare, ACA Marketplace) and Child Support Services.",
+      "phone": "(800) 843-6154",
+      "website": "https://www.hfs.illinois.gov",
+      "services": [
+        "Medicaid Enrollment",
+        "All Kids / CHIP",
+        "ACA Marketplace Navigation",
+        "Child Support Payments",
+        "Managed Care Plan Selection"
+      ]
+    },
+    {
+      "id": "il-dept-aging",
+      "name": "Illinois Dept. on Aging",
+      "type": "Social Services",
+      "level": "State",
+      "description": "Funds and coordinates community-based services that help older Illinoisans live independently, including the CIL network and senior centers.",
+      "phone": "(800) 252-8966",
+      "website": "https://www2.illinois.gov/aging",
+      "services": [
+        "Home-Delivered Meals",
+        "Transportation Assistance",
+        "Home Care Services",
+        "Adult Protective Services",
+        "Senior Health Insurance Counseling (SHIP)"
+      ]
+    },
+    {
+      "id": "il-dcfs",
+      "name": "Illinois Dept. of Children & Family Services (DCFS)",
+      "type": "Social Services",
+      "level": "State",
+      "description": "Investigates child abuse and neglect, provides foster care and adoption services, and funds community-based child welfare programs.",
+      "phone": "(800) 252-2873 (Abuse Hotline)",
+      "website": "https://www2.illinois.gov/dcfs",
+      "services": [
+        "Child Abuse Reporting Hotline",
+        "Foster Care",
+        "Adoption Services",
+        "Youth Placement Services",
+        "Family Preservation Programs"
+      ]
+    },
+    {
+      "id": "ihda",
+      "name": "Illinois Housing Development Authority (IHDA)",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Finances affordable housing development and provides down payment assistance programs for first-time homebuyers across Illinois.",
+      "phone": "(312) 836-5200",
+      "address": "111 E Wacker Dr, Suite 1000, Chicago, IL 60601",
+      "website": "https://www.ihda.org",
+      "services": [
+        "First-Time Homebuyer Assistance",
+        "Affordable Rental Housing Finder",
+        "Rental Assistance Programs",
+        "Housing Tax Credits",
+        "Mortgage Assistance"
+      ]
+    },
+    {
+      "id": "iepa",
+      "name": "Illinois Environmental Protection Agency (IEPA)",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Regulates air, water, and land environmental quality in Illinois. Handles pollution complaints and administers cleanup programs.",
+      "phone": "(217) 782-3397",
+      "website": "https://www2.illinois.gov/epa",
+      "services": [
+        "Environmental Complaints",
+        "Air Quality Reports",
+        "Lead Contamination Testing",
+        "Brownfield Site Cleanup",
+        "Water Quality Monitoring"
+      ]
+    },
+    {
+      "id": "idot",
+      "name": "Illinois Dept. of Transportation (IDOT)",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Plans and maintains Illinois state highways, bridges, and transit systems, including I-94 (Edens) and US-41 (Lake Shore Drive) near the ward.",
+      "phone": "(800) 452-4368",
+      "website": "https://idot.illinois.gov",
+      "services": [
+        "State Highway Maintenance",
+        "Bridge Inspections",
+        "Overweight Permit",
+        "Traffic Safety Grants",
+        "Public Transit Funding"
+      ]
+    },
+    {
+      "id": "il-attorney-general",
+      "name": "Illinois Attorney General",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Enforces state law, protects consumers from fraud, and provides victim services. Operates a consumer complaint hotline.",
+      "phone": "(800) 243-0618",
+      "website": "https://illinoisattorneygeneral.gov",
+      "services": [
+        "Consumer Fraud Complaints",
+        "Charity Fraud Complaints",
+        "Identity Theft Assistance",
+        "Victims' Rights Services",
+        "Nonprofit Oversight"
+      ]
+    },
+    {
+      "id": "il-state-board-elections",
+      "name": "Illinois State Board of Elections",
+      "type": "Elections",
+      "level": "State",
+      "description": "Administers state and federal election law, oversees candidate filing, and maintains the statewide voter registration database.",
+      "phone": "(217) 782-4141",
+      "website": "https://www.elections.il.gov",
+      "services": [
+        "Voter Registration",
+        "Candidate Filing",
+        "PAC & Lobbyist Registration",
+        "Election Results",
+        "Polling Place Lookup"
+      ]
+    },
+    {
+      "id": "il-legal-aid-online",
+      "name": "Illinois Legal Aid Online (ILAO)",
+      "type": "Social Services",
+      "level": "State",
+      "description": "Free online resource connecting Illinois residents to legal information, self-help forms, and referrals to legal aid organizations.",
+      "website": "https://www.illinoislegalaid.org",
+      "services": [
+        "Legal Information Articles",
+        "Self-Help Court Forms",
+        "Legal Aid Referrals",
+        "Lawyer Referral Service",
+        "Immigration Legal Help"
+      ]
+    },
+    {
+      "id": "icc",
+      "name": "Illinois Commerce Commission (ICC)",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Regulates electric, natural gas, and telecommunications utilities operating in Illinois. Handles consumer utility complaints.",
+      "phone": "(800) 524-0795",
+      "website": "https://www.icc.illinois.gov",
+      "services": [
+        "Utility Complaint Filing",
+        "Rate Case Information",
+        "Energy Efficiency Programs",
+        "Telecommunications Complaints",
+        "Pipeline Safety"
+      ]
+    },
+    {
+      "id": "idfpr",
+      "name": "Illinois Dept. of Financial & Professional Regulation (IDFPR)",
+      "type": "State Agency",
+      "level": "State",
+      "description": "Licenses and regulates over 1 million professionals in Illinois, including healthcare workers, real estate agents, and financial institutions.",
+      "phone": "(888) 473-4858",
+      "website": "https://idfpr.illinois.gov",
+      "services": [
+        "Professional License Lookup",
+        "License Renewal",
+        "Consumer Complaint Filing",
+        "Real Estate License",
+        "Pharmacy & Healthcare Licensing"
+      ]
+    },
+    {
+      "id": "il-lt-governor",
+      "name": "Illinois Lt. Governor — Community Programs Office",
+      "type": "State Agency",
+      "level": "State",
+      "description": "The Lt. Governor's office administers community grants, rural affairs, and coordinates state outreach to local communities.",
+      "phone": "(217) 785-0890",
+      "website": "https://ltgovernor.illinois.gov",
+      "services": [
+        "Community Grant Assistance",
+        "Rural Affairs Programs",
+        "Constituent Casework Referrals",
+        "Community Development Resources"
+      ]
+    },
+    {
+      "id": "sen-dick-durbin",
+      "name": "U.S. Senator Dick Durbin — Chicago Office",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Senator Durbin's Chicago constituent services office assists Illinois residents with federal agency issues including immigration, Social Security, VA, and passports.",
+      "phone": "(312) 353-4952",
+      "address": "230 S Dearborn St, Suite 3892, Chicago, IL 60604",
+      "website": "https://www.durbin.senate.gov",
+      "services": [
+        "Federal Agency Casework",
+        "Passport Expediting",
+        "Social Security Appeals",
+        "VA Claims Assistance",
+        "Immigration Help",
+        "Academy Nominations"
+      ]
+    },
+    {
+      "id": "sen-tammy-duckworth",
+      "name": "U.S. Senator Tammy Duckworth — Chicago Office",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Senator Duckworth's Chicago office helps Illinois residents navigate federal programs and provides constituent services for veterans, seniors, and families.",
+      "phone": "(312) 886-3506",
+      "address": "230 S Dearborn St, Suite 3900, Chicago, IL 60604",
+      "website": "https://www.duckworth.senate.gov",
+      "services": [
+        "Veteran Benefits Assistance",
+        "Federal Casework",
+        "Small Business Assistance",
+        "Social Security Help",
+        "Disability Services Navigation",
+        "Academy Nominations"
+      ]
+    },
+    {
+      "id": "rep-jan-schakowsky",
+      "name": "U.S. Rep. Jan Schakowsky — 9th District (Evanston Office)",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Rep. Schakowsky's district office serves 48th Ward residents with federal casework. Evanston office covers the North Shore and Edgewater area.",
+      "phone": "(847) 328-3409",
+      "address": "820 Davis St, Evanston, IL 60201",
+      "website": "https://schakowsky.house.gov",
+      "services": [
+        "Federal Agency Casework",
+        "Social Security Appeals",
+        "Immigration Assistance",
+        "Medicare & VA Help",
+        "Community Project Grants",
+        "Capitol Tours"
+      ]
+    },
+    {
+      "id": "social-security-admin",
+      "name": "Social Security Administration — Rogers Park Field Office",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Administers Social Security retirement, disability (SSDI), and Supplemental Security Income (SSI) programs. The closest field office to the 48th Ward.",
+      "phone": "(800) 772-1213",
+      "address": "6630 N Clark St, Chicago, IL 60626",
+      "website": "https://www.ssa.gov",
+      "services": [
+        "Social Security Benefits Application",
+        "SSDI Disability Claims",
+        "SSI Applications",
+        "Medicare Enrollment",
+        "Benefit Verification Letters",
+        "Name & Address Changes"
+      ]
+    },
+    {
+      "id": "cms-medicare",
+      "name": "Centers for Medicare & Medicaid Services (CMS)",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Federal agency overseeing Medicare health coverage for people 65+ and certain disabled individuals. Use 1-800-MEDICARE or medicare.gov for enrollment.",
+      "phone": "(800) 633-4227",
+      "website": "https://www.medicare.gov",
+      "services": [
+        "Medicare Enrollment",
+        "Plan Comparisons",
+        "Coverage Appeals",
+        "Fraud Reporting",
+        "Extra Help (Low-Income Subsidy)",
+        "SHIP Counseling Referrals"
+      ]
+    },
+    {
+      "id": "hud-chicago",
+      "name": "U.S. Dept. of Housing & Urban Development (HUD) — Chicago Regional Office",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Federal housing agency providing community development grants, fair housing enforcement, and Section 8 voucher program oversight.",
+      "phone": "(312) 353-5680",
+      "address": "77 W Jackson Blvd, Chicago, IL 60604",
+      "website": "https://www.hud.gov",
+      "services": [
+        "Fair Housing Complaints",
+        "Section 8 / Housing Choice Voucher Info",
+        "Community Development Block Grants",
+        "FHA Loan Info",
+        "Homeless Assistance Programs"
+      ]
+    },
+    {
+      "id": "jesse-brown-va",
+      "name": "Jesse Brown VA Medical Center",
+      "type": "Health",
+      "level": "Federal",
+      "description": "The VA medical center serving Chicago-area veterans with full inpatient, outpatient, and mental health services. Clinics and CBOCs serve North Side veterans.",
+      "phone": "(312) 569-8387",
+      "address": "820 S Damen Ave, Chicago, IL 60612",
+      "website": "https://www.va.gov/jesse-brown-health-care",
+      "services": [
+        "Primary & Specialty Medical Care",
+        "Mental Health Services",
+        "Benefits Enrollment",
+        "Prosthetics",
+        "Women Veteran's Program",
+        "Caregiver Support"
+      ]
+    },
+    {
+      "id": "sba-illinois",
+      "name": "U.S. Small Business Administration (SBA) — Illinois District",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Provides small business loans, grants, counseling, and government contracting assistance. Serves Edgewater and Andersonville small business owners.",
+      "phone": "(312) 353-4528",
+      "address": "500 W Madison St, Suite 1150, Chicago, IL 60661",
+      "website": "https://www.sba.gov/offices/district/il/chicago",
+      "services": [
+        "SBA Loans (7a, 504)",
+        "Disaster Loans",
+        "SCORE Mentorship Referrals",
+        "Government Contracting (8a)",
+        "Women-Owned Business Certification",
+        "SBDC Referrals"
+      ]
+    },
+    {
+      "id": "us-dept-labor",
+      "name": "U.S. Dept. of Labor — Chicago Regional Office",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Enforces federal workplace laws including wage and hour, workplace safety (OSHA), and employee benefits (ERISA) protections.",
+      "phone": "(312) 596-7180",
+      "address": "230 S Dearborn St, Room 774, Chicago, IL 60604",
+      "website": "https://www.dol.gov",
+      "services": [
+        "Wage Theft Complaints",
+        "OSHA Safety Complaints",
+        "Family & Medical Leave (FMLA)",
+        "Union Filing (NLRB referral)",
+        "Workers' Comp (Federal employees)",
+        "Job Training Programs"
+      ]
+    },
+    {
+      "id": "irs-taxpayer-assistance",
+      "name": "IRS Taxpayer Assistance Center — Chicago",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Provides in-person federal tax help. Appointment required. Referrals available to VITA (Volunteer Income Tax Assistance) free tax prep sites.",
+      "phone": "(844) 545-5640",
+      "address": "230 S Dearborn St, Chicago, IL 60604",
+      "website": "https://www.irs.gov",
+      "services": [
+        "Tax Account Help",
+        "ITIN Applications",
+        "Identity Theft Resolution",
+        "VITA Free Tax Prep Referrals",
+        "Payment Plan Setup",
+        "Taxpayer Advocate"
+      ]
+    },
+    {
+      "id": "uscis-chicago",
+      "name": "U.S. Citizenship & Immigration Services (USCIS) — Chicago Field Office",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Processes immigration applications for permanent residence, naturalization, asylum, and work authorization for Chicago-area applicants.",
+      "phone": "(800) 375-5283",
+      "address": "101 W Congress Pkwy, Chicago, IL 60605",
+      "website": "https://www.uscis.gov",
+      "services": [
+        "Green Card / Permanent Residence",
+        "Naturalization (Citizenship)",
+        "Work Authorization (EAD)",
+        "DACA Renewals",
+        "Asylum Applications",
+        "Case Status Lookup"
+      ]
+    },
+    {
+      "id": "fema-region-5",
+      "name": "FEMA Region 5 — Chicago",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Coordinates federal disaster response and preparedness for Illinois and the Great Lakes region. Manages flood insurance and disaster relief.",
+      "phone": "(312) 408-5500",
+      "address": "536 S Clark St, Chicago, IL 60605",
+      "website": "https://www.fema.gov",
+      "services": [
+        "Disaster Relief Applications",
+        "National Flood Insurance Program (NFIP)",
+        "Emergency Preparedness Resources",
+        "Hazard Mitigation Grants",
+        "Individual Assistance Programs"
+      ]
+    },
+    {
+      "id": "usps-edgewater",
+      "name": "U.S. Post Office — Edgewater Station",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Provides postal services for the Edgewater and Andersonville area, including mail delivery, PO boxes, and passport photo services.",
+      "phone": "(800) 275-8777",
+      "address": "5915 N Broadway, Chicago, IL 60660",
+      "website": "https://www.usps.com",
+      "services": [
+        "Mail & Package Services",
+        "PO Box Rental",
+        "Passport Photo Services",
+        "Money Orders",
+        "Change of Address",
+        "Hold Mail"
+      ]
+    },
+    {
+      "id": "eeoc-chicago",
+      "name": "Equal Employment Opportunity Commission (EEOC) — Chicago District",
+      "type": "Federal Agency",
+      "level": "Federal",
+      "description": "Enforces federal laws prohibiting employment discrimination based on race, color, religion, sex, national origin, age, disability, or genetic information.",
+      "phone": "(800) 669-4000",
+      "address": "230 S Dearborn St, Suite 2920, Chicago, IL 60604",
+      "website": "https://www.eeoc.gov/field/chicago",
+      "services": [
+        "Discrimination Charge Filing",
+        "Mediation & Conciliation",
+        "Employer Guidance",
+        "Federal Sector Appeals",
+        "Outreach & Education"
+      ]
+    }
+  ],
+  "civicGroups": [
+    {
+      "id": "48th-ward-democrats",
+      "name": "48th Ward Democrats",
+      "type": "Political Org",
+      "focus": "Local Democratic Party ward organization for Edgewater & Andersonville",
+      "description": "The official Democratic Party ward organization for the 48th Ward. Organizes voter outreach, candidate endorsements, and local political education for ward precincts.",
+      "website": "https://the48thward.org",
+      "tags": [
+        "politics",
+        "elections",
+        "voter-outreach",
+        "democratic-party"
+      ]
+    },
+    {
+      "id": "edgewater-neighborhood-association",
+      "name": "Edgewater Neighborhood Association (ENA)",
+      "type": "Neighborhood Org",
+      "focus": "Civic advocacy and community improvement for the Edgewater neighborhood",
+      "description": "The Edgewater Neighborhood Association advocates for residents on issues including land use, public safety, housing, and quality of life. Holds regular community meetings open to all residents.",
+      "website": "https://www.edgewater.org",
+      "tags": [
+        "neighborhood",
+        "advocacy",
+        "land-use",
+        "community-meetings"
+      ]
+    },
+    {
+      "id": "one-northside",
+      "name": "ONE Northside",
+      "type": "Advocacy",
+      "focus": "Progressive community organizing on housing, education, and immigrant rights on the North Side",
+      "description": "ONE Northside is a broad-based community organization building power across North Side neighborhoods. It leads campaigns for affordable housing, school equity, and immigrant rights through door-knocking and direct action.",
+      "website": "https://onenorthside.org",
+      "tags": [
+        "organizing",
+        "housing",
+        "immigration",
+        "education",
+        "progressive"
+      ]
+    },
+    {
+      "id": "northside-cdc",
+      "name": "Northside Community Development Corporation",
+      "type": "Community Development",
+      "focus": "Affordable housing development and economic opportunity on Chicago's North Side",
+      "description": "Northside CDC develops and preserves affordable rental housing and provides homeownership counseling and financial literacy resources for low-to-moderate income North Side residents.",
+      "website": "https://northsidecdc.org",
+      "tags": [
+        "affordable-housing",
+        "homeownership",
+        "community-development",
+        "financial-literacy"
+      ]
+    },
+    {
+      "id": "howard-brown-health",
+      "name": "Howard Brown Health",
+      "type": "Health",
+      "focus": "LGBTQ+-affirming healthcare for Chicagoans, with major presence in Andersonville",
+      "description": "Howard Brown Health is a Federally Qualified Health Center providing primary care, behavioral health, HIV/STI services, and pharmacy to LGBTQ+ people and allies. The Brown Elephant thrift stores fund their mission.",
+      "website": "https://howardbrown.org",
+      "tags": [
+        "LGBTQ+",
+        "healthcare",
+        "HIV",
+        "mental-health",
+        "andersonville",
+        "FQHC"
+      ]
+    },
+    {
+      "id": "heartland-alliance",
+      "name": "Heartland Alliance / Heartland Human Care Services",
+      "type": "Social Services",
+      "focus": "Anti-poverty services including housing, healthcare, and economic opportunity for the most vulnerable",
+      "description": "Heartland Alliance and its affiliate Heartland Human Care Services provide housing, mental health, refugee resettlement, and workforce services to people experiencing poverty, homelessness, or displacement.",
+      "website": "https://www.heartlandalliance.org",
+      "tags": [
+        "poverty",
+        "housing",
+        "refugee",
+        "mental-health",
+        "workforce"
+      ]
+    },
+    {
+      "id": "thresholds",
+      "name": "Thresholds",
+      "type": "Health",
+      "focus": "Mental health advocacy and community-based treatment for people with serious mental illness",
+      "description": "Thresholds provides comprehensive mental health and substance use services, supportive housing, and employment programs across Chicago, including offices serving North Side residents.",
+      "website": "https://www.thresholds.org",
+      "tags": [
+        "mental-health",
+        "substance-use",
+        "housing",
+        "advocacy",
+        "employment"
+      ]
+    },
+    {
+      "id": "asian-human-services",
+      "name": "Asian Human Services",
+      "type": "Social Services",
+      "focus": "Comprehensive social, health, and educational services for Chicago's diverse Asian communities",
+      "description": "Asian Human Services provides multilingual social services, mental health counseling, early childhood education, and elder services for the diverse Asian immigrant communities throughout Edgewater and the broader North Side.",
+      "website": "https://www.ahschicago.org",
+      "tags": [
+        "immigration",
+        "asian-community",
+        "multilingual",
+        "mental-health",
+        "elder-care",
+        "youth"
+      ]
+    },
+    {
+      "id": "swedish-american-museum",
+      "name": "Swedish American Museum",
+      "type": "Cultural",
+      "focus": "Preserving and celebrating Swedish and Scandinavian-American heritage in Andersonville",
+      "description": "The Swedish American Museum is Andersonville's cultural anchor, housing permanent and rotating exhibits on Swedish immigration history, the Nordic Room children's museum, and hosting community cultural events.",
+      "website": "https://www.samac.org",
+      "tags": [
+        "culture",
+        "heritage",
+        "andersonville",
+        "history",
+        "children",
+        "museum"
+      ]
+    },
+    {
+      "id": "edgewater-historical-society",
+      "name": "Edgewater Historical Society",
+      "type": "Cultural",
+      "focus": "Documenting and preserving the history of the Edgewater neighborhood",
+      "description": "The Edgewater Historical Society collects, preserves, and shares the history of the Edgewater community through exhibits, archives, walking tours, and public programs.",
+      "website": "https://www.edgewaterhistory.org",
+      "tags": [
+        "history",
+        "preservation",
+        "archives",
+        "edgewater",
+        "walking-tours"
+      ]
+    },
+    {
+      "id": "lawrence-hall",
+      "name": "Lawrence Hall Youth Services",
+      "type": "Youth",
+      "focus": "Trauma-informed care and residential services for at-risk youth and young adults",
+      "description": "Lawrence Hall provides foster care, residential treatment, community-based family services, and transitional living programs for youth who have experienced trauma, abuse, or neglect in the Chicago area.",
+      "website": "https://www.lawrencehall.org",
+      "tags": [
+        "youth",
+        "foster-care",
+        "trauma",
+        "residential",
+        "family-services"
+      ]
+    },
+    {
+      "id": "lakewood-balmoral-residents-council",
+      "name": "Lakewood-Balmoral Residents Council",
+      "type": "Neighborhood Org",
+      "focus": "Preserving the historic character and residential quality of the Lakewood-Balmoral neighborhood",
+      "description": "The Lakewood-Balmoral Residents Council advocates for the historic, tree-lined Lakewood-Balmoral district within the 48th Ward, engaging on zoning, preservation, and neighborhood beautification.",
+      "tags": [
+        "neighborhood",
+        "preservation",
+        "historic-district",
+        "lakewood-balmoral"
+      ]
+    },
+    {
+      "id": "bryn-mawr-improvement-assoc",
+      "name": "Bryn Mawr Improvement Association",
+      "type": "Neighborhood Org",
+      "focus": "Advocating for beautification and historic preservation along the Bryn Mawr corridor",
+      "description": "The Bryn Mawr Improvement Association works to enhance the Bryn Mawr Historic District, supporting landmarking efforts, storefront improvements, and neighborhood events.",
+      "tags": [
+        "neighborhood",
+        "historic-preservation",
+        "bryn-mawr",
+        "beautification"
+      ]
+    },
+    {
+      "id": "loyola-community-programs",
+      "name": "Loyola University — Center for Experiential Learning",
+      "type": "Community Development",
+      "focus": "Connecting Loyola University students with community service and civic engagement opportunities on the North Side",
+      "description": "Loyola's Center for Experiential Learning places students in service-learning roles and community partnerships across Edgewater, Rogers Park, and the broader North Side, supporting nonprofits and local initiatives.",
+      "website": "https://www.luc.edu/cel",
+      "tags": [
+        "education",
+        "service-learning",
+        "volunteering",
+        "loyola",
+        "civic-engagement"
+      ]
+    },
+    {
+      "id": "chicago-dsa-north-side",
+      "name": "Chicago DSA — North Side Branch",
+      "type": "Political Org",
+      "focus": "Democratic socialist organizing on housing, labor, and social justice on Chicago's North Side",
+      "description": "The North Side Branch of Chicago Democratic Socialists of America organizes around tenant rights, labor issues, and electoral politics, with significant membership in Edgewater and Andersonville.",
+      "website": "https://www.chicagodsa.org",
+      "tags": [
+        "politics",
+        "labor",
+        "housing",
+        "tenant-rights",
+        "progressive",
+        "electoral"
+      ]
+    },
+    {
+      "id": "pride-in-edgewater",
+      "name": "Pride in Edgewater",
+      "type": "Advocacy",
+      "focus": "LGBTQ+ community visibility, advocacy, and celebration in the Edgewater neighborhood",
+      "description": "Pride in Edgewater organizes LGBTQ+ community events, advocates for inclusive policies, and builds connections between LGBTQ+ residents and local institutions in the neighborhood.",
+      "tags": [
+        "LGBTQ+",
+        "pride",
+        "advocacy",
+        "community-events",
+        "edgewater"
+      ]
+    },
+    {
+      "id": "edgewater-garden-club",
+      "name": "Edgewater Garden Club",
+      "type": "Civic",
+      "focus": "Community greening, parkway planting, and beautification across Edgewater",
+      "description": "The Edgewater Garden Club organizes neighborhood beautification through parkway gardens, community planters, and green-thumb programming, working with residents and the Park District.",
+      "tags": [
+        "gardening",
+        "beautification",
+        "environment",
+        "parkways",
+        "community"
+      ]
+    },
+    {
+      "id": "caps-beat-1913",
+      "name": "CAPS Beat 1913 — Edgewater West",
+      "type": "Civic",
+      "focus": "Community policing partnership for Beat 1913 covering western Edgewater",
+      "description": "CAPS (Chicago Alternative Policing Strategy) Beat 1913 brings together residents and police for monthly beat meetings to address local crime concerns and build community safety.",
+      "tags": [
+        "public-safety",
+        "community-policing",
+        "CAPS",
+        "crime-prevention"
+      ]
+    },
+    {
+      "id": "caps-beat-1914",
+      "name": "CAPS Beat 1914 — Edgewater East / Lakefront",
+      "type": "Civic",
+      "focus": "Community policing partnership for Beat 1914 covering eastern Edgewater and the lakefront",
+      "description": "CAPS Beat 1914 facilitates regular community-police dialogue for the lakefront Edgewater area, addressing quality-of-life issues and promoting neighbor-to-neighbor safety strategies.",
+      "tags": [
+        "public-safety",
+        "community-policing",
+        "CAPS",
+        "crime-prevention",
+        "lakefront"
+      ]
+    },
+    {
+      "id": "caps-beat-1912",
+      "name": "CAPS Beat 1912 — Andersonville / Clark St Corridor",
+      "type": "Civic",
+      "focus": "Community policing partnership for Beat 1912 in the Andersonville and Clark St area",
+      "description": "CAPS Beat 1912 serves the Andersonville commercial corridor and surrounding residential blocks, coordinating between business owners, residents, and local police on safety concerns.",
+      "tags": [
+        "public-safety",
+        "community-policing",
+        "CAPS",
+        "andersonville",
+        "commercial-corridor"
+      ]
+    },
+    {
+      "id": "broadway-clark-corridor-group",
+      "name": "Broadway/Clark Corridor Business Alliance",
+      "type": "Community Development",
+      "focus": "Supporting small business vitality along the Broadway and Clark Street corridors",
+      "description": "A collaborative of small business owners and property stakeholders along the Broadway and Clark corridors advocating for corridor improvements, vacancy reduction, and supportive zoning.",
+      "tags": [
+        "small-business",
+        "commercial-corridor",
+        "broadway",
+        "clark",
+        "economic-development"
+      ]
+    },
+    {
+      "id": "chicago-filmmakers",
+      "name": "Chicago Filmmakers",
+      "type": "Cultural",
+      "focus": "Supporting independent filmmakers through screenings, education, and artist services in Edgewater",
+      "description": "Chicago Filmmakers provides production resources, filmmaker education, and community film screenings. Their Edgewater home is a hub for independent cinema on the North Side.",
+      "website": "https://www.chicagofilmmakers.org",
+      "tags": [
+        "arts",
+        "film",
+        "independent-media",
+        "education",
+        "edgewater"
+      ]
+    },
+    {
+      "id": "raven-theatre",
+      "name": "Raven Theatre Company",
+      "type": "Cultural",
+      "focus": "Professional live theater rooted in the Edgewater community",
+      "description": "Raven Theatre is one of Chicago's premier storefront theater companies, producing professional productions in Edgewater and offering education programs for youth and adults.",
+      "website": "https://www.raventheatre.com",
+      "tags": [
+        "arts",
+        "theater",
+        "education",
+        "community",
+        "edgewater"
+      ]
+    },
+    {
+      "id": "chicago-recovery-alliance",
+      "name": "Chicago Recovery Alliance (CRA)",
+      "type": "Health",
+      "focus": "Harm reduction services for people who use drugs, including needle exchange and naloxone distribution",
+      "description": "Chicago Recovery Alliance provides harm reduction services including needle/syringe exchange, naloxone (Narcan) distribution, and drug-user health education with mobile outreach across Chicago neighborhoods.",
+      "website": "https://www.anypositiveechange.org",
+      "tags": [
+        "harm-reduction",
+        "public-health",
+        "naloxone",
+        "addiction",
+        "outreach"
+      ]
+    },
+    {
+      "id": "edgewater-uptown-arts-center",
+      "name": "Edgewater / Uptown Arts Center Collaborative",
+      "type": "Cultural",
+      "focus": "Connecting arts organizations and residents to celebrate the cultural diversity of Edgewater and Uptown",
+      "description": "A coalition of arts organizations working across the Edgewater-Uptown border to produce community arts events, mural projects, and public space activation reflecting the neighborhoods' diverse communities.",
+      "tags": [
+        "arts",
+        "culture",
+        "diversity",
+        "public-art",
+        "community-events"
+      ]
+    }
+  ],
+  "legislation": [
+    {
+      "id": "eo-2026-1",
+      "title": "ICE On Notice Executive Order (EO 2026-1)",
+      "status": "Supported",
+      "level": "City",
+      "date": "2026-01-31",
+      "summary": "Directs CPD to investigate and document alleged illegal activity by federal immigration agents to protect Chicago residents.",
+      "impact": "Protects immigrant communities and increases oversight of federal agents.",
+      "link": "https://the48thward.org/blog/ice-on-notice",
+      "tags": [
+        "immigration",
+        "safety",
+        "justice"
+      ]
+    },
+    {
+      "id": "broadway-upzoning",
+      "title": "Broadway Corridor Upzoning",
+      "status": "In Progress",
+      "level": "Ward",
+      "date": "2026-03-20",
+      "summary": "Legislative effort to simplify zoning along Broadway to encourage small business density and affordable housing near Red Line stations.",
+      "impact": "Economic growth and increased housing density near transit.",
+      "tags": [
+        "zoning",
+        "housing",
+        "transit-oriented"
+      ]
+    },
+    {
+      "id": "aps-2026",
+      "title": "Accessible Pedestrian Signals Initiative",
+      "status": "Approved",
+      "level": "Ward",
+      "date": "2026-04-10",
+      "summary": "Allocation of $1.08M for 6 new APS signals at key ward intersections including Sheridan & Balmoral and Broadway & Argyle.",
+      "impact": "Increased safety and accessibility for residents with disabilities.",
+      "tags": [
+        "accessibility",
+        "safety"
+      ]
+    }
+  ],
+  "benefits": [
+    {
+      "id": "pb-voting",
+      "title": "Participatory Budgeting Voting",
+      "category": "Civic Engagement",
+      "description": "Vote on how to spend $1,000,000 of the ward's infrastructure budget.",
+      "eligibility": "Residents of 48th Ward age 14+",
+      "link": "https://the48thward.org/participatory-budgeting",
+      "howToApply": "Vote online or in-person during the annual spring cycle."
+    },
+    {
+      "id": "property-tax-exemption",
+      "title": "Homeowner Property Tax Exemptions",
+      "category": "Financial Assistance",
+      "description": "Various exemptions available for homeowners, seniors, and veterans to reduce property tax bills.",
+      "eligibility": "Homeowners in Cook County",
+      "link": "https://www.cookcountyassessor.com/exemptions",
+      "howToApply": "Apply via the Cook County Assessor's website."
+    }
+  ],
+  "communityHighlights": [
+    {
+      "category": "Award-Winning Arts",
+      "items": [
+        "Raven Theatre — Edgewater Landmark",
+        "Redtwist Theatre Co. — Storefront Innovation",
+        "Bramble Arts Loft — Best New Theater Company (2025)",
+        "Chicago Filmmakers — Independent Cinema"
+      ]
+    },
+    {
+      "category": "Anchor Institutions",
+      "items": [
+        "Nicholas Senn High School (IB World School)",
+        "Loyola University Chicago (Lake Shore Campus)",
+        "Edgewater Branch Library",
+        "Emanuel Congregation"
+      ]
+    },
+    {
+      "category": "Business Districts",
+      "items": [
+        "Andersonville Galleria (Artisans & Retail)",
+        "Broadway Antique Market",
+        "Gethsemane Garden Center",
+        "Alice & Friends' Vegan Kitchen"
+      ]
+    }
+  ],
+  "wardBusinesses": [
+    {
+      "name": "Alice & Friends' Vegan Kitchen",
+      "category": "Restaurant",
+      "address": "5812 N Broadway",
+      "website": "https://www.aliceandfriendsvegankitchen.com/"
+    },
+    {
+      "name": "Andersonville Galleria",
+      "category": "Retail",
+      "address": "5245 N Clark St",
+      "website": "https://www.andersonvillegalleria.com/"
+    },
+    {
+      "name": "Women and Children First",
+      "category": "Books",
+      "address": "5233 N Clark St",
+      "website": "https://www.womenandchildrenfirst.com/"
+    },
+    {
+      "name": "Gethsemane Garden Center",
+      "category": "Garden",
+      "address": "5739 N Clark St",
+      "website": "https://gethsemanegardens.com/"
+    },
+    {
+      "name": "Raven Theatre",
+      "category": "Arts",
+      "address": "6157 N Clark St",
+      "website": "https://www.raventheatre.com/"
+    },
+    {
+      "name": "Chengdu Impression",
+      "category": "Restaurant",
+      "address": "5912 N Broadway",
+      "website": "https://www.chengduimpression.com/"
+    },
+    {
+      "name": "Axum Ethiopian",
+      "category": "Restaurant",
+      "address": "5844 N Broadway",
+      "website": "https://axumethiopianonline.com/"
+    },
+    {
+      "name": "Dice Dojo",
+      "category": "Games",
+      "address": "5550 N Broadway",
+      "website": "https://www.chicagolandgames.com/"
+    },
+    {
+      "name": "Alamo Shoes",
+      "category": "Retail",
+      "address": "5321 N Clark St",
+      "website": "https://alamoshoes.com/"
+    },
+    {
+      "name": "Senn High School",
+      "category": "Education",
+      "address": "5900 N Glenwood Ave",
+      "website": "https://www.sennhs.org/"
+    }
+  ],
+  "quickStats": [
+    {
+      "label": "Residents",
+      "value": "55,000+"
+    },
+    {
+      "label": "Community Orgs",
+      "value": "982"
+    },
+    {
+      "label": "Voting Precincts",
+      "value": "34"
+    },
+    {
+      "label": "Community Budget",
+      "value": "$1M"
+    },
+    {
+      "label": "Agencies & Resources",
+      "value": "51+"
+    },
+    {
+      "label": "Civic Groups",
+      "value": "25"
+    }
+  ]
+}

@@ -1,0 +1,2158 @@
+{
+  "generated_at": "2026-07-15T17:22:42.807032+00:00",
+  "source": "FEC API (api.open.fec.gov)",
+  "election_year": 2026,
+  "total_candidates": 98,
+  "senate_candidates": 33,
+  "house_candidates": 65,
+  "presidential_candidates_2028": 0,
+  "election_dates": [
+    {
+      "state": "US",
+      "election_type": "primary",
+      "election_date": "2026-03-03",
+      "description": "Super Tuesday primaries"
+    },
+    {
+      "state": "US",
+      "election_type": "general",
+      "election_date": "2026-11-03",
+      "description": "2026 Midterm General Election"
+    },
+    {
+      "state": "US",
+      "election_type": "runoff",
+      "election_date": "2026-12-08",
+      "description": "Runoff elections (varies by state)"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "S6AL00233",
+      "name": "Tommy Tuberville",
+      "party": "Republican",
+      "state": "AL",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6AK00101",
+      "name": "Dan Sullivan",
+      "party": "Republican",
+      "state": "AK",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6AR00137",
+      "name": "Tom Cotton",
+      "party": "Republican",
+      "state": "AR",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8CO00597",
+      "name": "John Hickenlooper",
+      "party": "Democratic",
+      "state": "CO",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0DE00092",
+      "name": "Chris Coons",
+      "party": "Democratic",
+      "state": "DE",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0GA00180",
+      "name": "Jon Ossoff",
+      "party": "Democratic",
+      "state": "GA",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S4IA00129",
+      "name": "Joni Ernst",
+      "party": "Republican",
+      "state": "IA",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8ID00092",
+      "name": "Jim Risch",
+      "party": "Republican",
+      "state": "ID",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6IL00151",
+      "name": "Dick Durbin",
+      "party": "Democratic",
+      "state": "IL",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0KS00134",
+      "name": "Roger Marshall",
+      "party": "Republican",
+      "state": "KS",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S2KY00012",
+      "name": "Daniel Cameron",
+      "party": "Republican",
+      "state": "KY",
+      "office": "Senate",
+      "incumbent_challenge": "Open Seat",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6LA00168",
+      "name": "Bill Cassidy",
+      "party": "Republican",
+      "state": "LA",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6MA00241",
+      "name": "Ed Markey",
+      "party": "Democratic",
+      "state": "MA",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6ME00159",
+      "name": "Susan Collins",
+      "party": "Republican",
+      "state": "ME",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S2MI00422",
+      "name": "Gary Peters",
+      "party": "Democratic",
+      "state": "MI",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8MN00578",
+      "name": "Tina Smith",
+      "party": "Democratic",
+      "state": "MN",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8MS00241",
+      "name": "Cindy Hyde-Smith",
+      "party": "Republican",
+      "state": "MS",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S2MT00097",
+      "name": "Steve Daines",
+      "party": "Republican",
+      "state": "MT",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S4NC00162",
+      "name": "Thom Tillis",
+      "party": "Republican",
+      "state": "NC",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S2NE00150",
+      "name": "Pete Ricketts",
+      "party": "Republican",
+      "state": "NE",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8NH00205",
+      "name": "Jeanne Shaheen",
+      "party": "Democratic",
+      "state": "NH",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S4NJ00388",
+      "name": "Cory Booker",
+      "party": "Democratic",
+      "state": "NJ",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0NM00097",
+      "name": "Ben Ray Lujan",
+      "party": "Democratic",
+      "state": "NM",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S2OK00311",
+      "name": "Markwayne Mullin",
+      "party": "Republican",
+      "state": "OK",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8OR00207",
+      "name": "Jeff Merkley",
+      "party": "Democratic",
+      "state": "OR",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S6RI00163",
+      "name": "Jack Reed",
+      "party": "Democratic",
+      "state": "RI",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0SC00148",
+      "name": "Lindsey Graham",
+      "party": "Republican",
+      "state": "SC",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S4SD00197",
+      "name": "Mike Rounds",
+      "party": "Republican",
+      "state": "SD",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0TN00201",
+      "name": "Bill Hagerty",
+      "party": "Republican",
+      "state": "TN",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S2TX00106",
+      "name": "John Cornyn",
+      "party": "Republican",
+      "state": "TX",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S8VA00093",
+      "name": "Mark Warner",
+      "party": "Democratic",
+      "state": "VA",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S4WV00147",
+      "name": "Shelley Moore Capito",
+      "party": "Republican",
+      "state": "WV",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "S0WY00136",
+      "name": "Cynthia Lummis",
+      "party": "Republican",
+      "state": "WY",
+      "office": "Senate",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6AL01001",
+      "name": "Barry Moore",
+      "party": "Republican",
+      "state": "AL",
+      "district": "AL-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6AL02001",
+      "name": "Shomari Figures",
+      "party": "Democratic",
+      "state": "AL",
+      "district": "AL-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6AKAL001",
+      "name": "Mary Peltola",
+      "party": "Democratic",
+      "state": "AK",
+      "district": "AK-AL",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6AZ01001",
+      "name": "David Schweikert",
+      "party": "Republican",
+      "state": "AZ",
+      "district": "AZ-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6AZ02001",
+      "name": "Eli Crane",
+      "party": "Republican",
+      "state": "AZ",
+      "district": "AZ-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CA03001",
+      "name": "Kevin Kiley",
+      "party": "Republican",
+      "state": "CA",
+      "district": "CA-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CA13001",
+      "name": "Adam Gray",
+      "party": "Democratic",
+      "state": "CA",
+      "district": "CA-13",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CA22001",
+      "name": "David Valadao",
+      "party": "Republican",
+      "state": "CA",
+      "district": "CA-22",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CA27001",
+      "name": "George Whitesides",
+      "party": "Democratic",
+      "state": "CA",
+      "district": "CA-27",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CA45001",
+      "name": "Derek Tran",
+      "party": "Democratic",
+      "state": "CA",
+      "district": "CA-45",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CA47001",
+      "name": "Dave Min",
+      "party": "Democratic",
+      "state": "CA",
+      "district": "CA-47",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CO03001",
+      "name": "Adam Frisch",
+      "party": "Democratic",
+      "state": "CO",
+      "district": "CO-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6CO08001",
+      "name": "Gabe Evans",
+      "party": "Republican",
+      "state": "CO",
+      "district": "CO-08",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6FL13001",
+      "name": "Anna Paulina Luna",
+      "party": "Republican",
+      "state": "FL",
+      "district": "FL-13",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6GA07001",
+      "name": "Lucy McBath",
+      "party": "Democratic",
+      "state": "GA",
+      "district": "GA-07",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6IA01001",
+      "name": "Mariannette Miller-Meeks",
+      "party": "Republican",
+      "state": "IA",
+      "district": "IA-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6IA03001",
+      "name": "Zach Nunn",
+      "party": "Republican",
+      "state": "IA",
+      "district": "IA-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6IL06001",
+      "name": "Sean Casten",
+      "party": "Democratic",
+      "state": "IL",
+      "district": "IL-06",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6IL11001",
+      "name": "Bill Foster",
+      "party": "Democratic",
+      "state": "IL",
+      "district": "IL-11",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6IL14001",
+      "name": "Lauren Underwood",
+      "party": "Democratic",
+      "state": "IL",
+      "district": "IL-14",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6IL17001",
+      "name": "Eric Sorensen",
+      "party": "Democratic",
+      "state": "IL",
+      "district": "IL-17",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6KS03001",
+      "name": "Sharice Davids",
+      "party": "Democratic",
+      "state": "KS",
+      "district": "KS-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6KY06001",
+      "name": "Andy Barr",
+      "party": "Republican",
+      "state": "KY",
+      "district": "KY-06",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6ME02001",
+      "name": "Jared Golden",
+      "party": "Democratic",
+      "state": "ME",
+      "district": "ME-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MI07001",
+      "name": "Tom Barrett",
+      "party": "Republican",
+      "state": "MI",
+      "district": "MI-07",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MI08001",
+      "name": "Kristen McDonald Rivet",
+      "party": "Democratic",
+      "state": "MI",
+      "district": "MI-08",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MI10001",
+      "name": "John James",
+      "party": "Republican",
+      "state": "MI",
+      "district": "MI-10",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MN02001",
+      "name": "Angie Craig",
+      "party": "Democratic",
+      "state": "MN",
+      "district": "MN-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MN03001",
+      "name": "Kelly Morrison",
+      "party": "Democratic",
+      "state": "MN",
+      "district": "MN-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MT01001",
+      "name": "Ryan Zinke",
+      "party": "Republican",
+      "state": "MT",
+      "district": "MT-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6MT02001",
+      "name": "Troy Downing",
+      "party": "Republican",
+      "state": "MT",
+      "district": "MT-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NC01001",
+      "name": "Don Davis",
+      "party": "Democratic",
+      "state": "NC",
+      "district": "NC-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NC13001",
+      "name": "Brad Knott",
+      "party": "Republican",
+      "state": "NC",
+      "district": "NC-13",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NE02001",
+      "name": "Don Bacon",
+      "party": "Republican",
+      "state": "NE",
+      "district": "NE-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NH01001",
+      "name": "Chris Pappas",
+      "party": "Democratic",
+      "state": "NH",
+      "district": "NH-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NH02001",
+      "name": "Maggie Goodlander",
+      "party": "Democratic",
+      "state": "NH",
+      "district": "NH-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NJ07001",
+      "name": "Tom Kean Jr.",
+      "party": "Republican",
+      "state": "NJ",
+      "district": "NJ-07",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NM02001",
+      "name": "Gabe Vasquez",
+      "party": "Democratic",
+      "state": "NM",
+      "district": "NM-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NV03001",
+      "name": "Susie Lee",
+      "party": "Democratic",
+      "state": "NV",
+      "district": "NV-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NV04001",
+      "name": "Steven Horsford",
+      "party": "Democratic",
+      "state": "NV",
+      "district": "NV-04",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NY03001",
+      "name": "Tom Suozzi",
+      "party": "Democratic",
+      "state": "NY",
+      "district": "NY-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NY04001",
+      "name": "Laura Gillen",
+      "party": "Democratic",
+      "state": "NY",
+      "district": "NY-04",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NY17001",
+      "name": "Mike Lawler",
+      "party": "Republican",
+      "state": "NY",
+      "district": "NY-17",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NY18001",
+      "name": "Pat Ryan",
+      "party": "Democratic",
+      "state": "NY",
+      "district": "NY-18",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NY19001",
+      "name": "Josh Riley",
+      "party": "Democratic",
+      "state": "NY",
+      "district": "NY-19",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6NY22001",
+      "name": "John Mannion",
+      "party": "Democratic",
+      "state": "NY",
+      "district": "NY-22",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6OH01001",
+      "name": "Greg Landsman",
+      "party": "Democratic",
+      "state": "OH",
+      "district": "OH-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6OH09001",
+      "name": "Marcy Kaptur",
+      "party": "Democratic",
+      "state": "OH",
+      "district": "OH-09",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6OH13001",
+      "name": "Emilia Sykes",
+      "party": "Democratic",
+      "state": "OH",
+      "district": "OH-13",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6OR04001",
+      "name": "Val Hoyle",
+      "party": "Democratic",
+      "state": "OR",
+      "district": "OR-04",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6OR05001",
+      "name": "Janelle Bynum",
+      "party": "Democratic",
+      "state": "OR",
+      "district": "OR-05",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6PA01001",
+      "name": "Brian Fitzpatrick",
+      "party": "Republican",
+      "state": "PA",
+      "district": "PA-01",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6PA07001",
+      "name": "Ryan Mackenzie",
+      "party": "Republican",
+      "state": "PA",
+      "district": "PA-07",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6PA08001",
+      "name": "Matt Cartwright",
+      "party": "Democratic",
+      "state": "PA",
+      "district": "PA-08",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6PA17001",
+      "name": "Chris Deluzio",
+      "party": "Democratic",
+      "state": "PA",
+      "district": "PA-17",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6TX15001",
+      "name": "Monica De La Cruz",
+      "party": "Republican",
+      "state": "TX",
+      "district": "TX-15",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6TX23001",
+      "name": "Tony Gonzales",
+      "party": "Republican",
+      "state": "TX",
+      "district": "TX-23",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6TX28001",
+      "name": "Henry Cuellar",
+      "party": "Democratic",
+      "state": "TX",
+      "district": "TX-28",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6TX34001",
+      "name": "Vicente Gonzalez",
+      "party": "Democratic",
+      "state": "TX",
+      "district": "TX-34",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6VA02001",
+      "name": "Jen Kiggans",
+      "party": "Republican",
+      "state": "VA",
+      "district": "VA-02",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6VA07001",
+      "name": "Eugene Vindman",
+      "party": "Democratic",
+      "state": "VA",
+      "district": "VA-07",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6VA10001",
+      "name": "Suhas Subramanyam",
+      "party": "Democratic",
+      "state": "VA",
+      "district": "VA-10",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6WA03001",
+      "name": "Marie Gluesenkamp Perez",
+      "party": "Democratic",
+      "state": "WA",
+      "district": "WA-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6WA08001",
+      "name": "Kim Schrier",
+      "party": "Democratic",
+      "state": "WA",
+      "district": "WA-08",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    },
+    {
+      "candidate_id": "H6WI03001",
+      "name": "Derrick Van Orden",
+      "party": "Republican",
+      "state": "WI",
+      "district": "WI-03",
+      "office": "House",
+      "incumbent_challenge": "Incumbent",
+      "election_year": 2026
+    }
+  ],
+  "candidate_financials": [],
+  "by_state": {
+    "AL": {
+      "senate": [
+        {
+          "candidate_id": "S6AL00233",
+          "name": "Tommy Tuberville",
+          "party": "Republican",
+          "state": "AL",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6AL01001",
+          "name": "Barry Moore",
+          "party": "Republican",
+          "state": "AL",
+          "district": "AL-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6AL02001",
+          "name": "Shomari Figures",
+          "party": "Democratic",
+          "state": "AL",
+          "district": "AL-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "AK": {
+      "senate": [
+        {
+          "candidate_id": "S6AK00101",
+          "name": "Dan Sullivan",
+          "party": "Republican",
+          "state": "AK",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6AKAL001",
+          "name": "Mary Peltola",
+          "party": "Democratic",
+          "state": "AK",
+          "district": "AK-AL",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "AR": {
+      "senate": [
+        {
+          "candidate_id": "S6AR00137",
+          "name": "Tom Cotton",
+          "party": "Republican",
+          "state": "AR",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "CO": {
+      "senate": [
+        {
+          "candidate_id": "S8CO00597",
+          "name": "John Hickenlooper",
+          "party": "Democratic",
+          "state": "CO",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6CO03001",
+          "name": "Adam Frisch",
+          "party": "Democratic",
+          "state": "CO",
+          "district": "CO-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6CO08001",
+          "name": "Gabe Evans",
+          "party": "Republican",
+          "state": "CO",
+          "district": "CO-08",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "DE": {
+      "senate": [
+        {
+          "candidate_id": "S0DE00092",
+          "name": "Chris Coons",
+          "party": "Democratic",
+          "state": "DE",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "GA": {
+      "senate": [
+        {
+          "candidate_id": "S0GA00180",
+          "name": "Jon Ossoff",
+          "party": "Democratic",
+          "state": "GA",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6GA07001",
+          "name": "Lucy McBath",
+          "party": "Democratic",
+          "state": "GA",
+          "district": "GA-07",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "IA": {
+      "senate": [
+        {
+          "candidate_id": "S4IA00129",
+          "name": "Joni Ernst",
+          "party": "Republican",
+          "state": "IA",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6IA01001",
+          "name": "Mariannette Miller-Meeks",
+          "party": "Republican",
+          "state": "IA",
+          "district": "IA-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6IA03001",
+          "name": "Zach Nunn",
+          "party": "Republican",
+          "state": "IA",
+          "district": "IA-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "ID": {
+      "senate": [
+        {
+          "candidate_id": "S8ID00092",
+          "name": "Jim Risch",
+          "party": "Republican",
+          "state": "ID",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "IL": {
+      "senate": [
+        {
+          "candidate_id": "S6IL00151",
+          "name": "Dick Durbin",
+          "party": "Democratic",
+          "state": "IL",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6IL06001",
+          "name": "Sean Casten",
+          "party": "Democratic",
+          "state": "IL",
+          "district": "IL-06",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6IL11001",
+          "name": "Bill Foster",
+          "party": "Democratic",
+          "state": "IL",
+          "district": "IL-11",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6IL14001",
+          "name": "Lauren Underwood",
+          "party": "Democratic",
+          "state": "IL",
+          "district": "IL-14",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6IL17001",
+          "name": "Eric Sorensen",
+          "party": "Democratic",
+          "state": "IL",
+          "district": "IL-17",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "KS": {
+      "senate": [
+        {
+          "candidate_id": "S0KS00134",
+          "name": "Roger Marshall",
+          "party": "Republican",
+          "state": "KS",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6KS03001",
+          "name": "Sharice Davids",
+          "party": "Democratic",
+          "state": "KS",
+          "district": "KS-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "KY": {
+      "senate": [
+        {
+          "candidate_id": "S2KY00012",
+          "name": "Daniel Cameron",
+          "party": "Republican",
+          "state": "KY",
+          "office": "Senate",
+          "incumbent_challenge": "Open Seat",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6KY06001",
+          "name": "Andy Barr",
+          "party": "Republican",
+          "state": "KY",
+          "district": "KY-06",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "LA": {
+      "senate": [
+        {
+          "candidate_id": "S6LA00168",
+          "name": "Bill Cassidy",
+          "party": "Republican",
+          "state": "LA",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "MA": {
+      "senate": [
+        {
+          "candidate_id": "S6MA00241",
+          "name": "Ed Markey",
+          "party": "Democratic",
+          "state": "MA",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "ME": {
+      "senate": [
+        {
+          "candidate_id": "S6ME00159",
+          "name": "Susan Collins",
+          "party": "Republican",
+          "state": "ME",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6ME02001",
+          "name": "Jared Golden",
+          "party": "Democratic",
+          "state": "ME",
+          "district": "ME-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "MI": {
+      "senate": [
+        {
+          "candidate_id": "S2MI00422",
+          "name": "Gary Peters",
+          "party": "Democratic",
+          "state": "MI",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6MI07001",
+          "name": "Tom Barrett",
+          "party": "Republican",
+          "state": "MI",
+          "district": "MI-07",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6MI08001",
+          "name": "Kristen McDonald Rivet",
+          "party": "Democratic",
+          "state": "MI",
+          "district": "MI-08",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6MI10001",
+          "name": "John James",
+          "party": "Republican",
+          "state": "MI",
+          "district": "MI-10",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "MN": {
+      "senate": [
+        {
+          "candidate_id": "S8MN00578",
+          "name": "Tina Smith",
+          "party": "Democratic",
+          "state": "MN",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6MN02001",
+          "name": "Angie Craig",
+          "party": "Democratic",
+          "state": "MN",
+          "district": "MN-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6MN03001",
+          "name": "Kelly Morrison",
+          "party": "Democratic",
+          "state": "MN",
+          "district": "MN-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "MS": {
+      "senate": [
+        {
+          "candidate_id": "S8MS00241",
+          "name": "Cindy Hyde-Smith",
+          "party": "Republican",
+          "state": "MS",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "MT": {
+      "senate": [
+        {
+          "candidate_id": "S2MT00097",
+          "name": "Steve Daines",
+          "party": "Republican",
+          "state": "MT",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6MT01001",
+          "name": "Ryan Zinke",
+          "party": "Republican",
+          "state": "MT",
+          "district": "MT-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6MT02001",
+          "name": "Troy Downing",
+          "party": "Republican",
+          "state": "MT",
+          "district": "MT-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NC": {
+      "senate": [
+        {
+          "candidate_id": "S4NC00162",
+          "name": "Thom Tillis",
+          "party": "Republican",
+          "state": "NC",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6NC01001",
+          "name": "Don Davis",
+          "party": "Democratic",
+          "state": "NC",
+          "district": "NC-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NC13001",
+          "name": "Brad Knott",
+          "party": "Republican",
+          "state": "NC",
+          "district": "NC-13",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NE": {
+      "senate": [
+        {
+          "candidate_id": "S2NE00150",
+          "name": "Pete Ricketts",
+          "party": "Republican",
+          "state": "NE",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6NE02001",
+          "name": "Don Bacon",
+          "party": "Republican",
+          "state": "NE",
+          "district": "NE-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NH": {
+      "senate": [
+        {
+          "candidate_id": "S8NH00205",
+          "name": "Jeanne Shaheen",
+          "party": "Democratic",
+          "state": "NH",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6NH01001",
+          "name": "Chris Pappas",
+          "party": "Democratic",
+          "state": "NH",
+          "district": "NH-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NH02001",
+          "name": "Maggie Goodlander",
+          "party": "Democratic",
+          "state": "NH",
+          "district": "NH-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NJ": {
+      "senate": [
+        {
+          "candidate_id": "S4NJ00388",
+          "name": "Cory Booker",
+          "party": "Democratic",
+          "state": "NJ",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6NJ07001",
+          "name": "Tom Kean Jr.",
+          "party": "Republican",
+          "state": "NJ",
+          "district": "NJ-07",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NM": {
+      "senate": [
+        {
+          "candidate_id": "S0NM00097",
+          "name": "Ben Ray Lujan",
+          "party": "Democratic",
+          "state": "NM",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6NM02001",
+          "name": "Gabe Vasquez",
+          "party": "Democratic",
+          "state": "NM",
+          "district": "NM-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "OK": {
+      "senate": [
+        {
+          "candidate_id": "S2OK00311",
+          "name": "Markwayne Mullin",
+          "party": "Republican",
+          "state": "OK",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "OR": {
+      "senate": [
+        {
+          "candidate_id": "S8OR00207",
+          "name": "Jeff Merkley",
+          "party": "Democratic",
+          "state": "OR",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6OR04001",
+          "name": "Val Hoyle",
+          "party": "Democratic",
+          "state": "OR",
+          "district": "OR-04",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6OR05001",
+          "name": "Janelle Bynum",
+          "party": "Democratic",
+          "state": "OR",
+          "district": "OR-05",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "RI": {
+      "senate": [
+        {
+          "candidate_id": "S6RI00163",
+          "name": "Jack Reed",
+          "party": "Democratic",
+          "state": "RI",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "SC": {
+      "senate": [
+        {
+          "candidate_id": "S0SC00148",
+          "name": "Lindsey Graham",
+          "party": "Republican",
+          "state": "SC",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "SD": {
+      "senate": [
+        {
+          "candidate_id": "S4SD00197",
+          "name": "Mike Rounds",
+          "party": "Republican",
+          "state": "SD",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "TN": {
+      "senate": [
+        {
+          "candidate_id": "S0TN00201",
+          "name": "Bill Hagerty",
+          "party": "Republican",
+          "state": "TN",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "TX": {
+      "senate": [
+        {
+          "candidate_id": "S2TX00106",
+          "name": "John Cornyn",
+          "party": "Republican",
+          "state": "TX",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6TX15001",
+          "name": "Monica De La Cruz",
+          "party": "Republican",
+          "state": "TX",
+          "district": "TX-15",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6TX23001",
+          "name": "Tony Gonzales",
+          "party": "Republican",
+          "state": "TX",
+          "district": "TX-23",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6TX28001",
+          "name": "Henry Cuellar",
+          "party": "Democratic",
+          "state": "TX",
+          "district": "TX-28",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6TX34001",
+          "name": "Vicente Gonzalez",
+          "party": "Democratic",
+          "state": "TX",
+          "district": "TX-34",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "VA": {
+      "senate": [
+        {
+          "candidate_id": "S8VA00093",
+          "name": "Mark Warner",
+          "party": "Democratic",
+          "state": "VA",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": [
+        {
+          "candidate_id": "H6VA02001",
+          "name": "Jen Kiggans",
+          "party": "Republican",
+          "state": "VA",
+          "district": "VA-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6VA07001",
+          "name": "Eugene Vindman",
+          "party": "Democratic",
+          "state": "VA",
+          "district": "VA-07",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6VA10001",
+          "name": "Suhas Subramanyam",
+          "party": "Democratic",
+          "state": "VA",
+          "district": "VA-10",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "WV": {
+      "senate": [
+        {
+          "candidate_id": "S4WV00147",
+          "name": "Shelley Moore Capito",
+          "party": "Republican",
+          "state": "WV",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "WY": {
+      "senate": [
+        {
+          "candidate_id": "S0WY00136",
+          "name": "Cynthia Lummis",
+          "party": "Republican",
+          "state": "WY",
+          "office": "Senate",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ],
+      "house": []
+    },
+    "AZ": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6AZ01001",
+          "name": "David Schweikert",
+          "party": "Republican",
+          "state": "AZ",
+          "district": "AZ-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6AZ02001",
+          "name": "Eli Crane",
+          "party": "Republican",
+          "state": "AZ",
+          "district": "AZ-02",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "CA": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6CA03001",
+          "name": "Kevin Kiley",
+          "party": "Republican",
+          "state": "CA",
+          "district": "CA-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6CA13001",
+          "name": "Adam Gray",
+          "party": "Democratic",
+          "state": "CA",
+          "district": "CA-13",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6CA22001",
+          "name": "David Valadao",
+          "party": "Republican",
+          "state": "CA",
+          "district": "CA-22",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6CA27001",
+          "name": "George Whitesides",
+          "party": "Democratic",
+          "state": "CA",
+          "district": "CA-27",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6CA45001",
+          "name": "Derek Tran",
+          "party": "Democratic",
+          "state": "CA",
+          "district": "CA-45",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6CA47001",
+          "name": "Dave Min",
+          "party": "Democratic",
+          "state": "CA",
+          "district": "CA-47",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "FL": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6FL13001",
+          "name": "Anna Paulina Luna",
+          "party": "Republican",
+          "state": "FL",
+          "district": "FL-13",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NV": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6NV03001",
+          "name": "Susie Lee",
+          "party": "Democratic",
+          "state": "NV",
+          "district": "NV-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NV04001",
+          "name": "Steven Horsford",
+          "party": "Democratic",
+          "state": "NV",
+          "district": "NV-04",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "NY": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6NY03001",
+          "name": "Tom Suozzi",
+          "party": "Democratic",
+          "state": "NY",
+          "district": "NY-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NY04001",
+          "name": "Laura Gillen",
+          "party": "Democratic",
+          "state": "NY",
+          "district": "NY-04",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NY17001",
+          "name": "Mike Lawler",
+          "party": "Republican",
+          "state": "NY",
+          "district": "NY-17",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NY18001",
+          "name": "Pat Ryan",
+          "party": "Democratic",
+          "state": "NY",
+          "district": "NY-18",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NY19001",
+          "name": "Josh Riley",
+          "party": "Democratic",
+          "state": "NY",
+          "district": "NY-19",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6NY22001",
+          "name": "John Mannion",
+          "party": "Democratic",
+          "state": "NY",
+          "district": "NY-22",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "OH": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6OH01001",
+          "name": "Greg Landsman",
+          "party": "Democratic",
+          "state": "OH",
+          "district": "OH-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6OH09001",
+          "name": "Marcy Kaptur",
+          "party": "Democratic",
+          "state": "OH",
+          "district": "OH-09",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6OH13001",
+          "name": "Emilia Sykes",
+          "party": "Democratic",
+          "state": "OH",
+          "district": "OH-13",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "PA": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6PA01001",
+          "name": "Brian Fitzpatrick",
+          "party": "Republican",
+          "state": "PA",
+          "district": "PA-01",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6PA07001",
+          "name": "Ryan Mackenzie",
+          "party": "Republican",
+          "state": "PA",
+          "district": "PA-07",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6PA08001",
+          "name": "Matt Cartwright",
+          "party": "Democratic",
+          "state": "PA",
+          "district": "PA-08",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6PA17001",
+          "name": "Chris Deluzio",
+          "party": "Democratic",
+          "state": "PA",
+          "district": "PA-17",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "WA": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6WA03001",
+          "name": "Marie Gluesenkamp Perez",
+          "party": "Democratic",
+          "state": "WA",
+          "district": "WA-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        },
+        {
+          "candidate_id": "H6WA08001",
+          "name": "Kim Schrier",
+          "party": "Democratic",
+          "state": "WA",
+          "district": "WA-08",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    },
+    "WI": {
+      "senate": [],
+      "house": [
+        {
+          "candidate_id": "H6WI03001",
+          "name": "Derrick Van Orden",
+          "party": "Republican",
+          "state": "WI",
+          "district": "WI-03",
+          "office": "House",
+          "incumbent_challenge": "Incumbent",
+          "election_year": 2026
+        }
+      ]
+    }
+  }
+}

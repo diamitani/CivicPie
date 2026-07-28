@@ -1,0 +1,60 @@
+{
+  "version": "3.0.0",
+  "generated_at": "2026-07-28T18:02:14.552Z",
+  "description": "CivicPie — Combined master database from CivicPie + civicpie-platform + civic-ward-hub",
+  "datasets": {
+    "cities.json": {
+      "size_bytes": 8447,
+      "entry_count": 50
+    },
+    "city_government_structures.json": {
+      "size_bytes": 4791,
+      "entry_count": 15
+    },
+    "civic_calendar.json": {
+      "size_bytes": 1461,
+      "entry_count": 8
+    },
+    "elections_fec_candidates.json": {
+      "size_bytes": 54767,
+      "entry_count": 11
+    },
+    "elections_master_election_guide.json": {
+      "size_bytes": 35151,
+      "entry_count": 7
+    },
+    "elections_openstates_data.json": {
+      "size_bytes": 3311,
+      "entry_count": 7
+    },
+    "federal_agencies.json": {
+      "size_bytes": 7639,
+      "entry_count": 20
+    },
+    "grant_programs.json": {
+      "size_bytes": 2891,
+      "entry_count": 8
+    },
+    "master_index.json": {
+      "size_bytes": 1178,
+      "entry_count": 4
+    },
+    "state_agencies.json": {
+      "size_bytes": 248572,
+      "entry_count": 600
+    },
+    "states.json": {
+      "size_bytes": 39035,
+      "entry_count": 50
+    },
+    "ward_data.json": {
+      "size_bytes": 60447,
+      "entry_count": 10
+    },
+    "ward_directory.json": {
+      "size_bytes": 239700,
+      "entry_count": 7
+    }
+  },
+  "total_bytes": 707390
+}

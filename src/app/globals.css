@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cp-navy: #0a1628;
+    --cp-navy-light: #132042;
+    --cp-blue: #2563eb;
+    --cp-blue-light: #3b82f6;
+    --cp-teal: #0d9488;
+    --cp-amber: #f59e0b;
+    --cp-gold: #c9a227;
+    --cp-gold-light: #d4b03a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: #0a1628;
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: rgba(201, 162, 39, 0.3); }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.15);
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #c9a227, #d4b03a, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: rgba(37, 99, 235, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 560px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  .search-box:focus {
+    border-color: rgba(201, 162, 39, 0.5);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.2s;
+  }
+
+  .card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
