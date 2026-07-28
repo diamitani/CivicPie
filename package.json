@@ -1,7 +1,8 @@
 {
   "name": "civicpie",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
+  "description": "CivicPie — Hyperlocal Civic Engagement Platform. Nationwide district template.",
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/postbuild.mjs",

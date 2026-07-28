@@ -1,26 +1,40 @@
 const config = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
         navy: {
-          900: '#0a1628',
-          800: '#0f1f3d',
-          700: '#132042',
-          600: '#1a2d56',
+          DEFAULT: '#001B3D',
+          900: '#001B3D',
+          800: '#0A2A4A',
+          700: '#1C3A5E',
+        },
+        red: {
+          DEFAULT: '#C41230',
+          hover: '#E8243E',
+          dim: '#8B0D22',
         },
         gold: {
-          400: '#c9a227',
-          300: '#d4b03a',
+          DEFAULT: '#E8A030',
+          light: '#F5BE6A',
+          dim: '#B87818',
         },
-        'cp-blue': '#2563eb',
-        'cp-teal': '#0d9488',
+        cream: {
+          DEFAULT: '#F5EDD8',
+          dark: '#EDE0C4',
+        },
+        stone: {
+          DEFAULT: '#6B7280',
+          light: '#9BA3AF',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ["'Montserrat'", 'sans-serif'],
+        serif: ["'Lora'", 'serif'],
+        body: ["'Inter'", 'sans-serif'],
+      },
+      borderRadius: {
+        pill: '100px',
       },
     },
   },
