@@ -66,7 +66,7 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
             <div className="font-display text-2xl font-black tracking-[-0.5px] text-white leading-none">
               Civic<span className="text-[#C41230]">Pie</span>
             </div>
-            <div className="font-display text-[7px] font-bold tracking-[2px] uppercase text-white/30 mt-0.5">
+            <div className="font-display text-[7px] font-bold tracking-[2px] uppercase text-white/55 mt-0.5">
               Hyperlocal Civic Engagement
             </div>
           </div>
@@ -151,7 +151,7 @@ function Hero() {
                 Find My Gov →
               </button>
             </div>
-            <div className="flex items-center gap-6 text-xs text-white/35">
+            <div className="flex items-center gap-6 text-xs text-white/50">
               <span>🔒 Free to use</span><span className="w-1 h-1 rounded-full bg-white/20" />
               <span>📋 Public data only</span><span className="w-1 h-1 rounded-full bg-white/20" />
               <span>🏛️ No political affiliation</span>
@@ -179,7 +179,7 @@ function Hero() {
                     <div className="font-display text-[13px] font-bold text-white truncate">{item.title}</div>
                     <div className="font-body text-[11px] text-white/40">{item.meta}</div>
                   </div>
-                  <span className="text-white/25 text-sm">→</span>
+                  <span className="text-white/45 text-sm">→</span>
                 </div>
               ))}
               <div className="mt-[18px] pt-[18px] border-t border-white/[0.07] flex gap-2.5">
@@ -196,11 +196,11 @@ function Hero() {
       </div>
 
       {/* Tagline row */}
-      <div className="relative z-[2] px-10 pb-10 max-w-[1200px] mx-auto w-full mt-12 pt-12 border-t border-white/[0.07]">
+      <div className="relative z-[2] px-10 pb-10 max-w-[1200px] mx-auto w-full mt-12 pt-12 border-t border-white/[0.10]">
         <div className="flex items-center gap-3.5">
-          <div className="w-9 h-[1.5px] bg-white/20" />
-          <span className="font-display text-[10px] font-bold tracking-[3px] uppercase text-white/30">HYPERLOCAL <em className="text-[#C41230] not-italic">CIVIC</em> ENGAGEMENT</span>
-          <div className="w-9 h-[1.5px] bg-white/20" />
+          <div className="w-9 h-[1.5px] bg-white/40" />
+          <span className="font-display text-[10px] font-bold tracking-[3px] uppercase text-white/55">HYPERLOCAL <em className="text-[#C41230] not-italic">CIVIC</em> ENGAGEMENT</span>
+          <div className="w-9 h-[1.5px] bg-white/40" />
         </div>
       </div>
 
@@ -225,19 +225,19 @@ function Hero() {
 // ════════════════════════════════════════════════════════════════
 function StatsRibbon() {
   return (
-    <div className="bg-white/[0.04] border-t border-b border-white/[0.07] py-7 px-10">
-      <div className="grid grid-cols-4 gap-px bg-white/[0.07] rounded overflow-hidden max-w-[1200px] mx-auto max-md:grid-cols-2">
+    <div className="bg-[#0A2A4A] border-t border-b border-white/[0.08] py-7 px-10">
+      <div className="grid grid-cols-4 gap-px bg-white/[0.10] rounded overflow-hidden max-w-[1200px] mx-auto max-md:grid-cols-2">
         {[
           { num: '30', label: 'Days to Primary Election', color: '#C41230' },
-          { num: '50k+', label: 'Government Pages Indexed', color: '#FFFFFF' },
+          { num: '50k+', label: 'Government Pages Indexed', color: '#E8A030' },
           { num: '$12M', label: 'In Available Community Grants', color: '#E8A030' },
-          { num: '100%', label: 'Free · Nonpartisan · Public', color: '#FFFFFF' },
+          { num: '100%', label: 'Free · Nonpartisan · Public', color: '#E8A030' },
         ].map((stat, i) => (
-          <div key={i} className="py-5 px-7 bg-[rgba(0,27,61,0.01)] text-center">
+          <div key={i} className="py-5 px-7 text-center">
             <div className="font-display text-[32px] font-black tracking-[-1px] leading-none mb-1" style={{ color: stat.color }}>
               {stat.num}
             </div>
-            <div className="font-body text-xs text-white/35 font-medium">{stat.label}</div>
+            <div className="font-body text-xs text-white/65 font-semibold">{stat.label}</div>
           </div>
         ))}
       </div>
@@ -460,7 +460,7 @@ function Listings() {
             <div className="font-display text-lg font-black text-white mb-1.5">Not Ward 3?</div>
             <div className="font-body text-[13px] text-white/45 mb-[18px]">Enter your zip code to see your ward.</div>
             <div className="flex bg-white/[0.08] border-[1.5px] border-white/[0.12] rounded-xl overflow-hidden transition-colors focus-within:border-white/30">
-              <input type="text" placeholder="Your zip code…" className="flex-1 bg-transparent border-none outline-none font-body text-sm text-white py-3.5 px-4 placeholder:text-white/30" />
+              <input type="text" placeholder="Your zip code…" className="flex-1 bg-transparent border-none outline-none font-body text-sm text-white py-3.5 px-4 placeholder:text-white/55" />
               <button className="bg-[#C41230] text-white font-display text-[13px] font-bold px-5 tracking-[0.3px] hover:bg-[#E8243E] transition-colors">Go →</button>
             </div>
           </div>
@@ -581,10 +581,10 @@ function FinalCTA() {
             Find My Gov →
           </button>
         </div>
-        <p className="font-body text-xs text-white/25">Free forever. No account required to explore.</p>
+        <p className="font-body text-xs text-white/45">Free forever. No account required to explore.</p>
         <div className="flex items-center justify-center gap-3.5 mt-16 pt-12 border-t border-white/[0.07]">
           <div className="w-10 h-[1.5px] bg-white/20" />
-          <span className="font-display text-[11px] font-bold tracking-[3px] uppercase text-white/30">LEARN · ORGANIZE · <em className="text-[#C41230] not-italic">VOTE</em></span>
+          <span className="font-display text-[11px] font-bold tracking-[3px] uppercase text-white/55">LEARN · ORGANIZE · <em className="text-[#C41230] not-italic">VOTE</em></span>
           <div className="w-10 h-[1.5px] bg-white/20" />
         </div>
       </div>
@@ -606,7 +606,7 @@ function Footer() {
               Civic<span className="text-[#C41230]">Pie</span>
             </div>
           </div>
-          <div className="font-display text-[9px] font-bold tracking-[2.5px] uppercase text-white/25 mb-3.5">Hyperlocal Civic Engagement</div>
+          <div className="font-display text-[9px] font-bold tracking-[2.5px] uppercase text-white/45 mb-3.5">Hyperlocal Civic Engagement</div>
           <p className="font-body text-[13px] text-white/40 leading-relaxed max-w-[300px]">Local info. Real impact. Nonpartisan. Built on public government data, built for the people it affects.</p>
         </div>
         {[
@@ -615,7 +615,7 @@ function Footer() {
           { title: 'Organization', links: ['About CivicPie', 'Press', 'Contact', 'Privacy Policy', 'Terms of Service'] },
         ].map((col, i) => (
           <div key={i}>
-            <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-white/25 mb-5">{col.title}</div>
+            <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-white/45 mb-5">{col.title}</div>
             {col.links.map(link => (
               <a key={link} href="#" className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link}</a>
             ))}
