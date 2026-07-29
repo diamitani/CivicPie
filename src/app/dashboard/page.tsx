@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { PieLogo } from '@/components/Logo';
-import { getCurrentUser, signOut, User } from '@/lib/auth';
+import { getCurrentUser, refreshUser, signOut, User } from '@/lib/auth';
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -11,16 +11,26 @@ export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
-    const u = getCurrentUser();
-    if (!u) {
-      // Auto-create mock user for seamless demo experience
+    async function init() {
+      // Try real Cognito session first
+      const realUser = await refreshUser();
+      if (realUser) {
+        setUser(realUser);
+        return;
+      }
+      // Fallback: check localStorage
+      const localUser = getCurrentUser();
+      if (localUser) {
+        setUser(localUser);
+        return;
+      }
+      // No user — create demo
       const demoUser: User = { id: 'demo', name: 'Demo User', email: 'demo@civicpie.com', zipCode: '60660', ward: '48' };
       localStorage.setItem('civicpie_auth', JSON.stringify({ user: demoUser, token: 'demo-token' }));
       document.cookie = 'civicpie_session=demo-token; path=/; max-age=86400; SameSite=Lax';
       setUser(demoUser);
-    } else {
-      setUser(u);
     }
+    init();
   }, []);
 
   const handleSignOut = () => {

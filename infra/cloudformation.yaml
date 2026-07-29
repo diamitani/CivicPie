@@ -1,0 +1,139 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CivicPie — Auth + Data backend (Cognito + DynamoDB)
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, prod]
+
+Resources:
+  # ═══════════════════════════════════════════════
+  # COGNITO USER POOL
+  # ═══════════════════════════════════════════════
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub civicpie-${Environment}
+      UsernameAttributes: [email]
+      AutoVerifiedAttributes: [email]
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+          RequireUppercase: true
+      Schema:
+        - Name: name
+          AttributeDataType: String
+          Mutable: true
+          Required: false
+        - Name: zip_code
+          AttributeDataType: String
+          Mutable: true
+          Required: false
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: !Sub civicpie-web-${Environment}
+      UserPoolId: !Ref UserPool
+      GenerateSecret: false
+      ExplicitAuthFlows:
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_USER_SRP_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+      CallbackURLs:
+        - http://localhost:3000/dashboard
+        - https://civicpie-six.vercel.app/dashboard
+        - https://civicpie.com/dashboard
+      LogoutURLs:
+        - http://localhost:3000
+        - https://civicpie-six.vercel.app
+        - https://civicpie.com
+      SupportedIdentityProviders:
+        - COGNITO
+        - Google
+      AllowedOAuthFlows:
+        - code
+      AllowedOAuthScopes:
+        - email
+        - openid
+        - profile
+      AllowedOAuthFlowsUserPoolClient: true
+
+  UserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Sub civicpie-${Environment}
+      UserPoolId: !Ref UserPool
+
+  # ═══════════════════════════════════════════════
+  # GOOGLE IDENTITY PROVIDER
+  # ═══════════════════════════════════════════════
+  GoogleIdentityProvider:
+    Type: AWS::Cognito::UserPoolIdentityProvider
+    Properties:
+      ProviderName: Google
+      ProviderType: Google
+      UserPoolId: !Ref UserPool
+      AttributeMapping:
+        email: email
+        name: name
+      ProviderDetails:
+        client_id: '{{resolve:ssm:/civicpie/google/client_id}}'
+        client_secret: '{{resolve:ssm:/civicpie/google/client_secret}}'
+        authorize_scopes: 'profile email openid'
+
+  # ═══════════════════════════════════════════════
+  # DYNAMODB TABLES
+  # ═══════════════════════════════════════════════
+  ProfilesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub civicpie-${Environment}-profiles
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: user_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: user_id
+          KeyType: HASH
+
+  AlertsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub civicpie-${Environment}-alerts
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+        - AttributeName: user_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      GlobalSecondaryIndexes:
+        - IndexName: user_id-index
+          KeySchema:
+            - AttributeName: user_id
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+
+Outputs:
+  UserPoolId:
+    Value: !Ref UserPool
+    Export:
+      Name: !Sub civicpie-${Environment}-user-pool-id
+  UserPoolClientId:
+    Value: !Ref UserPoolClient
+    Export:
+      Name: !Sub civicpie-${Environment}-user-pool-client-id
+  UserPoolDomain:
+    Value: !Sub civicpie-${Environment}.auth.us-east-1.amazoncognito.com
+  ProfilesTableName:
+    Value: !Ref ProfilesTable
+  AlertsTableName:
+    Value: !Ref AlertsTable
