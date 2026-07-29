@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-07-29T17:27:11.963878+00:00",
+  "deadlines": [
+    {
+      "id": "il-2026",
+      "name": "2026 IL General Election",
+      "date": "2026-11-03",
+      "reg_deadline": "2026-10-20",
+      "early_vote": "2026-10-17",
+      "level": "State",
+      "state": "IL",
+      "reg_url": "https://ova.elections.il.gov/",
+      "source": "IL Board of Elections"
+    },
+    {
+      "id": "chi-2027",
+      "name": "2027 Chicago Municipal",
+      "date": "2027-02-25",
+      "reg_deadline": "2027-02-11",
+      "level": "City",
+      "state": "IL",
+      "reg_url": "https://ova.elections.il.gov/",
+      "source": "Chicago Board of Elections"
+    },
+    {
+      "id": "us-2028",
+      "name": "2028 Presidential General",
+      "date": "2028-11-07",
+      "reg_deadline": "2028-10-17",
+      "level": "Federal",
+      "state": "IL",
+      "reg_url": "https://ova.elections.il.gov/",
+      "source": "US EAC"
+    }
+  ]
+}

@@ -1,58 +1,59 @@
-[
-  {
-    "event_type": "election",
-    "name": "General Election Day",
-    "schedule": "First Tuesday after first Monday in November",
-    "next_date": "2026-11-03",
-    "level": "federal"
-  },
-  {
-    "event_type": "tax",
-    "name": "Federal Tax Filing Deadline",
-    "schedule": "April 15 annually",
-    "next_date": "2027-04-15",
-    "level": "federal"
-  },
-  {
-    "event_type": "enrollment",
-    "name": "Medicare Open Enrollment",
-    "schedule": "October 15 - December 7 annually",
-    "next_date": "2026-10-15",
-    "level": "federal"
-  },
-  {
-    "event_type": "enrollment",
-    "name": "Health Insurance Marketplace Open Enrollment",
-    "schedule": "November 1 - January 15 annually",
-    "next_date": "2026-11-01",
-    "level": "federal"
-  },
-  {
-    "event_type": "application",
-    "name": "FAFSA Application Opens",
-    "schedule": "October 1 annually",
-    "next_date": "2026-10-01",
-    "level": "federal"
-  },
-  {
-    "event_type": "census",
-    "name": "American Community Survey Data Release",
-    "schedule": "September annually",
-    "next_date": "2026-09-01",
-    "level": "federal"
-  },
-  {
-    "event_type": "budget",
-    "name": "Federal Fiscal Year Begins",
-    "schedule": "October 1 annually",
-    "next_date": "2026-10-01",
-    "level": "federal"
-  },
-  {
-    "event_type": "civic",
-    "name": "State of the Union Address",
-    "schedule": "January/February annually",
-    "next_date": "2027-01-01",
-    "level": "federal"
-  }
-]
+{
+  "generated_at": "2026-07-29T17:27:11.963878+00:00",
+  "events": [
+    {
+      "id": "cc-meeting",
+      "title": "Chicago City Council Meeting",
+      "category": "City Council",
+      "description": "Monthly meeting of the full Chicago City Council.",
+      "date": "1st Wednesday monthly",
+      "time": "10:00 AM",
+      "location": "City Hall, 121 N LaSalle St",
+      "recurring": true,
+      "link": "https://www.chicago.gov/city/en/depts/cityclerk.html",
+      "tags": [
+        "city-council",
+        "public-meeting"
+      ]
+    },
+    {
+      "id": "ward-night",
+      "title": "Ward Night \u2014 Meet Your Alderperson",
+      "category": "Community",
+      "description": "Community meeting with your ward alderperson.",
+      "date": "1st & 3rd Monday",
+      "time": "6:00 PM",
+      "location": "Your Ward Office",
+      "recurring": true,
+      "tags": [
+        "community",
+        "ward"
+      ]
+    },
+    {
+      "id": "caps-beat",
+      "title": "CAPS Beat Meeting",
+      "category": "Public Safety",
+      "description": "Chicago Alternative Policing Strategy community meeting.",
+      "date": "Monthly",
+      "location": "Your Police District",
+      "recurring": true,
+      "tags": [
+        "public-safety"
+      ]
+    },
+    {
+      "id": "elections-board",
+      "title": "Board of Elections Meeting",
+      "category": "Elections",
+      "description": "Public meeting of the Chicago Board of Elections.",
+      "date": "Monthly",
+      "location": "69 W Washington St",
+      "recurring": true,
+      "link": "https://chicagoelections.gov",
+      "tags": [
+        "elections"
+      ]
+    }
+  ]
+}
