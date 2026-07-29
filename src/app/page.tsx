@@ -147,12 +147,20 @@ function Hero() {
               CivicPie connects you with the local services, elected officials, meetings, elections, and opportunities that directly affect your life — sourced entirely from public government data.
             </p>
             {/* Search */}
-            <div className="flex items-center bg-white/[0.07] border-[1.5px] border-white/[0.12] rounded-full py-1.5 pl-6 pr-1.5 max-w-[500px] backdrop-blur-[12px] mb-6 transition-all focus-within:border-white/25 focus-within:shadow-[0_0_0_4px_rgba(232,160,48,0.12)]">
-              <input type="text" placeholder="Enter your zip code or city…" className="flex-1 bg-transparent border-none outline-none font-body text-[15px] text-white placeholder:text-white/35 min-w-0" />
-              <button className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full tracking-[0.3px] hover:bg-[#E8243E] transition-all shadow-[0_4px_12px_rgba(196,18,48,0.4)] flex-shrink-0">
+            <form onSubmit={handleSearch} className="flex items-center bg-white/[0.07] border-[1.5px] border-white/[0.12] rounded-full py-1.5 pl-6 pr-1.5 max-w-[500px] backdrop-blur-[12px] mb-6 transition-all focus-within:border-white/25 focus-within:shadow-[0_0_0_4px_rgba(232,160,48,0.12)]">
+              <input
+                type="text"
+                value={zip}
+                onChange={e => setZip(e.target.value)}
+                placeholder="Enter your zip code or city…"
+                className="flex-1 bg-transparent border-none outline-none font-body text-[15px] text-white placeholder:text-white/35 min-w-0"
+              />
+              <button
+                type="submit"
+                className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full tracking-[0.3px] hover:bg-[#E8243E] transition-all shadow-[0_4px_12px_rgba(196,18,48,0.4)] flex-shrink-0">
                 Find My Gov →
               </button>
-            </div>
+            </form>
             <div className="flex items-center gap-6 text-xs text-white/50">
               <span>🔒 Free to use</span><span className="w-1 h-1 rounded-full bg-white/20" />
               <span>📋 Public data only</span><span className="w-1 h-1 rounded-full bg-white/20" />
@@ -591,6 +599,19 @@ function Testimonials() {
 // FINAL CTA
 // ════════════════════════════════════════════════════════════════
 function FinalCTA() {
+  const [zip, setZip] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = zip.trim().toLowerCase();
+    if (!q) return;
+    if (q.includes('60660') || q.includes('edgewater')) window.location.href = '/ward/chicago-48';
+    else if (/60\d{3}/.test(q) || q.includes('chicago') || q.includes('illinois')) window.location.href = '/state/illinois';
+    else if (q.includes('new york') || q.includes('nyc')) window.location.href = '/state/new-york';
+    else if (q.includes('california')) window.location.href = '/state/california';
+    else window.location.href = `/state/${q.replace(/\s+/g, '-')}`;
+  };
+
   return (
     <section className="bg-navy py-[140px] px-10 relative overflow-hidden text-center">
       <div className="absolute top-[-30%] left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(196,18,48,0.2) 0%, transparent 65%)' }} />
@@ -602,12 +623,12 @@ function FinalCTA() {
         <p className="font-serif text-xl text-white/55 leading-relaxed mb-12">
           Enter your zip code. Find out who represents you, what they&apos;re deciding, and how you can show up.
         </p>
-        <div className="flex max-w-[480px] mx-auto mb-5 bg-white/[0.07] border-[1.5px] border-white/[0.14] rounded-full py-1.5 pl-6 pr-1.5 backdrop-blur-[12px] transition-all focus-within:border-white/[0.28] focus-within:shadow-[0_0_0_4px_rgba(232,160,48,0.12)]">
-          <input type="text" placeholder="Enter your zip code or city…" className="flex-1 bg-transparent border-none outline-none font-body text-[15px] text-white placeholder:text-white/35" />
-          <button className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full hover:bg-[#E8243E] transition-colors whitespace-nowrap shadow-[0_4px_12px_rgba(196,18,48,0.4)]">
+        <form onSubmit={handleSearch} className="flex max-w-[480px] mx-auto mb-5 bg-white/[0.07] border-[1.5px] border-white/[0.14] rounded-full py-1.5 pl-6 pr-1.5 backdrop-blur-[12px] transition-all focus-within:border-white/[0.28] focus-within:shadow-[0_0_0_4px_rgba(232,160,48,0.12)]">
+          <input type="text" value={zip} onChange={e => setZip(e.target.value)} placeholder="Enter your zip code or city…" className="flex-1 bg-transparent border-none outline-none font-body text-[15px] text-white placeholder:text-white/35" />
+          <button type="submit" className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full hover:bg-[#E8243E] transition-colors whitespace-nowrap shadow-[0_4px_12px_rgba(196,18,48,0.4)]">
             Find My Gov →
           </button>
-        </div>
+        </form>
         <p className="font-body text-xs text-white/45">Free forever. No account required to explore.</p>
         <div className="flex items-center justify-center gap-3.5 mt-16 pt-12 border-t border-white/[0.07]">
           <div className="w-10 h-[1.5px] bg-white/20" />
