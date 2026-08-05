@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
-  "generated_at": "2026-07-29T17:27:11.963878+00:00",
-  "sweep_last": "2026-07-29T17:27:11.963878+00:00",
+  "generated_at": "2026-08-05T22:16:51.609811+00:00",
+  "sweep_last": "2026-08-05T22:16:51.609811+00:00",
   "datasets": {
     "chicago_alderpersons.json": {
       "size": 13639,
@@ -48,8 +48,8 @@
       "count": 8
     },
     "master_index.json": {
-      "size": 1374,
-      "count": 5
+      "size": 1419,
+      "count": 6
     },
     "state_agencies.json": {
       "size": 248572,
@@ -69,5 +69,5 @@
     }
   },
   "total": 16,
-  "total_bytes": 727806
+  "total_bytes": 727851
 }
