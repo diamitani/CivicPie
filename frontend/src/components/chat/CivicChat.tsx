@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Send, Sparkles, Bot, User, Loader2, MapPin, Calendar, FileText } from 'lucide-react'
+import { Send, Sparkles, User, Loader2, FileText, AlertCircle } from 'lucide-react'
 import { ChatMessage } from '@/types'
 import { cn } from '@/lib/utils'
 
@@ -16,15 +16,15 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
     {
       role: 'assistant',
       content: wardId 
-        ? "Hi! I'm CivicGuide, your AI assistant for Chicago civic engagement. I can help you learn about this ward, upcoming meetings, your alderman's voting record, and how to get involved. What would you like to know?"
-        : "Hi! I'm CivicGuide, your AI assistant for Chicago civic engagement. Ask me anything about wards, aldermen, meetings, or how to get involved in your neighborhood. I can help you find your ward, understand local issues, and connect with your representatives.",
+        ? "Hi! I'm CivicGuide. I can help with this ward's official contacts, neighborhood context, meeting channels, election basics, and ways to get involved. Ask anything."
+        : "Hi! I'm CivicGuide. Ask me about Chicago wards, meetings, elections, city services, or how to get involved in your neighborhood.",
       timestamp: new Date().toISOString(),
     }
   ])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const messagesContainerRef = useRef<HTMLDivElement>(null)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
     const container = messagesContainerRef.current
@@ -43,57 +43,61 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!input.trim() || isLoading) return
+    const prompt = input.trim()
 
     const userMessage: ChatMessage = {
       role: 'user',
-      content: input,
+      content: prompt,
       timestamp: new Date().toISOString(),
     }
 
     setMessages(prev => [...prev, userMessage])
     setInput('')
     setIsLoading(true)
+    setError(null)
 
-    // Simulate API call - replace with actual API integration
-    setTimeout(() => {
-      const assistantMessage: ChatMessage = {
-        role: 'assistant',
-        content: generateResponse(input, wardId),
-        timestamp: new Date().toISOString(),
-        sources: [
-          {
-            title: 'Chicago City Council Website',
-            url: 'https://chicago.gov',
-            snippet: 'Official city council information'
-          }
-        ]
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: prompt,
+          wardId,
+          history: messages.map(({ role, content }) => ({ role, content })),
+        }),
+      })
+
+      const payload = await response.json()
+
+      if (!response.ok) {
+        throw new Error(payload?.error || 'Unable to reach CivicGuide right now.')
       }
-      setMessages(prev => [...prev, assistantMessage])
-      setIsLoading(false)
-    }, 1500)
-  }
 
-  // Placeholder response generator - replace with actual AI integration
-  function generateResponse(query: string, wardId?: number): string {
-    const lowerQuery = query.toLowerCase()
-    
-    if (lowerQuery.includes('meeting') || lowerQuery.includes('when')) {
-      return wardId 
-        ? `Ward ${wardId} meetings are typically held on the first Tuesday of each month at 7 PM. The next meeting is scheduled for March 5th at the local library. Would you like me to add this to your calendar or get the agenda?`
-        : `Most wards hold meetings monthly. To get specific meeting times for your ward, please let me know which ward you're in, or I can help you find your ward first.`
+      setMessages(prev => [
+        ...prev,
+        {
+          role: 'assistant',
+          content: payload.message,
+          timestamp: new Date().toISOString(),
+          sources: payload.sources ?? [],
+        },
+      ])
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Unable to reach CivicGuide right now.'
+      setError(message)
+      setMessages(prev => [
+        ...prev,
+        {
+          role: 'assistant',
+          content: 'I hit a connection issue just now. Please try again, or ask a more specific ward or meeting question so I can use the fallback civic data.',
+          timestamp: new Date().toISOString(),
+        },
+      ])
+    } finally {
+      setIsLoading(false)
     }
-    
-    if (lowerQuery.includes('alderman') || lowerQuery.includes('representative')) {
-      return wardId
-        ? `Your alderman for Ward ${wardId} is dedicated to serving the community. You can reach their office during business hours, or I can help you find their contact information and recent initiatives.`
-        : `Chicago has 50 aldermen representing each ward. Would you like me to help you find your alderman based on your address?`
-    }
-    
-    if (lowerQuery.includes('vote') || lowerQuery.includes('election')) {
-      return `Chicago elections include municipal elections every 4 years. The next election is scheduled for February 2027. I can help you find your polling place, check your registration, or learn about the candidates.`
-    }
-    
-    return `That's a great question about Chicago civic engagement. I'm here to help you navigate local government, find resources, and get involved in your community. Could you provide more details so I can give you the most accurate information?`
   }
 
   const suggestedQuestions = [
@@ -112,7 +116,7 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
         </div>
         <div className="flex-1">
           <h3 className="font-semibold text-white">CivicGuide</h3>
-          <p className="text-xs text-white/70">AI Civic Assistant</p>
+          <p className="text-xs text-white/70">Source-backed civic assistant</p>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -122,6 +126,12 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
 
       {/* Messages */}
       <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-6 space-y-4">
+        {error && (
+          <div className="mb-4 flex items-center gap-2 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+            <AlertCircle className="h-4 w-4 flex-shrink-0" />
+            <span>{error}</span>
+          </div>
+        )}
         <AnimatePresence>
           {messages.map((message, index) => (
             <motion.div
@@ -153,7 +163,7 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
                   ? "bg-slate-100 text-slate-800 rounded-tl-sm"
                   : "bg-blue-600 text-white rounded-tr-sm"
               )}>
-                <p className="text-sm leading-relaxed">{message.content}</p>
+                <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
                 
                 {message.sources && message.sources.length > 0 && (
                   <div className="mt-3 pt-3 border-t border-slate-200/50">
@@ -196,7 +206,6 @@ export function CivicChat({ wardId, className }: CivicChatProps) {
             </motion.div>
           )}
         </AnimatePresence>
-        <div ref={messagesEndRef} />
       </div>
 
       {/* Suggested Questions */}

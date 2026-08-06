@@ -15,9 +15,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'CivicPie - Your Chicago Civic Connection',
-  description: 'Connect with your ward, alderman, and local government. AI-powered civic engagement for Chicago neighborhoods.',
-  keywords: ['Chicago', 'civic engagement', 'alderman', 'ward', 'local government', 'politics'],
+  title: 'Civic Pie | Get a Piece of Gov.',
+  description: 'Sign up for ward updates, meeting alerts, election reminders, volunteer opportunities, and source-backed civic AI for Chicago neighborhoods.',
+  keywords: ['Chicago', 'civic engagement', 'alderman', 'ward', 'local government', 'politics', 'community updates', 'newsletter'],
 }
 
 export default function RootLayout({

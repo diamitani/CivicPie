@@ -3,13 +3,14 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, MapPin, Users, Calendar, MessageCircle } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { Menu, X, MapPin, Calendar, MessageCircle, Vote, BellRing, Newspaper } from 'lucide-react'
 
 const navigation = [
   { name: 'Wards', href: '/wards', icon: MapPin },
-  { name: 'Aldermen', href: '/aldermen', icon: Users },
+  { name: 'Community', href: '/community', icon: Newspaper },
   { name: 'Meetings', href: '/meetings', icon: Calendar },
+  { name: 'Elections', href: '/elections', icon: Vote },
+  { name: 'Updates', href: '/updates', icon: BellRing },
   { name: 'Ask CivicGuide', href: '/chat', icon: MessageCircle },
 ]
 
@@ -48,10 +49,10 @@ export function Navigation() {
             {/* CTA Button */}
             <div className="hidden md:flex items-center gap-4">
               <Link
-                href="/chat"
+                href="/updates"
                 className="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25"
               >
-                Get Started
+                Join Updates
               </Link>
             </div>
 
@@ -93,11 +94,11 @@ export function Navigation() {
                 ))}
                 <div className="pt-2 border-t border-slate-200">
                   <Link
-                    href="/chat"
+                    href="/updates"
                     className="flex items-center justify-center w-full px-4 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Get Started
+                    Join Updates
                   </Link>
                 </div>
               </div>

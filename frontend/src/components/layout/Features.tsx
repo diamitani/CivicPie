@@ -1,43 +1,43 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MapPin, MessageSquare, Calendar, FileText, Bell, Users, Search, Shield } from 'lucide-react'
+import { MapPin, MessageSquare, Calendar, FileText, Bell, Newspaper, Shield } from 'lucide-react'
 
 const features = [
   {
     icon: MapPin,
     title: 'Ward Explorer',
-    description: 'Interactive map of all 50 Chicago wards with demographics, boundaries, and neighborhood details.',
+    description: 'Browse all 50 wards, verified official contacts, neighborhood context, and direct links to ward offices.',
     color: 'bg-blue-500',
   },
   {
     icon: MessageSquare,
     title: 'CivicGuide AI',
-    description: 'Ask questions in plain English. Get answers about meetings, officials, and local issues instantly.',
-    color: 'bg-purple-500',
+    description: 'Ask questions in plain English and get source-backed answers about your ward, meetings, voting, and civic participation.',
+    color: 'bg-slate-800',
   },
   {
     icon: Calendar,
-    title: 'Meeting Tracker',
-    description: 'Never miss a meeting. Get calendars, agendas, and minutes for all ward and city council meetings.',
+    title: 'Meeting Signals',
+    description: 'Track official meeting channels, agendas, notices, and public hearing links from city and ward sources.',
     color: 'bg-green-500',
   },
   {
-    icon: FileText,
-    title: 'Voting Records',
-    description: 'Track how your alderman votes on key issues. Transparent access to city council decisions.',
+    icon: Bell,
+    title: 'Personalized Digests',
+    description: 'Choose daily, weekly, monthly, or event-driven updates for voting, candidates, volunteer work, and community news.',
     color: 'bg-amber-500',
   },
   {
-    icon: Users,
-    title: 'Official Profiles',
-    description: 'Comprehensive profiles for all aldermen with contact info, committees, and initiatives.',
+    icon: Newspaper,
+    title: 'Community Feed',
+    description: 'Follow neighborhood-level civic signals from official ward sites, city departments, and vetted public-interest sources.',
     color: 'bg-rose-500',
   },
   {
-    icon: Bell,
-    title: 'Smart Alerts',
-    description: 'Get notified about meetings, votes, and issues that matter to your neighborhood.',
+    icon: FileText,
+    title: 'Source Provenance',
+    description: 'Every fact should trace back to an official page, scrape timestamp, and reviewable source record.',
     color: 'bg-cyan-500',
   },
 ]
