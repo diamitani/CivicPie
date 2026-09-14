@@ -30,96 +30,73 @@ interface SearchResult {
   source: string;
 }
 
-// Pre-indexed rep data — loaded lazily
-let _wardData: any = null;
-let _statesData: any = null;
+// ─── Search function ─────────────────────────────────────────────────────────
+// Single source of truth: the live /api/lookup endpoint (seed data today,
+// Supabase tomorrow). No more hardcoded static JSON indexes.
 
-async function loadIndex() {
-  if (!_wardData) {
-    const res = await fetch('/data/ward_data.json');
-    _wardData = res.ok ? await res.json() : null;
+function toRep(o: any, fallbackDistrict: string): RepResult {
+  const contact: RepResult['contact'] = {};
+  for (const c of o.contacts || []) {
+    if (c.type === 'email' && !contact.email) contact.email = c.value;
+    else if (c.type === 'phone' && !contact.phone) contact.phone = c.value;
+    else if ((c.type === 'website' || c.type === 'url') && !contact.website) contact.website = c.value;
   }
-  if (!_statesData) {
-    const res = await fetch('/data/states.json');
-    _statesData = res.ok ? await res.json() : null;
-  }
-  return { wardData: _wardData, statesData: _statesData };
+  if (o.email && !contact.email) contact.email = o.email;
+  if (o.phone && !contact.phone) contact.phone = o.phone;
+  if (o.website && !contact.website) contact.website = o.website;
+  return {
+    id: o.id || `${o.name || 'rep'}`,
+    name: o.name || 'Unknown',
+    title: o.office_title || o.office || o.title || 'Representative',
+    level: o.level || '',
+    party: o.party,
+    district: fallbackDistrict,
+    photo: o.photo_url || undefined,
+    contact,
+    bio: o.bio,
+  };
 }
 
-// ─── Search function ─────────────────────────────────────────────────────────
-
 async function lookupReps(query: string): Promise<SearchResult[]> {
-  const q = query.toLowerCase().trim();
+  const q = query.trim();
   if (!q || q.length < 2) return [];
 
-  const { wardData, statesData } = await loadIndex();
+  let body: any = null;
+  try {
+    const res = await fetch(`/api/lookup?address=${encodeURIComponent(q)}`);
+    body = await res.json().catch(() => null);
+  } catch {
+    return [];
+  }
+  if (!body || body.error) return [];
+
   const results: SearchResult[] = [];
 
-  // 1. Chicago ward match
-  if (q.includes('60660') || q.includes('60640') || q.includes('edgewater') || q.includes('andersonville') || q.match(/48(th)?\s*ward/)) {
-    if (wardData?.officials) {
-      const meta = wardData.districtMeta;
+  if (body.coverage === 'local') {
+    const m = (body.district_id || '').match(/^il-chicago-ward-(\d+)$/);
+    const districtName = m ? `Ward ${parseInt(m[1], 10)}, Chicago` : (body.ward || body.district_id || 'Your district');
+    const officials = body.officials || [];
+    if (officials.length > 0) {
+      results.push({
+        district: { name: districtName, type: m ? 'Ward' : 'District', description: body.address || q },
+        reps: officials.map((o: any) => toRep(o, districtName)),
+        source: 'CivicPie · public records',
+      });
+    }
+  } else if (body.coverage === 'none') {
+    // Out-of-coverage areas still get federal + state representatives.
+    const reps = [...(body.federal_officials || []), ...(body.state_officials || [])]
+      .map((o: any) => toRep(o, body.address || q));
+    if (reps.length > 0) {
       results.push({
         district: {
-          name: meta?.name || '48th Ward',
-          type: 'Ward',
-          description: `${meta?.city || 'Chicago'}, ${meta?.state || 'Illinois'} — ${meta?.neighborhoods?.join(', ') || 'Edgewater & Andersonville'}`,
+          name: body.address || 'Your area',
+          type: 'Federal + State',
+          description: body.message || 'Your federal and state representatives.',
         },
-        reps: (wardData.officials || []).map((o: any) => ({
-          id: o.id, name: o.name, title: o.title, level: o.level, party: o.party,
-          district: meta?.name || '48th Ward',
-          contact: o.contact || {},
-          keyIssues: o.keyIssues,
-          achievements: o.achievements,
-          bio: o.bio,
-        })),
-        source: 'City of Chicago · 48th Ward Office',
-      });
-    }
-  }
-
-  // 2. State matches
-  if (statesData) {
-    const stateMatches = statesData.filter((s: any) =>
-      s.name.toLowerCase().includes(q) ||
-      s.abbreviation?.toLowerCase() === q.replace(/\s/g, '') ||
-      (q.length >= 2 && s.abbreviation?.toLowerCase().includes(q))
-    );
-
-    for (const state of stateMatches.slice(0, 3)) {
-      const reps: RepResult[] = [];
-      if (state.governor) {
-        reps.push({
-          id: `gov-${state.id}`, name: state.governor.name, title: 'Governor',
-          level: 'State', party: state.governor.party, district: state.name,
-          contact: { website: state.governor.website },
-        });
-      }
-      for (const senator of (state.senators || [])) {
-        reps.push({
-          id: `sen-${state.id}-${senator.name}`, name: senator.name, title: 'US Senator',
-          level: 'Federal', party: senator.party, district: state.name,
-          contact: { website: senator.website },
-        });
-      }
-      results.push({
-        district: { name: state.name, type: 'State', description: `Capital: ${state.capital} · Population: ${(state.population / 1000000).toFixed(1)}M` },
         reps,
-        source: `${state.name} Government`,
+        source: 'CivicPie · public records',
       });
-    }
-  }
-
-  // 3. Chicago/Illinois default for broad queries
-  if (q.includes('chicago') || q.includes('illinois') || q.includes('606')) {
-    if (statesData) {
-      const il = statesData.find((s: any) => s.abbreviation === 'IL');
-      if (il) {
-        const reps: RepResult[] = [];
-        if (il.governor) reps.push({ id: 'gov-il', name: il.governor.name, title: 'Governor', level: 'State', party: il.governor.party, district: 'Illinois', contact: { website: il.governor.website } });
-        for (const s of (il.senators || [])) reps.push({ id: `sen-il-${s.name}`, name: s.name, title: 'US Senator', level: 'Federal', party: s.party, district: 'Illinois', contact: { website: s.website } });
-        results.push({ district: { name: 'Illinois', type: 'State', description: 'Capital: Springfield · Population: 12.8M' }, reps, source: 'State of Illinois' });
-      }
     }
   }
 
