@@ -1,0 +1,512 @@
+[
+ {
+  "district_id": "us-state-ak",
+  "district_type": "state",
+  "state_abbr": "AK",
+  "city": null,
+  "district_name": "AK",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-al",
+  "district_type": "state",
+  "state_abbr": "AL",
+  "city": null,
+  "district_name": "AL",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ar",
+  "district_type": "state",
+  "state_abbr": "AR",
+  "city": null,
+  "district_name": "AR",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-az",
+  "district_type": "state",
+  "state_abbr": "AZ",
+  "city": null,
+  "district_name": "AZ",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ca",
+  "district_type": "state",
+  "state_abbr": "CA",
+  "city": null,
+  "district_name": "CA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-co",
+  "district_type": "state",
+  "state_abbr": "CO",
+  "city": null,
+  "district_name": "CO",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ct",
+  "district_type": "state",
+  "state_abbr": "CT",
+  "city": null,
+  "district_name": "CT",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-dc",
+  "district_type": "state",
+  "state_abbr": "DC",
+  "city": null,
+  "district_name": "DC",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-de",
+  "district_type": "state",
+  "state_abbr": "DE",
+  "city": null,
+  "district_name": "DE",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-fl",
+  "district_type": "state",
+  "state_abbr": "FL",
+  "city": null,
+  "district_name": "FL",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ga",
+  "district_type": "state",
+  "state_abbr": "GA",
+  "city": null,
+  "district_name": "GA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-hi",
+  "district_type": "state",
+  "state_abbr": "HI",
+  "city": null,
+  "district_name": "HI",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ia",
+  "district_type": "state",
+  "state_abbr": "IA",
+  "city": null,
+  "district_name": "IA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-id",
+  "district_type": "state",
+  "state_abbr": "ID",
+  "city": null,
+  "district_name": "ID",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-il",
+  "district_type": "state",
+  "state_abbr": "IL",
+  "city": null,
+  "district_name": "IL",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-in",
+  "district_type": "state",
+  "state_abbr": "IN",
+  "city": null,
+  "district_name": "IN",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ks",
+  "district_type": "state",
+  "state_abbr": "KS",
+  "city": null,
+  "district_name": "KS",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ky",
+  "district_type": "state",
+  "state_abbr": "KY",
+  "city": null,
+  "district_name": "KY",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-la",
+  "district_type": "state",
+  "state_abbr": "LA",
+  "city": null,
+  "district_name": "LA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ma",
+  "district_type": "state",
+  "state_abbr": "MA",
+  "city": null,
+  "district_name": "MA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-md",
+  "district_type": "state",
+  "state_abbr": "MD",
+  "city": null,
+  "district_name": "MD",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-me",
+  "district_type": "state",
+  "state_abbr": "ME",
+  "city": null,
+  "district_name": "ME",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-mi",
+  "district_type": "state",
+  "state_abbr": "MI",
+  "city": null,
+  "district_name": "MI",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-mn",
+  "district_type": "state",
+  "state_abbr": "MN",
+  "city": null,
+  "district_name": "MN",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-mo",
+  "district_type": "state",
+  "state_abbr": "MO",
+  "city": null,
+  "district_name": "MO",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ms",
+  "district_type": "state",
+  "state_abbr": "MS",
+  "city": null,
+  "district_name": "MS",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-mt",
+  "district_type": "state",
+  "state_abbr": "MT",
+  "city": null,
+  "district_name": "MT",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-nc",
+  "district_type": "state",
+  "state_abbr": "NC",
+  "city": null,
+  "district_name": "NC",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-nd",
+  "district_type": "state",
+  "state_abbr": "ND",
+  "city": null,
+  "district_name": "ND",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ne",
+  "district_type": "state",
+  "state_abbr": "NE",
+  "city": null,
+  "district_name": "NE",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-nh",
+  "district_type": "state",
+  "state_abbr": "NH",
+  "city": null,
+  "district_name": "NH",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-nj",
+  "district_type": "state",
+  "state_abbr": "NJ",
+  "city": null,
+  "district_name": "NJ",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-nm",
+  "district_type": "state",
+  "state_abbr": "NM",
+  "city": null,
+  "district_name": "NM",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-nv",
+  "district_type": "state",
+  "state_abbr": "NV",
+  "city": null,
+  "district_name": "NV",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ny",
+  "district_type": "state",
+  "state_abbr": "NY",
+  "city": null,
+  "district_name": "NY",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-oh",
+  "district_type": "state",
+  "state_abbr": "OH",
+  "city": null,
+  "district_name": "OH",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ok",
+  "district_type": "state",
+  "state_abbr": "OK",
+  "city": null,
+  "district_name": "OK",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-or",
+  "district_type": "state",
+  "state_abbr": "OR",
+  "city": null,
+  "district_name": "OR",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-pa",
+  "district_type": "state",
+  "state_abbr": "PA",
+  "city": null,
+  "district_name": "PA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ri",
+  "district_type": "state",
+  "state_abbr": "RI",
+  "city": null,
+  "district_name": "RI",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-sc",
+  "district_type": "state",
+  "state_abbr": "SC",
+  "city": null,
+  "district_name": "SC",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-sd",
+  "district_type": "state",
+  "state_abbr": "SD",
+  "city": null,
+  "district_name": "SD",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-tn",
+  "district_type": "state",
+  "state_abbr": "TN",
+  "city": null,
+  "district_name": "TN",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-tx",
+  "district_type": "state",
+  "state_abbr": "TX",
+  "city": null,
+  "district_name": "TX",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-ut",
+  "district_type": "state",
+  "state_abbr": "UT",
+  "city": null,
+  "district_name": "UT",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-va",
+  "district_type": "state",
+  "state_abbr": "VA",
+  "city": null,
+  "district_name": "VA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-vt",
+  "district_type": "state",
+  "state_abbr": "VT",
+  "city": null,
+  "district_name": "VT",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-wa",
+  "district_type": "state",
+  "state_abbr": "WA",
+  "city": null,
+  "district_name": "WA",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-wi",
+  "district_type": "state",
+  "state_abbr": "WI",
+  "city": null,
+  "district_name": "WI",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-wv",
+  "district_type": "state",
+  "state_abbr": "WV",
+  "city": null,
+  "district_name": "WV",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-wy",
+  "district_type": "state",
+  "state_abbr": "WY",
+  "city": null,
+  "district_name": "WY",
+  "district_number": null,
+  "source_id": "xlsx-master-2026-09",
+  "external_refs": {}
+ }
+]

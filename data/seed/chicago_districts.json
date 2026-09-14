@@ -1,0 +1,802 @@
+[
+ {
+  "district_id": "il-chicago-ward-01",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "1th Ward",
+  "district_number": "1",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Logan Square, West Town, Wicker Park, Bucktown",
+   "centroid": [
+    -87.68783,
+    41.91694
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-02",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "2th Ward",
+  "district_number": "2",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Near North Side, Old Town, Gold Coast",
+   "centroid": [
+    -87.63228,
+    41.88376
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-03",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "3th Ward",
+  "district_number": "3",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Bronzeville, Douglas, Grand Boulevard",
+   "centroid": [
+    -87.62605,
+    41.80236
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-04",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "4th Ward",
+  "district_number": "4",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Bronzeville, Kenwood, North Kenwood",
+   "centroid": [
+    -87.60284,
+    41.81697
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-05",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "5th Ward",
+  "district_number": "5",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Hyde Park, South Shore, Woodlawn",
+   "centroid": [
+    -87.57015,
+    41.76641
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-06",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "6th Ward",
+  "district_number": "6",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Chatham, Greater Grand Crossing",
+   "centroid": [
+    -87.62406,
+    41.73879
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-07",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "7th Ward",
+  "district_number": "7",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "South Shore, South Chicago",
+   "centroid": [
+    -87.56861,
+    41.72244
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-08",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "8th Ward",
+  "district_number": "8",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Chatham, Auburn Gresham, Avalon Park",
+   "centroid": [
+    -87.60474,
+    41.73912
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-09",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "9th Ward",
+  "district_number": "9",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Roseland, Pullman, West Pullman",
+   "centroid": [
+    -87.62172,
+    41.69
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-10",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "10th Ward",
+  "district_number": "10",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "East Side, South Deering, Hegewisch",
+   "centroid": [
+    -87.53543,
+    41.70447
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-11",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "11th Ward",
+  "district_number": "11",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Bridgeport, Chinatown, Armour Square",
+   "centroid": [
+    -87.64588,
+    41.82713
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-12",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "12th Ward",
+  "district_number": "12",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Brighton Park, McKinley Park, Archer Heights",
+   "centroid": [
+    -87.68953,
+    41.82326
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-13",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "13th Ward",
+  "district_number": "13",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Clearing, Garfield Ridge, West Lawn",
+   "centroid": [
+    -87.72281,
+    41.77496
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-14",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "14th Ward",
+  "district_number": "14",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Gage Park, Chicago Lawn, West Elsdon",
+   "centroid": [
+    -87.70207,
+    41.78638
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-15",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "15th Ward",
+  "district_number": "15",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Brighton Park, Back of the Yards, New City",
+   "centroid": [
+    -87.69116,
+    41.80115
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-16",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "16th Ward",
+  "district_number": "16",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Englewood, West Englewood, Auburn Gresham",
+   "centroid": [
+    -87.65351,
+    41.77951
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-17",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "17th Ward",
+  "district_number": "17",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Auburn Gresham, Ashburn, Beverly",
+   "centroid": [
+    -87.65699,
+    41.75056
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-18",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "18th Ward",
+  "district_number": "18",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Ashburn, Wrightwood, Scottsdale",
+   "centroid": [
+    -87.72147,
+    41.7404
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-19",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "19th Ward",
+  "district_number": "19",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Beverly, Morgan Park, Mount Greenwood",
+   "centroid": [
+    -87.68171,
+    41.70446
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-20",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "20th Ward",
+  "district_number": "20",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Back of the Yards, New City, Englewood",
+   "centroid": [
+    -87.6304,
+    41.79623
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-21",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "21th Ward",
+  "district_number": "21",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Morgan Park, Washington Heights, Roseland",
+   "centroid": [
+    -87.6424,
+    41.69762
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-22",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "22th Ward",
+  "district_number": "22",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Little Village, South Lawndale, North Lawndale",
+   "centroid": [
+    -87.71255,
+    41.84615
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-23",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "23th Ward",
+  "district_number": "23",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Garfield Ridge, Clearing, Archer Heights",
+   "centroid": [
+    -87.77626,
+    41.79347
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-24",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "24th Ward",
+  "district_number": "24",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "North Lawndale, East Garfield Park",
+   "centroid": [
+    -87.73021,
+    41.86614
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-25",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "25th Ward",
+  "district_number": "25",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Pilsen, Chinatown, South Loop",
+   "centroid": [
+    -87.67842,
+    41.85225
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-26",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "26th Ward",
+  "district_number": "26",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Humboldt Park, West Town, Ukrainian Village",
+   "centroid": [
+    -87.68994,
+    41.90288
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-27",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "27th Ward",
+  "district_number": "27",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "West Loop, Near West Side, Fulton Market",
+   "centroid": [
+    -87.68658,
+    41.88127
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-28",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "28th Ward",
+  "district_number": "28",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Austin, West Garfield Park",
+   "centroid": [
+    -87.69232,
+    41.87759
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-29",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "29th Ward",
+  "district_number": "29",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Austin, Belmont Cragin, Galewood",
+   "centroid": [
+    -87.783,
+    41.90928
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-30",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "30th Ward",
+  "district_number": "30",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Belmont Cragin, Hermosa, Portage Park",
+   "centroid": [
+    -87.76237,
+    41.93874
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-31",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "31th Ward",
+  "district_number": "31",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Belmont Cragin, Hermosa, Kelvyn Park",
+   "centroid": [
+    -87.74223,
+    41.9317
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-32",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "32th Ward",
+  "district_number": "32",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Bucktown, Wicker Park, Roscoe Village",
+   "centroid": [
+    -87.67533,
+    41.93003
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-33",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "33th Ward",
+  "district_number": "33",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Albany Park, Irving Park, North Park",
+   "centroid": [
+    -87.70954,
+    41.96801
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-34",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "34th Ward",
+  "district_number": "34",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "South Loop, Loop, Near South Side",
+   "centroid": [
+    -87.63228,
+    41.88376
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-35",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "35th Ward",
+  "district_number": "35",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Avondale, Logan Square, Hermosa",
+   "centroid": [
+    -87.71651,
+    41.93448
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-36",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "36th Ward",
+  "district_number": "36",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Belmont Cragin, Montclare, Galewood",
+   "centroid": [
+    -87.78988,
+    41.92375
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-37",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "37th Ward",
+  "district_number": "37",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Austin, West Humboldt Park",
+   "centroid": [
+    -87.74929,
+    41.89509
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-38",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "38th Ward",
+  "district_number": "38",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Dunning, Montclare, Portage Park",
+   "centroid": [
+    -87.80701,
+    41.94956
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-39",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "39th Ward",
+  "district_number": "39",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "North Park, Albany Park, Mayfair",
+   "centroid": [
+    -87.73303,
+    41.96829
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-40",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "40th Ward",
+  "district_number": "40",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "West Ridge, Lincoln Square, Bowmanville",
+   "centroid": [
+    -87.68961,
+    41.98382
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-41",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "41th Ward",
+  "district_number": "41",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Edison Park, Norwood Park, O'Hare",
+   "centroid": [
+    -87.80791,
+    42.01158
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-42",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "42th Ward",
+  "district_number": "42",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Loop, Near North Side, River North",
+   "centroid": [
+    -87.63228,
+    41.88376
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-43",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "43th Ward",
+  "district_number": "43",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Lincoln Park, Old Town, Gold Coast",
+   "centroid": [
+    -87.64871,
+    41.92804
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-44",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "44th Ward",
+  "district_number": "44",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Lakeview, Wrigleyville, Boystown",
+   "centroid": [
+    -87.65398,
+    41.94063
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-45",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "45th Ward",
+  "district_number": "45",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Jefferson Park, Portage Park, Forest Glen",
+   "centroid": [
+    -87.77254,
+    41.98073
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-46",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "46th Ward",
+  "district_number": "46",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Uptown, Buena Park, Sheridan Park",
+   "centroid": [
+    -87.65726,
+    41.96481
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-47",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "47th Ward",
+  "district_number": "47",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Lincoln Square, North Center, Ravenswood",
+   "centroid": [
+    -87.68195,
+    41.95894
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-48",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "48th Ward",
+  "district_number": "48",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Edgewater, Andersonville, Magnolia Glen",
+   "centroid": [
+    -87.65924,
+    41.98353
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-49",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "49th Ward",
+  "district_number": "49",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "Rogers Park, West Ridge, Loyola",
+   "centroid": [
+    -87.66777,
+    42.00777
+   ]
+  }
+ },
+ {
+  "district_id": "il-chicago-ward-50",
+  "district_type": "ward",
+  "state_abbr": "IL",
+  "city": "Chicago",
+  "district_name": "50th Ward",
+  "district_number": "50",
+  "source_id": "chicago-wards-xlsx",
+  "external_refs": {
+   "neighborhoods": "West Ridge, Peterson Park, Arcadia Terrace",
+   "centroid": [
+    -87.70403,
+    41.99737
+   ]
+  }
+ }
+]
