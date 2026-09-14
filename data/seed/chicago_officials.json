@@ -1,0 +1,802 @@
+[
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-01",
+  "full_name": "Daniel La Spata",
+  "first_name": "Daniel",
+  "last_name": "Spata",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:1",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/41A0E156-F788-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-02",
+  "full_name": "Brian Hopkins",
+  "first_name": "Brian",
+  "last_name": "Hopkins",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:2",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/B160E94E-FB88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-03",
+  "full_name": "Pat Dowell",
+  "first_name": "Pat",
+  "last_name": "Dowell",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:3",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/B66788C7-FA88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-04",
+  "full_name": "Lamont J. Robinson",
+  "first_name": "Lamont",
+  "last_name": "Robinson",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:4",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/80D52B16-6AF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-05",
+  "full_name": "Desmon C. Yancy",
+  "first_name": "Desmon",
+  "last_name": "Yancy",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:5",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/E0AC4B85-6AF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-06",
+  "full_name": "William E. Hall",
+  "first_name": "William",
+  "last_name": "Hall",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:6",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/7D95D6BB-6AF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-07",
+  "full_name": "Gregory I. Mitchell",
+  "first_name": "Gregory",
+  "last_name": "Mitchell",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:7",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/2E656B9F-C373-EC11-8F8E-001DD804F9F3.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-08",
+  "full_name": "Michelle A. Harris",
+  "first_name": "Michelle",
+  "last_name": "Harris",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:8",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/886B5C20-F788-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-09",
+  "full_name": "Anthony Beale",
+  "first_name": "Anthony",
+  "last_name": "Beale",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:9",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/AC394D1C-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-10",
+  "full_name": "Peter Chico",
+  "first_name": "Peter",
+  "last_name": "Chico",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:10",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/4C168A10-6BF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-11",
+  "full_name": "Nicole T. Lee",
+  "first_name": "Nicole",
+  "last_name": "Lee",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:11",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/E29E5122-7BB7-EC11-983E-001DD8049E83.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-12",
+  "full_name": "Julia M. Ramirez",
+  "first_name": "Julia",
+  "last_name": "Ramirez",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:12",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/9E248041-6BF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-13",
+  "full_name": "Marty Quinn",
+  "first_name": "Marty",
+  "last_name": "Quinn",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:13",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/97A2C337-FC88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-14",
+  "full_name": "Jeylu B. Gutierrez",
+  "first_name": "Jeylu",
+  "last_name": "Gutierrez",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:14",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/2E2DFB80-6BF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-15",
+  "full_name": "Raymond A. Lopez",
+  "first_name": "Raymond",
+  "last_name": "Lopez",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:15",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/0AD4F54F-FC88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-16",
+  "full_name": "Stephanie D. Coleman",
+  "first_name": "Stephanie",
+  "last_name": "Coleman",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:16",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/E019D2FB-F788-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-17",
+  "full_name": "David H. Moore",
+  "first_name": "David",
+  "last_name": "Moore",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:17",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/EF6C6F46-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-18",
+  "full_name": "Derrick G. Curtis",
+  "first_name": "Derrick",
+  "last_name": "Curtis",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:18",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/EE27295C-FC88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-19",
+  "full_name": "Matthew J. O'Shea",
+  "first_name": "Matthew",
+  "last_name": "O'Shea",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:19",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/8E62E57A-F788-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-20",
+  "full_name": "Jeanette B. Taylor",
+  "first_name": "Jeanette",
+  "last_name": "Taylor",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:20",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/E3010C0E-F888-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-21",
+  "full_name": "Ronnie L. Mosley",
+  "first_name": "Ronnie",
+  "last_name": "Mosley",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:21",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/8B0682AE-6BF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-22",
+  "full_name": "Michael D. Rodriguez",
+  "first_name": "Michael",
+  "last_name": "Rodriguez",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:22",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/40AA3439-736E-EC11-8F8E-001DD804FDD0.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-23",
+  "full_name": "Silvana Tabares",
+  "first_name": "Silvana",
+  "last_name": "Tabares",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:23",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/CD474D9F-F788-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-24",
+  "full_name": "Monique L. Scott",
+  "first_name": "Monique",
+  "last_name": "Scott",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:24",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/70A44C5E-5EEE-EC11-BB3B-001DD805196E.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-25",
+  "full_name": "Byron Sigcho-Lopez",
+  "first_name": "Byron",
+  "last_name": "Sigcho-Lopez",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:25",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/9F0FC064-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-26",
+  "full_name": "Jessica L. Fuentes",
+  "first_name": "Jessica",
+  "last_name": "Fuentes",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:26",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/85DA45DD-6BF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-27",
+  "full_name": "Walter R. Burnett",
+  "first_name": "Walter",
+  "last_name": "Burnett",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:27",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/81F21A0D-F16E-F011-BEC1-001DD8096BE6.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-28",
+  "full_name": "Jason C. Ervin",
+  "first_name": "Jason",
+  "last_name": "Ervin",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:28",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/C5C5987A-FC88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-29",
+  "full_name": "Chris Taliaferro",
+  "first_name": "Chris",
+  "last_name": "Taliaferro",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:29",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/F113CA93-FC88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-30",
+  "full_name": "Ruth Cruz",
+  "first_name": "Ruth",
+  "last_name": "Cruz",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:30",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/C7422EFD-6BF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-31",
+  "full_name": "Felix Cardona Jr.",
+  "first_name": "Felix",
+  "last_name": "Jr.",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:31",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/1C8E86C8-FB88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-32",
+  "full_name": "Scott Waguespack",
+  "first_name": "Scott",
+  "last_name": "Waguespack",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:32",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/239D3A1D-FA88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-33",
+  "full_name": "Rossana Rodriguez Sanchez",
+  "first_name": "Rossana",
+  "last_name": "Sanchez",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:33",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/176937CC-9378-EC11-8940-001DD804DD33.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-34",
+  "full_name": "William Conway",
+  "first_name": "William",
+  "last_name": "Conway",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:34",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/4C380420-6CF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-35",
+  "full_name": "Anthony J. Quezada",
+  "first_name": "Anthony",
+  "last_name": "Quezada",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:35",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/A32C8E68-7415-F011-9989-001DD806C140.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-36",
+  "full_name": "Gilbert Villegas",
+  "first_name": "Gilbert",
+  "last_name": "Villegas",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:36",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/9E0A3436-FB88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-37",
+  "full_name": "Emma Mitts",
+  "first_name": "Emma",
+  "last_name": "Mitts",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:37",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/970B1AB5-FA88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-38",
+  "full_name": "Nicholas Sposato",
+  "first_name": "Nicholas",
+  "last_name": "Sposato",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:38",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/40781120-F888-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-39",
+  "full_name": "Samantha Nugent",
+  "first_name": "Samantha",
+  "last_name": "Nugent",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:39",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/7C82104C-F888-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-40",
+  "full_name": "Andre Vasquez Jr.",
+  "first_name": "Andre",
+  "last_name": "Jr.",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:40",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/9DB0248A-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-41",
+  "full_name": "Anthony V. Napolitano",
+  "first_name": "Anthony",
+  "last_name": "Napolitano",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:41",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/55B86EA2-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-42",
+  "full_name": "Brendan Reilly",
+  "first_name": "Brendan",
+  "last_name": "Reilly",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:42",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/DE5B6D97-FC72-EC11-8F8E-001DD804F74D.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-43",
+  "full_name": "Timothy R. Knudsen",
+  "first_name": "Timothy",
+  "last_name": "Knudsen",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:43",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/75B69F92-D740-ED11-9DAF-001DD8309496.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-44",
+  "full_name": "Bennett R. Lawson",
+  "first_name": "Bennett",
+  "last_name": "Lawson",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:44",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/1628D550-6CF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-45",
+  "full_name": "James M. Gardiner",
+  "first_name": "James",
+  "last_name": "Gardiner",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:45",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/A29D73BA-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-46",
+  "full_name": "Angela Clay",
+  "first_name": "Angela",
+  "last_name": "Clay",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:46",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/5F4C907D-6CF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-47",
+  "full_name": "Matthew J. Martin",
+  "first_name": "Matthew",
+  "last_name": "Martin",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:47",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/A218F4F8-F988-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-48",
+  "full_name": "Leni Manaa-Hoppenworth",
+  "first_name": "Leni",
+  "last_name": "Manaa-Hoppenworth",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:48",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/561B99CA-6CF3-ED11-A7C6-001DD804FC2B.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-49",
+  "full_name": "Maria E. Hadden",
+  "first_name": "Maria",
+  "last_name": "Hadden",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:49",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/124700E1-FB88-EC11-8D20-001DD804FD38.jpg"
+  }
+ },
+ {
+  "office_id": "chi-alderman",
+  "district_id": "il-chicago-ward-50",
+  "full_name": "Debra L. Silverstein",
+  "first_name": "Debra",
+  "last_name": "Silverstein",
+  "party": "Democratic",
+  "is_incumbent": true,
+  "term_start": null,
+  "term_end": null,
+  "source_id": "chicago-wards-xlsx",
+  "source_key": "chicago-wards-xlsx:alderman:50",
+  "external_ids": {
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/0F96F023-FB88-EC11-8D20-001DD804FD38.jpg"
+  }
+ }
+]

@@ -1,0 +1,1568 @@
+[
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:1",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(872) 206-2685",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:1",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward01@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:1",
+  "agency_id": null,
+  "kind": "website",
+  "value": "https://www.the1stward.com/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:1",
+  "agency_id": null,
+  "kind": "address",
+  "value": "1958 North Milwaukee Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:2",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 744-6836",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:2",
+  "agency_id": null,
+  "kind": "email",
+  "value": "office@aldermanhopkins.com",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:2",
+  "agency_id": null,
+  "kind": "website",
+  "value": "https://www.aldermanhopkins.com/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:2",
+  "agency_id": null,
+  "kind": "address",
+  "value": "121 North LaSalle Street Suite 300",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:3",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 373-9273",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:3",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward03@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:3",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.ward03chicago.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:3",
+  "agency_id": null,
+  "kind": "address",
+  "value": "5046 South State Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:4",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 744-2690",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:4",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward04@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:4",
+  "agency_id": null,
+  "kind": "address",
+  "value": "928 East 43rd Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:5",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 744-6832",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:5",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward05@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:5",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2230 East 71st Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:6",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 241-3100",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:6",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward06@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:6",
+  "agency_id": null,
+  "kind": "address",
+  "value": "8541 South State Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:7",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 731-7777",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:7",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward07@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:7",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.gregmitchell7thward.org/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:7",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2249 East 95th Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:8",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 874-3300",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:8",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward08@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:8",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.Aldermanmichelleharris.net",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:8",
+  "agency_id": null,
+  "kind": "address",
+  "value": "8539 South Cottage Grove Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:9",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 785-1100",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:9",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward09@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:9",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.Ward09.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:9",
+  "agency_id": null,
+  "kind": "address",
+  "value": "34 East 112th Place",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:10",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 768-8138",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:10",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward10@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:10",
+  "agency_id": null,
+  "kind": "address",
+  "value": "10500 South Ewing Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:11",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 254-6677",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:11",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward11@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:11",
+  "agency_id": null,
+  "kind": "address",
+  "value": "3659 South Halsted Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:12",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 475-6783",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:12",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward12@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:12",
+  "agency_id": null,
+  "kind": "address",
+  "value": "3868 South Archer Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:13",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 581-8000",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:13",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward13@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:13",
+  "agency_id": null,
+  "kind": "address",
+  "value": "6500 South Pulaski Road",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:14",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 236-0117",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:14",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward14@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:14",
+  "agency_id": null,
+  "kind": "address",
+  "value": "3124 West 59th Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:15",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 823-1539",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:15",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward15@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:15",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.the15thward.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:15",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2650 West 51st Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:16",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 306-1981",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:16",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward16@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:16",
+  "agency_id": null,
+  "kind": "website",
+  "value": "https://www.16thward.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:16",
+  "agency_id": null,
+  "kind": "address",
+  "value": "1137 West 63rd Street Unit C",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:17",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 783-3672",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:17",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward17@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:17",
+  "agency_id": null,
+  "kind": "address",
+  "value": "1344 West 79th Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:18",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 284-5057",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:18",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward18@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:18",
+  "agency_id": null,
+  "kind": "address",
+  "value": "8359 South Pulaski Road",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:19",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 238-8766",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:19",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward19@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:19",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://the19thward.com/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:19",
+  "agency_id": null,
+  "kind": "address",
+  "value": "10400 South Western Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:20",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 966-5336",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:20",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward20@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:20",
+  "agency_id": null,
+  "kind": "address",
+  "value": "5401 South Wentworth Avenue Suite 19E",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:21",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 881-9300",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:21",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward21@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:21",
+  "agency_id": null,
+  "kind": "address",
+  "value": "10805 South Halsted Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:22",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 762-1771",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:22",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward22@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:22",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2500 South St. Louis Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:23",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 582-4444",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:23",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward23@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:23",
+  "agency_id": null,
+  "kind": "address",
+  "value": "6247 South Archer Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:24",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 533-2400",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:24",
+  "agency_id": null,
+  "kind": "email",
+  "value": "ward24@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:24",
+  "agency_id": null,
+  "kind": "address",
+  "value": "1158 South Keeler Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:25",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 523-4100",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:25",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward25@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:25",
+  "agency_id": null,
+  "kind": "website",
+  "value": "https://www.25thward.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:25",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2100 West Cermak Road",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:26",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 395-0143",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:26",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward26@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:26",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2511 West Division Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:27",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 432-1995",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:27",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward27@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:27",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://aldermanburnett.com/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:27",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4 North Western Avenue Unit 1C",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:28",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 533-0900",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:28",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward28@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:28",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.AldermanErvin.com/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:28",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2622 West Jackson Boulevard Suite 200A",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:29",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 237-6460",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:29",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward29@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:29",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.aldtaliaferro.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:29",
+  "agency_id": null,
+  "kind": "address",
+  "value": "6272 West North Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:30",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 628-7874",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:30",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward30@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:30",
+  "agency_id": null,
+  "kind": "address",
+  "value": "5418 W. Belmont Ave",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:31",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 824-2000",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:31",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward31@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:31",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4606 West Diversey Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:32",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 248-1330",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:32",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward32@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:32",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.ward32.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:32",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2657 North Clybourn Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:33",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 840-7880",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:33",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward33@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:33",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4747 North Sawyer Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:34",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 744-6820",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:34",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward34@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:34",
+  "agency_id": null,
+  "kind": "address",
+  "value": "121 North LaSalle Street Room 300",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:35",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 887-3772",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:35",
+  "agency_id": null,
+  "kind": "email",
+  "value": "ward35@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:35",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2934 North Milwaukee Avenue Unit C",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:36",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 745-4636",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:36",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward36@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:36",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.36thward.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:36",
+  "agency_id": null,
+  "kind": "address",
+  "value": "6560 West Fullerton Avenue Unit C118 Suite A",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:37",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 379-0960",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:37",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward37@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:37",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4924 West Chicago Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:38",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 283-3838",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:38",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward38@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:38",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://aldermansposato.com/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:38",
+  "agency_id": null,
+  "kind": "address",
+  "value": "3821 North Harlem Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:39",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 736-5594",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:39",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward39@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:39",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4200 West Lawrence Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:40",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 654-1867",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:40",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward40@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:40",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.40thward.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:40",
+  "agency_id": null,
+  "kind": "address",
+  "value": "5620 North Western Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:41",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 631-2241",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:41",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward41@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:41",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.chicago41.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:41",
+  "agency_id": null,
+  "kind": "address",
+  "value": "7231 West Touhy Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:42",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 642-4242",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:42",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward42@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:42",
+  "agency_id": null,
+  "kind": "address",
+  "value": "121 North LaSalle Street Room 200 Office 6",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:43",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 348-9500",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:43",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward43@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:43",
+  "agency_id": null,
+  "kind": "website",
+  "value": "https://ward43.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:43",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2523 North Halsted Street",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:44",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 525-6034",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:44",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward44@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:44",
+  "agency_id": null,
+  "kind": "address",
+  "value": "3223 North Sheffield Avenue Suite A",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:45",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 853-0799",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:45",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward45@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:45",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.aldermangardiner.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:45",
+  "agency_id": null,
+  "kind": "address",
+  "value": "5460 N. Milwaukee Ave",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:46",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(312) 744-6831",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:46",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward46@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:46",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4544 North Broadway",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:47",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 868-4747",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:47",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward47@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:47",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.aldermanmartin.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:47",
+  "agency_id": null,
+  "kind": "address",
+  "value": "4243 North Lincoln Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:48",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 784-5277",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:48",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward48@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:48",
+  "agency_id": null,
+  "kind": "website",
+  "value": "https://www.the48thward.org/",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:48",
+  "agency_id": null,
+  "kind": "address",
+  "value": "1129 West Bryn Mawr Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:49",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 338-5796",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:49",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward49@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:49",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://www.49thward.org",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:49",
+  "agency_id": null,
+  "kind": "address",
+  "value": "1447 West Morse Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:50",
+  "agency_id": null,
+  "kind": "phone",
+  "value": "(773) 262-1050",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:50",
+  "agency_id": null,
+  "kind": "email",
+  "value": "Ward50@cityofchicago.org",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:50",
+  "agency_id": null,
+  "kind": "website",
+  "value": "http://50thwardchicago.com",
+  "label": "Ward website",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ },
+ {
+  "official_source_key": "chicago-wards-xlsx:alderman:50",
+  "agency_id": null,
+  "kind": "address",
+  "value": "2949 West Devon Avenue",
+  "label": "Ward office",
+  "is_primary": true,
+  "source_id": "chicago-wards-xlsx"
+ }
+]

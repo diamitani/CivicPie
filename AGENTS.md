@@ -6,10 +6,12 @@
 - Vercel deployment
 - Design system in DESIGN.md — always read before visual changes
 
-## Backend (planned)
-- API routes in `src/app/api/` for geocoding, ward lookup, data serving
-- Supabase for user accounts, saved locations, community posts
-- Chicago Data Portal integration for live data refresh
+## Backend (built, 2026-09-14 — branch `backend/master-db-api`)
+- Live API routes in `src/app/api/`: health, lookup (address → ward → officials), districts, districts/[id], officials, candidates, agencies
+- Data layer in `src/lib/civic/db.ts`: Supabase Postgres via `DATABASE_URL`, explicit bundled-seed fallback (`data/seed/`, committed). Every response carries `meta.source: "supabase" | "seed"`.
+- Server mode: `output: 'export'` removed from next.config.js (API routes + middleware need it); `scripts/postbuild.mjs` no-ops without an `out/` dir
+- Staged (not live) handlers remain in `src/api-routes/` — do not confuse with `src/app/api/`
+- `npm run seed` refreshes `data/seed/` from ~/workspace/civicpie-data; `npm run test:api` runs the 22-assertion QA harness
 
 ## Key principles
 - Location-first UX: address/zip/neighborhood is the primary interaction

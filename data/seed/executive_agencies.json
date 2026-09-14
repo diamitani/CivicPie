@@ -1,0 +1,212 @@
+[
+ {
+  "name": "Department of State",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Marco Rubio.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:state",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of the Treasury",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Scott Bessent.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:the-treasury",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Defense",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Pete Hegseth.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:defense",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Justice",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Todd Blanche (acting).",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:justice",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of the Interior",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Doug Burgum.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:the-interior",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Agriculture",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Brooke Rollins.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:agriculture",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Commerce",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Howard Lutnick.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:commerce",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Labor",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Keith E. Sonderling (acting).",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:labor",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Health and Human Services",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Robert F. Kennedy Jr..",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:health-and-human-services",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Housing and Urban Development",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Scott Turner.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:housing-and-urban-development",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Transportation",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Sean Duffy.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:transportation",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Energy",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Chris Wright.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:energy",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Education",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Linda McMahon.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:education",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Veterans Affairs",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Doug Collins.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:veterans-affairs",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ },
+ {
+  "name": "Department of Homeland Security",
+  "level": "federal",
+  "state_abbr": null,
+  "city": null,
+  "agency_type": "department",
+  "parent_agency_id": null,
+  "description": "Cabinet-level executive department. Head: Markwayne Mullin.",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:homeland-security",
+  "external_refs": {
+   "verified": "2026-09-14"
+  }
+ }
+]
