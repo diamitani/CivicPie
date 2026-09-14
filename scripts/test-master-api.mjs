@@ -55,6 +55,23 @@ try {
   const names = (r.body.officials || []).map((o) => o.name);
   assert(names.includes('Leni Manaa-Hoppenworth'), 'alderperson present', names.slice(0, 3).join(','));
 
+  // 2b. Out-of-coverage ZIP (North Liberty, IA) → structured 200, NEVER 404
+  r = await get('/api/lookup?address=' + encodeURIComponent('52317'));
+  assert(r.status === 200, '52317 lookup 200 (no 404)', r.status);
+  assert(r.body.coverage === 'none', "coverage='none'", r.body.coverage);
+  assert(r.body.state_abbr === 'IA', 'state_abbr=IA', r.body.state_abbr);
+  const fed = (r.body.federal_officials || []).map((o) => o.name);
+  assert(fed.includes('Chuck Grassley') && fed.includes('Joni Ernst'), 'IA senators present', fed.slice(0, 4).join(','));
+  assert((r.body.state_officials || []).length > 0, 'IA state officials present', (r.body.state_officials || []).length);
+  assert(typeof r.body.message === 'string' && r.body.message.length > 0, 'coverage message present');
+
+  // 2c. Chicago ZIP → local coverage, ward 48 (unchanged behavior + coverage flag)
+  r = await get('/api/lookup?address=' + encodeURIComponent('60660'));
+  assert(r.status === 200, '60660 lookup 200', r.status);
+  assert(r.body.coverage === 'local', "coverage='local'", r.body.coverage);
+  assert(r.body.district_id === 'il-chicago-ward-48', '60660 → ward 48', r.body.district_id);
+  assert((r.body.officials || []).length >= 1, '60660 officials present');
+
   // 3. Officials — pagination cap + total
   r = await get('/api/officials?level=federal&limit=1000');
   assert(r.status === 200, 'officials 200');

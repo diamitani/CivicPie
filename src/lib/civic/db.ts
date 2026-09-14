@@ -52,6 +52,7 @@ function getPool(): Pool {
 
 export interface OfficialFilter {
   district_id?: string;
+  district_prefix?: string;
   office?: string;
   level?: 'federal' | 'state' | 'local';
   q?: string;
@@ -199,6 +200,7 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
       where.push(sql);
     };
     if (f.district_id) add('district_id = ?', f.district_id);
+    if (f.district_prefix) add('district_id LIKE ?', `${f.district_prefix}%`);
     if (f.office) add('office_id = ?', f.office);
     if (f.level) add('level = ?', f.level);
     if (f.q) add('(name ILIKE ? OR office_id ILIKE ?)', `%${f.q}%`, `%${f.q}%`);
@@ -238,6 +240,7 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
   }
   let out = seedOfficials();
   if (f.district_id) out = out.filter((o) => o.district_id === f.district_id);
+  if (f.district_prefix) out = out.filter((o) => (o.district_id || '').startsWith(f.district_prefix!));
   if (f.office) out = out.filter((o) => o.office === f.office);
   if (f.level) out = out.filter((o) => o.level === f.level);
   if (f.q) {
@@ -379,13 +382,30 @@ export async function searchAgencies(f: { level?: string }) {
 // Address lookup: geocode → ward (PostGIS in Supabase, point-in-polygon on seed)
 // ---------------------------------------------------------------------------
 
+export type Coverage = 'local' | 'none';
+
 export interface LookupResult {
   address: string;
   lat: number;
   lng: number;
+  coverage: Coverage;
   ward: string | null;
   district_id: string | null;
   officials: Official[];
+  // Out-of-coverage extras (coverage === 'none')
+  state_abbr?: string | null;
+  state_name?: string | null;
+  message?: string;
+  federal_officials?: Official[];
+  state_officials?: Official[];
+  state_officials_total?: number;
+}
+
+// Senators first, then House reps, then alphabetical — for the
+// out-of-coverage card.
+function sortFederalFirst(a: Official, b: Official): number {
+  const rank = (o: Official) => (o.office === 'us-senate' ? 0 : o.office === 'us-house' ? 1 : 2);
+  return rank(a) - rank(b) || a.name.localeCompare(b.name);
 }
 
 export async function lookupAddress(address: string): Promise<LookupResult> {
@@ -407,17 +427,54 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
     district_id = wardForPoint(seed.wards, geo.lat, geo.lng);
   }
 
-  const { data: officials } = district_id
-    ? await searchOfficials({ district_id, limit: MAX_LIMIT })
-    : { data: [] };
+  // In-coverage: identical shape to before, plus the coverage flag.
+  if (district_id) {
+    const { data: officials } = await searchOfficials({ district_id, limit: MAX_LIMIT });
+    return {
+      address: geo.matchedAddress,
+      lat: geo.lat,
+      lng: geo.lng,
+      coverage: 'local',
+      ward: district_id,
+      district_id,
+      officials,
+    };
+  }
 
+  // Out-of-coverage: NEVER a 404. Resolve whatever state/federal
+  // representation we can for the location and say so plainly.
+  const st = (geo.state_abbr || '').toLowerCase();
+  let federal_officials: Official[] = [];
+  let state_officials: Official[] = [];
+  let state_officials_total = 0;
+  if (st) {
+    const [senate, house] = await Promise.all([
+      searchOfficials({ district_prefix: `us-senate-${st}`, limit: MAX_LIMIT }),
+      searchOfficials({ district_prefix: `us-house-${st}-`, limit: MAX_LIMIT }),
+    ]);
+    federal_officials = [...senate.data, ...house.data].sort(sortFederalFirst);
+    const states = await searchOfficials({ district_id: `us-state-${st}`, limit: 20 });
+    state_officials = states.data;
+    state_officials_total = states.total;
+  }
+  const place = geo.matchedAddress || 'this area';
   return {
     address: geo.matchedAddress,
     lat: geo.lat,
     lng: geo.lng,
-    ward: district_id,
-    district_id,
-    officials,
+    coverage: 'none',
+    ward: null,
+    district_id: null,
+    officials: [],
+    state_abbr: geo.state_abbr || null,
+    state_name: geo.state_name || null,
+    message: st
+      ? `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city. ` +
+        `Here are your ${geo.state_name || st.toUpperCase()} state and federal representatives in the meantime.`
+      : `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city.`,
+    federal_officials,
+    state_officials,
+    state_officials_total,
   };
 }
 
