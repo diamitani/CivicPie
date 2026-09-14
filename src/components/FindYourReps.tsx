@@ -34,6 +34,18 @@ interface SearchResult {
 // Single source of truth: the live /api/lookup endpoint (seed data today,
 // Supabase tomorrow). No more hardcoded static JSON indexes.
 
+// The widget groups reps under City / County / State / Federal headings,
+// but /api/lookup uses lowercase levels ('local', 'federal', ...).
+// Normalize here so every rep lands in a rendered bucket.
+function normLevel(lvl: string): string {
+  const l = (lvl || '').toLowerCase();
+  if (l.includes('federal') || l === 'national') return 'Federal';
+  if (l.includes('state')) return 'State';
+  if (l.includes('county')) return 'County';
+  if (l.includes('city') || l.includes('local') || l.includes('ward') || l.includes('municipal')) return 'City';
+  return 'Other';
+}
+
 function toRep(o: any, fallbackDistrict: string): RepResult {
   const contact: RepResult['contact'] = {};
   for (const c of o.contacts || []) {
@@ -48,7 +60,7 @@ function toRep(o: any, fallbackDistrict: string): RepResult {
     id: o.id || `${o.name || 'rep'}`,
     name: o.name || 'Unknown',
     title: o.office_title || o.office || o.title || 'Representative',
-    level: o.level || '',
+    level: normLevel(o.level),
     party: o.party,
     district: fallbackDistrict,
     photo: o.photo_url || undefined,
@@ -236,7 +248,7 @@ function DistrictDetail({ result, onSelectRep, onBack }: {
   onSelectRep: (rep: RepResult) => void;
   onBack: () => void;
 }) {
-  const levels = ['City', 'County', 'State', 'Federal'];
+  const levels = ['City', 'County', 'State', 'Federal', 'Other'];
   const grouped: Record<string, RepResult[]> = {};
   for (const r of result.reps) {
     const l = r.level || 'Other';
