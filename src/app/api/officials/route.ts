@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
       q: sp.get('q') || undefined,
       limit: sp.get('limit') ? parseInt(sp.get('limit')!) : undefined,
     });
-    return NextResponse.json({ ok: true, meta: meta(), total, data });
+    return NextResponse.json({ ok: true, meta: await meta(), total, data });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

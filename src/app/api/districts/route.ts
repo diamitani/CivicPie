@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
       city: sp.get('city') || undefined,
       state: sp.get('state') || undefined,
     });
-    return NextResponse.json({ ok: true, meta: meta(), total: data.length, data });
+    return NextResponse.json({ ok: true, meta: await meta(), total: data.length, data });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

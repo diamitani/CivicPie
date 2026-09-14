@@ -1,11 +1,13 @@
-// CivicPie master-DB data layer — dual mode:
+// CivicPie master-DB data layer — dual mode with resilient fallback:
 //
-//   DATABASE_URL set   → Supabase Postgres (pg + PostGIS). System of record.
-//   DATABASE_URL unset  → bundled seed JSON in data/seed/ (npm run seed).
+//   DATABASE_URL set + healthy DB → Supabase Postgres (pg + PostGIS).
+//   Otherwise                    → bundled seed JSON in data/seed/ (npm run seed).
 //
+// The effective source is resolved per process: if DATABASE_URL is set but the
+// database is unreachable or the schema is missing, every query transparently
+// falls back to seed JSON so the site never 500s on a broken/empty database.
 // Every response carries meta.source: 'supabase' | 'seed' so callers always
-// know which data they are reading. Seed mode also logs a console warning
-// once per process so it is never mistaken for live data.
+// know which data they are reading.
 
 import { Pool } from 'pg';
 import { loadSeed, seedDirExists, type SeedData } from '@/lib/civic/seed';
@@ -22,12 +24,57 @@ import type {
 } from '@/lib/civic/types';
 
 export const DATA_SOURCE: DataSource = process.env.DATABASE_URL ? 'supabase' : 'seed';
+// CONFIGURED_SOURCE is env-only; the effective source is resolved by useDb().
+export const CONFIGURED_SOURCE: DataSource = DATA_SOURCE;
 
-export function meta() {
-  return { source: DATA_SOURCE };
+// Per-process DB health: null = not yet probed. Once a probe or query fails,
+// the rest of the process serves seed JSON (serverless processes recycle, so
+// a repaired DB is picked up on the next cold start).
+let dbOk: boolean | null = process.env.DATABASE_URL ? null : false;
+
+async function probeDb(): Promise<boolean> {
+  if (dbOk !== null) return dbOk;
+  try {
+    await getPool().query('SELECT 1 FROM districts LIMIT 1');
+    dbOk = true;
+  } catch (e: any) {
+    dbOk = false;
+    console.error(
+      '[civicpie] database unreachable or schema missing — serving bundled seed JSON. ' +
+        `Fix DATABASE_URL or load the schema, then redeploy. (${e?.message || e})`
+    );
+  }
+  return dbOk;
 }
 
-if (DATA_SOURCE === 'seed') {
+async function useDb(): Promise<boolean> {
+  if (!process.env.DATABASE_URL) return false;
+  return probeDb();
+}
+
+// Run dbFn when the database is healthy; on ANY db failure, mark it unhealthy
+// for this process and serve seedFn() instead. The site stays up regardless.
+async function withDbFallback<T>(dbFn: () => Promise<T>, seedFn: () => T | Promise<T>): Promise<T> {
+  if (await useDb()) {
+    try {
+      return await dbFn();
+    } catch (e: any) {
+      dbOk = false;
+      console.error(
+        '[civicpie] database query failed — falling back to seed JSON for this process. ' +
+          `(${e?.message || e})`
+      );
+    }
+  }
+  return seedFn();
+}
+
+export async function meta() {
+  const source: DataSource = (await useDb()) ? 'supabase' : 'seed';
+  return { source, db_configured: !!process.env.DATABASE_URL };
+}
+
+if (CONFIGURED_SOURCE === 'seed') {
   console.warn(
     '[civicpie] DATABASE_URL not set — serving bundled seed JSON (data/seed/). ' +
       'Set DATABASE_URL to use the live Supabase database.'
@@ -40,6 +87,7 @@ function getPool(): Pool {
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
       max: 10,
+      connectionTimeoutMillis: 8000,
       ssl: process.env.DATABASE_URL?.includes('localhost') ? false : { rejectUnauthorized: false },
     });
   }
@@ -66,36 +114,40 @@ function clampLimit(n?: number): number {
 }
 
 export async function getHealth() {
-  if (DATA_SOURCE === 'supabase') {
-    const p = getPool();
-    const [o, c, d, a] = await Promise.all([
-      p.query('SELECT COUNT(*) c FROM officials'),
-      p.query('SELECT COUNT(*) c FROM candidates'),
-      p.query('SELECT COUNT(*) c FROM districts'),
-      p.query('SELECT COUNT(*) c FROM agencies'),
-    ]);
-    return {
-      ok: true,
-      source: DATA_SOURCE,
-      counts: {
-        officials: Number(o.rows[0].c),
-        candidates: Number(c.rows[0].c),
-        districts: Number(d.rows[0].c),
-        agencies: Number(a.rows[0].c),
-      },
-    };
-  }
-  const s = loadSeed();
-  return {
-    ok: true,
-    source: DATA_SOURCE,
-    counts: {
-      officials: s.officials.length,
-      candidates: s.candidates.length,
-      districts: s.districts.length,
-      agencies: s.agencies.length,
+  return withDbFallback(
+    async () => {
+      const p = getPool();
+      const [o, c, d, a] = await Promise.all([
+        p.query('SELECT COUNT(*) c FROM officials'),
+        p.query('SELECT COUNT(*) c FROM candidates'),
+        p.query('SELECT COUNT(*) c FROM districts'),
+        p.query('SELECT COUNT(*) c FROM agencies'),
+      ]);
+      return {
+        ok: true,
+        source: 'supabase' as DataSource,
+        counts: {
+          officials: Number(o.rows[0].c),
+          candidates: Number(c.rows[0].c),
+          districts: Number(d.rows[0].c),
+          agencies: Number(a.rows[0].c),
+        },
+      };
     },
-  };
+    () => {
+      const s = loadSeed();
+      return {
+        ok: true,
+        source: 'seed' as DataSource,
+        counts: {
+          officials: s.officials.length,
+          candidates: s.candidates.length,
+          districts: s.districts.length,
+          agencies: s.agencies.length,
+        },
+      };
+    }
+  );
 }
 
 function contactsFor(seed: SeedData, name: string, wardNum: string): ContactPoint[] {
@@ -188,7 +240,7 @@ function seedAgencies(): Agency[] {
 
 export async function searchOfficials(f: OfficialFilter): Promise<{ data: Official[]; total: number }> {
   const limit = clampLimit(f.limit);
-  if (DATA_SOURCE === 'supabase') {
+  const fromDb = async () => {
     const p = getPool();
     const where: string[] = [];
     const args: any[] = [];
@@ -237,20 +289,23 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
       })),
       total: Number(trows[0].c),
     };
-  }
-  let out = seedOfficials();
-  if (f.district_id) out = out.filter((o) => o.district_id === f.district_id);
-  if (f.district_prefix) out = out.filter((o) => (o.district_id || '').startsWith(f.district_prefix!));
-  if (f.office) out = out.filter((o) => o.office === f.office);
-  if (f.level) out = out.filter((o) => o.level === f.level);
-  if (f.q) {
-    const q = f.q.toLowerCase();
-    out = out.filter(
-      (o) => o.name.toLowerCase().includes(q) || o.office_title.toLowerCase().includes(q)
-    );
-  }
-  out = out.sort((a, b) => a.name.localeCompare(b.name));
-  return { data: out.slice(0, limit), total: out.length };
+  };
+  const fromSeed = () => {
+    let out = seedOfficials();
+    if (f.district_id) out = out.filter((o) => o.district_id === f.district_id);
+    if (f.district_prefix) out = out.filter((o) => (o.district_id || '').startsWith(f.district_prefix!));
+    if (f.office) out = out.filter((o) => o.office === f.office);
+    if (f.level) out = out.filter((o) => o.level === f.level);
+    if (f.q) {
+      const q = f.q.toLowerCase();
+      out = out.filter(
+        (o) => o.name.toLowerCase().includes(q) || o.office_title.toLowerCase().includes(q)
+      );
+    }
+    out = out.sort((a, b) => a.name.localeCompare(b.name));
+    return { data: out.slice(0, limit), total: out.length };
+  };
+  return withDbFallback<{ data: Official[]; total: number }>(fromDb, fromSeed);
 }
 
 export async function searchCandidates(f: {
@@ -259,7 +314,7 @@ export async function searchCandidates(f: {
   limit?: number;
 }): Promise<{ data: Candidate[]; total: number }> {
   const limit = clampLimit(f.limit);
-  if (DATA_SOURCE === 'supabase') {
+  const fromDb = async () => {
     const p = getPool();
     const where: string[] = [];
     const args: any[] = [];
@@ -300,16 +355,19 @@ export async function searchCandidates(f: {
       })),
       total: Number(trows[0].c),
     };
-  }
-  let out = seedCandidates();
-  if (f.district_id) out = out.filter((c) => c.district_id === f.district_id);
-  if (f.office) out = out.filter((c) => c.office === f.office);
-  out = out.sort((a, b) => a.name.localeCompare(b.name));
-  return { data: out.slice(0, limit), total: out.length };
+  };
+  const fromSeed = () => {
+    let out = seedCandidates();
+    if (f.district_id) out = out.filter((c) => c.district_id === f.district_id);
+    if (f.office) out = out.filter((c) => c.office === f.office);
+    out = out.sort((a, b) => a.name.localeCompare(b.name));
+    return { data: out.slice(0, limit), total: out.length };
+  };
+  return withDbFallback(fromDb, fromSeed);
 }
 
 export async function searchDistricts(f: { type?: string; city?: string; state?: string }) {
-  if (DATA_SOURCE === 'supabase') {
+  const fromDb = async () => {
     const p = getPool();
     const where: string[] = [];
     const args: any[] = [];
@@ -330,12 +388,15 @@ export async function searchDistricts(f: { type?: string; city?: string; state?:
       args
     );
     return rows;
-  }
-  let out = seedDistricts();
-  if (f.type) out = out.filter((d) => d.district_type === f.type);
-  if (f.city) out = out.filter((d) => d.city?.toLowerCase() === f.city!.toLowerCase());
-  if (f.state) out = out.filter((d) => d.state_abbr?.toLowerCase() === f.state!.toLowerCase());
-  return out.sort((a, b) => a.district_name.localeCompare(b.district_name)).slice(0, 500);
+  };
+  const fromSeed = () => {
+    let out = seedDistricts();
+    if (f.type) out = out.filter((d) => d.district_type === f.type);
+    if (f.city) out = out.filter((d) => d.city?.toLowerCase() === f.city!.toLowerCase());
+    if (f.state) out = out.filter((d) => d.state_abbr?.toLowerCase() === f.state!.toLowerCase());
+    return out.sort((a, b) => a.district_name.localeCompare(b.district_name)).slice(0, 500);
+  };
+  return withDbFallback(fromDb, fromSeed);
 }
 
 export async function getDistrict(id: string): Promise<DistrictDetail | null> {
@@ -350,7 +411,7 @@ export async function getDistrict(id: string): Promise<DistrictDetail | null> {
 }
 
 export async function searchAgencies(f: { level?: string }) {
-  if (DATA_SOURCE === 'supabase') {
+  const fromDb = async () => {
     const p = getPool();
     const args: any[] = [];
     const where = f.level ? 'WHERE level = $1' : '';
@@ -372,10 +433,13 @@ export async function searchAgencies(f: { level?: string }) {
       state_abbr: r.state_abbr,
       source: r.source_name || 'supabase',
     }));
-  }
-  let out = seedAgencies();
-  if (f.level) out = out.filter((a) => a.level === f.level);
-  return out.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 500);
+  };
+  const fromSeed = () => {
+    let out = seedAgencies();
+    if (f.level) out = out.filter((a) => a.level === f.level);
+    return out.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 500);
+  };
+  return withDbFallback(fromDb, fromSeed);
 }
 
 // ---------------------------------------------------------------------------
@@ -412,20 +476,20 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
   const geo = await geocodeAddress(address);
   if (!geo) throw Object.assign(new Error('Address not found'), { status: 404 });
 
-  let district_id: string | null = null;
-  if (DATA_SOURCE === 'supabase') {
-    const p = getPool();
-    const { rows } = await p.query(
-      `SELECT district_id FROM districts
-       WHERE ST_Contains(geom, ST_SetSRID(ST_MakePoint($1, $2), 4326))
-       AND district_type = 'ward' LIMIT 1`,
-      [geo.lng, geo.lat]
-    );
-    district_id = rows[0]?.district_id || null;
-  } else {
-    const seed = loadSeed();
-    district_id = wardForPoint(seed.wards, geo.lat, geo.lng);
-  }
+  // Ward resolution: PostGIS when the DB is healthy, point-in-polygon on the
+  // seed ward geometry otherwise. Never throws on a broken database.
+  const district_id: string | null = await withDbFallback(
+    async () => {
+      const { rows } = await getPool().query(
+        `SELECT district_id FROM districts
+         WHERE ST_Contains(geom, ST_SetSRID(ST_MakePoint($1, $2), 4326))
+         AND district_type = 'ward' LIMIT 1`,
+        [geo.lng, geo.lat]
+      );
+      return rows[0]?.district_id || null;
+    },
+    () => wardForPoint(loadSeed().wards, geo.lat, geo.lng)
+  );
 
   // In-coverage: identical shape to before, plus the coverage flag.
   if (district_id) {

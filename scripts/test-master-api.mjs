@@ -107,6 +107,38 @@ try {
   r = await get('/api/lookup');
   assert(r.status === 400, 'missing address 400', r.status);
 
+  // 11. Broken DATABASE_URL → transparent seed fallback, never 500
+  // (regression: live Vercel had DATABASE_URL set to an empty Neon DB)
+  const PORT2 = 3211;
+  const BASE2 = `http://localhost:${PORT2}`;
+  const server2 = spawn('npx', ['next', 'start', '-p', String(PORT2)], {
+    cwd: new URL('..', import.meta.url).pathname,
+    stdio: 'ignore',
+    env: { ...process.env, DATABASE_URL: 'postgres://localhost:54399/civicpie' },
+  });
+  try {
+    for (let i = 0; i < 40; i++) {
+      try {
+        const hr = await fetch(BASE2 + '/api/health');
+        if (hr.ok) break;
+      } catch {}
+      await sleep(1500);
+    }
+    const g2 = (p) => fetch(BASE2 + p).then(async (res) => ({ status: res.status, body: await res.json().catch(() => ({})) }));
+    r = await g2('/api/health');
+    assert(r.status === 200 && r.body.ok, 'broken-db health 200');
+    assert(r.body.source === 'seed', 'broken-db falls back to seed', JSON.stringify(r.body.source));
+    assert(r.body.counts.officials === 7977, 'broken-db officials=7977', r.body.counts?.officials);
+    r = await g2('/api/lookup?address=' + encodeURIComponent('52317'));
+    assert(r.status === 200 && r.body.coverage === 'none', 'broken-db 52317 → coverage none', r.status);
+    r = await g2('/api/lookup?address=' + encodeURIComponent('60660'));
+    assert(r.status === 200 && r.body.coverage === 'local', 'broken-db 60660 → ward', r.body.coverage);
+    assert(r.body.district_id === 'il-chicago-ward-48', 'broken-db ward 48', r.body.district_id);
+  } finally {
+    server2.kill('SIGTERM');
+    setTimeout(() => server2.kill('SIGKILL'), 3000);
+  }
+
   console.log(process.exitCode ? '\nSOME TESTS FAILED' : '\nALL TESTS PASSED');
 } finally {
   server.kill('SIGTERM');

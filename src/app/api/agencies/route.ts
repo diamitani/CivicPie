@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   const sp = request.nextUrl.searchParams;
   try {
     const data = await searchAgencies({ level: sp.get('level') || undefined });
-    return NextResponse.json({ ok: true, meta: meta(), total: data.length, data });
+    return NextResponse.json({ ok: true, meta: await meta(), total: data.length, data });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
