@@ -86,7 +86,9 @@ async function lookupReps(query: string): Promise<SearchResult[]> {
 
   if (body.coverage === 'local') {
     const m = (body.district_id || '').match(/^il-chicago-ward-(\d+)$/);
-    const districtName = m ? `Ward ${parseInt(m[1], 10)}, Chicago` : (body.ward || body.district_id || 'Your district');
+    const districtName = m
+      ? `Ward ${parseInt(m[1], 10)}, Chicago`
+      : body.district_label || body.ward || body.district_id || 'Your district';
     const officials = body.officials || [];
     if (officials.length > 0) {
       results.push({

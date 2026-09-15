@@ -5,6 +5,7 @@ export interface GeocodeResult {
   lat: number;
   lng: number;
   matchedAddress: string;
+  city?: string;
   state_abbr?: string;
   state_name?: string;
 }
@@ -45,6 +46,7 @@ async function geocodeZip(zip: string): Promise<GeocodeResult | null> {
       lat: Number(place.latitude),
       lng: Number(place.longitude),
       matchedAddress: [city, abbr, zip].filter(Boolean).join(', '),
+      city: city || undefined,
       state_abbr: abbr || undefined,
       state_name: US_STATES[abbr] || place.state || undefined,
     };
@@ -69,10 +71,12 @@ export async function geocodeAddress(address: string): Promise<GeocodeResult | n
   const match = data?.result?.addressMatches?.[0];
   if (!match) return null;
   const abbr = String(match.addressComponents?.state || '').toUpperCase();
+  const city = String(match.addressComponents?.city || '').trim();
   return {
     lat: match.coordinates.y,
     lng: match.coordinates.x,
     matchedAddress: match.matchedAddress,
+    city: city || undefined,
     state_abbr: abbr || undefined,
     state_name: US_STATES[abbr] || undefined,
   };

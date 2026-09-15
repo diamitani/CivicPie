@@ -11,7 +11,7 @@
 
 import { Pool } from 'pg';
 import { loadSeed, seedDirExists, type SeedData } from '@/lib/civic/seed';
-import { geocodeAddress, wardForPoint } from '@/lib/civic/geo';
+import { geocodeAddress, wardForPoint, US_STATES } from '@/lib/civic/geo';
 import { officeTitle, levelOf } from '@/lib/civic/offices';
 import type {
   Official,
@@ -448,6 +448,37 @@ export async function searchAgencies(f: { level?: string }) {
 
 export type Coverage = 'local' | 'none';
 
+// City-level coverage (no geometry): a district of type 'city' in the seed
+// (see data/seed/city_districts.json) covers every address whose geocoded
+// city + state match. This is how smaller cities get hyperlocal coverage
+// without a ward-boundary dataset.
+function cityDistrictFor(city: string | undefined, stateAbbr: string | undefined): string | null {
+  if (!city || !stateAbbr) return null;
+  const key = `${city.trim().toLowerCase()}|${stateAbbr.trim().toLowerCase()}`;
+  const d = loadSeed().districts.find(
+    (r: any) =>
+      r.district_type === 'city' &&
+      `${String(r.city || '').toLowerCase()}|${String(r.state_abbr || '').toLowerCase()}` === key
+  );
+  return d?.district_id || null;
+}
+
+// Human label + in-app link for a covered district. Chicago wards get their
+// ward page; city districts get a label only (no dedicated page yet).
+function describeDistrict(district_id: string): { label: string; href: string | null } {
+  const m = district_id.match(/^il-chicago-ward-(\d+)$/);
+  if (m) {
+    const n = parseInt(m[1], 10);
+    return { label: `Ward ${n} · Chicago`, href: `/ward/chicago-${n}` };
+  }
+  const d = loadSeed().districts.find((r: any) => r.district_id === district_id);
+  if (d?.district_type === 'city' && d.city) {
+    const stateName = US_STATES[String(d.state_abbr || '').toUpperCase()] || d.state_abbr || '';
+    return { label: `${d.city} · ${stateName}`.trim(), href: null };
+  }
+  return { label: district_id, href: null };
+}
+
 export interface LookupResult {
   address: string;
   lat: number;
@@ -455,6 +486,8 @@ export interface LookupResult {
   coverage: Coverage;
   ward: string | null;
   district_id: string | null;
+  district_label: string | null;
+  district_href: string | null;
   officials: Official[];
   // Out-of-coverage extras (coverage === 'none')
   state_abbr?: string | null;
@@ -477,8 +510,10 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
   if (!geo) throw Object.assign(new Error('Address not found'), { status: 404 });
 
   // Ward resolution: PostGIS when the DB is healthy, point-in-polygon on the
-  // seed ward geometry otherwise. Never throws on a broken database.
-  const district_id: string | null = await withDbFallback(
+  // seed ward geometry otherwise. When no ward matches, fall back to
+  // city-level coverage (a 'city' district in the seed keyed by geocoded
+  // city + state — e.g. North Liberty, IA). Never throws on a broken database.
+  const wardId: string | null = await withDbFallback(
     async () => {
       const { rows } = await getPool().query(
         `SELECT district_id FROM districts
@@ -490,17 +525,21 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
     },
     () => wardForPoint(loadSeed().wards, geo.lat, geo.lng)
   );
+  const district_id: string | null = wardId || cityDistrictFor(geo.city, geo.state_abbr);
 
   // In-coverage: identical shape to before, plus the coverage flag.
   if (district_id) {
     const { data: officials } = await searchOfficials({ district_id, limit: MAX_LIMIT });
+    const { label, href } = describeDistrict(district_id);
     return {
       address: geo.matchedAddress,
       lat: geo.lat,
       lng: geo.lng,
       coverage: 'local',
-      ward: district_id,
+      ward: wardId,
       district_id,
+      district_label: label,
+      district_href: href,
       officials,
     };
   }
@@ -529,6 +568,8 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
     coverage: 'none',
     ward: null,
     district_id: null,
+    district_label: null,
+    district_href: null,
     officials: [],
     state_abbr: geo.state_abbr || null,
     state_name: geo.state_name || null,

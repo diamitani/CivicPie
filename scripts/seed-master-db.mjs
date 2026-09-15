@@ -19,6 +19,8 @@ const FILES = [
   ['data/staged/chicago_officials.json', 'chicago_officials.json'],
   ['data/staged/chicago_districts.json', 'chicago_districts.json'],
   ['data/staged/state_districts.json', 'state_districts.json'],
+  ['data/staged/city_districts.json', 'city_districts.json'],
+  ['data/staged/city_officials.json', 'city_officials.json'],
   ['data/staged/chicago_contacts.json', 'chicago_contacts.json'],
   ['data/raw/chicago_wards_2023.geojson', 'chicago_wards_2023.geojson'],
 ];

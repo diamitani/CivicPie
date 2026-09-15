@@ -30,6 +30,16 @@ function readJson(name: string): any[] {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
 }
 
+// Optional seed files (e.g. city-level coverage added after the master ingest).
+// Missing files resolve to [] so older snapshots still load.
+function readJsonOptional(name: string): any[] {
+  try {
+    return readJson(name);
+  } catch {
+    return [];
+  }
+}
+
 export function seedDirExists(): boolean {
   return fs.existsSync(path.join(SEED_DIR, 'chicago_officials.json'));
 }
@@ -48,9 +58,14 @@ export function loadSeed(): SeedData {
     ...readJson('executive_officials.json'),
     ...readJson('xlsx_officials.json'),
     ...readJson('chicago_officials.json'),
+    ...readJsonOptional('city_officials.json'),
   ];
   const candidates = readJson('xlsx_candidates.json');
-  const districts = [...readJson('chicago_districts.json'), ...readJson('state_districts.json')];
+  const districts = [
+    ...readJson('chicago_districts.json'),
+    ...readJson('state_districts.json'),
+    ...readJsonOptional('city_districts.json'),
+  ];
   const agencies = readJson('executive_agencies.json');
   const contacts = readJson('chicago_contacts.json');
   let terms: any[] = [];
