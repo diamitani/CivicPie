@@ -682,14 +682,18 @@ function Footer() {
         ].map((col, i) => (
           <div key={i}>
             <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-white/45 mb-5">{col.title}</div>
-            {col.links.map(link => (
-              <a key={link} href="#" className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link}</a>
-            ))}
+            {col.links.map(link => {
+              const href =
+                link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : '#';
+              return (
+                <a key={link} href={href} className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link}</a>
+              );
+            })}
           </div>
         ))}
       </div>
       <div className="max-w-[1200px] mx-auto flex items-center justify-between pt-8 border-t border-white/[0.07]">
-        <p className="font-body text-xs text-white/20">© 2025 CivicPie · Nonpartisan · All data sourced from public government records</p>
+        <p className="font-body text-xs text-white/20">© 2026 CivicPie · Nonpartisan · All data sourced from public government records</p>
         <div className="flex gap-[3px] items-center">
           <div className="h-1 rounded-[2px]" style={{ width: 28, background: '#1C3A5E' }} />
           <div className="h-1 rounded-[2px]" style={{ width: 18, background: '#C41230' }} />
