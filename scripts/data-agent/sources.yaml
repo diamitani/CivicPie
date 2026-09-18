@@ -41,7 +41,7 @@ sources:
     name: "North Liberty CivicClerk meetings/agendas"
     base_url: "https://www.northlibertyiowa.org/"
     cadence: weekly
-    adapter: north_liberty_civicclerk
+    adapter: civicclerk
     rate_limit_rps: 1.0
     respect_robots: true
     auth_env: null
@@ -52,7 +52,7 @@ sources:
     name: "FEC API — federal candidates/committees"
     base_url: "https://api.open.fec.gov/v1/"
     cadence: weekly
-    adapter: fec_api
+    adapter: fec
     rate_limit_rps: 1.0
     respect_robots: false
     auth_env: FEC_API_KEY
@@ -63,7 +63,7 @@ sources:
     name: "OpenStates API — state legislators"
     base_url: "https://v3.openstates.org/"
     cadence: weekly
-    adapter: openstates_api
+    adapter: openstates
     rate_limit_rps: 1.0
     respect_robots: false
     auth_env: OPENSTATES_API_KEY
@@ -74,7 +74,7 @@ sources:
     name: "US Census API — population/geography refresh"
     base_url: "https://api.census.gov/data/"
     cadence: monthly
-    adapter: census_api
+    adapter: census
     rate_limit_rps: 2.0
     respect_robots: false
     auth_env: null

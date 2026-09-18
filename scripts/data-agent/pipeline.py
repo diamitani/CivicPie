@@ -1,12 +1,20 @@
 """CivicPie data-agent pipeline: fetch → parse → normalize → dedupe → stage.
 
-Adapters live in adapters/<module>.py and MUST honor this contract:
+Adapters live in adapters/<module>.py and MUST honor ONE of two contracts:
 
+A) URL-listed (pipeline fetches politely via PoliteFetcher):
     URLS: list[str]                      # or: def get_urls(ctx) -> list[str]
     def parse(payload: dict, ctx: dict) -> list[dict]:
         # payload: {"url","status","headers","body","from_cache","fetched_at"}
-        # ctx:     {"source": <sources.yaml entry>, "fetched_at": <iso>}
-        # returns records matching the PRD §3 schema (list of dicts)
+
+B) Self-fetching (adapter fetches itself, e.g. multi-endpoint APIs):
+    def fetch_payload(ctx: dict) -> dict:   # returns one combined payload dict
+    def parse(payload: dict, ctx: dict) -> list[dict]:
+
+In both cases ctx is {"source": <sources.yaml entry>, "fetched_at": <iso>}
+and parse returns records matching the PRD §3 schema (list of dicts).
+Self-fetching adapters are still expected to rate-limit and identify
+themselves politely (see adapters/chicago_council.py for the pattern).
 
 The pipeline loads the adapter from the adapters/ file directly
 (importlib from file path), so adapters/ does not need to be a package.
@@ -60,7 +68,7 @@ FUZZY_NAME_THRESHOLD = 0.88
 MANDATORY_FIELDS = ["record_type", "source_id", "source_key",
                     "source_url", "scraped_at"]
 OFFICIAL_MANDATORY = ["full_name"]
-VALID_RECORD_TYPES = {"official", "meeting", "district", "committee"}
+VALID_RECORD_TYPES = {"official", "meeting", "district", "committee", "election"}
 
 _TAG_RE = re.compile(r"<[^>]+>")
 
@@ -268,38 +276,55 @@ def run_source(source: dict, *, dry_run: bool = False,
         return stats
 
     ctx = {"source": source, "fetched_at": utcnow_iso()}
-    try:
-        urls = adapter_urls(adapter, ctx)
-    except Exception as exc:  # noqa: BLE001 — adapter bug, keep going
-        stats["errors"].append(f"adapter URL listing failed: {exc}")
-        stats["duration_s"] = round(time.monotonic() - started, 2)
-        return stats
-
-    fetcher = PoliteFetcher(
-        cache_dir if cache_dir else BASE_DIR / ".cache",
-        rate_limit_rps=float(source.get("rate_limit_rps", 1.0)),
-        respect_robots=bool(source.get("respect_robots", True)),
-    )
-
     all_records: list[dict] = []
-    for url in urls:
-        result = fetcher.get(url)
-        if result.blocked_by_robots:
-            stats["errors"].append(f"blocked by robots.txt: {url}")
-            continue
-        if not result.ok:
-            stats["errors"].append(
-                f"fetch failed ({result.status}): {url} — {result.error}")
-            continue
-        stats["fetched"] += 1
-        try:
-            parsed = adapter.parse(result.payload(), ctx)
-        except Exception as exc:  # noqa: BLE001 — adapter bug, keep going
-            stats["errors"].append(f"adapter.parse failed for {url}: {exc}")
-            continue
-        all_records.extend(parsed or [])
 
-    stats["parsed"] = len(all_records)
+    # Mode B: self-fetching adapter (defines fetch_payload, no URL list).
+    if hasattr(adapter, "fetch_payload") and not (
+        hasattr(adapter, "get_urls") or hasattr(adapter, "URLS")
+    ):
+        try:
+            payload = adapter.fetch_payload(ctx)
+            parsed = adapter.parse(payload, ctx)
+            all_records.extend(parsed or [])
+            stats["fetched"] += 1
+            stats["parsed"] = len(all_records)
+        except Exception as exc:  # noqa: BLE001 — adapter bug, keep going
+            stats["errors"].append(f"adapter fetch_payload/parse failed: {exc}")
+            stats["duration_s"] = round(time.monotonic() - started, 2)
+            return stats
+    else:
+        # Mode A: pipeline-driven polite fetch.
+        try:
+            urls = adapter_urls(adapter, ctx)
+        except Exception as exc:  # noqa: BLE001 — adapter bug, keep going
+            stats["errors"].append(f"adapter URL listing failed: {exc}")
+            stats["duration_s"] = round(time.monotonic() - started, 2)
+            return stats
+
+        fetcher = PoliteFetcher(
+            cache_dir if cache_dir else BASE_DIR / ".cache",
+            rate_limit_rps=float(source.get("rate_limit_rps", 1.0)),
+            respect_robots=bool(source.get("respect_robots", True)),
+        )
+
+        for url in urls:
+            result = fetcher.get(url)
+            if result.blocked_by_robots:
+                stats["errors"].append(f"blocked by robots.txt: {url}")
+                continue
+            if not result.ok:
+                stats["errors"].append(
+                    f"fetch failed ({result.status}): {url} — {result.error}")
+                continue
+            stats["fetched"] += 1
+            try:
+                parsed = adapter.parse(result.payload(), ctx)
+            except Exception as exc:  # noqa: BLE001 — adapter bug, keep going
+                stats["errors"].append(f"adapter.parse failed for {url}: {exc}")
+                continue
+            all_records.extend(parsed or [])
+
+        stats["parsed"] = len(all_records)
 
     valid: list[dict] = []
     for rec in all_records:
