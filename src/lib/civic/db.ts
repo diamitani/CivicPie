@@ -10,6 +10,8 @@
 // know which data they are reading.
 
 import { Pool } from 'pg';
+import fs from 'node:fs';
+import path from 'node:path';
 import { loadSeed, seedDirExists, type SeedData } from '@/lib/civic/seed';
 import { geocodeAddress, wardForPoint, US_STATES } from '@/lib/civic/geo';
 import { officeTitle, levelOf } from '@/lib/civic/offices';
@@ -463,8 +465,31 @@ function cityDistrictFor(city: string | undefined, stateAbbr: string | undefined
   return d?.district_id || null;
 }
 
+// Slugs of cities that have a dedicated /city/[slug] page (public/data/cities.json).
+let _citySlugs: Set<string> | null = null;
+function cityPageSlugs(): Set<string> {
+  if (!_citySlugs) {
+    try {
+      const cities = JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), 'public', 'data', 'cities.json'), 'utf8')
+      );
+      _citySlugs = new Set((cities || []).map((c: any) => String(c.id)));
+    } catch {
+      _citySlugs = new Set();
+    }
+  }
+  return _citySlugs;
+}
+
+function citySlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 // Human label + in-app link for a covered district. Chicago wards get their
-// ward page; city districts get a label only (no dedicated page yet).
+// ward page; city districts link to /city/[slug] when that page exists.
 function describeDistrict(district_id: string): { label: string; href: string | null } {
   const m = district_id.match(/^il-chicago-ward-(\d+)$/);
   if (m) {
@@ -474,7 +499,10 @@ function describeDistrict(district_id: string): { label: string; href: string | 
   const d = loadSeed().districts.find((r: any) => r.district_id === district_id);
   if (d?.district_type === 'city' && d.city) {
     const stateName = US_STATES[String(d.state_abbr || '').toUpperCase()] || d.state_abbr || '';
-    return { label: `${d.city} · ${stateName}`.trim(), href: null };
+    const label = `${d.city} · ${stateName}`.trim();
+    const slug = citySlug(String(d.district_name || d.city));
+    const href = cityPageSlugs().has(slug) ? `/city/${slug}` : null;
+    return { label, href };
   }
   return { label: district_id, href: null };
 }

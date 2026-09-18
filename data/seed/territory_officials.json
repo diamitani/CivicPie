@@ -1,0 +1,62 @@
+[
+ {
+  "district_id": "us-state-pr",
+  "office_id": "gen-state-exec",
+  "full_name": "Jenniffer Gonz\u00e1lez-Col\u00f3n",
+  "first_name": "Jenniffer",
+  "last_name": "Gonz\u00e1lez-Col\u00f3n",
+  "party": "Republican",
+  "term_start": "2025-01-02",
+  "term_end": "2029-01-02",
+  "is_incumbent": true,
+  "source_id": "civicpie-manual-2026-09"
+ },
+ {
+  "district_id": "us-state-gu",
+  "office_id": "gen-state-exec",
+  "full_name": "Lourdes \"Lou\" Leon Guerrero",
+  "first_name": "Lourdes",
+  "last_name": "Leon Guerrero",
+  "party": "Democrat",
+  "term_start": "2023-01-02",
+  "term_end": "2027-01-02",
+  "is_incumbent": true,
+  "source_id": "civicpie-manual-2026-09"
+ },
+ {
+  "district_id": "us-state-vi",
+  "office_id": "gen-state-exec",
+  "full_name": "Albert Bryan Jr.",
+  "first_name": "Albert",
+  "last_name": "Bryan",
+  "party": "Democrat",
+  "term_start": "2023-01-02",
+  "term_end": "2027-01-02",
+  "is_incumbent": true,
+  "source_id": "civicpie-manual-2026-09"
+ },
+ {
+  "district_id": "us-state-as",
+  "office_id": "gen-state-exec",
+  "full_name": "Pulaali'i Nikolao Pula",
+  "first_name": "Pulaali'i",
+  "last_name": "Pula",
+  "party": "Republican",
+  "term_start": "2025-01-03",
+  "term_end": "2029-01-03",
+  "is_incumbent": true,
+  "source_id": "civicpie-manual-2026-09"
+ },
+ {
+  "district_id": "us-state-mp",
+  "office_id": "gen-state-exec",
+  "full_name": "David M. Apatang",
+  "first_name": "David",
+  "last_name": "Apatang",
+  "party": "Republican",
+  "term_start": "2025-01-20",
+  "term_end": "2029-01-20",
+  "is_incumbent": true,
+  "source_id": "civicpie-manual-2026-09"
+ }
+]

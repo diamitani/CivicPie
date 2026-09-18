@@ -43,9 +43,9 @@ try {
   let r = await get('/api/health');
   assert(r.status === 200 && r.body.ok, 'health 200');
   assert(r.body.source === 'seed', 'source=seed', JSON.stringify(r.body.source));
-  assert(r.body.counts.officials === 7983, 'officials=7983', r.body.counts?.officials);
+  assert(r.body.counts.officials === 7988, 'officials=7988', r.body.counts?.officials);
   assert(r.body.counts.candidates === 7077, 'candidates=7077', r.body.counts?.candidates);
-  assert(r.body.counts.districts === 102, 'districts=102', r.body.counts?.districts);
+  assert(r.body.counts.districts === 107, 'districts=107', r.body.counts?.districts);
   assert(r.body.counts.agencies === 15, 'agencies=15', r.body.counts?.agencies);
 
   // 2. Real Census lookup — Patrick's building, Ward 48
@@ -141,7 +141,7 @@ try {
     r = await g2('/api/health');
     assert(r.status === 200 && r.body.ok, 'broken-db health 200');
     assert(r.body.source === 'seed', 'broken-db falls back to seed', JSON.stringify(r.body.source));
-    assert(r.body.counts.officials === 7983, 'broken-db officials=7983', r.body.counts?.officials);
+    assert(r.body.counts.officials === 7988, 'broken-db officials=7988', r.body.counts?.officials);
     r = await g2('/api/lookup?address=' + encodeURIComponent('52317'));
     assert(r.status === 200 && r.body.coverage === 'local', 'broken-db 52317 → city coverage', r.status);
     r = await g2('/api/lookup?address=' + encodeURIComponent('60660'));

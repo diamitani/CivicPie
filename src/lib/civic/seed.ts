@@ -59,6 +59,7 @@ export function loadSeed(): SeedData {
     ...readJson('xlsx_officials.json'),
     ...readJson('chicago_officials.json'),
     ...readJsonOptional('city_officials.json'),
+    ...readJsonOptional('territory_officials.json'),
   ];
   const candidates = readJson('xlsx_candidates.json');
   const districts = [

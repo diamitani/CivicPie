@@ -62,7 +62,7 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
         }
       `}</style>
       <div className="flex items-center gap-8 h-[72px] max-w-[1200px] mx-auto">
-        <a href="#" className="flex items-center gap-3 flex-shrink-0">
+        <a href="/" className="flex items-center gap-3 flex-shrink-0">
           <PieLogo size={26} />
           <div>
             <div className="font-display text-2xl font-black tracking-[-0.5px] text-white leading-none">
@@ -74,9 +74,15 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
           </div>
         </a>
         <div className="flex items-center gap-8 flex-1 justify-center">
-          {['Explore', 'Events', 'Officials', 'Elections', 'Services'].map(link => (
-            <a key={link} href="#" className="font-display text-[13px] font-semibold text-white/55 hover:text-white transition-colors tracking-[0.3px]">
-              {link}
+          {[
+            { label: 'Explore', href: '/explore' },
+            { label: 'Events', href: '/events' },
+            { label: 'Officials', href: '/officials' },
+            { label: 'Elections', href: '/elections' },
+            { label: 'Services', href: '/services' },
+          ].map(link => (
+            <a key={link.label} href={link.href} className="font-display text-[13px] font-semibold text-white/55 hover:text-white transition-colors tracking-[0.3px]">
+              {link.label}
             </a>
           ))}
         </div>
@@ -676,19 +682,33 @@ function Footer() {
           <p className="font-body text-[13px] text-white/40 leading-relaxed max-w-[300px]">Local info. Real impact. Nonpartisan. Built on public government data, built for the people it affects.</p>
         </div>
         {[
-          { title: 'Platform', links: ['Explore', 'Elections', 'Officials', 'Events', 'Services'] },
-          { title: 'Resources', links: ['Voter Registration', 'Grants & Programs', 'Volunteer', 'Transcripts', 'API Access'] },
-          { title: 'Organization', links: ['About CivicPie', 'Press', 'Contact', 'Privacy Policy', 'Terms of Service'] },
+          { title: 'Platform', links: [
+            { label: 'Explore', href: '/explore' },
+            { label: 'Elections', href: '/elections' },
+            { label: 'Officials', href: '/officials' },
+            { label: 'Events', href: '/events' },
+            { label: 'Services', href: '/services' },
+          ] },
+          { title: 'Resources', links: [
+            { label: 'Voter Registration', href: '/elections' },
+            { label: 'Grants & Programs', href: '/resources' },
+            { label: 'Volunteer', href: '/resources' },
+            { label: 'Transcripts', href: '/meetings' },
+            { label: 'API Access', href: '/about' },
+          ] },
+          { title: 'Organization', links: [
+            { label: 'About CivicPie', href: '/about' },
+            { label: 'Press', href: '/about' },
+            { label: 'Contact', href: '/about' },
+            { label: 'Privacy Policy', href: '/privacy' },
+            { label: 'Terms of Service', href: '/terms' },
+          ] },
         ].map((col, i) => (
           <div key={i}>
             <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-white/45 mb-5">{col.title}</div>
-            {col.links.map(link => {
-              const href =
-                link === 'Privacy Policy' ? '/privacy' : link === 'Terms of Service' ? '/terms' : '#';
-              return (
-                <a key={link} href={href} className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link}</a>
-              );
-            })}
+            {col.links.map(link => (
+              <a key={link.label} href={link.href} className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link.label}</a>
+            ))}
           </div>
         ))}
       </div>
