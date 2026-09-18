@@ -187,7 +187,7 @@ function seedOfficials(): Official[] {
       term_end: r.term_end || null,
       incumbent: !!r.incumbent,
       email: r.email || null,
-      photo_url: r.photo_url || null,
+      photo_url: r.photo_url || r.external_ids?.photo_url || null,
       contacts: wardNum ? contactsFor(seed, name, wardNum) : [],
       source: r.source || 'seed',
     };
