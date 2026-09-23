@@ -16,12 +16,16 @@ Strategy (Contract A — URL-listed; the pipeline fetches politely):
   2. parse() extracts the meeting table deterministically:
      date/time | category | meeting name | location | attachments
      (Meeting Notice / Agenda / Minutes PDFs).
-  3. Optional model pass: when AI_GATEWAY_API_KEY is set, the parsed rows
-     are sent to Vercel AI Gateway (OpenAI-compatible
-     https://ai-gateway.vercel.sh/v1/chat/completions) for normalization
-     — ISO dates, canonical body names, document classification.
-     Any model failure falls back to the deterministic values; the model
-     never invents meetings.
+  3. Optional Jev pass: when AI_GATEWAY_API_KEY is set, the parsed rows
+     are evaluated by Jev (TypeSafe's System One evaluation model,
+     typesafe-ai/jev) through AI Gateway's native
+     https://ai-gateway.vercel.sh/v1/evaluate API. Jev generates no
+     text — it answers typed questions per row: choice (which CTA
+     body holds the meeting, with calibrated confidence) and boolean
+     (is this a full board meeting?). Dates, times, locations, and
+     documents stay deterministic; the model only classifies what code
+     can't. Answers under 0.6 confidence are left blank, never guessed,
+     and any model failure falls back to the deterministic values.
   4. Discovery fallback: if the listing fetch fails or yields zero rows,
      _discover_via_ddg() uses DuckDuckGo HTML search (free, no key) for
      site:transitchicago.com board notices/agendas/minutes and the
@@ -53,8 +57,6 @@ CTA_ORIGIN = "https://www.transitchicago.com"
 
 URLS = [BOARD_URL]
 
-AI_GATEWAY_URL = "https://ai-gateway.vercel.sh/v1/chat/completions"
-AI_GATEWAY_MODEL = os.environ.get("AI_GATEWAY_MODEL", "gpt-4o-mini")
 DDG_HTML = "https://html.duckduckgo.com/html/"
 
 
@@ -119,46 +121,80 @@ def _parse_rows(page_html):
 
 
 # ------------------------------------------------------------------ model
+# Jev (typesafe-ai/jev) via AI Gateway's native evaluation API.
+# Jev is a System One *evaluation* model: it does not generate text at
+# all — it answers typed questions (choice / score / boolean) about a
+# shared state, with calibrated probabilities. That makes it ideal for
+# the one judgment code can't make exactly here: which CTA body holds
+# each meeting. Dates, times, and document links are parsed
+# deterministically; the model only classifies. Low-confidence answers
+# (< 0.6) are discarded, not guessed at.
+EVALUATE_URL = "https://ai-gateway.vercel.sh/v1/evaluate"
+JEV_MODEL = os.environ.get("AI_GATEWAY_MODEL", "typesafe-ai/jev")
+JEV_MIN_CONFIDENCE = 0.6
+
+_BODY_CRITERIA = {
+    "Chicago Transit Board": "Full regular or special meetings of the Chicago Transit Board itself",
+    "Deferred Compensation Committee": "Meetings of the Deferred Compensation Committee",
+    "Finance, Audit and Budget Committee": "Finance, audit and budget (FAB) committee meetings",
+    "Employee Retirement Review Committee": "Employee retirement / pension review meetings",
+    "Committee on Strategic Planning": "Strategic planning committee meetings",
+    "Other": "Any other CTA body or meeting type",
+}
+
+
 def _normalize_with_model(rows):
-    """Ask the model to normalize parsed rows. Returns dict keyed by index
-    with {title, date_iso, time_local, body, location, category} or {} on
-    any failure (caller falls back to deterministic values)."""
+    """Classify each row's holding body with Jev. Returns {index: fields}
+    or {} on any failure (caller falls back to deterministic values)."""
     api_key = os.environ.get("AI_GATEWAY_API_KEY")
     if not api_key or not rows:
         return {}
-    compact = [
-        {"i": i, "date": d, "time": t, "category": c, "name": n, "loc": l}
-        for i, (d, t, c, n, l, _docs) in enumerate(rows)
+    state = [
+        {"meeting_name": n, "date": d, "time": t or None,
+         "location": l or None, "category": c or None,
+         "documents": [k for k, _u in docs]}
+        for (d, t, c, n, l, docs) in rows
     ]
-    prompt = (
-        "You normalize public transit board meeting listings. "
-        "For each item, return JSON array of {\"i\": <int>, \"title\": <clean meeting title>, "
-        "\"date_iso\": \"YYYY-MM-DD\", \"time_local\": \"HH:MM AM/PM (America/Chicago)\", "
-        "\"body\": <canonical body, e.g. 'Chicago Transit Board' or 'Deferred Compensation Committee'>, "
-        "\"location\": <clean location>, \"category\": <as given>}. "
-        "Normalize only what is present; never invent meetings, dates, or locations. "
-        "Reply with ONLY the JSON array.\n\n"
-        + json.dumps(compact)
-    )
+    questions = {}
+    for i in range(len(rows)):
+        questions[f"m{i}_body"] = {
+            "type": "choice",
+            "instructions": "Which CTA body holds this meeting?",
+            "criteria": _BODY_CRITERIA,
+        }
+        questions[f"m{i}_is_board"] = {
+            "type": "boolean",
+            "instructions": "Is this a full Chicago Transit Board meeting (not a committee)?",
+        }
     try:
         import requests
         resp = requests.post(
-            AI_GATEWAY_URL,
+            EVALUATE_URL,
             headers={"Authorization": f"Bearer {api_key}",
                      "Content-Type": "application/json"},
-            json={"model": AI_GATEWAY_MODEL, "temperature": 0,
-                  "max_tokens": 4000,
-                  "messages": [{"role": "user", "content": prompt}]},
-            timeout=60,
+            json={"model": JEV_MODEL, "state": state,
+                  "questions": questions},
+            timeout=90,
         )
         resp.raise_for_status()
-        text = resp.json()["choices"][0]["message"]["content"]
-        m = re.search(r"\[.*\]", text, re.S)
-        items = json.loads(m.group(0)) if m else []
-        return {it["i"]: it for it in items if isinstance(it, dict)
-                and "i" in it}
+        answers = resp.json().get("answers", {})
+        out = {}
+        for i in range(len(rows)):
+            b = answers.get(f"m{i}_body", {})
+            is_board = answers.get(f"m{i}_is_board", {})
+            body = b.get("choice")
+            conf = b.get("confidence", 0) or 0
+            fields = {}
+            if body and body != "Other" and conf >= JEV_MIN_CONFIDENCE:
+                fields["body"] = body
+            elif body == "Other" and conf >= JEV_MIN_CONFIDENCE:
+                fields["body"] = None  # explicitly unrecognized; leave blank
+            fields["is_board_meeting"] = (is_board.get("probability", 0) or 0) >= 0.5
+            fields["body_confidence"] = round(conf, 3)
+            out[i] = fields
+        return out
     except Exception as e:
-        log.warning("cta-board: model normalization skipped (%s)", e)
+        log.warning("cta-board: Jev normalization skipped (%s)", e)
         return {}
 
 
@@ -237,18 +273,20 @@ def parse(payload, ctx=None):
     records = []
     for i, (date_raw, time_raw, category, name, location, docs) in enumerate(rows):
         n = norm.get(i, {})
-        date_iso = n.get("date_iso") or _iso_date(date_raw)
+        date_iso = _iso_date(date_raw)
         rec = _base_record(url)
         rec.update({
-            "full_name": n.get("title") or name,
-            "source_key": f"{SOURCE_ID}:meeting:{date_iso}:{_slug(n.get('title') or name)}",
+            "full_name": name,
+            "source_key": f"{SOURCE_ID}:meeting:{date_iso}:{_slug(name)}",
             "meeting_date": date_iso,
-            "meeting_time_local": n.get("time_local") or (time_raw or None),
+            "meeting_time_local": time_raw or None,
             "meeting_body": n.get("body") or None,
-            "location": n.get("location") or (location or None),
-            "category": n.get("category") or (category or None),
+            "location": location or None,
+            "category": category or None,
             "documents": [{"kind": k, "url": u} for k, u in docs],
-            "external_ids": {"cta_documents": len(docs)},
+            "external_ids": {"cta_documents": len(docs),
+                             "jev_body_confidence": n.get("body_confidence"),
+                             "jev_is_board_meeting": n.get("is_board_meeting")},
             "conflicts": [],
         })
         records.append(rec)
