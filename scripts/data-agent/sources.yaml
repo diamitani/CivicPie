@@ -37,6 +37,17 @@ sources:
     auth_env: null
     enabled: true
 
+  - id: cta-board
+    name: "CTA Board — meeting notices, agendas & minutes (transitchicago.com)"
+    base_url: "https://www.transitchicago.com/board/notices-agendas-minutes/"
+    cadence: weekly
+    adapter: cta_board
+    rate_limit_rps: 0.5
+    respect_robots: true
+    auth_env: null
+    enabled: true
+    note: "Listing page allowed by robots.txt (only ?pg= pagination is disallowed — never followed). AI_GATEWAY_API_KEY enables optional model normalization; DDG search is the discovery fallback."
+
   - id: north-liberty-civicclerk
     name: "North Liberty CivicClerk meetings/agendas"
     base_url: "https://www.northlibertyiowa.org/"
