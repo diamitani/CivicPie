@@ -19,7 +19,8 @@ export default function SignUpPage() {
     setLoading(true);
     try {
       await signUp(name, email, password, zipCode);
-      window.location.href = '/dashboard';
+      const params = new URLSearchParams(window.location.search);
+      window.location.href = params.get('redirect') || '/dashboard';
     } catch (err: any) {
       setError(err.message || 'Sign up failed');
       setLoading(false);

@@ -16,8 +16,9 @@ export default function SignInPage() {
     setError('');
     setLoading(true);
     try {
-      signIn(email, password);
-      window.location.href = '/dashboard';
+      await signIn(email, password);
+      const params = new URLSearchParams(window.location.search);
+      window.location.href = params.get('redirect') || '/dashboard';
     } catch (err: any) {
       setError(err.message || 'Sign in failed');
     } finally {

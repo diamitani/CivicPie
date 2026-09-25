@@ -6,3 +6,7 @@ out/
 .vercel
 .env*
 tsconfig.tsbuildinfo
+
+# CivicPie data-agent runtime state (cache + staging queue)
+scripts/data-agent/.cache/
+scripts/data-agent/staging/

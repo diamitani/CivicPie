@@ -62,7 +62,7 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
         }
       `}</style>
       <div className="flex items-center gap-8 h-[72px] max-w-[1200px] mx-auto">
-        <a href="#" className="flex items-center gap-3 flex-shrink-0">
+        <a href="/" className="flex items-center gap-3 flex-shrink-0">
           <PieLogo size={26} />
           <div>
             <div className="font-display text-2xl font-black tracking-[-0.5px] text-white leading-none">
@@ -74,9 +74,15 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
           </div>
         </a>
         <div className="flex items-center gap-8 flex-1 justify-center">
-          {['Explore', 'Events', 'Officials', 'Elections', 'Services'].map(link => (
-            <a key={link} href="#" className="font-display text-[13px] font-semibold text-white/55 hover:text-white transition-colors tracking-[0.3px]">
-              {link}
+          {[
+            { label: 'Explore', href: '/explore' },
+            { label: 'Events', href: '/events' },
+            { label: 'Officials', href: '/officials' },
+            { label: 'Elections', href: '/elections' },
+            { label: 'Services', href: '/services' },
+          ].map(link => (
+            <a key={link.label} href={link.href} className="font-display text-[13px] font-semibold text-white/55 hover:text-white transition-colors tracking-[0.3px]">
+              {link.label}
             </a>
           ))}
         </div>
@@ -93,31 +99,45 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
   );
 }
 
+// ─── Shared address search routing ─────────────────────────────────────────
+// Every address/ZIP search on the homepage goes through /api/lookup first,
+// so routing is driven by real data — not hardcoded ZIP lists.
+// Ward 48 (the only ward with a full district page) routes directly there;
+// everything else goes to /coverage, which renders local results, federal +
+// state officials for out-of-coverage areas, or a graceful not-found.
+async function routeAddressSearch(rawQuery: string): Promise<void> {
+  const q = rawQuery.trim();
+  if (!q) return;
+  try {
+    const res = await fetch(`/api/lookup?address=${encodeURIComponent(q)}`);
+    const body = await res.json().catch(() => ({}));
+    const m = (body.district_id || '').match(/^il-chicago-ward-(\d+)$/);
+    if (body.coverage === 'local' && m && m[1] === '48') {
+      window.location.href = '/ward/chicago-48';
+      return;
+    }
+  } catch {
+    // fall through to /coverage on any lookup failure
+  }
+  window.location.href = `/coverage?q=${encodeURIComponent(q)}`;
+}
+
 // ════════════════════════════════════════════════════════════════
 // HERO
 // ════════════════════════════════════════════════════════════════
 function Hero() {
   const [zip, setZip] = useState('');
+  const [searching, setSearching] = useState(false);
 
-  const handleSearch = (e?: React.FormEvent) => {
+  const handleSearch = async (e?: React.FormEvent) => {
     e?.preventDefault();
-    const q = (zip || '').trim().toLowerCase();
-    if (!q) return;
-    // ZIP → district routing
-    if (q.includes('60660') || q.includes('60640') || q.includes('edgewater') || q.includes('andersonville')) {
-      window.location.href = '/ward/chicago-48';
-    } else if (/60\d{3}/.test(q) || q.includes('chicago') || q.includes('illinois')) {
-      window.location.href = '/state/illinois';
-    } else if (q.includes('100') || q.includes('new york') || q.includes('nyc')) {
-      window.location.href = '/state/new-york';
-    } else if (q.includes('900') || q.includes('california') || q.includes('los angeles')) {
-      window.location.href = '/state/california';
-    } else if (q.includes('texas')) {
-      window.location.href = '/state/texas';
-    } else {
-      // Anything we can't route locally (e.g. an out-of-area ZIP like 52317)
-      // goes to the coverage page — never a dead /state/<zip> URL.
-      window.location.href = `/coverage?q=${encodeURIComponent(zip.trim())}`;
+    if (searching) return;
+    setSearching(true);
+    try {
+      await routeAddressSearch(zip);
+    } finally {
+      // Navigation normally unmounts us; reset only if we're still here.
+      setSearching(false);
     }
   };
   return (
@@ -159,8 +179,9 @@ function Hero() {
               />
               <button
                 type="submit"
-                className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full tracking-[0.3px] hover:bg-[#E8243E] transition-all shadow-[0_4px_12px_rgba(196,18,48,0.4)] flex-shrink-0">
-                Find My Gov →
+                disabled={searching}
+                className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full tracking-[0.3px] hover:bg-[#E8243E] transition-all shadow-[0_4px_12px_rgba(196,18,48,0.4)] flex-shrink-0 disabled:opacity-70">
+                {searching ? 'Looking up…' : 'Find My Gov →'}
               </button>
             </form>
             <div className="flex items-center gap-6 text-xs text-white/50">
@@ -602,16 +623,17 @@ function Testimonials() {
 // ════════════════════════════════════════════════════════════════
 function FinalCTA() {
   const [zip, setZip] = useState('');
+  const [searching, setSearching] = useState(false);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    const q = zip.trim().toLowerCase();
-    if (!q) return;
-    if (q.includes('60660') || q.includes('edgewater')) window.location.href = '/ward/chicago-48';
-    else if (/60\d{3}/.test(q) || q.includes('chicago') || q.includes('illinois')) window.location.href = '/state/illinois';
-    else if (q.includes('new york') || q.includes('nyc')) window.location.href = '/state/new-york';
-    else if (q.includes('california')) window.location.href = '/state/california';
-    else window.location.href = `/coverage?q=${encodeURIComponent(zip.trim())}`;
+    if (searching) return;
+    setSearching(true);
+    try {
+      await routeAddressSearch(zip);
+    } finally {
+      setSearching(false);
+    }
   };
 
   return (
@@ -627,8 +649,8 @@ function FinalCTA() {
         </p>
         <form onSubmit={handleSearch} className="flex max-w-[480px] mx-auto mb-5 bg-white/[0.07] border-[1.5px] border-white/[0.14] rounded-full py-1.5 pl-6 pr-1.5 backdrop-blur-[12px] transition-all focus-within:border-white/[0.28] focus-within:shadow-[0_0_0_4px_rgba(232,160,48,0.12)]">
           <input type="text" value={zip} onChange={e => setZip(e.target.value)} placeholder="Enter your zip code or city…" className="flex-1 bg-transparent border-none outline-none font-body text-[15px] text-white placeholder:text-white/35" />
-          <button type="submit" className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full hover:bg-[#E8243E] transition-colors whitespace-nowrap shadow-[0_4px_12px_rgba(196,18,48,0.4)]">
-            Find My Gov →
+          <button type="submit" disabled={searching} className="bg-[#C41230] text-white font-display text-[13px] font-bold py-3 px-[22px] rounded-full hover:bg-[#E8243E] transition-colors whitespace-nowrap shadow-[0_4px_12px_rgba(196,18,48,0.4)] disabled:opacity-70">
+            {searching ? 'Looking up…' : 'Find My Gov →'}
           </button>
         </form>
         <p className="font-body text-xs text-white/45">Free forever. No account required to explore.</p>
@@ -660,20 +682,38 @@ function Footer() {
           <p className="font-body text-[13px] text-white/40 leading-relaxed max-w-[300px]">Local info. Real impact. Nonpartisan. Built on public government data, built for the people it affects.</p>
         </div>
         {[
-          { title: 'Platform', links: ['Explore', 'Elections', 'Officials', 'Events', 'Services'] },
-          { title: 'Resources', links: ['Voter Registration', 'Grants & Programs', 'Volunteer', 'Transcripts', 'API Access'] },
-          { title: 'Organization', links: ['About CivicPie', 'Press', 'Contact', 'Privacy Policy', 'Terms of Service'] },
+          { title: 'Platform', links: [
+            { label: 'Explore', href: '/explore' },
+            { label: 'Elections', href: '/elections' },
+            { label: 'Officials', href: '/officials' },
+            { label: 'Events', href: '/events' },
+            { label: 'Services', href: '/services' },
+          ] },
+          { title: 'Resources', links: [
+            { label: 'Voter Registration', href: '/elections' },
+            { label: 'Grants & Programs', href: '/resources' },
+            { label: 'Volunteer', href: '/resources' },
+            { label: 'Transcripts', href: '/meetings' },
+            { label: 'API Access', href: '/about' },
+          ] },
+          { title: 'Organization', links: [
+            { label: 'About CivicPie', href: '/about' },
+            { label: 'Press', href: '/about' },
+            { label: 'Contact', href: '/about' },
+            { label: 'Privacy Policy', href: '/privacy' },
+            { label: 'Terms of Service', href: '/terms' },
+          ] },
         ].map((col, i) => (
           <div key={i}>
             <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-white/45 mb-5">{col.title}</div>
             {col.links.map(link => (
-              <a key={link} href="#" className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link}</a>
+              <a key={link.label} href={link.href} className="block font-body text-sm text-white/45 mb-3 hover:text-white transition-colors">{link.label}</a>
             ))}
           </div>
         ))}
       </div>
       <div className="max-w-[1200px] mx-auto flex items-center justify-between pt-8 border-t border-white/[0.07]">
-        <p className="font-body text-xs text-white/20">© 2025 CivicPie · Nonpartisan · All data sourced from public government records</p>
+        <p className="font-body text-xs text-white/20">© 2026 CivicPie · Nonpartisan · All data sourced from public government records</p>
         <div className="flex gap-[3px] items-center">
           <div className="h-1 rounded-[2px]" style={{ width: 28, background: '#1C3A5E' }} />
           <div className="h-1 rounded-[2px]" style={{ width: 18, background: '#C41230' }} />

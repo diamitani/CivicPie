@@ -107,17 +107,40 @@ export async function loadDistrictPageData(
       const cities = await loadJson('cities.json');
       const city = cities?.find((c: any) => c.id === id);
       if (!city) return null;
+      // Pull live officials for cities that have a seed district (e.g. North Liberty).
+      let officials: any[] = [];
+      if (city.districtId) {
+        try {
+          const res = await fetch(`/api/officials?district_id=${encodeURIComponent(city.districtId)}&limit=50`);
+          if (res.ok) {
+            const body = await res.json();
+            officials = (body.data || []).map((o: any) => ({
+              id: o.id || `${city.districtId}-${o.name}`,
+              name: o.name,
+              title: o.office_title || 'Official',
+              level: 'Local',
+              party: o.party || null,
+              contact: { email: o.email || null, website: null },
+            }));
+          }
+        } catch { /* officials stay empty on API failure */ }
+      }
+      const pop = typeof city.population === 'number' ? city.population : 0;
+      const popLabel = pop >= 1000000
+        ? `${(pop / 1000000).toFixed(1)} million`
+        : pop > 0 ? pop.toLocaleString() : 'N/A';
       return {
         displayName: city.name,
         districtType: 'city',
-        description: `${city.name} — population ${(city.population / 1000000).toFixed(1)} million. ${city.governmentType || ''}`,
+        description: `${city.name} — population ${popLabel}.${city.governmentType ? ` ${city.governmentType.replace(/-/g, ' ')} government.` : ''}`,
         state: city.stateAbbreviation || '',
         stateAbbr: city.stateAbbreviation,
         stats: [
-          { label: 'Population', value: city.population?.toLocaleString() || 'N/A' },
-          { label: 'Government', value: city.governmentType || 'N/A' },
+          { label: 'Population', value: pop > 0 ? pop.toLocaleString() : 'N/A' },
+          { label: 'Government', value: city.governmentType?.replace(/-/g, ' ') || 'N/A' },
+          { label: 'Elected officials', value: officials.length ? String(officials.length) : 'N/A' },
         ],
-        officials: [],
+        officials,
         events: [],
         elections: [],
         agencies: [],

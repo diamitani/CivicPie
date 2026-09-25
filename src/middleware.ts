@@ -5,18 +5,22 @@ import type { NextRequest } from 'next/server';
 // NOTE: Middleware only runs in server mode (not with `output: 'export'`).
 // When statically exported, auth gating is handled client-side in the
 // (app) layout. This file is ready for when you switch to SSR/Supabase.
+//
+// PRODUCT RULE (2026-09-14): CivicPie is a FREE civic-information platform.
+// The core lookup flow — homepage, /coverage, and district detail pages —
+// is PUBLIC and never gated. Only personalized pages (/dashboard) require
+// a session.
 
-const PUBLIC_PATHS = ['/signin', '/signup', '/'];
-const PUBLIC_PREFIXES = ['/api/', '/_next/', '/favicon'];
+const PRIVATE_PREFIXES = ['/dashboard'];
 
 export function middleware(request: NextRequest): NextResponse {
   const { pathname } = request.nextUrl;
 
-  // Allow public paths
-  if (
-    PUBLIC_PATHS.includes(pathname) ||
-    PUBLIC_PREFIXES.some((p) => pathname.startsWith(p))
-  ) {
+  // Only personalized pages require auth; everything else is public.
+  const isPrivate = PRIVATE_PREFIXES.some(
+    (p) => pathname === p || pathname.startsWith(p + '/')
+  );
+  if (!isPrivate) {
     return NextResponse.next();
   }
 
@@ -25,7 +29,7 @@ export function middleware(request: NextRequest): NextResponse {
 
   if (!session?.value) {
     const signInUrl = new URL('/signin', request.url);
-    signInUrl.searchParams.set('redirect', pathname);
+    signInUrl.searchParams.set('redirect', pathname + request.nextUrl.search);
     return NextResponse.redirect(signInUrl);
   }
 

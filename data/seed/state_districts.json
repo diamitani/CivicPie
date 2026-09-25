@@ -508,5 +508,55 @@
   "district_number": null,
   "source_id": "xlsx-master-2026-09",
   "external_refs": {}
+ },
+ {
+  "district_id": "us-state-pr",
+  "district_type": "state",
+  "state_abbr": "PR",
+  "city": null,
+  "district_name": "Puerto Rico",
+  "district_number": null,
+  "source_id": "civicpie-manual-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-gu",
+  "district_type": "state",
+  "state_abbr": "GU",
+  "city": null,
+  "district_name": "Guam",
+  "district_number": null,
+  "source_id": "civicpie-manual-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-vi",
+  "district_type": "state",
+  "state_abbr": "VI",
+  "city": null,
+  "district_name": "U.S. Virgin Islands",
+  "district_number": null,
+  "source_id": "civicpie-manual-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-as",
+  "district_type": "state",
+  "state_abbr": "AS",
+  "city": null,
+  "district_name": "American Samoa",
+  "district_number": null,
+  "source_id": "civicpie-manual-2026-09",
+  "external_refs": {}
+ },
+ {
+  "district_id": "us-state-mp",
+  "district_type": "state",
+  "state_abbr": "MP",
+  "city": null,
+  "district_name": "Northern Mariana Islands",
+  "district_number": null,
+  "source_id": "civicpie-manual-2026-09",
+  "external_refs": {}
  }
 ]

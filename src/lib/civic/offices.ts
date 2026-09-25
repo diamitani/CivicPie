@@ -16,6 +16,8 @@ const TITLES: Record<string, { title: string; level: 'federal' | 'state' | 'loca
   'il-state-rep': { title: 'Illinois State Representative', level: 'state' },
   'il-state-sen': { title: 'Illinois State Senator', level: 'state' },
   'chi-alderman': { title: 'Alderperson', level: 'local' },
+  'gen-mayor': { title: 'Mayor', level: 'local' },
+  'gen-city-council': { title: 'City Council Member', level: 'local' },
 };
 
 export function officeTitle(officeId: string): string {

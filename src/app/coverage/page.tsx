@@ -9,6 +9,8 @@ interface LookupBody {
   coverage?: 'local' | 'none';
   address?: string;
   district_id?: string | null;
+  district_label?: string | null;
+  district_href?: string | null;
   officials?: any[];
   state_abbr?: string | null;
   state_name?: string | null;
@@ -104,7 +106,7 @@ function CoverageInner() {
                 ✅ You&apos;re covered
               </div>
               <h1 className="font-display text-3xl font-black text-white tracking-[-1px] mb-2">
-                {wardLabel(body.district_id)}
+                {body.district_label || wardLabel(body.district_id)}
               </h1>
               <p className="font-body text-sm text-white/50 mb-6">{body.address}</p>
               <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-white/40 mb-3">
@@ -140,7 +142,7 @@ function CoverageInner() {
                 🗺️ Coming soon to your area
               </div>
               <h1 className="font-display text-3xl font-black text-white tracking-[-1px] mb-3">
-                We don&apos;t cover {body.address || 'this area'} yet
+                Hyperlocal coverage for {body.address || 'this area'} is coming soon
               </h1>
               <p className="font-body text-[15px] text-white/55 leading-relaxed mb-8">{body.message}</p>
 
