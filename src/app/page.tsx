@@ -115,7 +115,9 @@ function Hero() {
     } else if (q.includes('texas')) {
       window.location.href = '/state/texas';
     } else {
-      window.location.href = `/state/${q.replace(/\s+/g, '-')}`;
+      // Anything we can't route locally (e.g. an out-of-area ZIP like 52317)
+      // goes to the coverage page — never a dead /state/<zip> URL.
+      window.location.href = `/coverage?q=${encodeURIComponent(zip.trim())}`;
     }
   };
   return (
@@ -609,7 +611,7 @@ function FinalCTA() {
     else if (/60\d{3}/.test(q) || q.includes('chicago') || q.includes('illinois')) window.location.href = '/state/illinois';
     else if (q.includes('new york') || q.includes('nyc')) window.location.href = '/state/new-york';
     else if (q.includes('california')) window.location.href = '/state/california';
-    else window.location.href = `/state/${q.replace(/\s+/g, '-')}`;
+    else window.location.href = `/coverage?q=${encodeURIComponent(zip.trim())}`;
   };
 
   return (

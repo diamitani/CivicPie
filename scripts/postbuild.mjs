@@ -1,10 +1,16 @@
-// Post-build script: generate routes-manifest.json for Vercel static export compatibility
-import { writeFileSync } from 'fs';
+// Post-build script: generate routes-manifest.json for Vercel static export compatibility.
+// In server mode (no `out/` dir) this is a no-op — Vercel handles routing natively.
+import { writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, '..', 'out');
+
+if (!existsSync(outDir)) {
+  console.log('✓ Server mode build — skipping routes-manifest.json (no out/ dir)');
+  process.exit(0);
+}
 
 const manifest = {
   version: 3,
