@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 // State-specific voter registration info
 const STATE_REGISTRATION: Record<string, { url: string; deadline: string; portal: string }> = {
-  IL: { url: 'https://ova.elections.il.gov/', deadline: 'Oct 20, 2026', portal: 'Illinois Online Voter Application' },
+  IL: { url: 'https://ova.elections.il.gov/', deadline: 'Oct 18, 2026', portal: 'Illinois Online Voter Application' },
   NY: { url: 'https://dmv.ny.gov/more-info/electronic-voter-registration-application', deadline: 'Oct 24, 2026', portal: 'NY DMV Voter Registration' },
   CA: { url: 'https://registertovote.ca.gov/', deadline: 'Oct 19, 2026', portal: 'California Online Voter Registration' },
   TX: { url: 'https://www.votetexas.gov/register-to-vote/', deadline: 'Oct 5, 2026', portal: 'VoteTexas.gov' },

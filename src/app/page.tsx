@@ -194,17 +194,17 @@ function Hero() {
           {/* Right — Ward Card */}
           <div className="relative max-lg:hidden">
             <div className="absolute top-[-16px] right-[-16px] bg-[#C41230] text-white rounded-full py-2 px-4 font-display text-[11px] font-bold tracking-[0.5px] shadow-[0_8px_24px_rgba(196,18,48,0.4)] z-10 flex items-center gap-1.5 animate-float">
-              🗳️ Primary: 30 Days Away
+              🗳️ General Election · Nov 3
             </div>
             <div className="bg-white/[0.04] border border-white/[0.10] rounded-[20px] p-7 backdrop-blur-[16px]">
               <div className="font-display text-[9px] font-bold tracking-[2.5px] uppercase text-[#E8A030] mb-4">★ Ward 3 · Chicago, IL</div>
               <div className="font-display text-[22px] font-black text-white tracking-[-0.5px] mb-1">Your Ward Overview</div>
-              <div className="font-body text-[13px] text-white/45 mb-6">Updated 2 minutes ago · 4 new items</div>
+              <div className="font-body text-[13px] text-white/45 mb-6">Sample ward overview</div>
               {[
-                { icon: '🗳️', bg: 'rgba(196,18,48,0.15)', title: 'Voter Registration Deadline', meta: 'May 14 · 30 days remaining' },
-                { icon: '🏛️', bg: 'rgba(0,27,61,0.15)', title: 'City Council Meeting', meta: 'May 14 · 7:00 PM · City Hall' },
-                { icon: '🤝', bg: 'rgba(16,185,129,0.12)', title: 'Poll Worker Volunteer', meta: 'May 18 · 12 spots open' },
-                { icon: '💰', bg: 'rgba(232,160,48,0.15)', title: 'Small Business Grant', meta: 'Deadline May 31 · Up to $15k' },
+                { icon: '🗳️', bg: 'rgba(196,18,48,0.15)', title: 'Voter Registration Deadline', meta: 'Online: Oct 18 · 15 days left' },
+                { icon: '🏛️', bg: 'rgba(0,27,61,0.15)', title: 'City Council Meeting', meta: 'Oct 21 · 10:00 AM · City Hall' },
+                { icon: '🤝', bg: 'rgba(16,185,129,0.12)', title: 'Poll Worker Volunteer', meta: 'Nov 3 · Election Day signup' },
+                { icon: '💰', bg: 'rgba(232,160,48,0.15)', title: 'Small Business Grant', meta: 'Rolling deadlines · Check eligibility' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 py-3 px-3.5 rounded-xl bg-white/[0.04] mb-2.5 cursor-pointer hover:bg-white/[0.08] transition-colors">
                   <div className="w-9 h-9 rounded-[9px] flex-shrink-0 flex items-center justify-center text-base" style={{ background: item.bg }}>{item.icon}</div>
@@ -261,7 +261,7 @@ function StatsRibbon() {
     <div className="bg-[#0A2A4A] border-t border-b border-white/[0.08] py-7 px-10">
       <div className="grid grid-cols-4 gap-px bg-white/[0.10] rounded overflow-hidden max-w-[1200px] mx-auto max-md:grid-cols-2">
         {[
-          { num: '30', label: 'Days to Primary Election', color: '#C41230' },
+          { num: '31', label: 'Days to General Election · Nov 3', color: '#C41230' },
           { num: '50k+', label: 'Government Pages Indexed', color: '#E8A030' },
           { num: '$12M', label: 'In Available Community Grants', color: '#E8A030' },
           { num: '100%', label: 'Free · Nonpartisan · Public', color: '#E8A030' },
@@ -448,11 +448,11 @@ function Features() {
 // ════════════════════════════════════════════════════════════════
 function Listings() {
   const listings = [
-    { icon: '🏛️', title: 'Ward 3 City Council — Regular Meeting', meta: 'Tue May 14 · 7:00 PM · City Hall Room 201', badge: 'Meeting', badgeClass: 'badge-navy' },
-    { icon: '🗳️', title: 'Primary Election — Voter Registration Deadline', meta: 'May 14 · 30 days remaining', badge: 'Election', badgeClass: 'badge-red' },
-    { icon: '📋', title: 'Zoning Variance Hearing — 1423 W. Maple', meta: 'Fri May 17 · 10:00 AM · Public comment period open', badge: 'Meeting', badgeClass: 'badge-navy' },
-    { icon: '🤝', title: 'Poll Worker Training — Primary Election', meta: 'Sat May 18 · 10:00 AM · Lincoln Library · 12 spots open', badge: 'Volunteer', badgeClass: 'badge-green' },
-    { icon: '💰', title: 'Small Business Grant — Round 3 Applications', meta: 'Deadline May 31 · Up to $15,000', badge: 'Grant', badgeClass: 'badge-gold' },
+    { icon: '🏛️', title: 'City Council — Regular Meeting', meta: 'Wed Oct 21 · 10:00 AM · City Hall Council Chambers', badge: 'Meeting', badgeClass: 'badge-navy' },
+    { icon: '🗳️', title: 'General Election — Voter Registration Deadline', meta: 'Online: Oct 18 · 15 days left', badge: 'Election', badgeClass: 'badge-red' },
+    { icon: '📋', title: 'Zoning Hearing', meta: 'Fridays · 10:00 AM · Public comment period open', badge: 'Meeting', badgeClass: 'badge-navy' },
+    { icon: '🤝', title: 'Poll Worker Training — General Election', meta: 'Nov 3 · Election Day signup', badge: 'Volunteer', badgeClass: 'badge-green' },
+    { icon: '💰', title: 'Small Business Grant Applications', meta: 'Up to $15,000 · Check eligibility', badge: 'Grant', badgeClass: 'badge-gold' },
     { icon: '🏘️', title: 'Community Development Block Grant — Housing', meta: 'Ongoing · Rental assistance for qualifying households', badge: 'Service', badgeClass: 'badge-cream' },
   ];
 
@@ -463,7 +463,7 @@ function Listings() {
           <div className="mb-10 reveal">
             <p className="section-eyebrow">What&apos;s Happening Now</p>
             <h2 className="section-heading">Ward 3 · Chicago<br /><em>This month.</em></h2>
-            <p className="text-base text-stone mt-3">Live data from official Chicago city sources. Updated every 15 minutes.</p>
+            <p className="text-base text-stone mt-3">Illustrative sample — real ward data appears here once connected.</p>
           </div>
           <div className="flex gap-2 mb-6 flex-wrap reveal">
             {['All', 'Meetings', 'Elections', 'Volunteer', 'Grants', 'Services'].map((tab, i) => (
@@ -506,7 +506,7 @@ function Listings() {
               ))}
             </div>
             <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-stone mb-3">Your Representatives</div>
-            {['Maria Rodriguez · Ward 3 Alderperson', 'Angela Davis · Mayor, City of Chicago', 'James Chen · State Rep · District 14'].map((rep, i) => (
+            {['Pat Dowell · Ward 3 Alderperson', 'Brandon Johnson · Mayor, City of Chicago', 'Kelly Cassidy · State Rep · District 14'].map((rep, i) => (
               <div key={i} className="flex items-center gap-3 p-3 rounded-[10px] bg-white mb-2 border border-[#EDE0C4] hover:shadow-sm transition-shadow cursor-pointer">
                 <div className="w-9 h-9 rounded-full bg-[#EDE0C4] flex items-center justify-center text-base flex-shrink-0">👤</div>
                 <div><div className="font-display text-[13px] font-bold text-navy">{rep.split('·')[0]}</div><div className="font-body text-[11px] text-stone">{rep.split('·').slice(1).join('·')}</div></div>
@@ -540,7 +540,7 @@ function ElectionCTA() {
         <div>
           <p className="section-eyebrow" style={{ color: 'rgba(255,255,255,0.7)' }}>Upcoming Elections</p>
           <h2 className="font-display text-[clamp(36px,4vw,56px)] font-black tracking-[-1.5px] leading-[0.95] text-white mb-5">
-            The ballot is 30 days away.<br />Do you know what&apos;s on it?
+            The ballot is 31 days away.<br />Do you know what&apos;s on it?
           </h2>
           <p className="font-body text-base text-white/65 leading-relaxed mt-4">
             Most people vote in presidential elections. Very few know who&apos;s running for city council, school board, or local judge — the positions that affect your daily life the most.
@@ -556,9 +556,9 @@ function ElectionCTA() {
         </div>
         <div className="flex flex-col gap-3 reveal">
           {[
-            { month: 'MAY', day: '14', title: 'Voter Registration Deadline', sub: 'Primary Election · Ward 3, Chicago' },
-            { month: 'JUN', day: '18', title: 'Primary Election Day', sub: 'City Council · State Reps · Local Judges' },
-            { month: 'NOV', day: '04', title: 'General Election Day', sub: 'All local, state, and federal races' },
+            { month: 'OCT', day: '18', title: 'Voter Registration Deadline', sub: 'General Election · Online registration closes' },
+            { month: 'NOV', day: '02', title: 'Early Voting Ends', sub: 'Last day of early voting · Sept 24 – Nov 2' },
+            { month: 'NOV', day: '03', title: 'General Election Day', sub: 'Polls open 6 AM – 7 PM · All races' },
           ].map((card, i) => (
             <div key={i} className="bg-white/[0.1] border border-white/[0.15] rounded-2xl p-5 backdrop-blur-[8px] flex items-center gap-4">
               <div className="bg-white/[0.15] rounded-[10px] p-2.5 text-center flex-shrink-0">

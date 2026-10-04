@@ -418,7 +418,7 @@
  {
   "office_id": "chi-alderman",
   "district_id": "il-chicago-ward-27",
-  "full_name": "Walter R. Burnett",
+  "full_name": "Walter Redmond Burnett",
   "first_name": "Walter",
   "last_name": "Burnett",
   "party": "Democratic",
@@ -428,7 +428,8 @@
   "source_id": "chicago-wards-xlsx",
   "source_key": "chicago-wards-xlsx:alderman:27",
   "external_ids": {
-   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/81F21A0D-F16E-F011-BEC1-001DD8096BE6.jpg"
+   "photo_url": "https://occprodstoragev1.blob.core.usgovcloudapi.net/council-profile-pictures/81F21A0D-F16E-F011-BEC1-001DD8096BE6.jpg",
+   "nickname": "Red"
   }
  },
  {

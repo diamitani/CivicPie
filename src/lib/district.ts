@@ -39,30 +39,75 @@ export async function loadDistrictPageData(
 ): Promise<DistrictPageData | null> {
   try {
     if (type === 'ward') {
-      const wd = await loadJson('ward_data.json');
-      const dir = await loadJson('ward_directory.json');
-      if (!wd) return null;
-      const meta = wd.districtMeta;
+      // 'chicago-28' → 'il-chicago-ward-28'. Every ward page renders its OWN
+      // ward's live officials from the API. The deep curated dataset in
+      // public/data/ward_data.json exists ONLY for the 48th Ward — using it
+      // for other wards was leaking Ward 48 content (alderwoman, events,
+      // agencies) onto every /ward/chicago-N page.
+      const wm = id.match(/^chicago-(\d+)$/);
+      const wardNum = wm ? parseInt(wm[1], 10) : null;
+      const districtId = wardNum ? `il-chicago-ward-${wardNum}` : null;
+      const is48 = wardNum === 48;
+
+      let live: any = null;
+      if (districtId) {
+        try {
+          const res = await fetch(`/api/districts/${encodeURIComponent(districtId)}`);
+          if (res.ok) live = (await res.json())?.data || null;
+        } catch {
+          live = null;
+        }
+      }
+      if (!live && !is48) return null;
+
+      // Curated deep data exists only for the 48th Ward.
+      const wd = is48 ? await loadJson('ward_data.json') : null;
+      const meta = wd?.districtMeta;
+      // Ordinals computed from the number — never trust the seed's
+      // "1th/42th" typos in district_name.
+      const ord = (n: number) => {
+        const v = n % 100;
+        const sfx = v >= 11 && v <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[v % 10] || 'th';
+        return `${n}${sfx}`;
+      };
+      const displayName = wardNum ? `${ord(wardNum)} Ward` : live?.district_name || id;
+
+      // API officials → page card shape ({name,title,level,party,contact}).
+      const liveOfficials = (live?.officials || []).map((o: any) => ({
+        id: o.id || `${districtId}-${o.name}`,
+        name: o.name,
+        title: o.office_title || 'Alderperson',
+        level: o.level === 'local' ? 'Local' : o.level || 'Local',
+        party: o.party || undefined,
+        contact: {
+          email: o.email || undefined,
+        },
+      }));
+      // Curated extras (events, agencies, civicGroups, quickStats) exist
+      // only for the 48th Ward. Other wards get their real officials and
+      // honest empty sections — never 48's content.
       return {
-        displayName: id.includes('48') ? (meta?.name || '48th Ward') : `Ward ${id.replace(/\D/g, '')}`,
+        displayName,
         districtType: 'ward',
-        description: meta?.description || `The ${id} Ward of Chicago.`,
-        city: meta?.city || 'Chicago',
-        state: meta?.state || 'Illinois',
+        description: meta?.description || `The ${displayName} of Chicago, Illinois.`,
+        city: 'Chicago',
+        state: 'Illinois',
         stateAbbr: 'IL',
         neighborhoods: meta?.neighborhoods || [],
-        stats: (wd.quickStats || []).slice(0, 5).map((s: any) => ({ label: s.label, value: s.value })),
-        officials: wd.officials || [],
-        events: wd.events || [],
+        stats: is48
+          ? (wd?.quickStats || []).slice(0, 5).map((s: any) => ({ label: s.label, value: s.value }))
+          : [],
+        officials: is48 ? wd?.officials || liveOfficials : liveOfficials,
+        events: is48 ? wd?.events || [] : [],
         elections: [
           { name: '2026 General Election', election_type: 'General', schedule: 'Nov 3, 2026', next_date: 'Nov 3, 2026', level: 'all' },
         ],
-        agencies: wd.agencies || [],
+        agencies: is48 ? wd?.agencies || [] : [],
         grants: [
           { program: 'Community Development Block Grant', agency: 'City of Chicago', type: 'Housing', amount_range: 'Up to $50K', deadline_note: 'Rolling' },
           { program: 'Small Business Improvement Fund', agency: 'City of Chicago', type: 'Business', amount_range: 'Up to $150K', deadline_note: 'Quarterly' },
         ],
-        civicGroups: wd.civicGroups || [],
+        civicGroups: is48 ? wd?.civicGroups || [] : [],
       };
     }
 

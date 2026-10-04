@@ -152,19 +152,18 @@ export async function getHealth() {
   );
 }
 
-function contactsFor(seed: SeedData, name: string, wardNum: string): ContactPoint[] {
+function contactsFor(seed: SeedData, sourceKey: string): ContactPoint[] {
+  // Contacts are keyed by official_source_key (e.g. 'chicago-wards-xlsx:alderman:48')
+  // — join on the official's own source_key, not ward/alderperson fields.
   const rows = seed.contacts.filter(
-    (c: any) => String(c.ward) === String(wardNum) && String(c.alderperson).trim() === String(name).trim()
+    (c: any) => String(c.official_source_key) === String(sourceKey)
   );
   const out: ContactPoint[] = [];
   const push = (kind: string, label: string | null, value: any) => {
     if (value && String(value).trim()) out.push({ kind, label, value: String(value).trim(), is_primary: false });
   };
   for (const r of rows) {
-    push('phone', r.contact_type || 'phone', r.phone);
-    push('email', null, r.email);
-    push('website', null, r.website);
-    push('address', r.address_type || 'office', r.address);
+    push(r.kind || 'phone', r.label || null, r.value);
   }
   return out;
 }
@@ -173,8 +172,8 @@ function seedOfficials(): Official[] {
   const seed = loadSeed();
   return seed.officials.map((r: any, i: number) => {
     const officeId = r.office_id || r.office || 'unknown';
-    const wardNum = r.district_id?.match(/ward-(\d+)/)?.[1];
     const name = r.name || r.full_name || 'Unknown';
+    const key = r.source_key || `seed-official-${i}`;
     return {
       id: `seed-${i}`,
       name,
@@ -188,7 +187,7 @@ function seedOfficials(): Official[] {
       incumbent: !!r.incumbent,
       email: r.email || null,
       photo_url: r.photo_url || r.external_ids?.photo_url || null,
-      contacts: wardNum ? contactsFor(seed, name, wardNum) : [],
+      contacts: contactsFor(seed, key),
       source: r.source || 'seed',
     };
   });

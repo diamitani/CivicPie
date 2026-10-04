@@ -4,7 +4,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "1th Ward",
+  "district_name": "1st Ward",
   "district_number": "1",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -20,7 +20,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "2th Ward",
+  "district_name": "2nd Ward",
   "district_number": "2",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -36,7 +36,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "3th Ward",
+  "district_name": "3rd Ward",
   "district_number": "3",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -324,7 +324,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "21th Ward",
+  "district_name": "21st Ward",
   "district_number": "21",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -340,7 +340,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "22th Ward",
+  "district_name": "22nd Ward",
   "district_number": "22",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -356,7 +356,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "23th Ward",
+  "district_name": "23rd Ward",
   "district_number": "23",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -484,7 +484,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "31th Ward",
+  "district_name": "31st Ward",
   "district_number": "31",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -500,7 +500,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "32th Ward",
+  "district_name": "32nd Ward",
   "district_number": "32",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -516,7 +516,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "33th Ward",
+  "district_name": "33rd Ward",
   "district_number": "33",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -644,7 +644,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "41th Ward",
+  "district_name": "41st Ward",
   "district_number": "41",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -660,7 +660,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "42th Ward",
+  "district_name": "42nd Ward",
   "district_number": "42",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
@@ -676,7 +676,7 @@
   "district_type": "ward",
   "state_abbr": "IL",
   "city": "Chicago",
-  "district_name": "43th Ward",
+  "district_name": "43rd Ward",
   "district_number": "43",
   "source_id": "chicago-wards-xlsx",
   "external_refs": {
