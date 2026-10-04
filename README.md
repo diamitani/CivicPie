@@ -45,6 +45,21 @@ curl "http://localhost:3000/api/districts?type=ward&city=Chicago&state=IL"
 - `offices.ts` — office-id → title/level mapping (kept in code because the current ingest doesn't populate the `offices` table).
 - `types.ts` — public API shapes.
 
+## Environment variables
+
+| Variable | Purpose | Required |
+|---|---|---|
+| `DATABASE_URL` | Supabase Postgres connection string (session pooler). Unset = serve bundled `data/seed/` JSON. | No |
+| `NEXT_PUBLIC_COGNITO_USER_POOL_ID` | AWS Cognito user pool for real sign-in. Unset = mock sign-in. | No |
+| `NEXT_PUBLIC_COGNITO_CLIENT_ID` | Cognito app client id. | No |
+| `NEXT_PUBLIC_COGNITO_DOMAIN` | Cognito domain for hosted UI / OAuth. | No |
+| `NEXT_PUBLIC_AUTH_REDIRECT` | Post-sign-in redirect URL (defaults to `/dashboard` on the current origin). | No |
+| `NEXT_PUBLIC_DYNAMODB_PROFILES_TABLE` | DynamoDB table for user profiles (defaults to `civicpie-prod-profiles`). | No |
+| `NEXT_PUBLIC_DYNAMODB_ALERTS_TABLE` | DynamoDB table for civic alerts (defaults to `civicpie-prod-alerts`). | No |
+| `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` | Sentry error reporting (client + server configs present). | No |
+
+No secrets are read from code outside this list; the deterministic QA scan reports zero secrets in the tree.
+
 ## Scripts
 
 | Script | Purpose |
