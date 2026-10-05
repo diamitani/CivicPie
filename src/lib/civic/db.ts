@@ -252,42 +252,63 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
       }
       where.push(sql);
     };
-    if (f.district_id) add('district_id = ?', f.district_id);
-    if (f.district_prefix) add('district_id LIKE ?', `${f.district_prefix}%`);
-    if (f.office) add('office_id = ?', f.office);
-    if (f.level) add('level = ?', f.level);
-    if (f.q) add('(name ILIKE ? OR office_id ILIKE ?)', `%${f.q}%`, `%${f.q}%`);
-    // NOTE: office title / contact points come from the offices & sources
-    // tables — make sure those are seeded in Supabase before loading.
-    const sql = `SELECT o.id, o.name, o.office_id, o.level, o.district_id, o.party,
-      o.term_start, o.term_end, o.incumbent, o.email, o.photo_url, s.name AS source_name,
-      of2.title AS office_title
-      FROM officials o
-      LEFT JOIN sources s ON s.id = o.source_id
-      LEFT JOIN offices of2 ON of2.id = o.office_id
+    if (f.district_id) add('o.district_id = ?', f.district_id);
+    if (f.district_prefix) add('o.district_id LIKE ?', `${f.district_prefix}%`);
+    if (f.office) add('o.office_id = ?', f.office);
+    if (f.level) add('of2.level = ?', f.level);
+    if (f.q) add('(o.full_name ILIKE ? OR o.office_id ILIKE ?)', `%${f.q}%`, `%${f.q}%`);
+    // Schema: civicpie-data/migrations/001_civicpie_master_schema.sql.
+    // officials carries no level/email columns — level comes from offices,
+    // email + contact points come from contact_points (aggregated per official).
+    const join = `FROM officials o
+      LEFT JOIN sources s ON s.source_id = o.source_id
+      LEFT JOIN offices of2 ON of2.office_id = o.office_id
+      LEFT JOIN LATERAL (
+        SELECT json_agg(json_build_object('kind', cp.kind, 'value', cp.value,
+          'label', cp.label, 'is_primary', cp.is_primary)
+          ORDER BY cp.is_primary DESC NULLS LAST) AS contacts
+        FROM contact_points cp WHERE cp.official_id = o.official_id
+      ) ct ON true`;
+    const sql = `SELECT o.official_id AS id, o.full_name AS name, o.office_id,
+      of2.level, o.district_id, o.party,
+      o.term_start, o.term_end, o.is_incumbent AS incumbent, o.photo_url,
+      s.name AS source_name, of2.title AS office_title, ct.contacts
+      ${join}
       ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
-      ORDER BY o.name ASC LIMIT ?`;
+      ORDER BY o.full_name ASC LIMIT ?`;
     args.push(limit);
     const { rows } = await p.query(sql, args);
-    const totalQ = `SELECT COUNT(*) c FROM officials o ${where.length ? 'WHERE ' + where.join(' AND ') : ''}`;
+    const totalQ = `SELECT COUNT(*) c ${join} ${where.length ? 'WHERE ' + where.join(' AND ') : ''}`;
     const { rows: trows } = await p.query(totalQ, args.slice(0, args.length - 1));
     return {
-      data: rows.map((r: any) => ({
-        id: r.id,
-        name: r.name,
-        office: r.office_id,
-        office_title: r.office_title || officeTitle(r.office_id),
-        level: r.level,
-        district_id: r.district_id,
-        party: r.party,
-        term_start: r.term_start,
-        term_end: r.term_end,
-        incumbent: !!r.incumbent,
-        email: r.email,
-        photo_url: r.photo_url,
-        contacts: [],
-        source: r.source_name || 'supabase',
-      })),
+      data: rows.map((r: any) => {
+        const contacts = (r.contacts || []).map((c: any) => ({
+          kind: c.kind,
+          label: c.label ?? null,
+          value: c.value,
+          is_primary: !!c.is_primary,
+        }));
+        const email =
+          contacts.find((c: any) => c.kind === 'email' && c.is_primary)?.value ||
+          contacts.find((c: any) => c.kind === 'email')?.value ||
+          null;
+        return {
+          id: String(r.id),
+          name: r.name,
+          office: r.office_id,
+          office_title: r.office_title || officeTitle(r.office_id),
+          level: r.level,
+          district_id: r.district_id,
+          party: r.party,
+          term_start: r.term_start,
+          term_end: r.term_end,
+          incumbent: !!r.incumbent,
+          email,
+          photo_url: r.photo_url,
+          contacts,
+          source: r.source_name || 'supabase',
+        };
+      }),
       total: Number(trows[0].c),
     };
   };
@@ -326,23 +347,26 @@ export async function searchCandidates(f: {
       }
       where.push(sql);
     };
-    if (f.district_id) add('district_id = ?', f.district_id);
-    if (f.office) add('office_id = ?', f.office);
-    const sql = `SELECT c.id, c.name, c.office_id, c.district_id, c.state_abbr, c.party,
-      c.election_year, c.election_date, c.incumbent, s.name AS source_name,
-      of2.title AS office_title
+    if (f.district_id) add('c.district_id = ?', f.district_id);
+    if (f.office) add('c.office_id = ?', f.office);
+    // Schema: civicpie-data/migrations/001 — candidates use candidate_id/full_name
+    // PKs, sources/offices join on source_id/office_id (not id).
+    const sql = `SELECT c.candidate_id AS id, c.full_name AS name, c.office_id,
+      c.district_id, c.state_abbr, c.party,
+      c.election_year, c.election_date, c.is_incumbent AS incumbent,
+      s.name AS source_name, of2.title AS office_title
       FROM candidates c
-      LEFT JOIN sources s ON s.id = c.source_id
-      LEFT JOIN offices of2 ON of2.id = c.office_id
+      LEFT JOIN sources s ON s.source_id = c.source_id
+      LEFT JOIN offices of2 ON of2.office_id = c.office_id
       ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
-      ORDER BY c.name ASC LIMIT ?`;
+      ORDER BY c.full_name ASC LIMIT ?`;
     args.push(limit);
     const { rows } = await p.query(sql, args);
     const totalQ = `SELECT COUNT(*) c FROM candidates c ${where.length ? 'WHERE ' + where.join(' AND ') : ''}`;
     const { rows: trows } = await p.query(totalQ, args.slice(0, args.length - 1));
     return {
       data: rows.map((r: any) => ({
-        id: r.id,
+        id: String(r.id),
         name: r.name,
         office: r.office_id,
         office_title: r.office_title || officeTitle(r.office_id),
@@ -418,14 +442,14 @@ export async function searchAgencies(f: { level?: string }) {
     const where = f.level ? 'WHERE level = $1' : '';
     if (f.level) args.push(f.level);
     const { rows } = await p.query(
-      `SELECT a.id, a.name, a.level, a.agency_type, a.description, a.city, a.state_abbr,
+      `SELECT a.agency_id AS id, a.name, a.level, a.agency_type, a.description, a.city, a.state_abbr,
               s.name AS source_name
-       FROM agencies a LEFT JOIN sources s ON s.id = a.source_id
+       FROM agencies a LEFT JOIN sources s ON s.source_id = a.source_id
        ${where} ORDER BY a.name ASC LIMIT 500`,
       args
     );
     return rows.map((r: any) => ({
-      id: r.id,
+      id: String(r.id),
       name: r.name,
       level: r.level,
       agency_type: r.agency_type,
