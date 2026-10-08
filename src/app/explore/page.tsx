@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ContentShell, { ContentSection, P, PageLink } from '@/components/ContentShell';
+import { SearchRow } from '@/components/ui';
 
 interface CityEntry {
   id: string;
@@ -74,21 +75,17 @@ export default function ExplorePage() {
       intro="Browse the places CivicPie covers in depth — or search any U.S. address or ZIP code to see who represents it."
     >
       <ContentSection heading="Search any address">
-        <form onSubmit={handleSearch} className="flex gap-3 mb-2">
-          <input
+        <div className="mb-2">
+          <SearchRow
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={setQ}
+            onSubmit={() => handleSearch()}
             placeholder="Address or ZIP — e.g. 60660, 52317, 00901"
-            className="flex-1 rounded-lg bg-white/[0.06] border border-white/[0.12] px-4 py-3 font-body text-[15px] text-white placeholder:text-white/30 focus:outline-none focus:border-[#E8A030]"
+            buttonLabel="Search"
+            loading={searching}
+            loadingLabel="Looking up…"
           />
-          <button
-            type="submit"
-            disabled={searching}
-            className="font-display text-[14px] font-bold bg-[#C41230] text-white px-6 py-3 rounded-lg hover:bg-[#E8243E] transition-colors disabled:opacity-50"
-          >
-            {searching ? 'Looking up…' : 'Search'}
-          </button>
-        </form>
+        </div>
         <P>
           Outside our hyperlocal cities, you'll get federal and state or territorial officials
           for the location — including all five U.S. territories.
@@ -102,23 +99,23 @@ export default function ExplorePage() {
               <Link
                 key={c.id}
                 href={`/city/${c.id}`}
-                className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 hover:border-[#E8A030]/50 hover:bg-white/[0.05] transition-all"
+                className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 hover:border-gold/50 hover:bg-white/[0.05] transition-all"
               >
                 <div className="font-display text-lg font-bold text-white">{c.name}</div>
                 <div className="font-body text-[13px] text-white/45 mt-1">
                   {c.stateAbbreviation}
                   {typeof c.population === 'number' ? ` · pop. ${c.population.toLocaleString()}` : ''}
                 </div>
-                <div className="font-body text-[13px] text-[#E8A030] mt-3">Open district page →</div>
+                <div className="font-body text-[13px] text-gold mt-3">Open district page →</div>
               </Link>
             ))}
             <Link
               href="/ward/chicago-48"
-              className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 hover:border-[#E8A030]/50 hover:bg-white/[0.05] transition-all"
+              className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 hover:border-gold/50 hover:bg-white/[0.05] transition-all"
             >
               <div className="font-display text-lg font-bold text-white">Chicago's 48th Ward</div>
               <div className="font-body text-[13px] text-white/45 mt-1">IL · hyperlocal ward page</div>
-              <div className="font-body text-[13px] text-[#E8A030] mt-3">Open ward page →</div>
+              <div className="font-body text-[13px] text-gold mt-3">Open ward page →</div>
             </Link>
           </div>
         </ContentSection>
@@ -134,7 +131,7 @@ export default function ExplorePage() {
             <Link
               key={t.zip}
               href={`/coverage?q=${t.zip}`}
-              className="rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 font-body text-[13px] text-white/70 hover:text-white hover:border-[#E8A030]/60 transition-all"
+              className="rounded-full border border-white/[0.12] bg-white/[0.03] px-4 py-2 font-body text-[13px] text-white/70 hover:text-white hover:border-gold/60 transition-all"
             >
               {t.name} · {t.zip}
             </Link>

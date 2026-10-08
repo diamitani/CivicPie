@@ -27,6 +27,12 @@ const config = {
           DEFAULT: '#6B7280',
           light: '#9BA3AF',
         },
+        gray: {
+          50: '#FAFAF8',
+          100: '#F4F4F2',
+          200: '#E8E8E6',
+          700: '#374151',
+        },
       },
       fontFamily: {
         display: ["'Montserrat'", 'sans-serif'],

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContentShell, { ContentSection, P, PageLink } from '@/components/ContentShell';
+import { InfoCard } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Resources — CivicPie',
@@ -17,13 +18,9 @@ function ResourceCard({
   body: string;
 }) {
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
-      <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-[#E8A030] mb-2">
-        {level}
-      </div>
-      <h3 className="font-display text-lg font-bold text-white mb-2">{name}</h3>
+    <InfoCard eyebrow={level} title={name}>
       <p className="font-body text-[14px] leading-relaxed text-white/60">{body}</p>
-    </div>
+    </InfoCard>
   );
 }
 
@@ -72,7 +69,7 @@ export default function ResourcesPage() {
       <ContentSection heading="Register to vote">
         <P>
           Civic participation starts with registration. Check your status or register through{' '}
-          <a href="https://vote.gov" target="_blank" rel="noopener noreferrer" className="text-[#E8A030] hover:text-[#F5BE6A] transition-colors">
+          <a href="https://vote.gov" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">
             vote.gov ↗
           </a>
           , and see <PageLink href="/elections">elections</PageLink> for upcoming dates.

@@ -28,7 +28,7 @@ export default function EventsPage() {
           <p className="font-body text-[14px] text-white/70">
             <span className="font-semibold text-white">North Liberty, Iowa</span> — meeting and
             event calendars on{' '}
-            <a href="https://northlibertyiowa.org" target="_blank" rel="noopener noreferrer" className="text-[#E8A030] hover:text-[#F5BE6A] transition-colors">
+            <a href="https://northlibertyiowa.org" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">
               northlibertyiowa.org ↗
             </a>
           </p>

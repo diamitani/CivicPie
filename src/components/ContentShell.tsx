@@ -18,13 +18,13 @@ export default function ContentShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[#001B3D] text-white">
+    <div className="min-h-screen bg-navy text-white">
       <header className="border-b border-white/[0.08]">
-        <div className="max-w-[1200px] mx-auto px-10 py-5 flex items-center justify-between">
+        <div className="container-main py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <PieLogo size={28} />
             <div className="font-display text-[22px] font-black tracking-[-0.5px] leading-none">
-              Civic<span className="text-[#C41230]">Pie</span>
+              Civic<span className="text-red">Pie</span>
             </div>
           </Link>
           <Link href="/" className="font-body text-sm text-white/50 hover:text-white transition-colors">
@@ -33,8 +33,8 @@ export default function ContentShell({
         </div>
       </header>
 
-      <main className="max-w-[800px] mx-auto px-10 py-16">
-        <div className="font-display text-[11px] font-bold tracking-[3px] uppercase text-[#E8A030] mb-4">
+      <main className="max-w-[800px] mx-auto pad-x py-16">
+        <div className="font-display text-[11px] font-bold tracking-[3px] uppercase text-gold mb-4">
           {eyebrow}
         </div>
         <h1 className="font-display text-5xl font-black tracking-tight mb-3">{title}</h1>
@@ -47,7 +47,7 @@ export default function ContentShell({
       </main>
 
       <footer className="border-t border-white/[0.08]">
-        <div className="max-w-[1200px] mx-auto px-10 py-8 flex items-center justify-between flex-wrap gap-4">
+        <div className="container-main py-8 flex items-center justify-between flex-wrap gap-4">
           <p className="font-body text-xs text-white/25">
             © 2026 CivicPie · Nonpartisan · All data sourced from public government records
           </p>
@@ -90,7 +90,7 @@ export function P({ children }: { children: React.ReactNode }) {
 
 export function PageLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-[#E8A030] hover:text-[#F5BE6A] transition-colors">
+    <Link href={href} className="text-gold hover:text-gold-light transition-colors">
       {children}
     </Link>
   );

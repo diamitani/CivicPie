@@ -17,7 +17,7 @@ export default function ElectionsPage() {
       <ContentSection heading="Upcoming elections">
         <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 space-y-4">
           <div>
-            <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-[#E8A030] mb-1">
+            <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-gold mb-1">
               Federal general election
             </div>
             <div className="font-display text-2xl font-black text-white">Tuesday, November 3, 2026</div>
@@ -39,7 +39,7 @@ export default function ElectionsPage() {
         <P>
           Registration deadlines and rules differ by state. The fastest way to check your status
           or register is through the federal portal at{' '}
-          <a href="https://vote.gov" target="_blank" rel="noopener noreferrer" className="text-[#E8A030] hover:text-[#F5BE6A] transition-colors">
+          <a href="https://vote.gov" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">
             vote.gov ↗
           </a>
           , which routes you to your state's official registration site.

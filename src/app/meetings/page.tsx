@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ContentShell, { ContentSection, P, PageLink } from '@/components/ContentShell';
+import { InfoCard } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Meetings — CivicPie',
@@ -23,12 +24,8 @@ function MeetingCard({
   sourceHref: string;
 }) {
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
-      <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-[#E8A030] mb-2">
-        {city}
-      </div>
-      <h3 className="font-display text-lg font-bold text-white mb-3">{body}</h3>
-      <dl className="space-y-2">
+    <InfoCard eyebrow={city} title={body}>
+      <dl className="space-y-2 mt-1">
         <div className="flex gap-3">
           <dt className="font-body text-[13px] text-white/40 w-20 flex-shrink-0">Schedule</dt>
           <dd className="font-body text-[14px] text-white/75">{schedule}</dd>
@@ -40,13 +37,13 @@ function MeetingCard({
         <div className="flex gap-3">
           <dt className="font-body text-[13px] text-white/40 w-20 flex-shrink-0">Agendas</dt>
           <dd className="font-body text-[14px]">
-            <a href={sourceHref} target="_blank" rel="noopener noreferrer" className="text-[#E8A030] hover:text-[#F5BE6A] transition-colors">
+            <a href={sourceHref} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">
               {source} ↗
             </a>
           </dd>
         </div>
       </dl>
-    </div>
+    </InfoCard>
   );
 }
 

@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { PieLogo } from '@/components/Logo';
+import { OfficialRow, EmptyState, Alert } from '@/components/ui';
 
 interface LookupBody {
   coverage?: 'local' | 'none';
@@ -32,19 +33,12 @@ function wardHref(district_id: string | null | undefined): string | null {
   return m ? `/ward/chicago-${parseInt(m[1], 10)}` : null;
 }
 
-function OfficialRow({ o }: { o: any }) {
+function OfficialRowView({ o }: { o: any }) {
   return (
-    <div className="flex items-center gap-3 py-3 px-4 rounded-xl bg-white/[0.04] border border-white/[0.07]">
-      <div className="w-9 h-9 rounded-full bg-white/[0.07] flex items-center justify-center text-base flex-shrink-0">
-        👤
-      </div>
-      <div className="min-w-0">
-        <div className="font-display text-[14px] font-bold text-white truncate">{o.name}</div>
-        <div className="font-body text-[12px] text-white/45 truncate">
-          {[o.office_title, o.party].filter(Boolean).join(' · ')}
-        </div>
-      </div>
-    </div>
+    <OfficialRow
+      name={o.name}
+      meta={[o.office_title, o.party].filter(Boolean).join(' · ')}
+    />
   );
 }
 
@@ -67,12 +61,12 @@ function CoverageInner() {
   }, [q]);
 
   return (
-    <div className="min-h-screen bg-[#001B3D] flex flex-col">
+    <div className="min-h-screen bg-navy flex flex-col">
       <header className="px-10 py-5 flex items-center gap-3 max-w-[1200px] mx-auto w-full">
         <Link href="/" className="flex items-center gap-3">
           <PieLogo size={26} />
           <div className="font-display text-2xl font-black tracking-[-0.5px] text-white leading-none">
-            Civic<span className="text-[#C41230]">Pie</span>
+            Civic<span className="text-red">Pie</span>
           </div>
         </Link>
       </header>
@@ -88,7 +82,7 @@ function CoverageInner() {
 
           {q && !body && (
             <div className="flex flex-col items-center gap-4 py-24">
-              <div className="animate-spin rounded-full h-10 w-10 border-2 border-[#E8A030] border-t-transparent" />
+              <div className="animate-spin rounded-full h-10 w-10 border-2 border-gold border-t-transparent" />
               <p className="font-body text-sm text-white/50">Looking up “{q}”…</p>
             </div>
           )}
@@ -102,7 +96,7 @@ function CoverageInner() {
 
           {q && body && body.coverage === 'local' && (
             <div className="bg-white/[0.04] border border-white/[0.10] rounded-[20px] p-8 backdrop-blur-[16px]">
-              <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-[#E8A030] mb-3">
+              <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-gold mb-3">
                 ✅ You&apos;re covered
               </div>
               <h1 className="font-display text-3xl font-black text-white tracking-[-1px] mb-2">
@@ -114,14 +108,14 @@ function CoverageInner() {
               </div>
               <div className="flex flex-col gap-2 mb-6">
                 {(body.officials || []).map((o: any, i: number) => (
-                  <OfficialRow key={o.id || i} o={o} />
+                  <OfficialRowView key={o.id || i} o={o} />
                 ))}
               </div>
               <div className="flex gap-3 flex-wrap">
                 {wardHref(body.district_id) && (
                   <Link
                     href={wardHref(body.district_id)!}
-                    className="bg-[#C41230] text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-[#E8243E] transition-colors"
+                    className="bg-red text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-red-hover transition-colors"
                   >
                     View full ward page →
                   </Link>
@@ -138,7 +132,7 @@ function CoverageInner() {
 
           {q && body && body.coverage === 'none' && (
             <div className="bg-white/[0.04] border border-white/[0.10] rounded-[20px] p-8 backdrop-blur-[16px]">
-              <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-[#E8A030] mb-3">
+              <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-gold mb-3">
                 🗺️ Coming soon to your area
               </div>
               <h1 className="font-display text-3xl font-black text-white tracking-[-1px] mb-3">
@@ -153,7 +147,7 @@ function CoverageInner() {
                   </div>
                   <div className="flex flex-col gap-2 mb-8">
                     {body.federal_officials!.map((o: any, i: number) => (
-                      <OfficialRow key={o.id || i} o={o} />
+                      <OfficialRowView key={o.id || i} o={o} />
                     ))}
                   </div>
                 </>
@@ -169,26 +163,23 @@ function CoverageInner() {
                   </div>
                   <div className="flex flex-col gap-2 mb-8">
                     {body.state_officials!.map((o: any, i: number) => (
-                      <OfficialRow key={o.id || i} o={o} />
+                      <OfficialRowView key={o.id || i} o={o} />
                     ))}
                   </div>
                 </>
               )}
 
-              <div className="rounded-2xl bg-[#C41230]/10 border border-[#C41230]/25 p-6 mb-6">
-                <div className="font-display text-base font-bold text-white mb-1.5">
-                  Want CivicPie in {body.state_name || 'your area'}?
-                </div>
-                <p className="font-body text-sm text-white/50 mb-4">
+              <Alert variant="red" dark title={`Want CivicPie in ${body.state_name || 'your area'}?`} className="mb-6">
+                <p className="mb-4">
                   Sign up free and we&apos;ll notify you the moment hyperlocal coverage launches near you.
                 </p>
                 <Link
                   href="/signup"
-                  className="inline-block bg-[#C41230] text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-[#E8243E] transition-colors"
+                  className="inline-block bg-red text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-red-hover transition-colors"
                 >
                   Notify me →
                 </Link>
-              </div>
+              </Alert>
 
               <Link
                 href="/"
@@ -212,16 +203,23 @@ function CoverageInner() {
 
 function EmptyCard({ title, body }: { title: string; body: string }) {
   return (
-    <div className="bg-white/[0.04] border border-white/[0.10] rounded-[20px] p-10 text-center backdrop-blur-[16px]">
-      <div className="text-4xl mb-4">🔍</div>
-      <h1 className="font-display text-2xl font-black text-white tracking-[-0.5px] mb-3">{title}</h1>
-      <p className="font-body text-[15px] text-white/50 leading-relaxed mb-8">{body}</p>
-      <Link
-        href="/"
-        className="inline-block bg-[#C41230] text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-[#E8243E] transition-colors"
-      >
-        Back home →
-      </Link>
+    <div className="bg-white/[0.04] border border-white/[0.10] rounded-[20px] backdrop-blur-[16px]">
+      <EmptyState
+        dark
+        icon="🔍"
+        title={title}
+        titleClassName="text-2xl font-black tracking-[-0.5px] mb-3"
+        body={body}
+        bodyClassName="mb-8"
+        action={
+          <Link
+            href="/"
+            className="inline-block bg-red text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-red-hover transition-colors"
+          >
+            Back home →
+          </Link>
+        }
+      />
     </div>
   );
 }
@@ -230,8 +228,8 @@ export default function CoveragePage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[#001B3D] flex items-center justify-center">
-          <div className="animate-spin rounded-full h-10 w-10 border-2 border-[#E8A030] border-t-transparent" />
+        <div className="min-h-screen bg-navy flex items-center justify-center">
+          <div className="animate-spin rounded-full h-10 w-10 border-2 border-gold border-t-transparent" />
         </div>
       }
     >
