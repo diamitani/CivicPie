@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { serverError } from '@/lib/civic/http';
 import { searchServices, servicesMeta } from '@/lib/services';
 
 export const dynamic = 'force-dynamic';
@@ -18,6 +19,6 @@ export async function GET(request: NextRequest) {
     });
     return NextResponse.json({ ok: true, total, data });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return serverError(e, 'services');
   }
 }

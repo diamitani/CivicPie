@@ -12,7 +12,7 @@ npm run seed        # copies staged JSON from ~/workspace/civicpie-data → data
 npm run dev         # or: npm run build && npm start
 ```
 
-Without `DATABASE_URL` the API serves the bundled seed snapshot in `data/seed/` (11.7 MB, committed to the repo so Vercel works out of the box). Set `DATABASE_URL` to a Supabase Postgres connection string and the same API reads the live database instead — no code change.
+Without `DATABASE_URL` the API serves the bundled seed snapshot in `data/seed/` (~19 MB incl. ~1,600 swept city councils, committed to the repo so Vercel works out of the box). Set `DATABASE_URL` to a Supabase Postgres connection string and the same API reads the live database instead — no code change.
 
 ## API
 
@@ -49,6 +49,7 @@ curl "http://localhost:3000/api/districts?type=ward&city=Chicago&state=IL"
 
 | Variable | Purpose | Required |
 |---|---|---|
+| `CIVICPIE_DATA_DIR` | Path to the `civicpie-data` checkout for `npm run seed` (default: sibling `../civicpie-data`). | No |
 | `DATABASE_URL` | Supabase Postgres connection string (session pooler). Unset = serve bundled `data/seed/` JSON. | No |
 | `NEXT_PUBLIC_COGNITO_USER_POOL_ID` | AWS Cognito user pool for real sign-in. Unset = mock sign-in. | No |
 | `NEXT_PUBLIC_COGNITO_CLIENT_ID` | Cognito app client id. | No |

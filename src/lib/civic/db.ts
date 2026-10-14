@@ -397,6 +397,15 @@ export async function searchCandidates(f: {
 }
 
 export async function searchDistricts(f: { type?: string; city?: string; state?: string }) {
+  return (await searchDistrictsPaged({ ...f, limit: 500, offset: 0 })).data;
+}
+
+// Paged variant: `total` is the full match count (the page itself is capped at 500).
+export async function searchDistrictsPaged(f: {
+  type?: string; city?: string; state?: string; limit?: number; offset?: number;
+}): Promise<{ data: District[]; total: number }> {
+  const limit = Math.min(Math.max(1, Math.floor(f.limit ?? 500)), 500);
+  const offset = Math.max(0, Math.floor(f.offset ?? 0));
   const fromDb = async () => {
     const p = getPool();
     const where: string[] = [];
@@ -411,20 +420,25 @@ export async function searchDistricts(f: { type?: string; city?: string; state?:
     if (f.type) add('district_type = ?', f.type);
     if (f.city) add('city ILIKE ?', f.city);
     if (f.state) add('state_abbr ILIKE ?', f.state);
+    const w = where.length ? 'WHERE ' + where.join(' AND ') : '';
+    const count = await p.query(`SELECT COUNT(*) c FROM districts ${w}`, args);
     const { rows } = await p.query(
       `SELECT district_id, district_type, district_name, district_number, city, state_abbr
-       FROM districts ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
-       ORDER BY district_name ASC LIMIT 500`,
+       FROM districts ${w} ORDER BY district_name ASC, district_id ASC
+       LIMIT ${limit} OFFSET ${offset}`,
       args
     );
-    return rows;
+    return { data: rows as District[], total: Number(count.rows[0].c) };
   };
   const fromSeed = () => {
     let out = seedDistricts();
     if (f.type) out = out.filter((d) => d.district_type === f.type);
     if (f.city) out = out.filter((d) => d.city?.toLowerCase() === f.city!.toLowerCase());
     if (f.state) out = out.filter((d) => d.state_abbr?.toLowerCase() === f.state!.toLowerCase());
-    return out.sort((a, b) => a.district_name.localeCompare(b.district_name)).slice(0, 500);
+    out = out.sort(
+      (a, b) => a.district_name.localeCompare(b.district_name) || a.district_id.localeCompare(b.district_id)
+    );
+    return { data: out.slice(offset, offset + limit), total: out.length };
   };
   return withDbFallback(fromDb, fromSeed);
 }

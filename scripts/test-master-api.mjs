@@ -90,7 +90,11 @@ try {
   assert(r.body.district_id === 'wa-seattle-city', '98101 → wa-seattle-city', r.body.district_id);
   assert((r.body.officials || []).length >= 5, 'Seattle council officials present', (r.body.officials || []).length);
   r = await get('/api/districts?type=city');
-  assert((r.body.data || r.body.districts || []).length >= 500, 'city districts >= 500 (list capped at 500)');
+  assert(r.body.total >= 1500 && (r.body.data || []).length === 500, 'city districts: total >= 1500, page capped at 500', `${r.body.total}/${(r.body.data || []).length}`);
+  r = await get('/api/districts?type=city&limit=10&offset=1000');
+  assert((r.body.data || []).length === 10 && r.body.total >= 1500, 'districts paging (limit/offset) works');
+  r = await get('/api/districts/zz-does-not-exist');
+  assert(r.status === 404, 'unknown district -> 404');
 
   // 2b4. Swept-city district detail carries source links + page-verified confidence.
   r = await get('/api/districts/pa-west-chester-city');
