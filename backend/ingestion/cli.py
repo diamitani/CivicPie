@@ -107,6 +107,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     places_p.add_argument("--level", default="county", choices=["county", "city"])
     places_p.add_argument("--state", help="two-letter state code")
     places_p.add_argument("--limit", type=int, default=25, help="max requests (billed!)")
+    sub.add_parser("export-master", help="export the internal DB to data/master/*.csv (master schema)")
+    load_p = sub.add_parser("load-master", help="upsert data/master/*.csv into Postgres/Supabase (needs DATABASE_URL pointing at it)")
+    load_p.add_argument("--dsn", help="Postgres DSN (default: $SUPABASE_DB_URL, then $DATABASE_URL)")
     sub.add_parser("seed", help="fill the DB from every keyless source (officials + counties + agencies)")
 
     args = parser.parse_args(argv)
@@ -127,6 +130,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.cmd == "enrich-places":
         from backend.ingestion.enrich_places import run_places_enrichment
         print(json.dumps(run_places_enrichment(level=args.level, limit=args.limit, state=args.state), indent=2))
+        return 0
+    if args.cmd == "export-master":
+        from backend.db import SessionLocal
+        from backend.ingestion.master import export_master
+        with SessionLocal() as sess:
+            print(json.dumps(export_master(sess), indent=2))
+        return 0
+    if args.cmd == "load-master":
+        import os
+        from backend.ingestion.master import load_master_to_postgres
+        print(json.dumps(load_master_to_postgres(args.dsn or os.environ.get("SUPABASE_DB_URL")), indent=2))
         return 0
     if args.cmd == "seed":
         return _seed()

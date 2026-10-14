@@ -104,3 +104,18 @@ Needs an API key (not run by `seed`):
 | `enrich-places --limit N` | `GOOGLE_MAPS_API_KEY` | county office address/phone/website; **billed per request** |
 
 Read endpoints: `/api/stats`, `/api/officials`, `/api/officials/{id}`, `/api/jurisdictions`, `/api/agencies`.
+
+### Master data, Supabase and QA tooling
+
+```bash
+supabase db push                                   # applies supabase/migrations (adds master tables + RLS)
+python -m backend.ingestion.cli export-master      # internal DB -> data/master/*.csv
+python -m backend.ingestion.cli load-master --dsn "$SUPABASE_DB_URL"   # idempotent upsert, no duplicates
+python -m backend.qa.backend_checks --repo .       # deterministic backend QA scan
+python -m backend.qa.e2e_smoke                     # Playwright (+Selenium if CHROMEDRIVER_PATH set) E2E
+python -m backend.qa.probe_sources                 # browser probe of Tier 2/3 source pages -> docs/TIER2_SOURCE_PROBE.md
+```
+
+`data/master/` holds the committed master CSVs; `backend/data/internal/civicpie_internal.db` is a
+SQLite snapshot of the internal database (rebuild any time with `alembic upgrade head && cli seed`).
+See `docs/QA-REPORT-backend-2026-10-14.md` for the latest QA verdict and open items.

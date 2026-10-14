@@ -51,3 +51,7 @@ tsconfig.tsbuildinfo
 # CivicPie data-agent runtime state (cache + staging queue)
 scripts/data-agent/.cache/
 scripts/data-agent/staging/
+
+# Internal DB snapshot is intentionally tracked
+!backend/data/internal/
+!backend/data/internal/*.db
