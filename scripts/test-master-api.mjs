@@ -3,6 +3,10 @@
 import { spawn } from 'node:child_process';
 import { setTimeout as sleep } from 'node:timers/promises';
 
+function killGroup(child) {
+  try { process.kill(-child.pid, 'SIGTERM'); } catch { try { child.kill(); } catch {} }
+}
+
 const PORT = 3210;
 const BASE = `http://localhost:${PORT}`;
 
@@ -35,6 +39,7 @@ async function waitForServer(server) {
 const server = spawn('npx', ['next', 'start', '-p', String(PORT)], {
   cwd: new URL('..', import.meta.url).pathname,
   stdio: 'ignore',
+  detached: true, // own process group so kill() reaches the next-server child, not just npx
 });
 try {
   await waitForServer(server);
@@ -87,6 +92,16 @@ try {
   r = await get('/api/districts?type=city');
   assert((r.body.data || r.body.districts || []).length >= 500, 'city districts >= 500 (list capped at 500)');
 
+  // 2b4. Swept-city district detail carries source links + page-verified confidence.
+  r = await get('/api/districts/pa-west-chester-city');
+  assert(r.status === 200, 'west-chester district 200', r.status);
+  const wc = r.body.data || {};
+  assert((wc.officials || []).some((o) => o.name === 'Brian McGinnis'), 'West Chester has McGinnis (fixed vs snippet)');
+  assert((wc.officials || []).every((o) => o.source_url), 'every West Chester official has a source_url');
+  assert(wc.refs?.confidence === 'page', "West Chester confidence='page'", wc.refs?.confidence);
+  r = await get('/api/lookup?address=' + encodeURIComponent('19380'));
+  assert(r.body.coverage === 'local' && r.body.district_href === '/city/pa-west-chester', 'West Chester lookup links to /city/pa-west-chester', r.body.district_href);
+
   // 2c. Chicago ZIP → local coverage, ward 48 (unchanged behavior + coverage flag)
   r = await get('/api/lookup?address=' + encodeURIComponent('60660'));
   assert(r.status === 200, '60660 lookup 200', r.status);
@@ -136,6 +151,7 @@ try {
   const server2 = spawn('npx', ['next', 'start', '-p', String(PORT2)], {
     cwd: new URL('..', import.meta.url).pathname,
     stdio: 'ignore',
+    detached: true,
     env: { ...process.env, DATABASE_URL: 'postgres://localhost:54399/civicpie' },
   });
   try {
@@ -157,12 +173,12 @@ try {
     assert(r.status === 200 && r.body.coverage === 'local', 'broken-db 60660 → ward', r.body.coverage);
     assert(r.body.district_id === 'il-chicago-ward-48', 'broken-db ward 48', r.body.district_id);
   } finally {
-    server2.kill('SIGTERM');
-    setTimeout(() => server2.kill('SIGKILL'), 3000);
+    killGroup(server2);
+    setTimeout(() => killGroup(server2), 3000);
   }
 
   console.log(process.exitCode ? '\nSOME TESTS FAILED' : '\nALL TESTS PASSED');
 } finally {
-  server.kill('SIGTERM');
-  setTimeout(() => server.kill('SIGKILL'), 3000);
+  killGroup(server);
+  setTimeout(() => killGroup(server), 3000);
 }

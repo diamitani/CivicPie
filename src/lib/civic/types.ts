@@ -28,6 +28,11 @@ export interface Official {
   photo_url: string | null;
   contacts: ContactPoint[];
   source: string;
+  // City-sweep extras (seed mode): where the data came from and how sure we are.
+  phone?: string | null;
+  seat?: string | null;
+  source_url?: string | null;
+  confidence?: string | null;
 }
 
 export interface District {
@@ -37,6 +42,8 @@ export interface District {
   district_number: string | null;
   city: string | null;
   state_abbr: string | null;
+  // Seed-mode extras for city districts: population, website, government_page, confidence...
+  refs?: Record<string, any> | null;
 }
 
 export interface DistrictDetail extends District {
