@@ -32,6 +32,7 @@ from backend.models.official import Branch, GovernmentLevel, Party
 
 log = logging.getLogger(__name__)
 
+USER_AGENT = "CivicPie Bot (civic engagement platform; +https://civicpie.com)"
 FJC_CSV_URL = "https://www.fjc.gov/sites/default/files/history/judges.csv"
 
 # The FJC dataset has one row per (judge, appointment). A judge can appear in
@@ -42,7 +43,7 @@ APPOINTMENT_INDICES = ("1", "2", "3", "4", "5", "6")
 def _parse_date(value: Any) -> Optional[date]:
     if value in (None, "", "NULL"):
         return None
-    for fmt in ("%Y-%m-%d", "%m/%d/%Y", "%Y"):
+    for fmt in ("%Y-%m-%d", "%m/%d/%Y"):
         try:
             return datetime.strptime(str(value).strip(), fmt).date()
         except ValueError:
@@ -70,6 +71,8 @@ class FederalJudiciaryIngestor(BaseIngestor):
         self.csv_path = params.get("csv_path") or os.environ.get("FJC_JUDGES_CSV")
         self.url = params.get("url", FJC_CSV_URL)
         self.timeout = params.get("timeout", 60.0)
+        # Default = judges holding an active (non-senior) seat, ~850 nationwide.
+        self.include_senior = params.get("include_senior", False)
         self.include_historical = params.get("include_historical", False)
 
     def _load_rows(self) -> list[dict]:
@@ -78,51 +81,50 @@ class FederalJudiciaryIngestor(BaseIngestor):
             with open(self.csv_path, "r", encoding="utf-8-sig") as f:
                 return list(csv.DictReader(f))
         log.info("fjc: fetching %s", self.url)
-        with httpx.Client(timeout=self.timeout) as client:
+        with httpx.Client(timeout=self.timeout, headers={"User-Agent": USER_AGENT}) as client:
             resp = client.get(self.url)
             resp.raise_for_status()
-            return list(csv.DictReader(io.StringIO(resp.text)))
+            return list(csv.DictReader(io.StringIO(resp.text.lstrip("\ufeff"))))
 
     def fetch(self) -> Iterable[IngestedRecord]:
         for row in self._load_rows():
             yield from self._records_from_row(row)
 
     def _records_from_row(self, row: dict) -> Iterable[IngestedRecord]:
-        nid = (row.get("nid") or row.get("NID") or "").strip()
+        nid = (row.get("nid") or "").strip()
         first = (row.get("First Name") or "").strip()
         middle = (row.get("Middle Name") or "").strip()
         last = (row.get("Last Name") or "").strip()
         suffix = (row.get("Suffix") or "").strip()
-        birth_year = _parse_date(row.get("Birth Year"))
-        birthday_full = _parse_date(row.get("Birth Date"))
         full_name = " ".join(v for v in (first, middle, last, suffix) if v).strip()
         if not full_name:
             return
+        deceased = bool((row.get("Death Year") or "").strip())
+        birth = _birth_date(row)
+        gender = {"Male": "M", "Female": "F"}.get((row.get("Gender") or "").strip())
 
         for idx in APPOINTMENT_INDICES:
             court = (row.get(f"Court Name ({idx})") or "").strip()
             if not court:
                 continue
             termination = _parse_date(row.get(f"Termination Date ({idx})"))
-            if termination and not self.include_historical:
-                # Judge already left this seat; skip unless we want history.
+            senior = _parse_date(row.get(f"Senior Status Date ({idx})"))
+            if not self.include_historical and (termination or deceased):
+                continue
+            if not self.include_historical and senior and not self.include_senior:
                 continue
 
-            appointment_date = _parse_date(row.get(f"Commission Date ({idx})"))
-            appointing_president = (
-                row.get(f"Appointing President ({idx})") or ""
-            ).strip()
             party_label = (row.get(f"Party of Appointing President ({idx})") or "").strip()
-            party = _party_from_label(party_label)
-
             court_level = _classify_court(court)
+            seat_id = (row.get(f"Seat ID ({idx})") or "").strip()
             yield IngestedRecord(
                 full_name=full_name,
                 first_name=first or None,
                 middle_name=middle or None,
                 last_name=last or None,
                 suffix=suffix or None,
-                birth_date=birthday_full or birth_year,
+                gender=gender,
+                birth_date=birth,
                 fjc_id=nid or None,
                 jurisdiction_name="United States",
                 jurisdiction_level=GovernmentLevel.FEDERAL,
@@ -130,26 +132,35 @@ class FederalJudiciaryIngestor(BaseIngestor):
                 office_title=_office_title(court),
                 branch=Branch.JUDICIAL,
                 chamber=court_level,
-                seat=court,  # unique seat name so multiple judges on same court get distinct offices? No -- see extra_data.
+                seat=seat_id or court,
                 is_elected=False,
-                party=party,
+                party=_party_from_label(party_label),
                 party_label=party_label or None,
-                start_date=appointment_date,
+                start_date=_parse_date(row.get(f"Commission Date ({idx})")),
                 end_date=termination,
-                is_current=termination is None,
+                is_current=termination is None and not deceased,
                 extra_data={
                     "court": court,
                     "court_level": court_level,
-                    "appointing_president": appointing_president or None,
-                    "senate_confirmation_date": _iso(
-                        _parse_date(row.get(f"Senate Confirmation Date ({idx})"))
-                    ),
+                    "seat_id": seat_id or None,
+                    "appointing_president": (row.get(f"Appointing President ({idx})") or "").strip() or None,
+                    "confirmation_date": _iso(_parse_date(row.get(f"Confirmation Date ({idx})"))),
                     "aba_rating": (row.get(f"ABA Rating ({idx})") or "").strip() or None,
-                    "chief_judge_start": _iso(_parse_date(row.get(f"Chief Judge Start ({idx})"))),
-                    "chief_judge_end": _iso(_parse_date(row.get(f"Chief Judge End ({idx})"))),
+                    "senior_status_date": _iso(senior),
+                    "chief_judge_begin": (row.get(f"Service as Chief Judge, Begin ({idx})") or "").strip() or None,
+                    "chief_judge_end": (row.get(f"Service as Chief Judge, End ({idx})") or "").strip() or None,
                     "appointment_position": int(idx),
                 },
             )
+
+
+def _birth_date(row: dict) -> Optional[date]:
+    """Only return a birth date when year, month and day are all present --
+    a bare year must not become a fake January 1 (it would corrupt identity matching)."""
+    try:
+        return date(int(row["Birth Year"]), int(row["Birth Month"]), int(row["Birth Day"]))
+    except (KeyError, TypeError, ValueError):
+        return None
 
 
 def _office_title(court: str) -> str:

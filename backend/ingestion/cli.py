@@ -55,6 +55,32 @@ def _tier1(args: argparse.Namespace) -> int:
     return rc
 
 
+KEYLESS_SOURCES = [
+    "federal_executive", "state_executives", "congress_legislators",
+    "federal_judiciary", "census_counties",
+]
+
+
+def _seed() -> int:
+    """Fill the database from every source that needs no API key."""
+    from backend.ingestion.agencies import run_agency_pipeline
+
+    summaries, rc = [], 0
+    for key in KEYLESS_SOURCES:
+        try:
+            summaries.append(run_pipeline(key))
+        except Exception as exc:
+            rc = 1
+            summaries.append({"source": key, "status": "failed", "error": str(exc)})
+    try:
+        summaries.append(run_agency_pipeline())
+    except Exception as exc:
+        rc = 1
+        summaries.append({"source": "agencies:federal_register", "status": "failed", "error": str(exc)})
+    print(json.dumps(summaries, indent=2, default=str))
+    return rc
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     logging.basicConfig(
         level=logging.INFO,
@@ -74,6 +100,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
 
     sub.add_parser("tier1", help="run the default Tier-1 federal+state pipeline")
+    sub.add_parser("agencies", help="ingest federal agencies from the Federal Register")
+    enrich_p = sub.add_parser("enrich-wikipedia", help="add bios/photos from Wikipedia (exact-title matches only)")
+    enrich_p.add_argument("--limit", type=int, help="max people to enrich this run")
+    places_p = sub.add_parser("enrich-places", help="Google Places address/phone/website (billed; needs GOOGLE_MAPS_API_KEY)")
+    places_p.add_argument("--level", default="county", choices=["county", "city"])
+    places_p.add_argument("--state", help="two-letter state code")
+    places_p.add_argument("--limit", type=int, default=25, help="max requests (billed!)")
+    sub.add_parser("seed", help="fill the DB from every keyless source (officials + counties + agencies)")
 
     args = parser.parse_args(argv)
     if args.cmd == "list":
@@ -82,6 +116,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         return _run(args)
     if args.cmd == "tier1":
         return _tier1(args)
+    if args.cmd == "agencies":
+        from backend.ingestion.agencies import run_agency_pipeline
+        print(json.dumps(run_agency_pipeline(), indent=2, default=str))
+        return 0
+    if args.cmd == "enrich-wikipedia":
+        from backend.ingestion.enrich_wikipedia import run_wikipedia_enrichment
+        print(json.dumps(run_wikipedia_enrichment(limit=args.limit), indent=2))
+        return 0
+    if args.cmd == "enrich-places":
+        from backend.ingestion.enrich_places import run_places_enrichment
+        print(json.dumps(run_places_enrichment(level=args.level, limit=args.limit, state=args.state), indent=2))
+        return 0
+    if args.cmd == "seed":
+        return _seed()
     parser.error(f"unknown command {args.cmd}")
     return 2
 

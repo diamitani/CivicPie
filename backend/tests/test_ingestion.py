@@ -285,9 +285,10 @@ def test_seed_record_without_ids_resolves_via_office_currency(session, run):
 
 FJC_CSV = textwrap.dedent(
     """
-    nid,First Name,Middle Name,Last Name,Suffix,Birth Year,Birth Date,Court Name (1),Commission Date (1),Termination Date (1),Appointing President (1),Party of Appointing President (1),Senate Confirmation Date (1),ABA Rating (1),Chief Judge Start (1),Chief Judge End (1)
-    1234500,Active,Q.,Judge,,1965,1965-04-12,U. S. Court of Appeals for the Ninth Circuit,2016-08-15,,Barack Obama,Democratic,2016-07-01,Well Qualified,,
-    6789000,Retired,,Judge,,1935,,U. S. District Court for the Southern District of Texas,1985-01-15,2015-06-30,Ronald Reagan,Republican,,,,
+    nid,jid,Last Name,First Name,Middle Name,Suffix,Birth Month,Birth Day,Birth Year,Death Year,Gender,Court Name (1),Seat ID (1),Appointing President (1),Party of Appointing President (1),ABA Rating (1),Confirmation Date (1),Commission Date (1),Senior Status Date (1),Termination Date (1)
+    1234500,1,Judge,Active,Q.,,4,12,1965,,Female,U.S. Court of Appeals for the Ninth Circuit,CA0901,Barack Obama,Democratic,Well Qualified,2016-07-01,2016-08-15,,
+    6789000,2,Judge,Retired,,,,,1935,2019,Male,U.S. District Court for the Southern District of Texas,TXSD0101,Ronald Reagan,Republican,,1985-01-10,1985-01-15,,2015-06-30
+    5550001,3,Judge,Senior,,,,,1950,,Male,U.S. District Court for the District of Columbia,DCD0308,William J. Clinton,Democratic,,1998-06-05,1998-06-23,2016-03-16,
     """
 ).strip()
 
@@ -307,6 +308,7 @@ def test_fjc_ingestor_filters_historical_and_upserts(session, run):
     assert updated == 0
     person = session.query(Person).filter_by(fjc_id="1234500").one()
     assert person.full_name == "Active Q. Judge"
+    assert str(person.birth_date) == "1965-04-12"
     term = session.query(OfficialTerm).filter_by(person_id=person.id).one()
     office = session.get(Office, term.office_id)
     assert office.branch == Branch.JUDICIAL
@@ -314,13 +316,24 @@ def test_fjc_ingestor_filters_historical_and_upserts(session, run):
     assert term.is_current is True
     assert term.party == Party.DEMOCRAT
     assert term.extra_data["appointing_president"] == "Barack Obama"
+    assert office.seat == "CA0901"
+
+
+def test_fjc_senior_status_excluded_by_default_but_includable(session, run):
+    with tempfile.TemporaryDirectory() as d:
+        path = _write_fjc_csv(d)
+        assert session.query(Person).filter_by(fjc_id="5550001").count() == 0
+        _ingest_all(session, run, FederalJudiciaryIngestor(csv_path=path, include_senior=True))
+    senior = session.query(Person).filter_by(fjc_id="5550001").one()
+    # bare birth year must NOT become a fake Jan-1 birthday
+    assert senior.birth_date is None
 
 
 def test_fjc_ingestor_include_historical(session, run):
     with tempfile.TemporaryDirectory() as d:
         ingestor = FederalJudiciaryIngestor(csv_path=_write_fjc_csv(d), include_historical=True)
         inserted, _ = _ingest_all(session, run, ingestor)
-    assert inserted == 2
+    assert inserted == 3
     retired = session.query(Person).filter_by(fjc_id="6789000").one()
     retired_term = session.query(OfficialTerm).filter_by(person_id=retired.id).one()
     assert retired_term.is_current is False

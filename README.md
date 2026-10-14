@@ -47,3 +47,27 @@ All data is sourced from publicly available government websites:
 - Individual aldermanic websites
 - Chicago Board of Elections
 - City of Chicago data portal
+
+## Elected-officials database (backend)
+
+```bash
+pip install -r backend/requirements.txt
+alembic upgrade head                          # create schema (SQLite by default; set DATABASE_URL for Postgres)
+python -m backend.ingestion.cli seed          # fill from every keyless source (see below)
+python -m backend.ingestion.cli enrich-wikipedia      # bios + photos (exact Wikipedia titles only)
+uvicorn backend.main:app --reload             # API at /docs
+```
+
+`seed` loads: President/VP, 50 governors + 50 attorneys general, Congress (~539),
+active Article III judges (~850, via the Federal Judicial Center), ~3,200 county
+jurisdictions (Census) and ~470 federal agencies (Federal Register).
+
+Needs an API key (not run by `seed`):
+
+| Command | Env var | Notes |
+|---|---|---|
+| `run openstates` | `OPENSTATES_API_KEY` | ~7,400 state legislators |
+| `run google_civic --address ...` | `GOOGLE_CIVIC_API_KEY` | address-keyed cross-reference |
+| `enrich-places --limit N` | `GOOGLE_MAPS_API_KEY` | county office address/phone/website; **billed per request** |
+
+Read endpoints: `/api/stats`, `/api/officials`, `/api/officials/{id}`, `/api/jurisdictions`, `/api/agencies`.

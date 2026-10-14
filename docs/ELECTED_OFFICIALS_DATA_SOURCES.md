@@ -20,7 +20,7 @@ This document is the working map of every API, dataset, and scrape target we nee
 | U.S. Senate | 100 | `unitedstates/congress-legislators` (CC0, GitHub) | Implemented (`congress_legislators`) |
 | U.S. House | 435 | Same | Implemented |
 | DC, PR, GU, AS, VI, MP delegates | 6 | Same (`legislators-current.yaml`) | Implemented |
-| Federal judiciary (Art. III) | ~870 | Federal Judicial Center CSV | Implemented (`federal_judiciary`) |
+| Federal judiciary (Art. III) | ~850 active seats (excludes senior status) | Federal Judicial Center CSV | Implemented (`federal_judiciary`) |
 
 **Key APIs:**
 - **Congress.gov API** (api.congress.gov) — bills, votes, statements; key required, free
@@ -329,3 +329,16 @@ When a source delivers a complete current roster, the orchestrator marks rows it
 1. **Judges below state supreme courts** — sourcing varies wildly. Federal Judicial Center covers Article III, but state and local trial judges require state-by-state work.
 2. **Native nations** — 574 federally recognized tribes have elected councils. Not in any of the standard rosters. Likely a Tier-5 effort.
 3. **Insular areas (PR, GU, USVI, MP, AS)** — partial OpenStates coverage; PR territorial legislature is in. GU/USVI/MP/AS need bespoke ingestors.
+
+---
+
+## Agencies & enrichment (implemented)
+
+| Layer | Source | Command | Notes |
+|---|---|---|---|
+| Federal agencies (~470, with parent/child) | Federal Register API | `agencies` | no key; includes some defunct agencies (e.g. ACTION) — `is_active` not yet derived |
+| Bios + photos | Wikipedia REST summary | `enrich-wikipedia` | only exact page titles (Congress IDs, states); image licenses vary per file |
+| Office address/phone/website/lat-lng | Google Places API (New) | `enrich-places` | needs `GOOGLE_MAPS_API_KEY`; billed per request |
+
+Known gaps: governors/AGs/judges have no Wikipedia IDs yet (needs Wikidata, which is
+rate-limited from the sandbox); state agencies and county/city departments are not ingested.

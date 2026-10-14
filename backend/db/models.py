@@ -287,3 +287,37 @@ class IngestionRun(Base, TimestampMixin):
     records_failed: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     error_message: Mapped[Optional[str]] = mapped_column(Text)
     parameters: Mapped[Optional[dict]] = mapped_column(JSON)
+
+
+class Agency(Base, TimestampMixin):
+    """A government agency/department (federal now; state/county/city later).
+
+    Agencies are appointed bodies, so they live beside -- not inside -- the
+    elected-officials graph. `jurisdiction_id` ties them to the same OCD
+    jurisdiction hierarchy; `parent_id` models department -> sub-agency.
+    """
+
+    __tablename__ = "agencies"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    source: Mapped[str] = mapped_column(String(64), nullable=False)
+    source_id: Mapped[str] = mapped_column(String(128), nullable=False)
+    name: Mapped[str] = mapped_column(String(512), nullable=False, index=True)
+    short_name: Mapped[Optional[str]] = mapped_column(String(64), index=True)
+    slug: Mapped[Optional[str]] = mapped_column(String(255), index=True)
+    level: Mapped[str] = mapped_column(String(16), nullable=False, default="federal", index=True)
+    jurisdiction_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("jurisdictions.id", ondelete="SET NULL"), index=True
+    )
+    parent_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("agencies.id", ondelete="SET NULL"), index=True
+    )
+    description: Mapped[Optional[str]] = mapped_column(Text)
+    website: Mapped[Optional[str]] = mapped_column(String(512))
+    wikipedia_url: Mapped[Optional[str]] = mapped_column(String(512))
+    is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    extra_data: Mapped[Optional[dict]] = mapped_column(JSON)
+
+    parent = relationship("Agency", remote_side=[id], backref="children")
+
+    __table_args__ = (UniqueConstraint("source", "source_id", name="uq_agency_source"),)

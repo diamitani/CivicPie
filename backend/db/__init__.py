@@ -14,6 +14,7 @@ from backend.db.models import (
     OfficialTerm,
     DataSource,
     IngestionRun,
+    Agency,
 )
 
 __all__ = [
@@ -28,4 +29,5 @@ __all__ = [
     "OfficialTerm",
     "DataSource",
     "IngestionRun",
+    "Agency",
 ]

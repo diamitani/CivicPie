@@ -1,5 +1,12 @@
 # FastAPI Backend for CivicPie
 
+import os
+import sys
+
+# Allow `python main.py` / `uvicorn main:app` from inside backend/ as well as
+# `uvicorn backend.main:app` from the repo root.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -21,6 +28,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+from backend.api.civic import router as civic_router  # noqa: E402
+
+app.include_router(civic_router)
 
 # Models
 class Alderman(BaseModel):
