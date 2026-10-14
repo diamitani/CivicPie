@@ -43,9 +43,9 @@ try {
   let r = await get('/api/health');
   assert(r.status === 200 && r.body.ok, 'health 200');
   assert(r.body.source === 'seed', 'source=seed', JSON.stringify(r.body.source));
-  assert(r.body.counts.officials === 7988, 'officials=7988', r.body.counts?.officials);
+  assert(r.body.counts.officials >= 7988, 'officials >= 7988 (grows with city sweeps)', r.body.counts?.officials);
   assert(r.body.counts.candidates === 7077, 'candidates=7077', r.body.counts?.candidates);
-  assert(r.body.counts.districts === 107, 'districts=107', r.body.counts?.districts);
+  assert(r.body.counts.districts >= 107, 'districts >= 107 (grows with city sweeps)', r.body.counts?.districts);
   assert(r.body.counts.agencies === 15, 'agencies=15', r.body.counts?.agencies);
 
   // 2. Real Census lookup — Patrick's building, Ward 48
@@ -66,17 +66,26 @@ try {
   assert(nlNames.includes('Chris Hoffman'), 'NL mayor present', nlNames.join(','));
   assert((r.body.officials || []).length === 6, 'NL mayor + 5 council', (r.body.officials || []).length);
 
-  // 2b2. Out-of-coverage state ZIP (Los Angeles, CA) → coverage='none' with
-  // federal + state officials, NEVER a 404.
-  r = await get('/api/lookup?address=' + encodeURIComponent('90210'));
-  assert(r.status === 200, '90210 lookup 200 (no 404)', r.status);
-  assert(r.body.coverage === 'none', "90210 coverage='none'", r.body.coverage);
-  assert(r.body.state_abbr === 'CA', 'state_abbr=CA', r.body.state_abbr);
-  const caFed = (r.body.federal_officials || []).map((o) => o.name);
-  assert(caFed.includes('Alex Padilla') && caFed.includes('Adam B. Schiff'), 'CA senators present', caFed.slice(0, 4).join(','));
-  assert((r.body.state_officials || []).length > 0, 'CA state officials present', (r.body.state_officials || []).length);
-  assert(r.body.state_officials_total > 0, 'CA state total present', r.body.state_officials_total);
+  // 2b2. Out-of-coverage ZIP → coverage='none' with federal + state officials, NEVER a 404.
+  // Sun City, AZ is a Census-designated place (no municipal government), so it
+  // stays uncovered no matter how many city sweeps we load.
+  r = await get('/api/lookup?address=' + encodeURIComponent('85351'));
+  assert(r.status === 200, '85351 lookup 200 (no 404)', r.status);
+  assert(r.body.coverage === 'none', "85351 coverage='none'", r.body.coverage);
+  assert(r.body.state_abbr === 'AZ', 'state_abbr=AZ', r.body.state_abbr);
+  const azFed = (r.body.federal_officials || []).map((o) => o.name);
+  assert(azFed.some((n) => /Kelly/.test(n)) && azFed.some((n) => /Gallego/.test(n)), 'AZ senators present', azFed.slice(0, 4).join(','));
+  assert((r.body.state_officials || []).length > 0, 'AZ state officials present', (r.body.state_officials || []).length);
+  assert(r.body.state_officials_total > 0, 'AZ state total present', r.body.state_officials_total);
   assert(typeof r.body.message === 'string' && r.body.message.includes('hyperlocal'), 'coverage message present');
+
+  // 2b3. City-sweep coverage: a city outside Chicago resolves to its own council.
+  r = await get('/api/lookup?address=' + encodeURIComponent('98101'));
+  assert(r.status === 200 && r.body.coverage === 'local', '98101 (Seattle) coverage=local', r.body.coverage);
+  assert(r.body.district_id === 'wa-seattle-city', '98101 → wa-seattle-city', r.body.district_id);
+  assert((r.body.officials || []).length >= 5, 'Seattle council officials present', (r.body.officials || []).length);
+  r = await get('/api/districts?type=city');
+  assert((r.body.data || r.body.districts || []).length >= 500, 'city districts >= 500 (list capped at 500)');
 
   // 2c. Chicago ZIP → local coverage, ward 48 (unchanged behavior + coverage flag)
   r = await get('/api/lookup?address=' + encodeURIComponent('60660'));
@@ -141,7 +150,7 @@ try {
     r = await g2('/api/health');
     assert(r.status === 200 && r.body.ok, 'broken-db health 200');
     assert(r.body.source === 'seed', 'broken-db falls back to seed', JSON.stringify(r.body.source));
-    assert(r.body.counts.officials === 7988, 'broken-db officials=7988', r.body.counts?.officials);
+    assert(r.body.counts.officials >= 7988, 'broken-db officials >= 7988', r.body.counts?.officials);
     r = await g2('/api/lookup?address=' + encodeURIComponent('52317'));
     assert(r.status === 200 && r.body.coverage === 'local', 'broken-db 52317 → city coverage', r.status);
     r = await g2('/api/lookup?address=' + encodeURIComponent('60660'));
