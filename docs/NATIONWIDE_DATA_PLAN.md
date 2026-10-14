@@ -113,3 +113,14 @@ Start **Phase 0 and the code half of Phase 1** now, with no new keys needed:
 1. QA Auditor scorecard on the 13.4k members and API.
 2. Write the missing places loader and the council-members loader; add council data to the app's seed so cities beyond Chicago show up even before Supabase is live.
 3. Run a **25-city pilot** of the scrape pipeline through Firecrawl to measure real accuracy, credits per city and time per city, so the big run's cost is a measured number and not a guess.
+
+
+---
+## Status update (2026-10-14, end of day)
+- **Live in the app (seed mode):** 1,715 city districts, 12,465 officials, `/city/<st>-<name>` pages for all of them.
+  Sources: 1,578 earlier sweep cities, +20 page-verified pilot cities, +117 cities confirmed by browser scrape.
+- **Held back (not in app):** 349 snippet-only wave-4 cities until each is confirmed from its real page.
+- **Scraping approach:** Playwright browser scraper + agreement-based verification. Firecrawl is NOT the primary tool:
+  measured ~15 credits/page (see data/pilot/PILOT_REPORT.md, correction section), so the earlier 60-100k-credit estimate is void.
+- **Still open:** Supabase `DATABASE_URL` + running `004_rls_lockdown.sql`; URL discovery for cities with no council page URL (Google Places API key);
+  elections and local agencies; scaling the browser scraper beyond this container (bot-blocks and proxy flakiness here; run it on your own machine or CI).
