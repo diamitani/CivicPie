@@ -1,0 +1,284 @@
+[
+  {
+    "id": "hhs",
+    "name": "U.S. Department of Health & Human Services",
+    "abbr": "HHS",
+    "level": "federal",
+    "description": "Protects the health of all Americans and provides essential human services.",
+    "website": "https://www.hhs.gov",
+    "services": [
+      "Medicare",
+      "Medicaid",
+      "CDC",
+      "FDA",
+      "NIH",
+      "Health Insurance Marketplace"
+    ]
+  },
+  {
+    "id": "ed",
+    "name": "U.S. Department of Education",
+    "abbr": "ED",
+    "level": "federal",
+    "description": "Promotes student achievement and preparation for global competitiveness.",
+    "website": "https://www.ed.gov",
+    "services": [
+      "Federal Student Aid (FAFSA)",
+      "Pell Grants",
+      "Special Education",
+      "Civil Rights in Education"
+    ]
+  },
+  {
+    "id": "hud",
+    "name": "U.S. Department of Housing & Urban Development",
+    "abbr": "HUD",
+    "level": "federal",
+    "description": "Creates strong, sustainable, inclusive communities and quality affordable homes.",
+    "website": "https://www.hud.gov",
+    "services": [
+      "FHA Loans",
+      "Housing Choice Vouchers",
+      "Community Development Block Grants",
+      "Fair Housing"
+    ]
+  },
+  {
+    "id": "sba",
+    "name": "Small Business Administration",
+    "abbr": "SBA",
+    "level": "federal",
+    "description": "Aids, counsels, assists and protects the interests of small businesses.",
+    "website": "https://www.sba.gov",
+    "services": [
+      "7(a) Loans",
+      "Disaster Assistance",
+      "Government Contracting",
+      "Small Business Development Centers"
+    ]
+  },
+  {
+    "id": "usda",
+    "name": "U.S. Department of Agriculture",
+    "abbr": "USDA",
+    "level": "federal",
+    "description": "Provides leadership on food, agriculture, natural resources, and rural development.",
+    "website": "https://www.usda.gov",
+    "services": [
+      "SNAP (Food Stamps)",
+      "WIC",
+      "Rural Development Grants",
+      "Farm Loans"
+    ]
+  },
+  {
+    "id": "dol",
+    "name": "U.S. Department of Labor",
+    "abbr": "DOL",
+    "level": "federal",
+    "description": "Promotes the welfare of job seekers, wage earners, and retirees.",
+    "website": "https://www.dol.gov",
+    "services": [
+      "Unemployment Insurance",
+      "OSHA Workplace Safety",
+      "Job Corps",
+      "Apprenticeship Programs"
+    ]
+  },
+  {
+    "id": "ssa",
+    "name": "Social Security Administration",
+    "abbr": "SSA",
+    "level": "federal",
+    "description": "Delivers Social Security services that meet the changing needs of the public.",
+    "website": "https://www.ssa.gov",
+    "services": [
+      "Retirement Benefits",
+      "Disability Insurance (SSDI)",
+      "Supplemental Security Income (SSI)",
+      "Medicare Enrollment"
+    ]
+  },
+  {
+    "id": "va",
+    "name": "U.S. Department of Veterans Affairs",
+    "abbr": "VA",
+    "level": "federal",
+    "description": "Cares for those who have served in our nation's military.",
+    "website": "https://www.va.gov",
+    "services": [
+      "VA Healthcare",
+      "Disability Compensation",
+      "GI Bill Education Benefits",
+      "VA Home Loans"
+    ]
+  },
+  {
+    "id": "irs",
+    "name": "Internal Revenue Service",
+    "abbr": "IRS",
+    "level": "federal",
+    "description": "Provides America's taxpayers top quality service by helping them understand and meet their tax responsibilities.",
+    "website": "https://www.irs.gov",
+    "services": [
+      "Tax Filing",
+      "Earned Income Tax Credit",
+      "Child Tax Credit",
+      "Free File"
+    ]
+  },
+  {
+    "id": "epa",
+    "name": "Environmental Protection Agency",
+    "abbr": "EPA",
+    "level": "federal",
+    "description": "Protects human health and the environment.",
+    "website": "https://www.epa.gov",
+    "services": [
+      "Environmental Grants",
+      "Clean Water SRF",
+      "Brownfields Program",
+      "Air Quality Monitoring"
+    ]
+  },
+  {
+    "id": "fema",
+    "name": "Federal Emergency Management Agency",
+    "abbr": "FEMA",
+    "level": "federal",
+    "description": "Helps people before, during and after disasters.",
+    "website": "https://www.fema.gov",
+    "services": [
+      "Disaster Relief",
+      "Flood Insurance",
+      "Emergency Preparedness",
+      "Hazard Mitigation Grants"
+    ]
+  },
+  {
+    "id": "dot",
+    "name": "U.S. Department of Transportation",
+    "abbr": "DOT",
+    "level": "federal",
+    "description": "Ensures a fast, safe, efficient, accessible and convenient transportation system.",
+    "website": "https://www.transportation.gov",
+    "services": [
+      "Highway Funding",
+      "Transit Grants",
+      "Aviation Safety",
+      "Infrastructure Investment"
+    ]
+  },
+  {
+    "id": "doj",
+    "name": "U.S. Department of Justice",
+    "abbr": "DOJ",
+    "level": "federal",
+    "description": "Enforces the law and defends the interests of the United States.",
+    "website": "https://www.justice.gov",
+    "services": [
+      "Civil Rights Division",
+      "FBI",
+      "COPS Grants",
+      "Violence Against Women Grants"
+    ]
+  },
+  {
+    "id": "dhs",
+    "name": "U.S. Department of Homeland Security",
+    "abbr": "DHS",
+    "level": "federal",
+    "description": "Secures the nation from the many threats we face.",
+    "website": "https://www.dhs.gov",
+    "services": [
+      "FEMA",
+      "TSA",
+      "Cybersecurity (CISA)",
+      "Immigration Services (USCIS)"
+    ]
+  },
+  {
+    "id": "doi",
+    "name": "U.S. Department of the Interior",
+    "abbr": "DOI",
+    "level": "federal",
+    "description": "Protects and manages the Nation's natural resources and cultural heritage.",
+    "website": "https://www.doi.gov",
+    "services": [
+      "National Parks",
+      "Bureau of Indian Affairs",
+      "Land Management",
+      "Fish & Wildlife"
+    ]
+  },
+  {
+    "id": "doe",
+    "name": "U.S. Department of Energy",
+    "abbr": "DOE",
+    "level": "federal",
+    "description": "Addresses America's energy, environmental and nuclear challenges.",
+    "website": "https://www.energy.gov",
+    "services": [
+      "Energy Efficiency Grants",
+      "Solar Energy",
+      "Nuclear Security",
+      "National Labs"
+    ]
+  },
+  {
+    "id": "state",
+    "name": "U.S. Department of State",
+    "abbr": "DOS",
+    "level": "federal",
+    "description": "Leads America's foreign policy to advance the interests and security of the American people.",
+    "website": "https://www.state.gov",
+    "services": [
+      "Passports",
+      "Visas",
+      "Travel Advisories",
+      "Foreign Aid"
+    ]
+  },
+  {
+    "id": "treasury",
+    "name": "U.S. Department of the Treasury",
+    "abbr": "Treasury",
+    "level": "federal",
+    "description": "Maintains a strong economy and creates economic and job opportunities.",
+    "website": "https://home.treasury.gov",
+    "services": [
+      "IRS",
+      "Treasury Bonds",
+      "Economic Relief",
+      "Financial Sanctions"
+    ]
+  },
+  {
+    "id": "dod",
+    "name": "U.S. Department of Defense",
+    "abbr": "DOD",
+    "level": "federal",
+    "description": "Provides the military forces needed to deter war and ensure national security.",
+    "website": "https://www.defense.gov",
+    "services": [
+      "Military Benefits",
+      "TRICARE",
+      "Defense Contracts",
+      "National Guard"
+    ]
+  },
+  {
+    "id": "nara",
+    "name": "National Archives & Records Administration",
+    "abbr": "NARA",
+    "level": "federal",
+    "description": "Preserves and documents government and historical records.",
+    "website": "https://www.archives.gov",
+    "services": [
+      "Federal Register",
+      "Presidential Documents",
+      "Genealogy Records",
+      "FOIA Requests"
+    ]
+  }
+]

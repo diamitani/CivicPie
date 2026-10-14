@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-08-11T18:44:17.239163+00:00",
+  "events": [
+    {
+      "id": "cc-meeting",
+      "title": "Chicago City Council Meeting",
+      "category": "City Council",
+      "description": "Monthly meeting of the full Chicago City Council.",
+      "date": "1st Wednesday monthly",
+      "time": "10:00 AM",
+      "location": "City Hall, 121 N LaSalle St",
+      "recurring": true,
+      "link": "https://www.chicago.gov/city/en/depts/cityclerk.html",
+      "tags": [
+        "city-council",
+        "public-meeting"
+      ]
+    },
+    {
+      "id": "ward-night",
+      "title": "Ward Night \u2014 Meet Your Alderperson",
+      "category": "Community",
+      "description": "Community meeting with your ward alderperson.",
+      "date": "1st & 3rd Monday",
+      "time": "6:00 PM",
+      "location": "Your Ward Office",
+      "recurring": true,
+      "tags": [
+        "community",
+        "ward"
+      ]
+    },
+    {
+      "id": "caps-beat",
+      "title": "CAPS Beat Meeting",
+      "category": "Public Safety",
+      "description": "Chicago Alternative Policing Strategy community meeting.",
+      "date": "Monthly",
+      "location": "Your Police District",
+      "recurring": true,
+      "tags": [
+        "public-safety"
+      ]
+    },
+    {
+      "id": "elections-board",
+      "title": "Board of Elections Meeting",
+      "category": "Elections",
+      "description": "Public meeting of the Chicago Board of Elections.",
+      "date": "Monthly",
+      "location": "69 W Washington St",
+      "recurring": true,
+      "link": "https://chicagoelections.gov",
+      "tags": [
+        "elections"
+      ]
+    }
+  ]
+}

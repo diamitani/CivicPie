@@ -43,3 +43,11 @@ htmlcov/
 frontend/.local-dev/
 frontend/tsconfig.tsbuildinfo
 backend/data/weekly_sync/
+out/
+.env*
+!.env.example
+tsconfig.tsbuildinfo
+
+# CivicPie data-agent runtime state (cache + staging queue)
+scripts/data-agent/.cache/
+scripts/data-agent/staging/

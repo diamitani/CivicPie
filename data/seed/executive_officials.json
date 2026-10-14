@@ -1,0 +1,251 @@
+[
+ {
+  "office_id": "us-president",
+  "district_id": null,
+  "full_name": "Donald Trump",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-01-20",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:us-president:donald-trump",
+  "external_ids": {}
+ },
+ {
+  "office_id": "us-vp",
+  "district_id": null,
+  "full_name": "JD Vance",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-01-20",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:us-vp:jd-vance",
+  "external_ids": {}
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Marco Rubio",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-01-21",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:state:marco-rubio",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of State"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Scott Bessent",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-01-28",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:the-treasury:scott-bessent",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of the Treasury"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Pete Hegseth",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-01-25",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:defense:pete-hegseth",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Defense"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Todd Blanche",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2026-04-02",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:justice:todd-blanche",
+  "external_ids": {
+   "acting": true,
+   "agency": "Department of Justice"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Doug Burgum",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-01",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:the-interior:doug-burgum",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of the Interior"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Brooke Rollins",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-13",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:agriculture:brooke-rollins",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Agriculture"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Howard Lutnick",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-21",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:commerce:howard-lutnick",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Commerce"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Keith E. Sonderling",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2026-04-20",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:labor:keith-e.-sonderling",
+  "external_ids": {
+   "acting": true,
+   "agency": "Department of Labor"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Robert F. Kennedy Jr.",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-13",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:health-and-human-services:robert-f.-kennedy-jr.",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Health and Human Services"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Scott Turner",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-05",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:housing-and-urban-development:scott-turner",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Housing and Urban Development"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Sean Duffy",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-01-28",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:transportation:sean-duffy",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Transportation"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Chris Wright",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-04",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:energy:chris-wright",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Energy"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Linda McMahon",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-03-03",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:education:linda-mcmahon",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Education"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Doug Collins",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2025-02-05",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:veterans-affairs:doug-collins",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Veterans Affairs"
+  }
+ },
+ {
+  "office_id": "us-cabinet",
+  "district_id": null,
+  "full_name": "Markwayne Mullin",
+  "party": "Republican",
+  "is_incumbent": true,
+  "term_start": "2026-03-24",
+  "term_end": "2029-01-20",
+  "source_id": "manual-seed",
+  "source_key": "manual-seed:cabinet:homeland-security:markwayne-mullin",
+  "external_ids": {
+   "acting": false,
+   "agency": "Department of Homeland Security"
+  }
+ }
+]

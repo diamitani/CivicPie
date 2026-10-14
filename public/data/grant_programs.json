@@ -1,0 +1,111 @@
+[
+  {
+    "program": "Community Development Block Grant (CDBG)",
+    "agency": "HUD",
+    "type": "formula",
+    "level": "city/county",
+    "deadline_note": "Annual allocation \u2014 check with your local HUD field office",
+    "amount_range": "$100K - $50M",
+    "eligible": [
+      "Cities",
+      "Counties",
+      "States"
+    ],
+    "url": "https://www.hud.gov/program_offices/comm_planning/cdbg"
+  },
+  {
+    "program": "HOME Investment Partnerships",
+    "agency": "HUD",
+    "type": "formula",
+    "level": "city/county",
+    "deadline_note": "Annual allocation",
+    "amount_range": "$500K - $10M",
+    "eligible": [
+      "States",
+      "Local governments",
+      "Nonprofits"
+    ],
+    "url": "https://www.hud.gov/program_offices/comm_planning/home"
+  },
+  {
+    "program": "FEMA Hazard Mitigation Grants",
+    "agency": "FEMA",
+    "type": "rolling",
+    "level": "state/local",
+    "deadline_note": "Rolling \u2014 applications accepted year-round",
+    "amount_range": "Varies",
+    "eligible": [
+      "States",
+      "Tribes",
+      "Territories",
+      "Local governments"
+    ],
+    "url": "https://www.fema.gov/grants/mitigation"
+  },
+  {
+    "program": "SBA 7(a) Loans",
+    "agency": "SBA",
+    "type": "rolling",
+    "level": "federal",
+    "deadline_note": "Rolling \u2014 apply through approved lenders",
+    "amount_range": "Up to $5M",
+    "eligible": [
+      "Small businesses"
+    ],
+    "url": "https://www.sba.gov/funding-programs/loans/7a-loans"
+  },
+  {
+    "program": "EPA Brownfields Assessment Grants",
+    "agency": "EPA",
+    "type": "competitive",
+    "level": "local",
+    "deadline_note": "Annual cycle \u2014 typically opens in fall",
+    "amount_range": "Up to $500K",
+    "eligible": [
+      "Local governments",
+      "Nonprofits",
+      "Tribes"
+    ],
+    "url": "https://www.epa.gov/brownfields"
+  },
+  {
+    "program": "USDA Rural Development Grants",
+    "agency": "USDA",
+    "type": "varies",
+    "level": "rural",
+    "deadline_note": "Multiple programs with rolling deadlines",
+    "amount_range": "$50K - $25M",
+    "eligible": [
+      "Rural communities",
+      "Nonprofits",
+      "Tribes"
+    ],
+    "url": "https://www.rd.usda.gov"
+  },
+  {
+    "program": "DOJ COPS Hiring Program",
+    "agency": "DOJ",
+    "type": "competitive",
+    "level": "local",
+    "deadline_note": "Annual cycle \u2014 typically spring",
+    "amount_range": "Up to $2M",
+    "eligible": [
+      "Law enforcement agencies"
+    ],
+    "url": "https://cops.usdoj.gov/grants"
+  },
+  {
+    "program": "National Endowment for the Arts Grants",
+    "agency": "NEA",
+    "type": "competitive",
+    "level": "federal",
+    "deadline_note": "Multiple deadlines throughout the year",
+    "amount_range": "$10K - $100K",
+    "eligible": [
+      "Nonprofits",
+      "Local governments",
+      "Arts organizations"
+    ],
+    "url": "https://www.arts.gov/grants"
+  }
+]
