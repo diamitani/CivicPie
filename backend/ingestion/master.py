@@ -19,6 +19,7 @@ from __future__ import annotations
 import csv
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any, Iterable, Optional
 
@@ -104,6 +105,24 @@ def _district_id(office: Office, term: OfficialTerm, oid: str) -> Optional[str]:
     return None
 
 
+SEED_AGENCIES = Path(__file__).resolve().parents[2] / "data" / "seed" / "executive_agencies.json"
+
+
+def canonical_agency_name(name: str) -> str:
+    """Federal Register style 'Agriculture Department' -> 'Department of Agriculture'."""
+    m = re.fullmatch(r"(.+) Department", name)
+    if not m or "," in name or " Office" in name:
+        return name
+    core = m.group(1)
+    return f"Department of {'the ' if core in ('Treasury', 'Interior') else ''}{core}"
+
+
+def _seed_agency_keys() -> dict[str, str]:
+    if not SEED_AGENCIES.exists():
+        return {}
+    return {a["name"]: a["source_key"] for a in json.loads(SEED_AGENCIES.read_text())}
+
+
 def _j(v: Any) -> str:
     return json.dumps(v, sort_keys=True, separators=(",", ":")) if v else "{}"
 
@@ -179,13 +198,20 @@ def export_master(session: Session, out_dir: Path = MASTER_DIR) -> dict[str, int
                                           "census-counties", _j({"ocd_id": j.ocd_id, "fips": fips})]
 
     by_id = {a.id: a for a in session.scalars(select(Agency))}
+    seed_keys = _seed_agency_keys()
+
+    def agency_key(a: Agency) -> str:
+        # A Federal Register department that IS a seed cabinet department reuses
+        # the seed's source_key, so loading merges instead of duplicating.
+        return seed_keys.get(canonical_agency_name(a.name)) or f"fr-agency:{a.source_id}"
+
     for a in sorted(by_id.values(), key=lambda x: x.id):
         parent = by_id.get(a.parent_id)
         rows["agencies"].append([
-            a.name, a.level, "department" if not a.parent_id else "sub-agency",
-            f"fr-agency:{parent.source_id}" if parent else "", a.description or "", a.website or "",
-            "", "", "federal-register", f"fr-agency:{a.source_id}",
-            _j({"slug": a.slug, "short_name": a.short_name}),
+            canonical_agency_name(a.name), a.level, "department" if not a.parent_id else "sub-agency",
+            agency_key(parent) if parent else "", a.description or "", a.website or "",
+            "", "", "federal-register", agency_key(a),
+            _j({"slug": a.slug, "short_name": a.short_name, "federal_register_id": a.source_id}),
         ])
 
     rows["offices"] = [[oid, *OFFICES[oid][:3], OFFICES[oid][3] or "", _b(OFFICES[oid][4])] for oid in sorted(OFFICES)]
@@ -228,10 +254,13 @@ def load_master_to_postgres(dsn: Optional[str] = None, master_dir: Path = MASTER
     conn = psycopg2.connect(dsn)
     try:
         with conn, conn.cursor() as cur:
-            def upsert(table, cols, key, rs, update_cols):
+            def upsert(table, cols, key, rs, update_cols, keep_existing=()):
                 if not rs:
                     return
-                sets = ", ".join(f"{c}=excluded.{c}" for c in update_cols)
+                sets = ", ".join(
+                    [f"{c}=excluded.{c}" for c in update_cols]
+                    + [f"{c}=coalesce(public.{table}.{c}, excluded.{c})" for c in keep_existing]
+                )
                 execute_values(
                     cur,
                     f"insert into public.{table} ({', '.join(cols)}) values %s "
@@ -253,7 +282,7 @@ def load_master_to_postgres(dsn: Optional[str] = None, master_dir: Path = MASTER
                 r["is_incumbent"] = r["is_incumbent"] == "true"
             upsert("officials", ["office_id", "district_id", "full_name", "first_name", "last_name", "party", "is_incumbent", "term_start", "term_end", "photo_url", "biography", "source_id", "source_key", "external_ids", "social"], "source_key", ofc, ["office_id", "district_id", "full_name", "first_name", "last_name", "party", "term_start", "term_end", "photo_url", "biography", "external_ids", "social"])
             ag = [{k: _n(v) for k, v in r.items()} for r in _read(master_dir / "agencies.csv")]
-            upsert("agencies", ["name", "level", "agency_type", "description", "website", "city", "state_abbr", "source_id", "source_key", "external_refs"], "source_key", ag, ["name", "level", "agency_type", "description", "website", "external_refs"])
+            upsert("agencies", ["name", "level", "agency_type", "description", "website", "city", "state_abbr", "source_id", "source_key", "external_refs"], "source_key", ag, ["name", "level", "agency_type", "external_refs"], keep_existing=["description", "website"])
             for r in ag:  # second pass: parent links
                 if r["parent_source_key"]:
                     cur.execute(

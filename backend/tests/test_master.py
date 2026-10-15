@@ -86,3 +86,13 @@ def test_keys_match_seed_conventions_and_president_not_exported(exported):
     assert len(keys) == len(rd("officials"))  # no duplicate natural keys
     ds = {r["district_id"] for r in rd("districts")}
     assert {"us-senate-wy", "us-house-wy-al", "us-house-il-07", "us-state-tx", "us-county-17031"} <= ds
+
+
+def test_agency_names_canonicalised_and_merge_with_seed_keys():
+    from backend.ingestion.master import canonical_agency_name, _seed_agency_keys
+    assert canonical_agency_name("Agriculture Department") == "Department of Agriculture"
+    assert canonical_agency_name("Treasury Department") == "Department of the Treasury"
+    assert canonical_agency_name("Inspector General Office, Treasury Department").startswith("Inspector General")
+    assert canonical_agency_name("Environmental Protection Agency") == "Environmental Protection Agency"
+    seed = _seed_agency_keys()
+    assert seed and canonical_agency_name("Interior Department") in seed
