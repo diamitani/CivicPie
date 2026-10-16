@@ -1,15 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { PieLogo } from '@/components/Logo';
 import { getCurrentUser, refreshUser, signOut, User } from '@/lib/auth';
 import { Stat } from '@/components/ui';
 
 export default function DashboardPage() {
   const router = useRouter();
+  const pathname = usePathname();
   const [user, setUser] = useState<User | null>(null);
-  const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
     async function init() {
@@ -49,7 +50,7 @@ export default function DashboardPage() {
   ];
 
   const events = [
-    { d: '14', m: 'MAY', t: 'Ward 3 City Council Meeting', s: '7:00 PM · City Hall' },
+    { d: '14', m: 'MAY', t: user.ward ? `Ward ${user.ward} City Council Meeting` : 'City Council Meeting', s: '7:00 PM · City Hall' },
     { d: '18', m: 'MAY', t: 'Poll Worker Training', s: '10:00 AM · Lincoln Library · 12 spots' },
   ];
 
@@ -57,15 +58,16 @@ export default function DashboardPage() {
     { icon: '🗳️', t: 'Check Voter Registration', d: 'Verify your status in 30 seconds', href: 'https://www.vote.gov' },
     { icon: '📍', t: 'Find Your Polling Place', d: 'See where to vote on election day', href: '/state/illinois' },
     { icon: '💰', t: 'Browse Available Grants', d: '$2.4M in open grant programs', href: '/state/illinois' },
-    { icon: '🤝', t: 'Sign Up to Volunteer', d: '18 open positions near you', href: '/ward/chicago-48' },
+    { icon: '🤝', t: 'Sign Up to Volunteer', d: '18 open positions near you', href: user.ward ? `/ward/chicago-${user.ward}` : '/explore' },
   ];
 
+  // Every sidebar item goes to a real page — no dead tabs.
   const navItems = [
-    { id: 'overview', icon: '🏠', label: 'Overview' },
-    { id: 'elections', icon: '🗳️', label: 'Elections', badge: '30d' },
-    { id: 'events', icon: '📅', label: 'Events' },
-    { id: 'officials', icon: '👤', label: 'Officials' },
-    { id: 'volunteer', icon: '🤝', label: 'Volunteer' },
+    { href: '/dashboard', icon: '🏠', label: 'Overview' },
+    { href: '/elections', icon: '🗳️', label: 'Elections', badge: '30d' },
+    { href: '/meetings', icon: '📅', label: 'Meetings' },
+    { href: '/officials', icon: '👤', label: 'Officials' },
+    { href: '/services', icon: '🏛️', label: 'Services' },
   ];
 
   return (
@@ -80,37 +82,29 @@ export default function DashboardPage() {
                 Civic<span className="text-red">Pie</span>
               </div>
               <div className="font-body text-[8px] text-white/45 tracking-[1px] uppercase mt-0.5">
-                Ward {user.ward || '3'} · Chicago
+                {user.ward ? `Ward ${user.ward} · Chicago` : 'Chicago'}
               </div>
             </div>
           </div>
         </div>
         <nav className="p-6 flex-1 space-y-1">
-          {navItems.map(item => (
-            <button
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-lg font-display text-[13px] font-semibold transition-all ${
-                activeTab === item.id
-                  ? 'bg-[rgba(196,18,48,0.15)] text-white'
-                  : 'text-white/50 hover:bg-white/[0.05] hover:text-white/85'
-              }`}
-            >
-              <span className="text-base w-5 text-center">{item.icon}</span> {item.label}
-              {item.badge && <span className="ml-auto bg-red text-white text-[10px] font-bold px-[7px] py-0.5 rounded-full">{item.badge}</span>}
-            </button>
-          ))}
-          <div className="pt-5 pb-3"><div className="font-display text-[9px] font-bold tracking-[2.5px] uppercase text-white/45 px-3">Resources</div></div>
-          {[{ id: 'grants', icon: '💰', label: 'Grants' }, { id: 'services', icon: '🏛️', label: 'Services' }].map(item => (
-            <button key={item.id} onClick={() => setActiveTab(item.id)}
-              className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-lg font-display text-[13px] font-semibold transition-all ${
-                activeTab === item.id
-                  ? 'bg-[rgba(196,18,48,0.15)] text-white'
-                  : 'text-white/50 hover:bg-white/[0.05] hover:text-white/85'
-              }`}>
-              <span className="text-base w-5 text-center">{item.icon}</span> {item.label}
-            </button>
-          ))}
+          {navItems.map(item => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-3 w-full py-2.5 px-3 rounded-lg font-display text-[13px] font-semibold transition-all ${
+                  isActive
+                    ? 'bg-[rgba(196,18,48,0.15)] text-white'
+                    : 'text-white/50 hover:bg-white/[0.05] hover:text-white/85'
+                }`}
+              >
+                <span className="text-base w-5 text-center">{item.icon}</span> {item.label}
+                {item.badge && <span className="ml-auto bg-red text-white text-[10px] font-bold px-[7px] py-0.5 rounded-full">{item.badge}</span>}
+              </Link>
+            );
+          })}
         </nav>
         <div className="p-6 border-t border-white/[0.06]">
           <button onClick={handleSignOut}
@@ -125,7 +119,7 @@ export default function DashboardPage() {
         <header className="flex items-center justify-between flex-wrap gap-3 py-4 px-8 max-sm:px-4 bg-white border-b border-gray-200 shadow-sm">
           <div>
             <div className="font-display text-lg font-black text-navy">Your Ward Overview</div>
-            <div className="font-body text-[13px] text-stone mt-px">Ward {user.ward || '3'}, Chicago, IL · Updated 2 min ago</div>
+            <div className="font-body text-[13px] text-stone mt-px">{user.ward ? `Ward ${user.ward}, Chicago, IL` : 'Chicago, IL'} · Updated 2 min ago</div>
           </div>
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(196,18,48,0.1)] text-red font-body text-[11px] font-semibold">🗳 Primary: 30 days</span>

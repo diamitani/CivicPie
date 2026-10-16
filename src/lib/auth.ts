@@ -73,8 +73,9 @@ async function cognitoSignUp(name: string, email: string, password: string, zipC
     );
   }
   const user: User = { id: 'pending_confirmation', name, email, zipCode };
-  persistUser(user, 'cognito_pending');
-  return user;
+  const withWard = await ensureWard(user);
+  persistUser(withWard, 'cognito_pending');
+  return withWard;
 }
 
 async function cognitoSignInWithGoogle(): Promise<User> {
@@ -109,6 +110,46 @@ async function cognitoGetUser(): Promise<User | null> {
   }
 }
 
+// ─── Ward resolution ────────────────────────────────────────────────────────
+// Signup collects a ZIP but never resolved it to a ward, so the dashboard fell
+// back to a hardcoded "Ward 3". Resolve the ward through the same lookup API
+// the public site uses (ZIP → centroid → point-in-polygon). Never throws and
+// never blocks auth: on any failure the user simply has no ward yet.
+
+async function resolveWardNumber(zip: string): Promise<string | null> {
+  const zip5 = (zip || '').trim().slice(0, 5);
+  if (!/^\d{5}$/.test(zip5)) return null;
+  try {
+    const res = await fetch(`/api/lookup?address=${encodeURIComponent(zip5)}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const m = String(data?.ward || '').match(/(\d+)$/);
+    return m ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+async function ensureWard(user: User): Promise<User> {
+  if (user.ward || !user.zipCode) return user;
+  const ward = await resolveWardNumber(user.zipCode);
+  if (!ward) return user;
+  const updated: User = { ...user, ward };
+  try {
+    const users: Record<string, User & { password: string }> = JSON.parse(
+      localStorage.getItem('civicpie_users') || '{}'
+    );
+    const key = user.email.toLowerCase();
+    if (users[key]) {
+      users[key] = { ...users[key], ward };
+      localStorage.setItem('civicpie_users', JSON.stringify(users));
+    }
+  } catch {
+    /* storage backfill is best-effort */
+  }
+  return updated;
+}
+
 // ─── Mock fallback ───────────────────────────────────────────────────────────
 
 async function mockSignIn(email: string, password: string): Promise<User> {
@@ -119,8 +160,9 @@ async function mockSignIn(email: string, password: string): Promise<User> {
   if (!stored) throw new Error('No account found. Sign up first.');
   if (stored.password !== password) throw new Error('Invalid password.');
   const { password: _, ...user } = stored;
-  persistUser(user, 'mock_' + Date.now());
-  return user;
+  const withWard = await ensureWard(user);
+  persistUser(withWard, 'mock_' + Date.now());
+  return withWard;
 }
 
 async function mockSignUp(name: string, email: string, password: string, zipCode: string): Promise<User> {
@@ -131,8 +173,9 @@ async function mockSignUp(name: string, email: string, password: string, zipCode
   const user: User = { id: 'user_' + Date.now(), name, email: email.toLowerCase(), zipCode: zipCode || '' };
   users[email.toLowerCase()] = { ...user, password };
   localStorage.setItem('civicpie_users', JSON.stringify(users));
-  persistUser(user, 'mock_' + Date.now());
-  return user;
+  const withWard = await ensureWard(user);
+  persistUser(withWard, 'mock_' + Date.now());
+  return withWard;
 }
 
 function mockSignOut(): void { clearPersistedUser(); }
@@ -187,8 +230,18 @@ export async function signInWithGoogle(): Promise<User> {
 export async function refreshUser(): Promise<User | null> {
   if (USE_COGNITO) {
     const user = await cognitoGetUser();
-    if (user) persistUser(user, 'cognito_session');
+    if (user) {
+      const withWard = await ensureWard(user);
+      persistUser(withWard, 'cognito_session');
+      return withWard;
+    }
     return user;
   }
-  return mockGetUser();
+  const user = mockGetUser();
+  if (user && !user.ward && user.zipCode) {
+    const withWard = await ensureWard(user);
+    if (withWard.ward) persistUser(withWard, 'mock_session');
+    return withWard;
+  }
+  return user;
 }
