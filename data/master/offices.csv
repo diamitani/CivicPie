@@ -1,0 +1,21 @@
+office_id,title,level,branch,term_length_years,is_elected
+chi-alderman,Alderperson,local,legislative,4,true
+gen-city-council,City Council Member,local,legislative,,true
+gen-mayor,Mayor,local,executive,,true
+gen-state-exec,State Executive Officer,state,executive,,true
+gen-state-rep,State Representative,state,legislative,,true
+gen-state-sen,State Senator,state,legislative,,true
+il-state-rep,Illinois State Representative,state,legislative,2,true
+il-state-sen,Illinois State Senator,state,legislative,,true
+state-attorney-general,Attorney General,state,executive,4,true
+state-governor,Governor,state,executive,4,true
+us-cabinet,Cabinet Secretary,federal,executive,,false
+us-house,U.S. Representative,federal,legislative,2,true
+us-judge-appeals,U.S. Circuit Judge,federal,judicial,,false
+us-judge-cit,"Judge, Court of International Trade",federal,judicial,,false
+us-judge-district,U.S. District Judge,federal,judicial,,false
+us-judge-scotus,Justice of the Supreme Court,federal,judicial,,false
+us-president,President of the United States,federal,executive,4,true
+us-senate,U.S. Senator,federal,legislative,6,true
+us-vice-president,Vice President of the United States,federal,executive,4,true
+us-vp,Vice President of the United States,federal,executive,4,true

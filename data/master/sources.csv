@@ -1,0 +1,6 @@
+source_id,name,url,source_type,license
+congress-legislators,unitedstates/congress-legislators,https://github.com/unitedstates/congress-legislators,dataset,CC0
+fjc-judges,Federal Judicial Center Biographical Directory,https://www.fjc.gov/history/judges,dataset,Public domain
+census-counties,U.S. Census Bureau national_county,https://www.census.gov/library/reference/code-lists/ansi.html,dataset,Public domain
+federal-register,Federal Register agencies API,https://www.federalregister.gov/developers/documentation/api/v1,api,Public domain
+state-exec-seed,Hand-curated state constitutional officers,,manual,

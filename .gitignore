@@ -1,12 +1,57 @@
+# Dependencies
 node_modules/
-.next/
-out/
+__pycache__/
+*.pyc
 .env
+.env.local
+
+# Build outputs
+.next/
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Data
+/data/scraped/
+/data/cache/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Misc
+*.tmp
+*.temp
+.cache/
 .vercel
+frontend/.local-dev/
+frontend/tsconfig.tsbuildinfo
+backend/data/weekly_sync/
+out/
 .env*
+!.env.example
 tsconfig.tsbuildinfo
 
 # CivicPie data-agent runtime state (cache + staging queue)
 scripts/data-agent/.cache/
 scripts/data-agent/staging/
+
+# Internal DB snapshot is intentionally tracked
+!backend/data/internal/
+!backend/data/internal/*.db

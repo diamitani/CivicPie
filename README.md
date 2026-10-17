@@ -81,3 +81,42 @@ No secrets are read from code outside this list; the deterministic QA scan repor
 2. Load the schema from `~/workspace/civicpie-data/migrations/001_civicpie_master_schema.sql`, then run its `ingest.py`.
 3. **Known upstream blocker:** the migration defines FKs from `officials`/`candidates` to `sources` and `offices`, but `ingest.py` never inserts into those two tables — a fresh load will fail FK checks until they're seeded first. Backend seed mode is unaffected.
 4. The API switches automatically once `DATABASE_URL` is present (`/api/health` will report `"source": "supabase"`).
+
+## Elected-officials database (backend)
+
+```bash
+pip install -r backend/requirements.txt
+alembic upgrade head                          # create schema (SQLite by default; set DATABASE_URL for Postgres)
+python -m backend.ingestion.cli seed          # fill from every keyless source (see below)
+python -m backend.ingestion.cli enrich-wikipedia      # bios + photos (exact Wikipedia titles only)
+uvicorn backend.main:app --reload             # API at /docs
+```
+
+`seed` loads: President/VP, 50 governors + 50 attorneys general, Congress (~539),
+active Article III judges (~850, via the Federal Judicial Center), ~3,200 county
+jurisdictions (Census) and ~470 federal agencies (Federal Register).
+
+Needs an API key (not run by `seed`):
+
+| Command | Env var | Notes |
+|---|---|---|
+| `run openstates` | `OPENSTATES_API_KEY` | ~7,400 state legislators |
+| `run google_civic --address ...` | `GOOGLE_CIVIC_API_KEY` | address-keyed cross-reference |
+| `enrich-places --limit N` | `GOOGLE_MAPS_API_KEY` | county office address/phone/website; **billed per request** |
+
+Read endpoints: `/api/stats`, `/api/officials`, `/api/officials/{id}`, `/api/jurisdictions`, `/api/agencies`.
+
+### Master data, Supabase and QA tooling
+
+```bash
+supabase db push                                   # applies supabase/migrations (adds master tables + RLS)
+python -m backend.ingestion.cli export-master      # internal DB -> data/master/*.csv
+python -m backend.ingestion.cli load-master --dsn "$SUPABASE_DB_URL"   # idempotent upsert, no duplicates
+python -m backend.qa.backend_checks --repo .       # deterministic backend QA scan
+python -m backend.qa.e2e_smoke                     # Playwright (+Selenium if CHROMEDRIVER_PATH set) E2E
+python -m backend.qa.probe_sources                 # browser probe of Tier 2/3 source pages -> docs/TIER2_SOURCE_PROBE.md
+```
+
+`data/master/` holds the committed master CSVs; `backend/data/internal/civicpie_internal.db` is a
+SQLite snapshot of the internal database (rebuild any time with `alembic upgrade head && cli seed`).
+See `docs/QA-REPORT-backend-2026-10-14.md` for the latest QA verdict and open items.

@@ -1,0 +1,1618 @@
+official_source_key,agency_source_key,kind,label,value,is_primary,source_id
+bioguide:A000055,,address,Office,272 Cannon House Office Building Washington DC 20515-0104,false,congress-legislators
+bioguide:A000055,,phone,Office,202-225-4876,true,congress-legislators
+bioguide:A000055,,website,Official,https://aderholt.house.gov,false,congress-legislators
+bioguide:A000148,,address,Office,1524 Longworth House Office Building Washington DC 20515-2104,false,congress-legislators
+bioguide:A000148,,phone,Office,202-225-5931,true,congress-legislators
+bioguide:A000148,,website,Official,https://auchincloss.house.gov,false,congress-legislators
+bioguide:A000369,,address,Office,104 Cannon House Office Building Washington DC 20515-2802,false,congress-legislators
+bioguide:A000369,,phone,Office,202-225-6155,true,congress-legislators
+bioguide:A000369,,website,Official,https://amodei.house.gov,false,congress-legislators
+bioguide:A000370,,address,Office,2436 Rayburn House Office Building Washington DC 20515-3312,false,congress-legislators
+bioguide:A000370,,phone,Office,202-225-1510,true,congress-legislators
+bioguide:A000370,,website,Official,https://adams.house.gov,false,congress-legislators
+bioguide:A000371,,address,Office,108 Cannon House Office Building Washington DC 20515-0533,false,congress-legislators
+bioguide:A000371,,phone,Office,202-225-3201,true,congress-legislators
+bioguide:A000371,,website,Official,https://aguilar.house.gov,false,congress-legislators
+bioguide:A000372,,address,Office,462 Cannon House Office Building Washington DC 20515-1012,false,congress-legislators
+bioguide:A000372,,phone,Office,202-225-2823,true,congress-legislators
+bioguide:A000372,,website,Official,https://allen.house.gov,false,congress-legislators
+bioguide:A000375,,address,Office,1111 Longworth House Office Building Washington DC 20515-4319,false,congress-legislators
+bioguide:A000375,,phone,Office,202-225-4005,true,congress-legislators
+bioguide:A000375,,website,Official,https://arrington.house.gov,false,congress-legislators
+bioguide:A000379,,address,Office,328 Cannon House Office Building Washington DC 20515-2504,false,congress-legislators
+bioguide:A000379,,phone,Office,202-225-2876,true,congress-legislators
+bioguide:A000379,,website,Official,https://alford.house.gov,false,congress-legislators
+bioguide:A000380,,address,Office,1119 Longworth House Office Building Washington DC 20515-3901,false,congress-legislators
+bioguide:A000380,,phone,Office,202-225-4911,true,congress-legislators
+bioguide:A000380,,website,Official,https://amo.house.gov,false,congress-legislators
+bioguide:A000381,,address,Office,1432 Longworth House Office Building Washington DC 20515-0303,false,congress-legislators
+bioguide:A000381,,phone,Office,202-225-4065,true,congress-legislators
+bioguide:A000381,,website,Official,https://ansari.house.gov,false,congress-legislators
+bioguide:A000382,,address,Office,374 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:A000382,,phone,Office,202-224-4524,true,congress-legislators
+bioguide:A000382,,website,Official,https://www.alsobrooks.senate.gov,false,congress-legislators
+bioguide:A000383,,address,Office,330 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:A000383,,phone,Office,202-224-4721,true,congress-legislators
+bioguide:A000383,,website,Official,https://www.armstrong.senate.gov,false,congress-legislators
+bioguide:B000490,,address,Office,2407 Rayburn House Office Building Washington DC 20515-1002,false,congress-legislators
+bioguide:B000490,,phone,Office,202-225-3631,true,congress-legislators
+bioguide:B000490,,website,Official,https://bishop.house.gov,false,congress-legislators
+bioguide:B000668,,address,Office,409 Cannon House Office Building Washington DC 20515-3702,false,congress-legislators
+bioguide:B000668,,phone,Office,202-225-6730,true,congress-legislators
+bioguide:B000668,,website,Official,https://bentz.house.gov,false,congress-legislators
+bioguide:B000740,,address,Office,2402 Rayburn House Office Building Washington DC 20515-3605,false,congress-legislators
+bioguide:B000740,,phone,Office,202-225-2132,true,congress-legislators
+bioguide:B000740,,website,Official,https://bice.house.gov,false,congress-legislators
+bioguide:B000825,,address,Office,1713 Longworth House Office Building Washington DC 20515-0604,false,congress-legislators
+bioguide:B000825,,phone,Office,202-225-4761,true,congress-legislators
+bioguide:B000825,,website,Official,https://boebert.house.gov,false,congress-legislators
+bioguide:B001230,,address,Office,141 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001230,,phone,Office,202-224-5653,true,congress-legislators
+bioguide:B001230,,website,Official,https://www.baldwin.senate.gov,false,congress-legislators
+bioguide:B001236,,address,Office,555 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001236,,phone,Office,202-224-4843,true,congress-legislators
+bioguide:B001236,,website,Official,https://www.boozman.senate.gov/public,false,congress-legislators
+bioguide:B001243,,address,Office,357 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001243,,phone,Office,202-224-3344,true,congress-legislators
+bioguide:B001243,,website,Official,https://www.blackburn.senate.gov,false,congress-legislators
+bioguide:B001257,,address,Office,2306 Rayburn House Office Building Washington DC 20515-0912,false,congress-legislators
+bioguide:B001257,,phone,Office,202-225-5755,true,congress-legislators
+bioguide:B001257,,website,Official,https://bilirakis.house.gov,false,congress-legislators
+bioguide:B001260,,address,Office,2409 Rayburn House Office Building Washington DC 20515-0916,false,congress-legislators
+bioguide:B001260,,phone,Office,202-225-5015,true,congress-legislators
+bioguide:B001260,,website,Official,https://buchanan.house.gov,false,congress-legislators
+bioguide:B001261,,address,Office,307 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001261,,phone,Office,202-224-6441,true,congress-legislators
+bioguide:B001261,,website,Official,https://www.barrasso.senate.gov,false,congress-legislators
+bioguide:B001267,,address,Office,261 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001267,,phone,Office,202-224-5852,true,congress-legislators
+bioguide:B001267,,website,Official,https://www.bennet.senate.gov,false,congress-legislators
+bioguide:B001277,,address,Office,503 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001277,,phone,Office,202-224-2823,true,congress-legislators
+bioguide:B001277,,website,Official,https://www.blumenthal.senate.gov,false,congress-legislators
+bioguide:B001278,,address,Office,2231 Rayburn House Office Building Washington DC 20515-3701,false,congress-legislators
+bioguide:B001278,,phone,Office,202-225-0855,true,congress-legislators
+bioguide:B001278,,website,Official,https://bonamici.house.gov,false,congress-legislators
+bioguide:B001281,,address,Office,2079 Rayburn House Office Building Washington DC 20515-3503,false,congress-legislators
+bioguide:B001281,,phone,Office,202-225-4324,true,congress-legislators
+bioguide:B001281,,website,Official,https://beatty.house.gov,false,congress-legislators
+bioguide:B001282,,address,Office,2430 Rayburn House Office Building Washington DC 20515-1706,false,congress-legislators
+bioguide:B001282,,phone,Office,202-225-4706,true,congress-legislators
+bioguide:B001282,,website,Official,https://barr.house.gov,false,congress-legislators
+bioguide:B001285,,address,Office,2262 Rayburn House Office Building Washington DC 20515-0526,false,congress-legislators
+bioguide:B001285,,phone,Office,202-225-5811,true,congress-legislators
+bioguide:B001285,,website,Official,https://juliabrownley.house.gov,false,congress-legislators
+bioguide:B001287,,address,Office,172 Cannon House Office Building Washington DC 20515-0506,false,congress-legislators
+bioguide:B001287,,phone,Office,202-225-5716,true,congress-legislators
+bioguide:B001287,,website,Official,https://bera.house.gov,false,congress-legislators
+bioguide:B001288,,address,Office,306 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001288,,phone,Office,202-224-3224,true,congress-legislators
+bioguide:B001288,,website,Official,https://www.booker.senate.gov,false,congress-legislators
+bioguide:B001291,,address,Office,2236 Rayburn House Office Building Washington DC 20515-4336,false,congress-legislators
+bioguide:B001291,,phone,Office,202-225-1555,true,congress-legislators
+bioguide:B001291,,website,Official,https://babin.house.gov,false,congress-legislators
+bioguide:B001292,,address,Office,1226 Longworth House Office Building Washington DC 20515-4608,false,congress-legislators
+bioguide:B001292,,phone,Office,202-225-4376,true,congress-legislators
+bioguide:B001292,,website,Official,https://beyer.house.gov,false,congress-legislators
+bioguide:B001295,,address,Office,352 Cannon House Office Building Washington DC 20515-1312,false,congress-legislators
+bioguide:B001295,,phone,Office,202-225-5661,true,congress-legislators
+bioguide:B001295,,website,Official,https://bost.house.gov,false,congress-legislators
+bioguide:B001296,,address,Office,1502 Longworth House Office Building Washington DC 20515-3802,false,congress-legislators
+bioguide:B001296,,phone,Office,202-225-6111,true,congress-legislators
+bioguide:B001296,,website,Official,https://boyle.house.gov,false,congress-legislators
+bioguide:B001298,,address,Office,2104 Rayburn House Office Building Washington DC 20515-2702,false,congress-legislators
+bioguide:B001298,,phone,Office,202-225-4155,true,congress-legislators
+bioguide:B001298,,website,Official,https://bacon.house.gov,false,congress-legislators
+bioguide:B001299,,address,Office,303 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001299,,phone,Office,202-224-4814,true,congress-legislators
+bioguide:B001299,,website,Official,https://www.banks.senate.gov,false,congress-legislators
+bioguide:B001300,,address,Office,2312 Rayburn House Office Building Washington DC 20515-0544,false,congress-legislators
+bioguide:B001300,,phone,Office,202-225-8220,true,congress-legislators
+bioguide:B001300,,website,Official,https://barragan.house.gov,false,congress-legislators
+bioguide:B001301,,address,Office,566 Cannon House Office Building Washington DC 20515-2201,false,congress-legislators
+bioguide:B001301,,phone,Office,202-225-4735,true,congress-legislators
+bioguide:B001301,,website,Official,https://bergman.house.gov,false,congress-legislators
+bioguide:B001302,,address,Office,464 Cannon House Office Building Washington DC 20515-0305,false,congress-legislators
+bioguide:B001302,,phone,Office,202-225-2635,true,congress-legislators
+bioguide:B001302,,website,Official,https://biggs.house.gov,false,congress-legislators
+bioguide:B001303,,address,Office,513 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001303,,phone,Office,202-224-2441,true,congress-legislators
+bioguide:B001303,,website,Official,https://www.bluntrochester.senate.gov,false,congress-legislators
+bioguide:B001305,,address,Office,354 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001305,,phone,Office,202-224-3154,true,congress-legislators
+bioguide:B001305,,website,Official,https://www.budd.senate.gov,false,congress-legislators
+bioguide:B001306,,address,Office,2429 Rayburn House Office Building Washington DC 20515-3512,false,congress-legislators
+bioguide:B001306,,phone,Office,202-225-5355,true,congress-legislators
+bioguide:B001306,,website,Official,https://balderson.house.gov,false,congress-legislators
+bioguide:B001307,,address,Office,2303 Rayburn House Office Building Washington DC 20515-1404,false,congress-legislators
+bioguide:B001307,,phone,Office,202-225-5037,true,congress-legislators
+bioguide:B001307,,website,Official,https://baird.house.gov,false,congress-legislators
+bioguide:B001309,,address,Office,1122 Longworth House Office Building Washington DC 20515-4202,false,congress-legislators
+bioguide:B001309,,phone,Office,202-225-5435,true,congress-legislators
+bioguide:B001309,,website,Official,https://burchett.house.gov,false,congress-legislators
+bioguide:B001313,,address,Office,2455 Rayburn House Office Building Washington DC 20515-3511,false,congress-legislators
+bioguide:B001313,,phone,Office,202-225-7032,true,congress-legislators
+bioguide:B001313,,website,Official,https://shontelbrown.house.gov,false,congress-legislators
+bioguide:B001314,,address,Office,2459 Rayburn House Office Building Washington DC 20515-0904,false,congress-legislators
+bioguide:B001314,,phone,Office,202-225-0123,true,congress-legislators
+bioguide:B001314,,website,Official,https://bean.house.gov,false,congress-legislators
+bioguide:B001315,,address,Office,1717 Longworth House Office Building Washington DC 20515-1313,false,congress-legislators
+bioguide:B001315,,phone,Office,202-225-2371,true,congress-legislators
+bioguide:B001315,,website,Official,https://budzinski.house.gov,false,congress-legislators
+bioguide:B001316,,address,Office,1108 Longworth House Office Building Washington DC 20515-2507,false,congress-legislators
+bioguide:B001316,,phone,Office,202-225-6536,true,congress-legislators
+bioguide:B001316,,website,Official,https://burlison.house.gov,false,congress-legislators
+bioguide:B001317,,address,Office,351 Cannon House Office Building Washington DC 20515-3602,false,congress-legislators
+bioguide:B001317,,phone,Office,202-225-2701,true,congress-legislators
+bioguide:B001317,,website,Official,https://brecheen.house.gov,false,congress-legislators
+bioguide:B001318,,address,Office,1510 Longworth House Office Building Washington DC 20515-4500,false,congress-legislators
+bioguide:B001318,,phone,Office,202-225-4115,true,congress-legislators
+bioguide:B001318,,website,Official,https://balint.house.gov,false,congress-legislators
+bioguide:B001319,,address,Office,416 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:B001319,,phone,Office,202-224-5744,true,congress-legislators
+bioguide:B001319,,website,Official,https://www.britt.senate.gov,false,congress-legislators
+bioguide:B001321,,address,Office,1232 Longworth House Office Building Washington DC 20515-2207,false,congress-legislators
+bioguide:B001321,,phone,Office,202-225-4872,true,congress-legislators
+bioguide:B001321,,website,Official,https://barrett.house.gov,false,congress-legislators
+bioguide:B001322,,address,Office,124 Cannon House Office Building Washington DC 20515-4705,false,congress-legislators
+bioguide:B001322,,phone,Office,202-225-2006,true,congress-legislators
+bioguide:B001322,,website,Official,https://baumgartner.house.gov,false,congress-legislators
+bioguide:B001323,,address,Office,153 Cannon House Office Building Washington DC 20515-0200,false,congress-legislators
+bioguide:B001323,,phone,Office,202-225-5765,true,congress-legislators
+bioguide:B001323,,website,Official,https://begich.house.gov,false,congress-legislators
+bioguide:B001324,,address,Office,1429 Longworth House Office Building Washington DC 20515-2501,false,congress-legislators
+bioguide:B001324,,phone,Office,202-225-2406,true,congress-legislators
+bioguide:B001324,,website,Official,https://bell.house.gov,false,congress-legislators
+bioguide:B001325,,address,Office,1530 Longworth House Office Building Washington DC 20515-4003,false,congress-legislators
+bioguide:B001325,,phone,Office,202-225-5301,true,congress-legislators
+bioguide:B001325,,website,Official,https://sheribiggs.house.gov,false,congress-legislators
+bioguide:B001326,,address,Office,1508 Longworth House Office Building Washington DC 20515-3705,false,congress-legislators
+bioguide:B001326,,phone,Office,202-225-5711,true,congress-legislators
+bioguide:B001326,,website,Official,https://bynum.house.gov,false,congress-legislators
+bioguide:B001327,,address,Office,1133 Longworth House Office Building Washington DC 20515-3808,false,congress-legislators
+bioguide:B001327,,phone,Office,202-225-5546,true,congress-legislators
+bioguide:B001327,,website,Official,https://bresnahan.house.gov,false,congress-legislators
+bioguide:B001328,,address,Office,468 Cannon House Office Building Washington DC 20515-1013,false,congress-legislators
+bioguide:B001328,,phone,Office,202-225-2939,true,congress-legislators
+bioguide:B001328,,website,Official,https://blair.house.gov/,false,congress-legislators
+bioguide:C000059,,address,Office,2205 Rayburn House Office Building Washington DC 20515-0541,false,congress-legislators
+bioguide:C000059,,phone,Office,202-225-1986,true,congress-legislators
+bioguide:C000059,,website,Official,https://calvert.house.gov,false,congress-legislators
+bioguide:C000127,,address,Office,511 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C000127,,phone,Office,202-224-3441,true,congress-legislators
+bioguide:C000127,,website,Official,https://www.cantwell.senate.gov,false,congress-legislators
+bioguide:C000537,,address,Office,274 Cannon House Office Building Washington DC 20515-4006,false,congress-legislators
+bioguide:C000537,,phone,Office,202-225-3315,true,congress-legislators
+bioguide:C000537,,website,Official,https://clyburn.house.gov,false,congress-legislators
+bioguide:C000880,,address,Office,239 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C000880,,phone,Office,202-224-6142,true,congress-legislators
+bioguide:C000880,,website,Official,https://www.crapo.senate.gov,false,congress-legislators
+bioguide:C001035,,address,Office,413 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001035,,phone,Office,202-224-2523,true,congress-legislators
+bioguide:C001035,,website,Official,https://www.collins.senate.gov,false,congress-legislators
+bioguide:C001039,,address,Office,2421 Rayburn House Office Building Washington DC 20515-0903,false,congress-legislators
+bioguide:C001039,,phone,Office,202-225-5744,true,congress-legislators
+bioguide:C001039,,website,Official,https://cammack.house.gov,false,congress-legislators
+bioguide:C001047,,address,Office,170 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001047,,phone,Office,202-224-6472,true,congress-legislators
+bioguide:C001047,,website,Official,https://www.capito.senate.gov,false,congress-legislators
+bioguide:C001051,,address,Office,2208 Rayburn House Office Building Washington DC 20515-4331,false,congress-legislators
+bioguide:C001051,,phone,Office,202-225-3864,true,congress-legislators
+bioguide:C001051,,website,Official,https://carter.house.gov,false,congress-legislators
+bioguide:C001053,,address,Office,2207 Rayburn House Office Building Washington DC 20515-3604,false,congress-legislators
+bioguide:C001053,,phone,Office,202-225-6165,true,congress-legislators
+bioguide:C001053,,website,Official,https://cole.house.gov,false,congress-legislators
+bioguide:C001055,,address,Office,2210 Rayburn House Office Building Washington DC 20515-1101,false,congress-legislators
+bioguide:C001055,,phone,Office,202-225-2726,true,congress-legislators
+bioguide:C001055,,website,Official,https://case.house.gov,false,congress-legislators
+bioguide:C001056,,address,Office,517 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001056,,phone,Office,202-224-2934,true,congress-legislators
+bioguide:C001056,,website,Official,https://www.cornyn.senate.gov,false,congress-legislators
+bioguide:C001059,,address,Office,2081 Rayburn House Office Building Washington DC 20515-0521,false,congress-legislators
+bioguide:C001059,,phone,Office,202-225-3341,true,congress-legislators
+bioguide:C001059,,website,Official,https://costa.house.gov,false,congress-legislators
+bioguide:C001061,,address,Office,2217 Rayburn House Office Building Washington DC 20515-2505,false,congress-legislators
+bioguide:C001061,,phone,Office,202-225-4535,true,congress-legislators
+bioguide:C001061,,website,Official,https://cleaver.house.gov,false,congress-legislators
+bioguide:C001063,,address,Office,2308 Rayburn House Office Building Washington DC 20515-4328,false,congress-legislators
+bioguide:C001063,,phone,Office,202-225-1640,true,congress-legislators
+bioguide:C001063,,website,Official,https://cuellar.house.gov,false,congress-legislators
+bioguide:C001066,,address,Office,2188 Rayburn House Office Building Washington DC 20515-0914,false,congress-legislators
+bioguide:C001066,,phone,Office,202-225-3376,true,congress-legislators
+bioguide:C001066,,website,Official,https://castor.house.gov,false,congress-legislators
+bioguide:C001067,,address,Office,2058 Rayburn House Office Building Washington DC 20515-3209,false,congress-legislators
+bioguide:C001067,,phone,Office,202-225-6231,true,congress-legislators
+bioguide:C001067,,website,Official,https://clarke.house.gov,false,congress-legislators
+bioguide:C001068,,address,Office,2268 Rayburn House Office Building Washington DC 20515-4209,false,congress-legislators
+bioguide:C001068,,phone,Office,202-225-3265,true,congress-legislators
+bioguide:C001068,,website,Official,https://cohen.house.gov,false,congress-legislators
+bioguide:C001069,,address,Office,2449 Rayburn House Office Building Washington DC 20515-0702,false,congress-legislators
+bioguide:C001069,,phone,Office,202-225-2076,true,congress-legislators
+bioguide:C001069,,website,Official,https://courtney.house.gov,false,congress-legislators
+bioguide:C001072,,address,Office,2135 Rayburn House Office Building Washington DC 20515-1407,false,congress-legislators
+bioguide:C001072,,phone,Office,202-225-4011,true,congress-legislators
+bioguide:C001072,,website,Official,https://carson.house.gov,false,congress-legislators
+bioguide:C001075,,address,Office,455 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001075,,phone,Office,202-224-5824,true,congress-legislators
+bioguide:C001075,,website,Official,https://www.cassidy.senate.gov,false,congress-legislators
+bioguide:C001080,,address,Office,2423 Rayburn House Office Building Washington DC 20515-0528,false,congress-legislators
+bioguide:C001080,,phone,Office,202-225-5464,true,congress-legislators
+bioguide:C001080,,website,Official,https://chu.house.gov,false,congress-legislators
+bioguide:C001087,,address,Office,2422 Rayburn House Office Building Washington DC 20515-0401,false,congress-legislators
+bioguide:C001087,,phone,Office,202-225-4076,true,congress-legislators
+bioguide:C001087,,website,Official,https://crawford.house.gov,false,congress-legislators
+bioguide:C001088,,address,Office,218 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001088,,phone,Office,202-224-5042,true,congress-legislators
+bioguide:C001088,,website,Official,https://www.coons.senate.gov,false,congress-legislators
+bioguide:C001091,,address,Office,2241 Rayburn House Office Building Washington DC 20515-4320,false,congress-legislators
+bioguide:C001091,,phone,Office,202-225-3236,true,congress-legislators
+bioguide:C001091,,website,Official,https://castro.house.gov,false,congress-legislators
+bioguide:C001095,,address,Office,326 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001095,,phone,Office,202-224-2353,true,congress-legislators
+bioguide:C001095,,website,Official,https://www.cotton.senate.gov,false,congress-legislators
+bioguide:C001096,,address,Office,313 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001096,,phone,Office,202-224-2043,true,congress-legislators
+bioguide:C001096,,website,Official,https://www.cramer.senate.gov,false,congress-legislators
+bioguide:C001098,,address,Office,167 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001098,,phone,Office,202-224-5922,true,congress-legislators
+bioguide:C001098,,website,Official,https://www.cruz.senate.gov,false,congress-legislators
+bioguide:C001101,,address,Office,2368 Rayburn House Office Building Washington DC 20515-2105,false,congress-legislators
+bioguide:C001101,,phone,Office,202-225-2836,true,congress-legislators
+bioguide:C001101,,website,Official,https://katherineclark.house.gov,false,congress-legislators
+bioguide:C001103,,address,Office,2432 Rayburn House Office Building Washington DC 20515-1001,false,congress-legislators
+bioguide:C001103,,phone,Office,202-225-5831,true,congress-legislators
+bioguide:C001103,,website,Official,https://buddycarter.house.gov,false,congress-legislators
+bioguide:C001108,,address,Office,2410 Rayburn House Office Building Washington DC 20515-1701,false,congress-legislators
+bioguide:C001108,,phone,Office,202-225-3115,true,congress-legislators
+bioguide:C001108,,website,Official,https://comer.house.gov,false,congress-legislators
+bioguide:C001110,,address,Office,2082 Rayburn House Office Building Washington DC 20515-0546,false,congress-legislators
+bioguide:C001110,,phone,Office,202-225-2965,true,congress-legislators
+bioguide:C001110,,website,Official,https://correa.house.gov,false,congress-legislators
+bioguide:C001112,,address,Office,2331 Rayburn House Office Building Washington DC 20515-0524,false,congress-legislators
+bioguide:C001112,,phone,Office,202-225-3601,true,congress-legislators
+bioguide:C001112,,website,Official,https://carbajal.house.gov,false,congress-legislators
+bioguide:C001113,,address,Office,309 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001113,,phone,Office,202-224-3542,true,congress-legislators
+bioguide:C001113,,website,Official,https://www.cortezmasto.senate.gov,false,congress-legislators
+bioguide:C001114,,address,Office,502 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:C001114,,phone,Office,202-224-5251,true,congress-legislators
+bioguide:C001114,,website,Official,https://www.curtis.senate.gov,false,congress-legislators
+bioguide:C001115,,address,Office,304 Cannon House Office Building Washington DC 20515-4327,false,congress-legislators
+bioguide:C001115,,phone,Office,202-225-7742,true,congress-legislators
+bioguide:C001115,,website,Official,https://cloud.house.gov,false,congress-legislators
+bioguide:C001116,,address,Office,445 Cannon House Office Building Washington DC 20515-1009,false,congress-legislators
+bioguide:C001116,,phone,Office,202-225-9893,true,congress-legislators
+bioguide:C001116,,website,Official,https://clyde.house.gov,false,congress-legislators
+bioguide:C001117,,address,Office,2440 Rayburn House Office Building Washington DC 20515-1306,false,congress-legislators
+bioguide:C001117,,phone,Office,202-225-4561,true,congress-legislators
+bioguide:C001117,,website,Official,https://casten.house.gov,false,congress-legislators
+bioguide:C001118,,address,Office,2443 Rayburn House Office Building Washington DC 20515-4606,false,congress-legislators
+bioguide:C001118,,phone,Office,202-225-5431,true,congress-legislators
+bioguide:C001118,,website,Official,https://cline.house.gov,false,congress-legislators
+bioguide:C001119,,address,Office,2052 Rayburn House Office Building Washington DC 20515-2302,false,congress-legislators
+bioguide:C001119,,phone,Office,202-225-2271,true,congress-legislators
+bioguide:C001119,,website,Official,https://craig.house.gov,false,congress-legislators
+bioguide:C001120,,address,Office,248 Cannon House Office Building Washington DC 20515-4302,false,congress-legislators
+bioguide:C001120,,phone,Office,202-225-6565,true,congress-legislators
+bioguide:C001120,,website,Official,https://crenshaw.house.gov,false,congress-legislators
+bioguide:C001121,,address,Office,1323 Longworth House Office Building Washington DC 20515-0606,false,congress-legislators
+bioguide:C001121,,phone,Office,202-225-7882,true,congress-legislators
+bioguide:C001121,,website,Official,https://crow.house.gov,false,congress-legislators
+bioguide:C001123,,address,Office,2463 Rayburn House Office Building Washington DC 20515-0531,false,congress-legislators
+bioguide:C001123,,phone,Office,202-225-5256,true,congress-legislators
+bioguide:C001123,,website,Official,https://cisneros.house.gov,false,congress-legislators
+bioguide:C001125,,address,Office,442 Cannon House Office Building Washington DC 20515-1802,false,congress-legislators
+bioguide:C001125,,phone,Office,202-225-6636,true,congress-legislators
+bioguide:C001125,,website,Official,https://troycarter.house.gov,false,congress-legislators
+bioguide:C001126,,address,Office,1433 Longworth House Office Building Washington DC 20515-3515,false,congress-legislators
+bioguide:C001126,,phone,Office,202-225-2015,true,congress-legislators
+bioguide:C001126,,website,Official,https://carey.house.gov,false,congress-legislators
+bioguide:C001129,,address,Office,2351 Rayburn House Office Building Washington DC 20515-1010,false,congress-legislators
+bioguide:C001129,,phone,Office,202-225-4101,true,congress-legislators
+bioguide:C001129,,website,Official,https://collins.house.gov,false,congress-legislators
+bioguide:C001130,,address,Office,1616 Longworth House Office Building Washington DC 20515-4330,false,congress-legislators
+bioguide:C001130,,phone,Office,202-225-8885,true,congress-legislators
+bioguide:C001130,,website,Official,https://crockett.house.gov,false,congress-legislators
+bioguide:C001131,,address,Office,446 Cannon House Office Building Washington DC 20515-4335,false,congress-legislators
+bioguide:C001131,,phone,Office,202-225-5645,true,congress-legislators
+bioguide:C001131,,website,Official,https://casar.house.gov,false,congress-legislators
+bioguide:C001132,,address,Office,307 Cannon House Office Building Washington DC 20515-0302,false,congress-legislators
+bioguide:C001132,,phone,Office,202-225-3361,true,congress-legislators
+bioguide:C001132,,website,Official,https://crane.house.gov,false,congress-legislators
+bioguide:C001133,,address,Office,461 Cannon House Office Building Washington DC 20515-0306,false,congress-legislators
+bioguide:C001133,,phone,Office,202-225-2542,true,congress-legislators
+bioguide:C001133,,website,Official,https://ciscomani.house.gov,false,congress-legislators
+bioguide:C001136,,address,Office,1022 Longworth House Office Building Washington DC 20515-3003,false,congress-legislators
+bioguide:C001136,,phone,Office,202-225-4765,true,congress-legislators
+bioguide:C001136,,website,Official,https://conaway.house.gov,false,congress-legislators
+bioguide:C001137,,address,Office,1029 Longworth House Office Building Washington DC 20515-0605,false,congress-legislators
+bioguide:C001137,,phone,Office,202-225-4422,true,congress-legislators
+bioguide:C001137,,website,Official,https://crank.house.gov,false,congress-legislators
+bioguide:D000032,,address,Office,1710 Longworth House Office Building Washington DC 20515-0919,false,congress-legislators
+bioguide:D000032,,phone,Office,202-225-2536,true,congress-legislators
+bioguide:D000032,,website,Official,https://donalds.house.gov,false,congress-legislators
+bioguide:D000096,,address,Office,2159 Rayburn House Office Building Washington DC 20515-1307,false,congress-legislators
+bioguide:D000096,,phone,Office,202-225-5006,true,congress-legislators
+bioguide:D000096,,website,Official,https://davis.house.gov,false,congress-legislators
+bioguide:D000197,,address,Office,2111 Rayburn House Office Building Washington DC 20515-0601,false,congress-legislators
+bioguide:D000197,,phone,Office,202-225-4431,true,congress-legislators
+bioguide:D000197,,website,Official,https://degette.house.gov,false,congress-legislators
+bioguide:D000216,,address,Office,2413 Rayburn House Office Building Washington DC 20515-0703,false,congress-legislators
+bioguide:D000216,,phone,Office,202-225-3661,true,congress-legislators
+bioguide:D000216,,website,Official,https://delauro.house.gov,false,congress-legislators
+bioguide:D000230,,address,Office,1123 Longworth House Office Building Washington DC 20515-3301,false,congress-legislators
+bioguide:D000230,,phone,Office,202-225-3101,true,congress-legislators
+bioguide:D000230,,website,Official,https://dondavis.house.gov,false,congress-legislators
+bioguide:D000399,,address,Office,2307 Rayburn House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:D000399,,phone,Office,202-225-4865,true,congress-legislators
+bioguide:D000399,,website,Official,https://doggett.house.gov,false,congress-legislators
+bioguide:D000530,,address,Office,1222 Longworth House Office Building Washington DC 20515-3817,false,congress-legislators
+bioguide:D000530,,phone,Office,202-225-2301,true,congress-legislators
+bioguide:D000530,,website,Official,https://deluzio.house.gov,false,congress-legislators
+bioguide:D000563,,address,Office,711 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:D000563,,phone,Office,202-224-2152,true,congress-legislators
+bioguide:D000563,,website,Official,https://www.durbin.senate.gov,false,congress-legislators
+bioguide:D000594,,address,Office,1415 Longworth House Office Building Washington DC 20515-4315,false,congress-legislators
+bioguide:D000594,,phone,Office,202-225-9901,true,congress-legislators
+bioguide:D000594,,website,Official,https://delacruz.house.gov,false,congress-legislators
+bioguide:D000600,,address,Office,374 Cannon House Office Building Washington DC 20515-0926,false,congress-legislators
+bioguide:D000600,,phone,Office,202-225-4211,true,congress-legislators
+bioguide:D000600,,website,Official,https://mariodiazbalart.house.gov,false,congress-legislators
+bioguide:D000616,,address,Office,2304 Rayburn House Office Building Washington DC 20515-4204,false,congress-legislators
+bioguide:D000616,,phone,Office,202-225-6831,true,congress-legislators
+bioguide:D000616,,website,Official,https://desjarlais.house.gov,false,congress-legislators
+bioguide:D000617,,address,Office,2311 Rayburn House Office Building Washington DC 20515-4701,false,congress-legislators
+bioguide:D000617,,phone,Office,202-225-6311,true,congress-legislators
+bioguide:D000617,,website,Official,https://delbene.house.gov,false,congress-legislators
+bioguide:D000618,,address,Office,320 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:D000618,,phone,Office,202-224-2651,true,congress-legislators
+bioguide:D000618,,website,Official,https://www.daines.senate.gov,false,congress-legislators
+bioguide:D000622,,address,Office,524 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:D000622,,phone,Office,202-224-2854,true,congress-legislators
+bioguide:D000622,,website,Official,https://www.duckworth.senate.gov,false,congress-legislators
+bioguide:D000623,,address,Office,2134 Rayburn House Office Building Washington DC 20515-0510,false,congress-legislators
+bioguide:D000623,,phone,Office,202-225-2095,true,congress-legislators
+bioguide:D000623,,website,Official,https://desaulnier.house.gov,false,congress-legislators
+bioguide:D000624,,address,Office,102 Cannon House Office Building Washington DC 20515-2206,false,congress-legislators
+bioguide:D000624,,phone,Office,202-225-4071,true,congress-legislators
+bioguide:D000624,,website,Official,https://debbiedingell.house.gov,false,congress-legislators
+bioguide:D000626,,address,Office,2113 Rayburn House Office Building Washington DC 20515-3508,false,congress-legislators
+bioguide:D000626,,phone,Office,202-225-6205,true,congress-legislators
+bioguide:D000626,,website,Official,https://davidson.house.gov,false,congress-legislators
+bioguide:D000628,,address,Office,466 Cannon House Office Building Washington DC 20515-0902,false,congress-legislators
+bioguide:D000628,,phone,Office,202-225-5235,true,congress-legislators
+bioguide:D000628,,website,Official,https://dunn.house.gov,false,congress-legislators
+bioguide:D000629,,address,Office,2435 Rayburn House Office Building Washington DC 20515-1603,false,congress-legislators
+bioguide:D000629,,phone,Office,202-225-2865,true,congress-legislators
+bioguide:D000629,,website,Official,https://davids.house.gov,false,congress-legislators
+bioguide:D000631,,address,Office,150 Cannon House Office Building Washington DC 20515-3804,false,congress-legislators
+bioguide:D000631,,phone,Office,202-225-4731,true,congress-legislators
+bioguide:D000631,,website,Official,https://dean.house.gov,false,congress-legislators
+bioguide:D000634,,address,Office,1529 Longworth House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:D000634,,phone,Office,202-225-3211,true,congress-legislators
+bioguide:D000634,,website,Official,https://downing.house.gov,false,congress-legislators
+bioguide:D000635,,address,Office,1207 Longworth House Office Building Washington DC 20515-3703,false,congress-legislators
+bioguide:D000635,,phone,Office,202-225-4811,true,congress-legislators
+bioguide:D000635,,website,Official,https://dexter.house.gov,false,congress-legislators
+bioguide:E000071,,address,Office,1721 Longworth House Office Building Washington DC 20515-4306,false,congress-legislators
+bioguide:E000071,,phone,Office,202-225-2002,true,congress-legislators
+bioguide:E000071,,website,Official,https://ellzey.house.gov,false,congress-legislators
+bioguide:E000235,,address,Office,443 Cannon House Office Building Washington DC 20515-2404,false,congress-legislators
+bioguide:E000235,,phone,Office,202-225-5772,true,congress-legislators
+bioguide:E000235,,website,Official,https://ezell.house.gov,false,congress-legislators
+bioguide:E000246,,address,Office,1505 Longworth House Office Building Washington DC 20515-3311,false,congress-legislators
+bioguide:E000246,,phone,Office,202-225-6401,true,congress-legislators
+bioguide:E000246,,website,Official,https://edwards.house.gov,false,congress-legislators
+bioguide:E000294,,address,Office,326 Cannon House Office Building Washington DC 20515-2306,false,congress-legislators
+bioguide:E000294,,phone,Office,202-225-2331,true,congress-legislators
+bioguide:E000294,,website,Official,https://emmer.house.gov,false,congress-legislators
+bioguide:E000295,,address,Office,260 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:E000295,,phone,Office,202-224-3254,true,congress-legislators
+bioguide:E000295,,website,Official,https://www.ernst.senate.gov,false,congress-legislators
+bioguide:E000296,,address,Office,1105 Longworth House Office Building Washington DC 20515-3803,false,congress-legislators
+bioguide:E000296,,phone,Office,202-225-4001,true,congress-legislators
+bioguide:E000296,,website,Official,https://evans.house.gov,false,congress-legislators
+bioguide:E000297,,address,Office,2332 Rayburn House Office Building Washington DC 20515-3213,false,congress-legislators
+bioguide:E000297,,phone,Office,202-225-4365,true,congress-legislators
+bioguide:E000297,,website,Official,https://espaillat.house.gov,false,congress-legislators
+bioguide:E000298,,address,Office,2234 Rayburn House Office Building Washington DC 20515-1604,false,congress-legislators
+bioguide:E000298,,phone,Office,202-225-6216,true,congress-legislators
+bioguide:E000298,,website,Official,https://estes.house.gov,false,congress-legislators
+bioguide:E000299,,address,Office,2448 Rayburn House Office Building Washington DC 20515-4316,false,congress-legislators
+bioguide:E000299,,phone,Office,202-225-4831,true,congress-legislators
+bioguide:E000299,,website,Official,https://escobar.house.gov,false,congress-legislators
+bioguide:E000300,,address,Office,1229 Longworth House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:E000300,,phone,Office,202-225-5625,true,congress-legislators
+bioguide:E000300,,website,Official,https://gabeevans.house.gov,false,congress-legislators
+bioguide:E000301,,address,Office,1213 Longworth House Office Building Washington DC 20515-2003,false,congress-legislators
+bioguide:E000301,,phone,Office,202-225-4016,true,congress-legislators
+bioguide:E000301,,website,Official,https://elfreth.house.gov,false,congress-legislators
+bioguide:F000110,,address,Office,2349 Rayburn House Office Building Washington DC 20515-1806,false,congress-legislators
+bioguide:F000110,,phone,Office,202-225-3901,true,congress-legislators
+bioguide:F000110,,website,Official,https://fields.house.gov,false,congress-legislators
+bioguide:F000246,,address,Office,2416 Rayburn House Office Building Washington DC 20515-4304,false,congress-legislators
+bioguide:F000246,,phone,Office,202-225-6673,true,congress-legislators
+bioguide:F000246,,website,Official,https://fallon.house.gov,false,congress-legislators
+bioguide:F000446,,address,Office,2434 Rayburn House Office Building Washington DC 20515-1504,false,congress-legislators
+bioguide:F000446,,phone,Office,202-225-4426,true,congress-legislators
+bioguide:F000446,,website,Official,https://feenstra.house.gov,false,congress-legislators
+bioguide:F000450,,address,Office,2462 Rayburn House Office Building Washington DC 20515-3305,false,congress-legislators
+bioguide:F000450,,phone,Office,202-225-2071,true,congress-legislators
+bioguide:F000450,,website,Official,https://foxx.house.gov,false,congress-legislators
+bioguide:F000454,,address,Office,2366 Rayburn House Office Building Washington DC 20515-1311,false,congress-legislators
+bioguide:F000454,,phone,Office,202-225-3515,true,congress-legislators
+bioguide:F000454,,website,Official,https://foster.house.gov,false,congress-legislators
+bioguide:F000459,,address,Office,2187 Rayburn House Office Building Washington DC 20515-4203,false,congress-legislators
+bioguide:F000459,,phone,Office,202-225-3271,true,congress-legislators
+bioguide:F000459,,website,Official,https://fleischmann.house.gov,false,congress-legislators
+bioguide:F000462,,address,Office,2305 Rayburn House Office Building Washington DC 20515-0922,false,congress-legislators
+bioguide:F000462,,phone,Office,202-225-9890,true,congress-legislators
+bioguide:F000462,,website,Official,https://frankel.house.gov,false,congress-legislators
+bioguide:F000463,,address,Office,448 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:F000463,,phone,Office,202-224-6551,true,congress-legislators
+bioguide:F000463,,website,Official,https://www.fischer.senate.gov,false,congress-legislators
+bioguide:F000466,,address,Office,271 Cannon House Office Building Washington DC 20515-3801,false,congress-legislators
+bioguide:F000466,,phone,Office,202-225-4276,true,congress-legislators
+bioguide:F000466,,website,Official,https://fitzpatrick.house.gov,false,congress-legislators
+bioguide:F000468,,address,Office,2004 Rayburn House Office Building Washington DC 20515-4307,false,congress-legislators
+bioguide:F000468,,phone,Office,202-225-2571,true,congress-legislators
+bioguide:F000468,,website,Official,https://fletcher.house.gov,false,congress-legislators
+bioguide:F000469,,address,Office,1514 Longworth House Office Building Washington DC 20515-1201,false,congress-legislators
+bioguide:F000469,,phone,Office,202-225-6611,true,congress-legislators
+bioguide:F000469,,website,Official,https://fulcher.house.gov,false,congress-legislators
+bioguide:F000470,,address,Office,2229 Rayburn House Office Building Washington DC 20515-2307,false,congress-legislators
+bioguide:F000470,,phone,Office,202-225-2165,true,congress-legislators
+bioguide:F000470,,website,Official,https://fischbach.house.gov,false,congress-legislators
+bioguide:F000471,,address,Office,2444 Rayburn House Office Building Washington DC 20515-4905,false,congress-legislators
+bioguide:F000471,,phone,Office,202-225-5101,true,congress-legislators
+bioguide:F000471,,website,Official,https://fitzgerald.house.gov,false,congress-legislators
+bioguide:F000472,,address,Office,2301 Rayburn House Office Building Washington DC 20515-0918,false,congress-legislators
+bioguide:F000472,,phone,Office,202-225-1252,true,congress-legislators
+bioguide:F000472,,website,Official,https://franklin.house.gov,false,congress-legislators
+bioguide:F000474,,address,Office,343 Cannon House Office Building Washington DC 20515-2701,false,congress-legislators
+bioguide:F000474,,phone,Office,202-225-4806,true,congress-legislators
+bioguide:F000474,,website,Official,https://flood.house.gov,false,congress-legislators
+bioguide:F000475,,address,Office,2418 Rayburn House Office Building Washington DC 20515-2301,false,congress-legislators
+bioguide:F000475,,phone,Office,202-225-2472,true,congress-legislators
+bioguide:F000475,,website,Official,https://finstad.house.gov,false,congress-legislators
+bioguide:F000476,,address,Office,1224 Longworth House Office Building Washington DC 20515-0910,false,congress-legislators
+bioguide:F000476,,phone,Office,202-225-2176,true,congress-legislators
+bioguide:F000476,,website,Official,https://frost.house.gov,false,congress-legislators
+bioguide:F000477,,address,Office,2452 Rayburn House Office Building Washington DC 20515-3304,false,congress-legislators
+bioguide:F000477,,phone,Office,202-225-1784,true,congress-legislators
+bioguide:F000477,,website,Official,https://foushee.house.gov,false,congress-legislators
+bioguide:F000478,,address,Office,345 Cannon House Office Building Washington DC 20515-4007,false,congress-legislators
+bioguide:F000478,,phone,Office,202-225-9895,true,congress-legislators
+bioguide:F000478,,website,Official,https://fry.house.gov,false,congress-legislators
+bioguide:F000479,,address,Office,142 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:F000479,,phone,Office,202-224-4254,true,congress-legislators
+bioguide:F000479,,website,Official,https://www.fetterman.senate.gov,false,congress-legislators
+bioguide:F000480,,address,Office,243 Cannon House Office Building Washington DC 20515-0520,false,congress-legislators
+bioguide:F000480,,phone,Office,202-225-2915,true,congress-legislators
+bioguide:F000480,,website,Official,https://fong.house.gov,false,congress-legislators
+bioguide:F000481,,address,Office,225 Cannon House Office Building Washington DC 20515-0102,false,congress-legislators
+bioguide:F000481,,phone,Office,202-225-4931,true,congress-legislators
+bioguide:F000481,,website,Official,https://figures.house.gov,false,congress-legislators
+bioguide:F000482,,address,Office,1607 Longworth House Office Building Washington DC 20515-3400,false,congress-legislators
+bioguide:F000482,,phone,Office,202-225-2611,true,congress-legislators
+bioguide:F000482,,website,Official,https://fedorchak.house.gov,false,congress-legislators
+bioguide:F000483,,address,Office,1517 Longworth House Office Building Washington DC 20515-0530,false,congress-legislators
+bioguide:F000483,,phone,Office,202-225-4176,true,congress-legislators
+bioguide:F000483,,website,Official,https://friedman.house.gov,false,congress-legislators
+bioguide:F000484,,address,Office,244 Cannon House Office Building Washington DC 20515-0906,false,congress-legislators
+bioguide:F000484,,phone,Office,202-225-2706,true,congress-legislators
+bioguide:F000484,,website,Official,https://fine.house.gov,false,congress-legislators
+bioguide:F000485,,address,Office,2201 Rayburn House Office Building Washington DC 20515-1014,false,congress-legislators
+bioguide:F000485,,phone,Office,202-225-5211,true,congress-legislators
+bioguide:F000485,,website,Official,https://fuller.house.gov,false,congress-legislators
+bioguide:G000386,,address,Office,135 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:G000386,,phone,Office,202-224-3744,true,congress-legislators
+bioguide:G000386,,website,Official,https://www.grassley.senate.gov,false,congress-legislators
+bioguide:G000546,,address,Office,1135 Longworth House Office Building Washington DC 20515-2506,false,congress-legislators
+bioguide:G000546,,phone,Office,202-225-7041,true,congress-legislators
+bioguide:G000546,,website,Official,https://graves.house.gov,false,congress-legislators
+bioguide:G000553,,address,Office,2347 Rayburn House Office Building Washington DC 20515-4309,false,congress-legislators
+bioguide:G000553,,phone,Office,202-225-7508,true,congress-legislators
+bioguide:G000553,,website,Official,https://algreen.house.gov,false,congress-legislators
+bioguide:G000555,,address,Office,478 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:G000555,,phone,Office,202-224-4451,true,congress-legislators
+bioguide:G000555,,website,Official,https://www.gillibrand.senate.gov,false,congress-legislators
+bioguide:G000558,,address,Office,2161 Rayburn House Office Building Washington DC 20515-1702,false,congress-legislators
+bioguide:G000558,,phone,Office,202-225-3501,true,congress-legislators
+bioguide:G000558,,website,Official,https://guthrie.house.gov,false,congress-legislators
+bioguide:G000559,,address,Office,2428 Rayburn House Office Building Washington DC 20515-0508,false,congress-legislators
+bioguide:G000559,,phone,Office,202-225-1880,true,congress-legislators
+bioguide:G000559,,website,Official,https://garamendi.house.gov,false,congress-legislators
+bioguide:G000565,,address,Office,2057 Rayburn House Office Building Washington DC 20515-0309,false,congress-legislators
+bioguide:G000565,,phone,Office,202-225-2315,true,congress-legislators
+bioguide:G000565,,website,Official,https://gosar.house.gov,false,congress-legislators
+bioguide:G000568,,address,Office,2110 Rayburn House Office Building Washington DC 20515-4609,false,congress-legislators
+bioguide:G000568,,phone,Office,202-225-3861,true,congress-legislators
+bioguide:G000568,,website,Official,https://morgangriffith.house.gov,false,congress-legislators
+bioguide:G000574,,address,Office,302 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:G000574,,phone,Office,202-224-4521,true,congress-legislators
+bioguide:G000574,,website,Official,https://www.gallego.senate.gov,false,congress-legislators
+bioguide:G000576,,address,Office,1211 Longworth House Office Building Washington DC 20515-4906,false,congress-legislators
+bioguide:G000576,,phone,Office,202-225-2476,true,congress-legislators
+bioguide:G000576,,website,Official,https://grothman.house.gov,false,congress-legislators
+bioguide:G000581,,address,Office,1201 Longworth House Office Building Washington DC 20515-4334,false,congress-legislators
+bioguide:G000581,,phone,Office,202-225-2531,true,congress-legislators
+bioguide:G000581,,website,Official,https://gonzalez.house.gov,false,congress-legislators
+bioguide:G000583,,address,Office,106 Cannon House Office Building Washington DC 20515-3005,false,congress-legislators
+bioguide:G000583,,phone,Office,202-225-4465,true,congress-legislators
+bioguide:G000583,,website,Official,https://gottheimer.house.gov,false,congress-legislators
+bioguide:G000585,,address,Office,506 Cannon House Office Building Washington DC 20515-0534,false,congress-legislators
+bioguide:G000585,,phone,Office,202-225-6235,true,congress-legislators
+bioguide:G000585,,website,Official,https://gomez.house.gov,false,congress-legislators
+bioguide:G000586,,address,Office,2334 Rayburn House Office Building Washington DC 20515-1304,false,congress-legislators
+bioguide:G000586,,phone,Office,202-225-8203,true,congress-legislators
+bioguide:G000586,,website,Official,https://chuygarcia.house.gov,false,congress-legislators
+bioguide:G000587,,address,Office,2419 Rayburn House Office Building Washington DC 20515-4329,false,congress-legislators
+bioguide:G000587,,phone,Office,202-225-1688,true,congress-legislators
+bioguide:G000587,,website,Official,https://sylviagarcia.house.gov,false,congress-legislators
+bioguide:G000589,,address,Office,2431 Rayburn House Office Building Washington DC 20515-4305,false,congress-legislators
+bioguide:G000589,,phone,Office,202-225-3484,true,congress-legislators
+bioguide:G000589,,website,Official,https://gooden.house.gov,false,congress-legislators
+bioguide:G000591,,address,Office,450 Cannon House Office Building Washington DC 20515-2403,false,congress-legislators
+bioguide:G000591,,phone,Office,202-225-5031,true,congress-legislators
+bioguide:G000591,,website,Official,https://guest.house.gov,false,congress-legislators
+bioguide:G000592,,address,Office,1107 Longworth House Office Building Washington DC 20515-1902,false,congress-legislators
+bioguide:G000592,,phone,Office,202-225-6306,true,congress-legislators
+bioguide:G000592,,website,Official,https://golden.house.gov,false,congress-legislators
+bioguide:G000593,,address,Office,448 Cannon House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:G000593,,phone,Office,202-225-2778,true,congress-legislators
+bioguide:G000593,,website,Official,https://gimenez.house.gov,false,congress-legislators
+bioguide:G000597,,address,Office,2344 Rayburn House Office Building Washington DC 20515-3202,false,congress-legislators
+bioguide:G000597,,phone,Office,202-225-7896,true,congress-legislators
+bioguide:G000597,,website,Official,https://garbarino.house.gov,false,congress-legislators
+bioguide:G000598,,address,Office,109 Cannon House Office Building Washington DC 20515-0542,false,congress-legislators
+bioguide:G000598,,phone,Office,202-225-7924,true,congress-legislators
+bioguide:G000598,,website,Official,https://robertgarcia.house.gov,false,congress-legislators
+bioguide:G000599,,address,Office,245 Cannon House Office Building Washington DC 20515-3210,false,congress-legislators
+bioguide:G000599,,phone,Office,202-225-7944,true,congress-legislators
+bioguide:G000599,,website,Official,https://goldman.house.gov,false,congress-legislators
+bioguide:G000600,,address,Office,1431 Longworth House Office Building Washington DC 20515-4703,false,congress-legislators
+bioguide:G000600,,phone,Office,202-225-3536,true,congress-legislators
+bioguide:G000600,,website,Official,https://gluesenkampperez.house.gov,false,congress-legislators
+bioguide:G000601,,address,Office,1716 Longworth House Office Building Washington DC 20515-4312,false,congress-legislators
+bioguide:G000601,,phone,Office,202-225-5071,true,congress-legislators
+bioguide:G000601,,website,Official,https://craiggoldman.house.gov,false,congress-legislators
+bioguide:G000602,,address,Office,428 Cannon House Office Building Washington DC 20515-3204,false,congress-legislators
+bioguide:G000602,,phone,Office,202-225-5516,true,congress-legislators
+bioguide:G000602,,website,Official,https://gillen.house.gov,false,congress-legislators
+bioguide:G000603,,address,Office,1305 Longworth House Office Building Washington DC 20515-4326,false,congress-legislators
+bioguide:G000603,,phone,Office,202-225-7772,true,congress-legislators
+bioguide:G000603,,website,Official,https://gill.house.gov,false,congress-legislators
+bioguide:G000604,,address,Office,223 Cannon House Office Building Washington DC 20515-2902,false,congress-legislators
+bioguide:G000604,,phone,Office,202-225-5206,true,congress-legislators
+bioguide:G000604,,website,Official,https://goodlander.house.gov,false,congress-legislators
+bioguide:G000605,,address,Office,1230 Longworth House Office Building Washington DC 20515-0513,false,congress-legislators
+bioguide:G000605,,phone,Office,202-225-1947,true,congress-legislators
+bioguide:G000605,,website,Official,https://gray.house.gov,false,congress-legislators
+bioguide:G000606,,address,Office,1203 Longworth House Office Building Washington DC 20515-0307,false,congress-legislators
+bioguide:G000606,,phone,Office,202-225-2435,true,congress-legislators
+bioguide:G000606,,website,Official,https://grijalva.house.gov,false,congress-legislators
+bioguide:G000607,,address,Office,408 Cannon House Office Building Washington DC 20515-0501,false,congress-legislators
+bioguide:G000607,,phone,Office,202-225-3076,true,congress-legislators
+bioguide:G000607,,website,Official,https://gallagher.house.gov/,false,congress-legislators
+bioguide:G000608,,address,Office,211 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:G000608,,phone,Office,202-224-5972,true,congress-legislators
+bioguide:G000608,,website,Official,https://www.dgraham.senate.gov,false,congress-legislators
+bioguide:H000273,,address,Office,316 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H000273,,phone,Office,202-224-5941,true,congress-legislators
+bioguide:H000273,,website,Official,https://www.hickenlooper.senate.gov,false,congress-legislators
+bioguide:H000601,,address,Office,251 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H000601,,phone,Office,202-224-4944,true,congress-legislators
+bioguide:H000601,,website,Official,https://www.hagerty.senate.gov,false,congress-legislators
+bioguide:H000874,,address,Office,1705 Longworth House Office Building Washington DC 20515-2005,false,congress-legislators
+bioguide:H000874,,phone,Office,202-225-4131,true,congress-legislators
+bioguide:H000874,,website,Official,https://hoyer.house.gov,false,congress-legislators
+bioguide:H001042,,address,Office,109 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001042,,phone,Office,202-224-6361,true,congress-legislators
+bioguide:H001042,,website,Official,https://www.hirono.senate.gov,false,congress-legislators
+bioguide:H001046,,address,Office,709 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001046,,phone,Office,202-224-5521,true,congress-legislators
+bioguide:H001046,,website,Official,https://www.heinrich.senate.gov,false,congress-legislators
+bioguide:H001047,,address,Office,2137 Rayburn House Office Building Washington DC 20515-0704,false,congress-legislators
+bioguide:H001047,,phone,Office,202-225-5541,true,congress-legislators
+bioguide:H001047,,website,Official,https://himes.house.gov,false,congress-legislators
+bioguide:H001052,,address,Office,1536 Longworth House Office Building Washington DC 20515-2001,false,congress-legislators
+bioguide:H001052,,phone,Office,202-225-5311,true,congress-legislators
+bioguide:H001052,,website,Official,https://harris.house.gov,false,congress-legislators
+bioguide:H001058,,address,Office,2232 Rayburn House Office Building Washington DC 20515-2204,false,congress-legislators
+bioguide:H001058,,phone,Office,202-225-4401,true,congress-legislators
+bioguide:H001058,,website,Official,https://huizenga.house.gov,false,congress-legislators
+bioguide:H001061,,address,Office,338 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001061,,phone,Office,202-224-2551,true,congress-legislators
+bioguide:H001061,,website,Official,https://www.hoeven.senate.gov,false,congress-legislators
+bioguide:H001066,,address,Office,406 Cannon House Office Building Washington DC 20515-2804,false,congress-legislators
+bioguide:H001066,,phone,Office,202-225-9894,true,congress-legislators
+bioguide:H001066,,website,Official,https://horsford.house.gov,false,congress-legislators
+bioguide:H001067,,address,Office,2112 Rayburn House Office Building Washington DC 20515-3309,false,congress-legislators
+bioguide:H001067,,phone,Office,202-225-3715,true,congress-legislators
+bioguide:H001067,,website,Official,https://hudson.house.gov,false,congress-legislators
+bioguide:H001068,,address,Office,2330 Rayburn House Office Building Washington DC 20515-0502,false,congress-legislators
+bioguide:H001068,,phone,Office,202-225-5161,true,congress-legislators
+bioguide:H001068,,website,Official,https://huffman.house.gov,false,congress-legislators
+bioguide:H001072,,address,Office,1533 Longworth House Office Building Washington DC 20515-0402,false,congress-legislators
+bioguide:H001072,,phone,Office,202-225-2506,true,congress-legislators
+bioguide:H001072,,website,Official,https://hill.house.gov,false,congress-legislators
+bioguide:H001076,,address,Office,324 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001076,,phone,Office,202-224-3324,true,congress-legislators
+bioguide:H001076,,website,Official,https://www.hassan.senate.gov,false,congress-legislators
+bioguide:H001077,,address,Office,572 Cannon House Office Building Washington DC 20515-1803,false,congress-legislators
+bioguide:H001077,,phone,Office,202-225-2031,true,congress-legislators
+bioguide:H001077,,website,Official,https://clayhiggins.house.gov,false,congress-legislators
+bioguide:H001079,,address,Office,528 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001079,,phone,Office,202-224-5054,true,congress-legislators
+bioguide:H001079,,website,Official,https://www.hydesmith.senate.gov,false,congress-legislators
+bioguide:H001081,,address,Office,2049 Rayburn House Office Building Washington DC 20515-0705,false,congress-legislators
+bioguide:H001081,,phone,Office,202-225-4476,true,congress-legislators
+bioguide:H001081,,website,Official,https://hayes.house.gov,false,congress-legislators
+bioguide:H001082,,address,Office,171 Cannon House Office Building Washington DC 20515-3601,false,congress-legislators
+bioguide:H001082,,phone,Office,202-225-2211,true,congress-legislators
+bioguide:H001082,,website,Official,https://hern.house.gov,false,congress-legislators
+bioguide:H001085,,address,Office,1727 Longworth House Office Building Washington DC 20515-3806,false,congress-legislators
+bioguide:H001085,,phone,Office,202-225-4315,true,congress-legislators
+bioguide:H001085,,website,Official,https://houlahan.house.gov,false,congress-legislators
+bioguide:H001086,,address,Office,167 Cannon House Office Building Washington DC 20515-4201,false,congress-legislators
+bioguide:H001086,,phone,Office,202-225-6356,true,congress-legislators
+bioguide:H001086,,website,Official,https://harshbarger.house.gov,false,congress-legislators
+bioguide:H001089,,address,Office,381 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001089,,phone,Office,202-224-6154,true,congress-legislators
+bioguide:H001089,,website,Official,https://www.hawley.senate.gov,false,congress-legislators
+bioguide:H001090,,address,Office,209 Cannon House Office Building Washington DC 20515-0509,false,congress-legislators
+bioguide:H001090,,phone,Office,202-225-4540,true,congress-legislators
+bioguide:H001090,,website,Official,https://harder.house.gov,false,congress-legislators
+bioguide:H001091,,address,Office,2458 Rayburn House Office Building Washington DC 20515-1502,false,congress-legislators
+bioguide:H001091,,phone,Office,202-225-2911,true,congress-legislators
+bioguide:H001091,,website,Official,https://hinson.house.gov,false,congress-legislators
+bioguide:H001093,,address,Office,342 Cannon House Office Building Washington DC 20515-1409,false,congress-legislators
+bioguide:H001093,,phone,Office,202-225-5315,true,congress-legislators
+bioguide:H001093,,website,Official,https://houchin.house.gov,false,congress-legislators
+bioguide:H001094,,address,Office,1620 Longworth House Office Building Washington DC 20515-3704,false,congress-legislators
+bioguide:H001094,,phone,Office,202-225-6416,true,congress-legislators
+bioguide:H001094,,website,Official,https://hoyle.house.gov,false,congress-legislators
+bioguide:H001095,,address,Office,1520 Longworth House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:H001095,,phone,Office,202-225-5646,true,congress-legislators
+bioguide:H001095,,website,Official,https://hunt.house.gov,false,congress-legislators
+bioguide:H001096,,address,Office,1227 Longworth House Office Building Washington DC 20515-5000,false,congress-legislators
+bioguide:H001096,,phone,Office,202-225-2311,true,congress-legislators
+bioguide:H001096,,website,Official,https://hageman.house.gov,false,congress-legislators
+bioguide:H001098,,address,Office,1722 Longworth House Office Building Washington DC 20515-0308,false,congress-legislators
+bioguide:H001098,,phone,Office,202-225-4576,true,congress-legislators
+bioguide:H001098,,website,Official,https://hamadeh.house.gov,false,congress-legislators
+bioguide:H001099,,address,Office,1039 Longworth House Office Building Washington DC 20515-0908,false,congress-legislators
+bioguide:H001099,,phone,Office,202-225-3671,true,congress-legislators
+bioguide:H001099,,website,Official,https://haridopolos.house.gov,false,congress-legislators
+bioguide:H001100,,address,Office,1641 Longworth House Office Building Washington DC 20515-0603,false,congress-legislators
+bioguide:H001100,,phone,Office,202-225-4676,true,congress-legislators
+bioguide:H001100,,website,Official,https://hurd.house.gov,false,congress-legislators
+bioguide:H001101,,address,Office,1233 Longworth House Office Building Washington DC 20515-3310,false,congress-legislators
+bioguide:H001101,,phone,Office,202-225-2576,true,congress-legislators
+bioguide:H001101,,website,Official,https://harrigan.house.gov,false,congress-legislators
+bioguide:H001102,,address,Office,126 Cannon House Office Building Washington DC 20515-3308,false,congress-legislators
+bioguide:H001102,,phone,Office,202-225-1976,true,congress-legislators
+bioguide:H001102,,website,Official,https://markharris.house.gov,false,congress-legislators
+bioguide:H001103,,address,Office,1419 Longworth House Office Building Washington DC 20515-5401,false,congress-legislators
+bioguide:H001103,,phone,Office,202-225-2615,true,congress-legislators
+bioguide:H001103,,website,Official,https://hernandez.house.gov,false,congress-legislators
+bioguide:H001104,,address,Office,304 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:H001104,,phone,Office,202-224-3353,true,congress-legislators
+bioguide:H001104,,website,Official,https://www.husted.senate.gov,false,congress-legislators
+bioguide:I000056,,address,Office,2108 Rayburn House Office Building Washington DC 20515-0548,false,congress-legislators
+bioguide:I000056,,phone,Office,202-225-5672,true,congress-legislators
+bioguide:I000056,,website,Official,https://issa.house.gov,false,congress-legislators
+bioguide:I000058,,address,Office,1610 Longworth House Office Building Washington DC 20515-2004,false,congress-legislators
+bioguide:I000058,,phone,Office,202-225-8699,true,congress-legislators
+bioguide:I000058,,website,Official,https://ivey.house.gov,false,congress-legislators
+bioguide:J000288,,address,Office,2240 Rayburn House Office Building Washington DC 20515-1004,false,congress-legislators
+bioguide:J000288,,phone,Office,202-225-1605,true,congress-legislators
+bioguide:J000288,,website,Official,https://hankjohnson.house.gov,false,congress-legislators
+bioguide:J000289,,address,Office,2056 Rayburn House Office Building Washington DC 20515-3504,false,congress-legislators
+bioguide:J000289,,phone,Office,202-225-2676,true,congress-legislators
+bioguide:J000289,,website,Official,https://jordan.house.gov,false,congress-legislators
+bioguide:J000293,,address,Office,328 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:J000293,,phone,Office,202-224-5323,true,congress-legislators
+bioguide:J000293,,website,Official,https://www.ronjohnson.senate.gov,false,congress-legislators
+bioguide:J000294,,address,Office,2267 Rayburn House Office Building Washington DC 20515-3208,false,congress-legislators
+bioguide:J000294,,phone,Office,202-225-5936,true,congress-legislators
+bioguide:J000294,,website,Official,https://jeffries.house.gov,false,congress-legislators
+bioguide:J000295,,address,Office,2065 Rayburn House Office Building Washington DC 20515-3514,false,congress-legislators
+bioguide:J000295,,phone,Office,202-225-5731,true,congress-legislators
+bioguide:J000295,,website,Official,https://joyce.house.gov,false,congress-legislators
+bioguide:J000298,,address,Office,2346 Rayburn House Office Building Washington DC 20515-4707,false,congress-legislators
+bioguide:J000298,,phone,Office,202-225-3106,true,congress-legislators
+bioguide:J000298,,website,Official,https://jayapal.house.gov,false,congress-legislators
+bioguide:J000299,,address,Office,521 Cannon House Office Building Washington DC 20515-1804,false,congress-legislators
+bioguide:J000299,,phone,Office,202-225-2777,true,congress-legislators
+bioguide:J000299,,website,Official,https://mikejohnson.house.gov,false,congress-legislators
+bioguide:J000301,,address,Office,1714 Longworth House Office Building Washington DC 20515-4100,false,congress-legislators
+bioguide:J000301,,phone,Office,202-225-2801,true,congress-legislators
+bioguide:J000301,,website,Official,https://dustyjohnson.house.gov,false,congress-legislators
+bioguide:J000302,,address,Office,2102 Rayburn House Office Building Washington DC 20515-3813,false,congress-legislators
+bioguide:J000302,,phone,Office,202-225-2431,true,congress-legislators
+bioguide:J000302,,website,Official,https://johnjoyce.house.gov,false,congress-legislators
+bioguide:J000304,,address,Office,125 Cannon House Office Building Washington DC 20515-4313,false,congress-legislators
+bioguide:J000304,,phone,Office,202-225-3706,true,congress-legislators
+bioguide:J000304,,website,Official,https://jackson.house.gov,false,congress-legislators
+bioguide:J000305,,address,Office,2348 Rayburn House Office Building Washington DC 20515-0551,false,congress-legislators
+bioguide:J000305,,phone,Office,202-225-2040,true,congress-legislators
+bioguide:J000305,,website,Official,https://sarajacobs.house.gov,false,congress-legislators
+bioguide:J000307,,address,Office,1519 Longworth House Office Building Washington DC 20515-2210,false,congress-legislators
+bioguide:J000307,,phone,Office,202-225-4961,true,congress-legislators
+bioguide:J000307,,website,Official,https://james.house.gov,false,congress-legislators
+bioguide:J000309,,address,Office,1632 Longworth House Office Building Washington DC 20515-1301,false,congress-legislators
+bioguide:J000309,,phone,Office,202-225-4372,true,congress-legislators
+bioguide:J000309,,website,Official,https://jonathanjackson.house.gov,false,congress-legislators
+bioguide:J000310,,address,Office,221 Cannon House Office Building Washington DC 20515-4332,false,congress-legislators
+bioguide:J000310,,phone,Office,202-225-2231,true,congress-legislators
+bioguide:J000310,,website,Official,https://juliejohnson.house.gov,false,congress-legislators
+bioguide:J000311,,address,Office,1320 Longworth House Office Building Washington DC 20515-1003,false,congress-legislators
+bioguide:J000311,,phone,Office,202-225-5901,true,congress-legislators
+bioguide:J000311,,website,Official,https://jack.house.gov,false,congress-legislators
+bioguide:J000312,,address,Office,509 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:J000312,,phone,Office,202-224-3954,true,congress-legislators
+bioguide:J000312,,website,Official,https://www.justice.senate.gov,false,congress-legislators
+bioguide:K000009,,address,Office,2314 Rayburn House Office Building Washington DC 20515-3509,false,congress-legislators
+bioguide:K000009,,phone,Office,202-225-4146,true,congress-legislators
+bioguide:K000009,,website,Official,https://kaptur.house.gov,false,congress-legislators
+bioguide:K000367,,address,Office,425 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:K000367,,phone,Office,202-224-3244,true,congress-legislators
+bioguide:K000367,,website,Official,https://www.klobuchar.senate.gov,false,congress-legislators
+bioguide:K000375,,address,Office,2372 Rayburn House Office Building Washington DC 20515-2109,false,congress-legislators
+bioguide:K000375,,phone,Office,202-225-3111,true,congress-legislators
+bioguide:K000375,,website,Official,https://keating.house.gov,false,congress-legislators
+bioguide:K000376,,address,Office,1707 Longworth House Office Building Washington DC 20515-3816,false,congress-legislators
+bioguide:K000376,,phone,Office,202-225-5406,true,congress-legislators
+bioguide:K000376,,website,Official,https://kelly.house.gov,false,congress-legislators
+bioguide:K000377,,address,Office,516 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:K000377,,phone,Office,202-224-2235,true,congress-legislators
+bioguide:K000377,,website,Official,https://www.kelly.senate.gov,false,congress-legislators
+bioguide:K000383,,address,Office,133 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:K000383,,phone,Office,202-224-5344,true,congress-legislators
+bioguide:K000383,,website,Official,https://www.king.senate.gov,false,congress-legislators
+bioguide:K000384,,address,Office,231 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:K000384,,phone,Office,202-224-4024,true,congress-legislators
+bioguide:K000384,,website,Official,https://www.kaine.senate.gov,false,congress-legislators
+bioguide:K000385,,address,Office,2329 Rayburn House Office Building Washington DC 20515-1302,false,congress-legislators
+bioguide:K000385,,phone,Office,202-225-0773,true,congress-legislators
+bioguide:K000385,,website,Official,https://robinkelly.house.gov,false,congress-legislators
+bioguide:K000388,,address,Office,2243 Rayburn House Office Building Washington DC 20515-2401,false,congress-legislators
+bioguide:K000388,,phone,Office,202-225-4306,true,congress-legislators
+bioguide:K000388,,website,Official,https://trentkelly.house.gov,false,congress-legislators
+bioguide:K000389,,address,Office,306 Cannon House Office Building Washington DC 20515-0517,false,congress-legislators
+bioguide:K000389,,phone,Office,202-225-2631,true,congress-legislators
+bioguide:K000389,,website,Official,https://khanna.house.gov,false,congress-legislators
+bioguide:K000391,,address,Office,2367 Rayburn House Office Building Washington DC 20515-1308,false,congress-legislators
+bioguide:K000391,,phone,Office,202-225-3711,true,congress-legislators
+bioguide:K000391,,website,Official,https://krishnamoorthi.house.gov,false,congress-legislators
+bioguide:K000392,,address,Office,560 Cannon House Office Building Washington DC 20515-4208,false,congress-legislators
+bioguide:K000392,,phone,Office,202-225-4714,true,congress-legislators
+bioguide:K000392,,website,Official,https://kustoff.house.gov,false,congress-legislators
+bioguide:K000393,,address,Office,437 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:K000393,,phone,Office,202-224-4623,true,congress-legislators
+bioguide:K000393,,website,Official,https://www.kennedy.senate.gov/public,false,congress-legislators
+bioguide:K000394,,address,Office,520 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:K000394,,phone,Office,202-224-4744,true,congress-legislators
+bioguide:K000394,,website,Official,https://www.kim.senate.gov,false,congress-legislators
+bioguide:K000397,,address,Office,2439 Rayburn House Office Building Washington DC 20515-0540,false,congress-legislators
+bioguide:K000397,,phone,Office,202-225-4111,true,congress-legislators
+bioguide:K000397,,website,Official,https://youngkim.house.gov,false,congress-legislators
+bioguide:K000398,,address,Office,251 Cannon House Office Building Washington DC 20515-3007,false,congress-legislators
+bioguide:K000398,,phone,Office,202-225-5361,true,congress-legislators
+bioguide:K000398,,website,Official,https://kean.house.gov,false,congress-legislators
+bioguide:K000399,,address,Office,152 Cannon House Office Building Washington DC 20515-4602,false,congress-legislators
+bioguide:K000399,,phone,Office,202-225-4215,true,congress-legislators
+bioguide:K000399,,website,Official,https://kiggans.house.gov,false,congress-legislators
+bioguide:K000400,,address,Office,144 Cannon House Office Building Washington DC 20515-0537,false,congress-legislators
+bioguide:K000400,,phone,Office,202-225-7084,true,congress-legislators
+bioguide:K000400,,website,Official,https://kamlager-dove.house.gov,false,congress-legislators
+bioguide:K000401,,address,Office,2445 Rayburn House Office Building Washington DC 20515-0503,false,congress-legislators
+bioguide:K000401,,phone,Office,202-225-2523,true,congress-legislators
+bioguide:K000401,,website,Official,https://kiley.house.gov,false,congress-legislators
+bioguide:K000402,,address,Office,423 Cannon House Office Building Washington DC 20515-3226,false,congress-legislators
+bioguide:K000402,,phone,Office,202-225-3306,true,congress-legislators
+bioguide:K000402,,website,Official,https://kennedy.house.gov,false,congress-legislators
+bioguide:K000403,,address,Office,1626 Longworth House Office Building Washington DC 20515-4403,false,congress-legislators
+bioguide:K000403,,phone,Office,202-225-7751,true,congress-legislators
+bioguide:K000403,,website,Official,https://mikekennedy.house.gov,false,congress-legislators
+bioguide:K000404,,address,Office,425 Cannon House Office Building Washington DC 20515-5201,false,congress-legislators
+bioguide:K000404,,phone,Office,202-225-2646,true,congress-legislators
+bioguide:K000404,,website,Official,https://king-hinds.house.gov,false,congress-legislators
+bioguide:K000405,,address,Office,1239 Longworth House Office Building Washington DC 20515-3313,false,congress-legislators
+bioguide:K000405,,phone,Office,202-225-4531,true,congress-legislators
+bioguide:K000405,,website,Official,https://knott.house.gov,false,congress-legislators
+bioguide:L000273,,address,Office,2417 Rayburn House Office Building Washington DC 20515-3103,false,congress-legislators
+bioguide:L000273,,phone,Office,202-225-6190,true,congress-legislators
+bioguide:L000273,,website,Official,https://fernandez.house.gov,false,congress-legislators
+bioguide:L000397,,address,Office,1401 Longworth House Office Building Washington DC 20515-0518,false,congress-legislators
+bioguide:L000397,,phone,Office,202-225-3072,true,congress-legislators
+bioguide:L000397,,website,Official,https://lofgren.house.gov,false,congress-legislators
+bioguide:L000491,,address,Office,2405 Rayburn House Office Building Washington DC 20515-3603,false,congress-legislators
+bioguide:L000491,,phone,Office,202-225-5565,true,congress-legislators
+bioguide:L000491,,website,Official,https://lucas.house.gov,false,congress-legislators
+bioguide:L000557,,address,Office,1501 Longworth House Office Building Washington DC 20515-0701,false,congress-legislators
+bioguide:L000557,,phone,Office,202-225-2265,true,congress-legislators
+bioguide:L000557,,website,Official,https://larson.house.gov,false,congress-legislators
+bioguide:L000560,,address,Office,2163 Rayburn House Office Building Washington DC 20515-4702,false,congress-legislators
+bioguide:L000560,,phone,Office,202-225-2605,true,congress-legislators
+bioguide:L000560,,website,Official,https://larsen.house.gov,false,congress-legislators
+bioguide:L000562,,address,Office,2109 Rayburn House Office Building Washington DC 20515-2108,false,congress-legislators
+bioguide:L000562,,phone,Office,202-225-8273,true,congress-legislators
+bioguide:L000562,,website,Official,https://lynch.house.gov,false,congress-legislators
+bioguide:L000566,,address,Office,2470 Rayburn House Office Building Washington DC 20515-3505,false,congress-legislators
+bioguide:L000566,,phone,Office,202-225-6405,true,congress-legislators
+bioguide:L000566,,website,Official,https://latta.house.gov,false,congress-legislators
+bioguide:L000570,,address,Office,498 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:L000570,,phone,Office,202-224-6621,true,congress-legislators
+bioguide:L000570,,website,Official,https://www.lujan.senate.gov,false,congress-legislators
+bioguide:L000571,,address,Office,127A Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:L000571,,phone,Office,202-224-3424,true,congress-legislators
+bioguide:L000571,,website,Official,https://www.lummis.senate.gov,false,congress-legislators
+bioguide:L000575,,address,Office,731 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:L000575,,phone,Office,202-224-5754,true,congress-legislators
+bioguide:L000575,,website,Official,https://www.lankford.senate.gov,false,congress-legislators
+bioguide:L000577,,address,Office,363 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:L000577,,phone,Office,202-224-5444,true,congress-legislators
+bioguide:L000577,,website,Official,https://www.lee.senate.gov,false,congress-legislators
+bioguide:L000582,,address,Office,2454 Rayburn House Office Building Washington DC 20515-0536,false,congress-legislators
+bioguide:L000582,,phone,Office,202-225-3976,true,congress-legislators
+bioguide:L000582,,website,Official,https://lieu.house.gov,false,congress-legislators
+bioguide:L000583,,address,Office,2133 Rayburn House Office Building Washington DC 20515-1011,false,congress-legislators
+bioguide:L000583,,phone,Office,202-225-2931,true,congress-legislators
+bioguide:L000583,,website,Official,https://loudermilk.house.gov,false,congress-legislators
+bioguide:L000585,,address,Office,503 Cannon House Office Building Washington DC 20515-1316,false,congress-legislators
+bioguide:L000585,,phone,Office,202-225-6201,true,congress-legislators
+bioguide:L000585,,website,Official,https://lahood.house.gov,false,congress-legislators
+bioguide:L000590,,address,Office,365 Cannon House Office Building Washington DC 20515-2803,false,congress-legislators
+bioguide:L000590,,phone,Office,202-225-3252,true,congress-legislators
+bioguide:L000590,,website,Official,https://susielee.house.gov,false,congress-legislators
+bioguide:L000593,,address,Office,2352 Rayburn House Office Building Washington DC 20515-0549,false,congress-legislators
+bioguide:L000593,,phone,Office,202-225-3906,true,congress-legislators
+bioguide:L000593,,website,Official,https://levin.house.gov,false,congress-legislators
+bioguide:L000595,,address,Office,142 Cannon House Office Building Washington DC 20515-1805,false,congress-legislators
+bioguide:L000595,,phone,Office,202-225-8490,true,congress-legislators
+bioguide:L000595,,website,Official,https://letlow.house.gov,false,congress-legislators
+bioguide:L000596,,address,Office,226 Cannon House Office Building Washington DC 20515-0913,false,congress-legislators
+bioguide:L000596,,phone,Office,202-225-5961,true,congress-legislators
+bioguide:L000596,,website,Official,https://luna.house.gov,false,congress-legislators
+bioguide:L000597,,address,Office,2464 Rayburn House Office Building Washington DC 20515-0915,false,congress-legislators
+bioguide:L000597,,phone,Office,202-225-5626,true,congress-legislators
+bioguide:L000597,,website,Official,https://laurellee.house.gov,false,congress-legislators
+bioguide:L000598,,address,Office,122 Cannon House Office Building Washington DC 20515-3201,false,congress-legislators
+bioguide:L000598,,phone,Office,202-225-3826,true,congress-legislators
+bioguide:L000598,,website,Official,https://lalota.house.gov,false,congress-legislators
+bioguide:L000599,,address,Office,324 Cannon House Office Building Washington DC 20515-3217,false,congress-legislators
+bioguide:L000599,,phone,Office,202-225-6506,true,congress-legislators
+bioguide:L000599,,website,Official,https://lawler.house.gov,false,congress-legislators
+bioguide:L000600,,address,Office,422 Cannon House Office Building Washington DC 20515-3223,false,congress-legislators
+bioguide:L000600,,phone,Office,202-225-3161,true,congress-legislators
+bioguide:L000600,,website,Official,https://langworthy.house.gov,false,congress-legislators
+bioguide:L000601,,address,Office,2244 Rayburn House Office Building Washington DC 20515-3501,false,congress-legislators
+bioguide:L000601,,phone,Office,202-225-2216,true,congress-legislators
+bioguide:L000601,,website,Official,https://landsman.house.gov,false,congress-legislators
+bioguide:L000602,,address,Office,2437 Rayburn House Office Building Washington DC 20515-3812,false,congress-legislators
+bioguide:L000602,,phone,Office,202-225-2135,true,congress-legislators
+bioguide:L000602,,website,Official,https://summerlee.house.gov,false,congress-legislators
+bioguide:L000603,,address,Office,444 Cannon House Office Building Washington DC 20515-4308,false,congress-legislators
+bioguide:L000603,,phone,Office,202-225-4901,true,congress-legislators
+bioguide:L000603,,website,Official,https://luttrell.house.gov,false,congress-legislators
+bioguide:L000606,,address,Office,1507 Longworth House Office Building Washington DC 20515-3216,false,congress-legislators
+bioguide:L000606,,phone,Office,202-225-2464,true,congress-legislators
+bioguide:L000606,,website,Official,https://latimer.house.gov,false,congress-legislators
+bioguide:L000607,,address,Office,1117 Longworth House Office Building Washington DC 20515-0516,false,congress-legislators
+bioguide:L000607,,phone,Office,202-225-8104,true,congress-legislators
+bioguide:L000607,,website,Official,https://liccardo.house.gov,false,congress-legislators
+bioguide:M000133,,address,Office,255 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M000133,,phone,Office,202-224-2742,true,congress-legislators
+bioguide:M000133,,website,Official,https://www.markey.senate.gov,false,congress-legislators
+bioguide:M000194,,address,Office,1728 Longworth House Office Building Washington DC 20515-4001,false,congress-legislators
+bioguide:M000194,,phone,Office,202-225-3176,true,congress-legislators
+bioguide:M000194,,website,Official,https://mace.house.gov,false,congress-legislators
+bioguide:M000312,,address,Office,370 Cannon House Office Building Washington DC 20515-2102,false,congress-legislators
+bioguide:M000312,,phone,Office,202-225-6101,true,congress-legislators
+bioguide:M000312,,website,Official,https://mcgovern.house.gov,false,congress-legislators
+bioguide:M000317,,address,Office,1124 Longworth House Office Building Washington DC 20515-3211,false,congress-legislators
+bioguide:M000317,,phone,Office,202-225-3371,true,congress-legislators
+bioguide:M000317,,website,Official,https://malliotakis.house.gov,false,congress-legislators
+bioguide:M000355,,address,Office,317 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M000355,,phone,Office,202-224-2541,true,congress-legislators
+bioguide:M000355,,website,Official,https://www.mcconnell.senate.gov,false,congress-legislators
+bioguide:M000687,,address,Office,2263 Rayburn House Office Building Washington DC 20515-2007,false,congress-legislators
+bioguide:M000687,,phone,Office,202-225-4741,true,congress-legislators
+bioguide:M000687,,website,Official,https://mfume.house.gov,false,congress-legislators
+bioguide:M000871,,address,Office,344 Cannon House Office Building Washington DC 20515-1601,false,congress-legislators
+bioguide:M000871,,phone,Office,202-225-2715,true,congress-legislators
+bioguide:M000871,,website,Official,https://mann.house.gov,false,congress-legislators
+bioguide:M000934,,address,Office,521 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M000934,,phone,Office,202-224-6521,true,congress-legislators
+bioguide:M000934,,website,Official,https://www.moran.senate.gov,false,congress-legislators
+bioguide:M001111,,address,Office,154 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001111,,phone,Office,202-224-2621,true,congress-legislators
+bioguide:M001111,,website,Official,https://www.murray.senate.gov,false,congress-legislators
+bioguide:M001136,,address,Office,562 Cannon House Office Building Washington DC 20515-2209,false,congress-legislators
+bioguide:M001136,,phone,Office,202-225-2106,true,congress-legislators
+bioguide:M001136,,website,Official,https://mcclain.house.gov,false,congress-legislators
+bioguide:M001137,,address,Office,2310 Rayburn House Office Building Washington DC 20515-3205,false,congress-legislators
+bioguide:M001137,,phone,Office,202-225-3461,true,congress-legislators
+bioguide:M001137,,website,Official,https://meeks.house.gov,false,congress-legislators
+bioguide:M001143,,address,Office,2426 Rayburn House Office Building Washington DC 20515-2304,false,congress-legislators
+bioguide:M001143,,phone,Office,202-225-6631,true,congress-legislators
+bioguide:M001143,,website,Official,https://mccollum.house.gov,false,congress-legislators
+bioguide:M001153,,address,Office,522 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001153,,phone,Office,202-224-6665,true,congress-legislators
+bioguide:M001153,,website,Official,https://www.murkowski.senate.gov,false,congress-legislators
+bioguide:M001157,,address,Office,2300 Rayburn House Office Building Washington DC 20515-4310,false,congress-legislators
+bioguide:M001157,,phone,Office,202-225-2401,true,congress-legislators
+bioguide:M001157,,website,Official,https://mccaul.house.gov,false,congress-legislators
+bioguide:M001160,,address,Office,2252 Rayburn House Office Building Washington DC 20515-4904,false,congress-legislators
+bioguide:M001160,,phone,Office,202-225-4572,true,congress-legislators
+bioguide:M001160,,website,Official,https://gwenmoore.house.gov,false,congress-legislators
+bioguide:M001163,,address,Office,2206 Rayburn House Office Building Washington DC 20515-0507,false,congress-legislators
+bioguide:M001163,,phone,Office,202-225-7163,true,congress-legislators
+bioguide:M001163,,website,Official,https://matsui.house.gov,false,congress-legislators
+bioguide:M001169,,address,Office,136 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001169,,phone,Office,202-224-4041,true,congress-legislators
+bioguide:M001169,,website,Official,https://www.murphy.senate.gov,false,congress-legislators
+bioguide:M001176,,address,Office,531 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001176,,phone,Office,202-224-3753,true,congress-legislators
+bioguide:M001176,,website,Official,https://www.merkley.senate.gov,false,congress-legislators
+bioguide:M001177,,address,Office,2256 Rayburn House Office Building Washington DC 20515-0505,false,congress-legislators
+bioguide:M001177,,phone,Office,202-225-2511,true,congress-legislators
+bioguide:M001177,,website,Official,https://mcclintock.house.gov,false,congress-legislators
+bioguide:M001184,,address,Office,2371 Rayburn House Office Building Washington DC 20515-1704,false,congress-legislators
+bioguide:M001184,,phone,Office,202-225-3465,true,congress-legislators
+bioguide:M001184,,website,Official,https://massie.house.gov,false,congress-legislators
+bioguide:M001188,,address,Office,2468 Rayburn House Office Building Washington DC 20515-3206,false,congress-legislators
+bioguide:M001188,,phone,Office,202-225-2601,true,congress-legislators
+bioguide:M001188,,website,Official,https://meng.house.gov,false,congress-legislators
+bioguide:M001194,,address,Office,246 Cannon House Office Building Washington DC 20515-2202,false,congress-legislators
+bioguide:M001194,,phone,Office,202-225-3561,true,congress-legislators
+bioguide:M001194,,website,Official,https://moolenaar.house.gov,false,congress-legislators
+bioguide:M001196,,address,Office,1126 Longworth House Office Building Washington DC 20515-2106,false,congress-legislators
+bioguide:M001196,,phone,Office,202-225-8020,true,congress-legislators
+bioguide:M001196,,website,Official,https://moulton.house.gov,false,congress-legislators
+bioguide:M001198,,address,Office,479A Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001198,,phone,Office,202-224-4774,true,congress-legislators
+bioguide:M001198,,website,Official,https://www.marshall.senate.gov,false,congress-legislators
+bioguide:M001199,,address,Office,2182 Rayburn House Office Building Washington DC 20515-0921,false,congress-legislators
+bioguide:M001199,,phone,Office,202-225-3026,true,congress-legislators
+bioguide:M001199,,website,Official,https://mast.house.gov,false,congress-legislators
+bioguide:M001204,,address,Office,350 Cannon House Office Building Washington DC 20515-3809,false,congress-legislators
+bioguide:M001204,,phone,Office,202-225-6511,true,congress-legislators
+bioguide:M001204,,website,Official,https://meuser.house.gov,false,congress-legislators
+bioguide:M001205,,address,Office,465 Cannon House Office Building Washington DC 20515-4801,false,congress-legislators
+bioguide:M001205,,phone,Office,202-225-3452,true,congress-legislators
+bioguide:M001205,,website,Official,https://miller.house.gov,false,congress-legislators
+bioguide:M001206,,address,Office,570 Cannon House Office Building Washington DC 20515-3225,false,congress-legislators
+bioguide:M001206,,phone,Office,202-225-3615,true,congress-legislators
+bioguide:M001206,,website,Official,https://morelle.house.gov,false,congress-legislators
+bioguide:M001208,,address,Office,2246 Rayburn House Office Building Washington DC 20515-1006,false,congress-legislators
+bioguide:M001208,,phone,Office,202-225-4501,true,congress-legislators
+bioguide:M001208,,website,Official,https://mcbath.house.gov,false,congress-legislators
+bioguide:M001210,,address,Office,407 Cannon House Office Building Washington DC 20515-3303,false,congress-legislators
+bioguide:M001210,,phone,Office,202-225-3415,true,congress-legislators
+bioguide:M001210,,website,Official,https://murphy.house.gov,false,congress-legislators
+bioguide:M001211,,address,Office,1740 Longworth House Office Building Washington DC 20515-1315,false,congress-legislators
+bioguide:M001211,,phone,Office,202-225-5271,true,congress-legislators
+bioguide:M001211,,website,Official,https://marymiller.house.gov,false,congress-legislators
+bioguide:M001212,,address,Office,1511 Longworth House Office Building Washington DC 20515-0101,false,congress-legislators
+bioguide:M001212,,phone,Office,202-225-2901,true,congress-legislators
+bioguide:M001212,,website,Official,https://barrymoore.house.gov,false,congress-legislators
+bioguide:M001213,,address,Office,1131 Longworth House Office Building Washington DC 20515-4401,false,congress-legislators
+bioguide:M001213,,phone,Office,202-225-0453,true,congress-legislators
+bioguide:M001213,,website,Official,https://blakemoore.house.gov,false,congress-legislators
+bioguide:M001214,,address,Office,2441 Rayburn House Office Building Washington DC 20515-1401,false,congress-legislators
+bioguide:M001214,,phone,Office,202-225-2461,true,congress-legislators
+bioguide:M001214,,website,Official,https://mrvan.house.gov,false,congress-legislators
+bioguide:M001215,,address,Office,504 Cannon House Office Building Washington DC 20515-1501,false,congress-legislators
+bioguide:M001215,,phone,Office,202-225-6576,true,congress-legislators
+bioguide:M001215,,website,Official,https://millermeeks.house.gov,false,congress-legislators
+bioguide:M001216,,address,Office,346 Cannon House Office Building Washington DC 20515-0907,false,congress-legislators
+bioguide:M001216,,phone,Office,202-225-4035,true,congress-legislators
+bioguide:M001216,,website,Official,https://mills.house.gov,false,congress-legislators
+bioguide:M001217,,address,Office,242 Cannon House Office Building Washington DC 20515-0923,false,congress-legislators
+bioguide:M001217,,phone,Office,202-225-3001,true,congress-legislators
+bioguide:M001217,,website,Official,https://moskowitz.house.gov,false,congress-legislators
+bioguide:M001218,,address,Office,1719 Longworth House Office Building Washington DC 20515-1007,false,congress-legislators
+bioguide:M001218,,phone,Office,202-225-4272,true,congress-legislators
+bioguide:M001218,,website,Official,https://mccormick.house.gov,false,congress-legislators
+bioguide:M001219,,address,Office,228 Cannon House Office Building Washington DC 20515-5301,false,congress-legislators
+bioguide:M001219,,phone,Office,202-225-1188,true,congress-legislators
+bioguide:M001219,,website,Official,https://moylan.house.gov,false,congress-legislators
+bioguide:M001220,,address,Office,1527 Longworth House Office Building Washington DC 20515-1703,false,congress-legislators
+bioguide:M001220,,phone,Office,202-225-5401,true,congress-legislators
+bioguide:M001220,,website,Official,https://mcgarvey.house.gov,false,congress-legislators
+bioguide:M001222,,address,Office,143 Cannon House Office Building Washington DC 20515-3507,false,congress-legislators
+bioguide:M001222,,phone,Office,202-225-3876,true,congress-legislators
+bioguide:M001222,,website,Official,https://maxmiller.house.gov,false,congress-legislators
+bioguide:M001223,,address,Office,252 Cannon House Office Building Washington DC 20515-3902,false,congress-legislators
+bioguide:M001223,,phone,Office,202-225-2735,true,congress-legislators
+bioguide:M001223,,website,Official,https://magaziner.house.gov,false,congress-legislators
+bioguide:M001224,,address,Office,1605 Longworth House Office Building Washington DC 20515-4301,false,congress-legislators
+bioguide:M001224,,phone,Office,202-225-3035,true,congress-legislators
+bioguide:M001224,,website,Official,https://moran.house.gov,false,congress-legislators
+bioguide:M001225,,address,Office,1404 Longworth House Office Building Washington DC 20515-0515,false,congress-legislators
+bioguide:M001225,,phone,Office,202-225-3531,true,congress-legislators
+bioguide:M001225,,website,Official,https://kevinmullin.house.gov,false,congress-legislators
+bioguide:M001226,,address,Office,2453 Rayburn House Office Building Washington DC 20515-3008,false,congress-legislators
+bioguide:M001226,,phone,Office,202-225-7919,true,congress-legislators
+bioguide:M001226,,website,Official,https://menendez.house.gov,false,congress-legislators
+bioguide:M001227,,address,Office,1628 Longworth House Office Building Washington DC 20515-4604,false,congress-legislators
+bioguide:M001227,,phone,Office,202-225-6365,true,congress-legislators
+bioguide:M001227,,website,Official,https://mcclellan.house.gov,false,congress-legislators
+bioguide:M001228,,address,Office,249 Cannon House Office Building Washington DC 20515-4402,false,congress-legislators
+bioguide:M001228,,phone,Office,202-225-9730,true,congress-legislators
+bioguide:M001228,,website,Official,https://maloy.house.gov,false,congress-legislators
+bioguide:M001229,,address,Office,426 Cannon House Office Building Washington DC 20515-3010,false,congress-legislators
+bioguide:M001229,,phone,Office,202-225-3436,true,congress-legislators
+bioguide:M001229,,website,Official,https://mciver.house.gov,false,congress-legislators
+bioguide:M001230,,address,Office,121 Cannon House Office Building Washington DC 20515-3807,false,congress-legislators
+bioguide:M001230,,phone,Office,202-225-6411,true,congress-legislators
+bioguide:M001230,,website,Official,https://mackenzie.house.gov,false,congress-legislators
+bioguide:M001231,,address,Office,1516 Longworth House Office Building Washington DC 20515-3222,false,congress-legislators
+bioguide:M001231,,phone,Office,202-225-3701,true,congress-legislators
+bioguide:M001231,,website,Official,https://mannion.house.gov,false,congress-legislators
+bioguide:M001232,,address,Office,1130 Longworth House Office Building Washington DC 20515-2006,false,congress-legislators
+bioguide:M001232,,phone,Office,202-225-2721,true,congress-legislators
+bioguide:M001232,,website,Official,https://mcclaindelaney.house.gov,false,congress-legislators
+bioguide:M001233,,address,Office,1208 Longworth House Office Building Washington DC 20515-1408,false,congress-legislators
+bioguide:M001233,,phone,Office,202-225-4636,true,congress-legislators
+bioguide:M001233,,website,Official,https://messmer.house.gov,false,congress-legislators
+bioguide:M001234,,address,Office,1205 Longworth House Office Building Washington DC 20515-2303,false,congress-legislators
+bioguide:M001234,,phone,Office,202-225-2871,true,congress-legislators
+bioguide:M001234,,website,Official,https://morrison.house.gov,false,congress-legislators
+bioguide:M001235,,address,Office,1337 Longworth House Office Building Washington DC 20515-4802,false,congress-legislators
+bioguide:M001235,,phone,Office,202-225-2711,true,congress-legislators
+bioguide:M001235,,website,Official,https://rileymoore.house.gov,false,congress-legislators
+bioguide:M001236,,address,Office,1424 Longworth House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:M001236,,phone,Office,202-225-5634,true,congress-legislators
+bioguide:M001236,,website,Official,https://timmoore.house.gov,false,congress-legislators
+bioguide:M001237,,address,Office,1408 Longworth House Office Building Washington DC 20515-2208,false,congress-legislators
+bioguide:M001237,,phone,Office,202-225-3611,true,congress-legislators
+bioguide:M001237,,website,Official,https://mcdonaldrivet.house.gov,false,congress-legislators
+bioguide:M001238,,address,Office,1306 Longworth House Office Building Washington DC 20515-0800,false,congress-legislators
+bioguide:M001238,,phone,Office,202-225-4165,true,congress-legislators
+bioguide:M001238,,website,Official,https://mcbride.house.gov,false,congress-legislators
+bioguide:M001239,,address,Office,1013 Longworth House Office Building Washington DC 20515-4605,false,congress-legislators
+bioguide:M001239,,phone,Office,202-225-4711,true,congress-legislators
+bioguide:M001239,,website,Official,https://mcguire.house.gov,false,congress-legislators
+bioguide:M001240,,address,Office,1032 Longworth House Office Building Washington DC 20515-3306,false,congress-legislators
+bioguide:M001240,,phone,Office,202-225-3065,true,congress-legislators
+bioguide:M001240,,website,Official,https://mcdowell.house.gov,false,congress-legislators
+bioguide:M001241,,address,Office,1034 Longworth House Office Building Washington DC 20515-0547,false,congress-legislators
+bioguide:M001241,,phone,Office,202-225-5611,true,congress-legislators
+bioguide:M001241,,website,Official,https://min.house.gov,false,congress-legislators
+bioguide:M001242,,address,Office,284 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001242,,phone,Office,202-224-2315,true,congress-legislators
+bioguide:M001242,,website,Official,https://www.moreno.senate.gov,false,congress-legislators
+bioguide:M001243,,address,Office,702 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001243,,phone,Office,202-224-6324,true,congress-legislators
+bioguide:M001243,,website,Official,https://www.mccormick.senate.gov,false,congress-legislators
+bioguide:M001244,,address,Office,387 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:M001244,,phone,Office,202-224-3041,true,congress-legislators
+bioguide:M001244,,website,Official,https://www.moody.senate.gov,false,congress-legislators
+bioguide:M001245,,address,Office,1318 Longworth House Office Building Washington DC 20515-4318,false,congress-legislators
+bioguide:M001245,,phone,Office,202-225-3816,true,congress-legislators
+bioguide:M001245,,website,Official,https://menefee.house.gov,false,congress-legislators
+bioguide:M001246,,address,Office,1427 Longworth House Office Building Washington DC 20515-3011,false,congress-legislators
+bioguide:M001246,,phone,Office,202-225-5034,true,congress-legislators
+bioguide:M001246,,website,Official,https://mejia.house.gov,false,congress-legislators
+bioguide:N000002,,address,Office,2132 Rayburn House Office Building Washington DC 20515-3212,false,congress-legislators
+bioguide:N000002,,phone,Office,202-225-5635,true,congress-legislators
+bioguide:N000002,,website,Official,https://nadler.house.gov,false,congress-legislators
+bioguide:N000015,,address,Office,372 Cannon House Office Building Washington DC 20515-2101,false,congress-legislators
+bioguide:N000015,,phone,Office,202-225-5601,true,congress-legislators
+bioguide:N000015,,website,Official,https://neal.house.gov,false,congress-legislators
+bioguide:N000026,,address,Office,1104 Longworth House Office Building Washington DC 20515-4322,false,congress-legislators
+bioguide:N000026,,phone,Office,202-225-5951,true,congress-legislators
+bioguide:N000026,,website,Official,https://nehls.house.gov,false,congress-legislators
+bioguide:N000147,,address,Office,2136 Rayburn House Office Building Washington DC 20515-5101,false,congress-legislators
+bioguide:N000147,,phone,Office,202-225-8050,true,congress-legislators
+bioguide:N000147,,website,Official,https://norton.house.gov,false,congress-legislators
+bioguide:N000188,,address,Office,2427 Rayburn House Office Building Washington DC 20515-3001,false,congress-legislators
+bioguide:N000188,,phone,Office,202-225-6501,true,congress-legislators
+bioguide:N000188,,website,Official,https://norcross.house.gov,false,congress-legislators
+bioguide:N000189,,address,Office,460 Cannon House Office Building Washington DC 20515-4704,false,congress-legislators
+bioguide:N000189,,phone,Office,202-225-5816,true,congress-legislators
+bioguide:N000189,,website,Official,https://newhouse.house.gov,false,congress-legislators
+bioguide:N000190,,address,Office,569 Cannon House Office Building Washington DC 20515-4005,false,congress-legislators
+bioguide:N000190,,phone,Office,202-225-5501,true,congress-legislators
+bioguide:N000190,,website,Official,https://norman.house.gov,false,congress-legislators
+bioguide:N000191,,address,Office,2400 Rayburn House Office Building Washington DC 20515-0602,false,congress-legislators
+bioguide:N000191,,phone,Office,202-225-2161,true,congress-legislators
+bioguide:N000191,,website,Official,https://neguse.house.gov,false,congress-legislators
+bioguide:N000193,,address,Office,1410 Longworth House Office Building Washington DC 20515-1503,false,congress-legislators
+bioguide:N000193,,phone,Office,202-225-5476,true,congress-legislators
+bioguide:N000193,,website,Official,https://nunn.house.gov,false,congress-legislators
+bioguide:O000019,,address,Office,2433 Rayburn House Office Building Washington DC 20515-0523,false,congress-legislators
+bioguide:O000019,,phone,Office,202-225-5861,true,congress-legislators
+bioguide:O000019,,website,Official,https://obernolte.house.gov,false,congress-legislators
+bioguide:O000086,,address,Office,309 Cannon House Office Building Washington DC 20515-4404,false,congress-legislators
+bioguide:O000086,,phone,Office,202-225-3011,true,congress-legislators
+bioguide:O000086,,website,Official,https://owens.house.gov,false,congress-legislators
+bioguide:O000172,,address,Office,250 Cannon House Office Building Washington DC 20515-3214,false,congress-legislators
+bioguide:O000172,,phone,Office,202-225-3965,true,congress-legislators
+bioguide:O000172,,website,Official,https://ocasio-cortez.house.gov,false,congress-legislators
+bioguide:O000173,,address,Office,1730 Longworth House Office Building Washington DC 20515-2305,false,congress-legislators
+bioguide:O000173,,phone,Office,202-225-4755,true,congress-legislators
+bioguide:O000173,,website,Official,https://omar.house.gov,false,congress-legislators
+bioguide:O000174,,address,Office,317 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:O000174,,phone,Office,202-224-3521,true,congress-legislators
+bioguide:O000174,,website,Official,https://www.ossoff.senate.gov,false,congress-legislators
+bioguide:O000175,,address,Office,151 Cannon House Office Building Washington DC 20515-4205,false,congress-legislators
+bioguide:O000175,,phone,Office,202-225-4311,true,congress-legislators
+bioguide:O000175,,website,Official,https://ogles.house.gov,false,congress-legislators
+bioguide:O000176,,address,Office,1339 Longworth House Office Building Washington DC 20515-2002,false,congress-legislators
+bioguide:O000176,,phone,Office,202-225-3061,true,congress-legislators
+bioguide:O000176,,website,Official,https://olszewski.house.gov,false,congress-legislators
+bioguide:O000177,,address,Office,1113 Longworth House Office Building Washington DC 20515-2503,false,congress-legislators
+bioguide:O000177,,phone,Office,202-225-2956,true,congress-legislators
+bioguide:O000177,,website,Official,https://onder.house.gov,false,congress-legislators
+bioguide:P000034,,address,Office,2107 Rayburn House Office Building Washington DC 20515-3006,false,congress-legislators
+bioguide:P000034,,phone,Office,202-225-4671,true,congress-legislators
+bioguide:P000034,,website,Official,https://pallone.house.gov,false,congress-legislators
+bioguide:P000048,,address,Office,2202 Rayburn House Office Building Washington DC 20515-4311,false,congress-legislators
+bioguide:P000048,,phone,Office,202-225-3605,true,congress-legislators
+bioguide:P000048,,website,Official,https://pfluger.house.gov,false,congress-legislators
+bioguide:P000145,,address,Office,331 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:P000145,,phone,Office,202-224-3553,true,congress-legislators
+bioguide:P000145,,website,Official,https://www.padilla.senate.gov,false,congress-legislators
+bioguide:P000197,,address,Office,1236 Longworth House Office Building Washington DC 20515-0511,false,congress-legislators
+bioguide:P000197,,phone,Office,202-225-4965,true,congress-legislators
+bioguide:P000197,,website,Official,https://pelosi.house.gov,false,congress-legislators
+bioguide:P000595,,address,Office,724 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:P000595,,phone,Office,202-224-6221,true,congress-legislators
+bioguide:P000595,,website,Official,https://www.peters.senate.gov,false,congress-legislators
+bioguide:P000597,,address,Office,2354 Rayburn House Office Building Washington DC 20515-1901,false,congress-legislators
+bioguide:P000597,,phone,Office,202-225-6116,true,congress-legislators
+bioguide:P000597,,website,Official,https://pingree.house.gov,false,congress-legislators
+bioguide:P000603,,address,Office,295 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:P000603,,phone,Office,202-224-4343,true,congress-legislators
+bioguide:P000603,,website,Official,https://www.paul.senate.gov,false,congress-legislators
+bioguide:P000605,,address,Office,2160 Rayburn House Office Building Washington DC 20515-3810,false,congress-legislators
+bioguide:P000605,,phone,Office,202-225-5836,true,congress-legislators
+bioguide:P000605,,website,Official,https://perry.house.gov,false,congress-legislators
+bioguide:P000607,,address,Office,1026 Longworth House Office Building Washington DC 20515-4902,false,congress-legislators
+bioguide:P000607,,phone,Office,202-225-2906,true,congress-legislators
+bioguide:P000607,,website,Official,https://pocan.house.gov,false,congress-legislators
+bioguide:P000608,,address,Office,2369 Rayburn House Office Building Washington DC 20515-0550,false,congress-legislators
+bioguide:P000608,,phone,Office,202-225-0508,true,congress-legislators
+bioguide:P000608,,website,Official,https://scottpeters.house.gov,false,congress-legislators
+bioguide:P000609,,address,Office,170 Cannon House Office Building Washington DC 20515-0106,false,congress-legislators
+bioguide:P000609,,phone,Office,202-225-4921,true,congress-legislators
+bioguide:P000609,,website,Official,https://palmer.house.gov,false,congress-legislators
+bioguide:P000610,,address,Office,2059 Rayburn House Office Building Washington DC 20515-5500,false,congress-legislators
+bioguide:P000610,,phone,Office,202-225-1790,true,congress-legislators
+bioguide:P000610,,website,Official,https://plaskett.house.gov,false,congress-legislators
+bioguide:P000613,,address,Office,200 Cannon House Office Building Washington DC 20515-0519,false,congress-legislators
+bioguide:P000613,,phone,Office,202-225-2861,true,congress-legislators
+bioguide:P000613,,website,Official,https://panetta.house.gov,false,congress-legislators
+bioguide:P000614,,address,Office,452 Cannon House Office Building Washington DC 20515-2901,false,congress-legislators
+bioguide:P000614,,phone,Office,202-225-5456,true,congress-legislators
+bioguide:P000614,,website,Official,https://pappas.house.gov,false,congress-legislators
+bioguide:P000617,,address,Office,402 Cannon House Office Building Washington DC 20515-2107,false,congress-legislators
+bioguide:P000617,,phone,Office,202-225-5111,true,congress-legislators
+bioguide:P000617,,website,Official,https://pressley.house.gov,false,congress-legislators
+bioguide:P000620,,address,Office,348 Cannon House Office Building Washington DC 20515-0607,false,congress-legislators
+bioguide:P000620,,phone,Office,202-225-2645,true,congress-legislators
+bioguide:P000620,,website,Official,https://pettersen.house.gov,false,congress-legislators
+bioguide:P000621,,address,Office,1007 Longworth House Office Building Washington DC 20515-3009,false,congress-legislators
+bioguide:P000621,,phone,Office,202-225-5751,true,congress-legislators
+bioguide:P000621,,website,Official,https://pou.house.gov,false,congress-legislators
+bioguide:P000622,,address,Office,2021 Rayburn House Office Building Washington DC 20515-0901,false,congress-legislators
+bioguide:P000622,,phone,Office,202-225-4136,true,congress-legislators
+bioguide:P000622,,website,Official,https://patronis.house.gov,false,congress-legislators
+bioguide:Q000023,,address,Office,2083 Rayburn House Office Building Washington DC 20515-1305,false,congress-legislators
+bioguide:Q000023,,phone,Office,202-225-4061,true,congress-legislators
+bioguide:Q000023,,website,Official,https://quigley.house.gov,false,congress-legislators
+bioguide:R000122,,address,Office,728 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:R000122,,phone,Office,202-224-4642,true,congress-legislators
+bioguide:R000122,,website,Official,https://www.reed.senate.gov,false,congress-legislators
+bioguide:R000305,,address,Office,1221 Longworth House Office Building Washington DC 20515-3302,false,congress-legislators
+bioguide:R000305,,phone,Office,202-225-3032,true,congress-legislators
+bioguide:R000305,,website,Official,https://ross.house.gov,false,congress-legislators
+bioguide:R000395,,address,Office,2406 Rayburn House Office Building Washington DC 20515-1705,false,congress-legislators
+bioguide:R000395,,phone,Office,202-225-4601,true,congress-legislators
+bioguide:R000395,,website,Official,https://halrogers.house.gov,false,congress-legislators
+bioguide:R000575,,address,Office,2469 Rayburn House Office Building Washington DC 20515-0103,false,congress-legislators
+bioguide:R000575,,phone,Office,202-225-3261,true,congress-legislators
+bioguide:R000575,,website,Official,https://mikerogers.house.gov,false,congress-legislators
+bioguide:R000579,,address,Office,1708 Longworth House Office Building Washington DC 20515-3218,false,congress-legislators
+bioguide:R000579,,phone,Office,202-225-5614,true,congress-legislators
+bioguide:R000579,,website,Official,https://patryan.house.gov,false,congress-legislators
+bioguide:R000584,,address,Office,483 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:R000584,,phone,Office,202-224-2752,true,congress-legislators
+bioguide:R000584,,website,Official,https://www.risch.senate.gov,false,congress-legislators
+bioguide:R000599,,address,Office,2342 Rayburn House Office Building Washington DC 20515-0525,false,congress-legislators
+bioguide:R000599,,phone,Office,202-225-5330,true,congress-legislators
+bioguide:R000599,,website,Official,https://ruiz.house.gov,false,congress-legislators
+bioguide:R000600,,address,Office,2001 Rayburn House Office Building Washington DC 20515-5200,false,congress-legislators
+bioguide:R000600,,phone,Office,202-225-8577,true,congress-legislators
+bioguide:R000600,,website,Official,https://radewagen.house.gov,false,congress-legislators
+bioguide:R000603,,address,Office,2333 Rayburn House Office Building Washington DC 20515-3307,false,congress-legislators
+bioguide:R000603,,phone,Office,202-225-2731,true,congress-legislators
+bioguide:R000603,,website,Official,https://rouzer.house.gov,false,congress-legislators
+bioguide:R000605,,address,Office,716 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:R000605,,phone,Office,202-224-5842,true,congress-legislators
+bioguide:R000605,,website,Official,https://www.rounds.senate.gov,false,congress-legislators
+bioguide:R000606,,address,Office,2242 Rayburn House Office Building Washington DC 20515-2008,false,congress-legislators
+bioguide:R000606,,phone,Office,202-225-5341,true,congress-legislators
+bioguide:R000606,,website,Official,https://raskin.house.gov,false,congress-legislators
+bioguide:R000608,,address,Office,713 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:R000608,,phone,Office,202-224-6244,true,congress-legislators
+bioguide:R000608,,website,Official,https://www.rosen.senate.gov,false,congress-legislators
+bioguide:R000609,,address,Office,1711 Longworth House Office Building Washington DC 20515-0905,false,congress-legislators
+bioguide:R000609,,phone,Office,202-225-2501,true,congress-legislators
+bioguide:R000609,,website,Official,https://rutherford.house.gov,false,congress-legislators
+bioguide:R000610,,address,Office,2209 Rayburn House Office Building Washington DC 20515-3814,false,congress-legislators
+bioguide:R000610,,phone,Office,202-225-2065,true,congress-legislators
+bioguide:R000610,,website,Official,https://reschenthaler.house.gov,false,congress-legislators
+bioguide:R000612,,address,Office,2238 Rayburn House Office Building Washington DC 20515-4206,false,congress-legislators
+bioguide:R000612,,phone,Office,202-225-4231,true,congress-legislators
+bioguide:R000612,,website,Official,https://johnrose.house.gov,false,congress-legislators
+bioguide:R000614,,address,Office,103 Cannon House Office Building Washington DC 20515-4321,false,congress-legislators
+bioguide:R000614,,phone,Office,202-225-4236,true,congress-legislators
+bioguide:R000614,,website,Official,https://roy.house.gov,false,congress-legislators
+bioguide:R000617,,address,Office,1523 Longworth House Office Building Washington DC 20515-1303,false,congress-legislators
+bioguide:R000617,,phone,Office,202-225-5701,true,congress-legislators
+bioguide:R000617,,website,Official,https://ramirez.house.gov,false,congress-legislators
+bioguide:R000618,,address,Office,139 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:R000618,,phone,Office,202-224-4224,true,congress-legislators
+bioguide:R000618,,website,Official,https://www.ricketts.senate.gov,false,congress-legislators
+bioguide:R000619,,address,Office,421 Cannon House Office Building Washington DC 20515-3506,false,congress-legislators
+bioguide:R000619,,phone,Office,202-225-5705,true,congress-legislators
+bioguide:R000619,,website,Official,https://rulli.house.gov,false,congress-legislators
+bioguide:R000620,,address,Office,1319 Longworth House Office Building Washington DC 20515-0529,false,congress-legislators
+bioguide:R000620,,phone,Office,202-225-6131,true,congress-legislators
+bioguide:R000620,,website,Official,https://rivas.house.gov,false,congress-legislators
+bioguide:R000621,,address,Office,1531 Longworth House Office Building Washington DC 20515-4706,false,congress-legislators
+bioguide:R000621,,phone,Office,202-225-5916,true,congress-legislators
+bioguide:R000621,,website,Official,https://randall.house.gov,false,congress-legislators
+bioguide:R000622,,address,Office,128 Cannon House Office Building Washington DC 20515-3219,false,congress-legislators
+bioguide:R000622,,phone,Office,202-225-5441,true,congress-legislators
+bioguide:R000622,,website,Official,https://riley.house.gov,false,congress-legislators
+bioguide:S000033,,address,Office,332 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S000033,,phone,Office,202-224-5141,true,congress-legislators
+bioguide:S000033,,website,Official,https://www.sanders.senate.gov,false,congress-legislators
+bioguide:S000148,,address,Office,322 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S000148,,phone,Office,202-224-6542,true,congress-legislators
+bioguide:S000148,,website,Official,https://www.schumer.senate.gov,false,congress-legislators
+bioguide:S000168,,address,Office,2162 Rayburn House Office Building Washington DC 20515-0927,false,congress-legislators
+bioguide:S000168,,phone,Office,202-225-3931,true,congress-legislators
+bioguide:S000168,,website,Official,https://salazar.house.gov,false,congress-legislators
+bioguide:S000185,,address,Office,2328 Rayburn House Office Building Washington DC 20515-4603,false,congress-legislators
+bioguide:S000185,,phone,Office,202-225-8351,true,congress-legislators
+bioguide:S000185,,website,Official,https://bobbyscott.house.gov,false,congress-legislators
+bioguide:S000250,,address,Office,2204 Rayburn House Office Building Washington DC 20515-4317,false,congress-legislators
+bioguide:S000250,,phone,Office,202-225-6105,true,congress-legislators
+bioguide:S000250,,website,Official,https://sessions.house.gov,false,congress-legislators
+bioguide:S000344,,address,Office,2365 Rayburn House Office Building Washington DC 20515-0532,false,congress-legislators
+bioguide:S000344,,phone,Office,202-225-5911,true,congress-legislators
+bioguide:S000344,,website,Official,https://sherman.house.gov,false,congress-legislators
+bioguide:S000510,,address,Office,2264 Rayburn House Office Building Washington DC 20515-4709,false,congress-legislators
+bioguide:S000510,,phone,Office,202-225-8901,true,congress-legislators
+bioguide:S000510,,website,Official,https://adamsmith.house.gov,false,congress-legislators
+bioguide:S000522,,address,Office,2373 Rayburn House Office Building Washington DC 20515-3004,false,congress-legislators
+bioguide:S000522,,phone,Office,202-225-3765,true,congress-legislators
+bioguide:S000522,,website,Official,https://chrissmith.house.gov,false,congress-legislators
+bioguide:S000929,,address,Office,1609 Longworth House Office Building Washington DC 20515-1405,false,congress-legislators
+bioguide:S000929,,phone,Office,202-225-2276,true,congress-legislators
+bioguide:S000929,,website,Official,https://spartz.house.gov,false,congress-legislators
+bioguide:S001145,,address,Office,2408 Rayburn House Office Building Washington DC 20515-1309,false,congress-legislators
+bioguide:S001145,,phone,Office,202-225-2111,true,congress-legislators
+bioguide:S001145,,website,Official,https://schakowsky.house.gov,false,congress-legislators
+bioguide:S001148,,address,Office,2084 Rayburn House Office Building Washington DC 20515-1202,false,congress-legislators
+bioguide:S001148,,phone,Office,202-225-5531,true,congress-legislators
+bioguide:S001148,,website,Official,https://simpson.house.gov,false,congress-legislators
+bioguide:S001150,,address,Office,112 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001150,,phone,Office,202-224-3841,true,congress-legislators
+bioguide:S001150,,website,Official,https://www.schiff.senate.gov,false,congress-legislators
+bioguide:S001156,,address,Office,2309 Rayburn House Office Building Washington DC 20515-0538,false,congress-legislators
+bioguide:S001156,,phone,Office,202-225-6676,true,congress-legislators
+bioguide:S001156,,website,Official,https://lindasanchez.house.gov,false,congress-legislators
+bioguide:S001159,,address,Office,1724 Longworth House Office Building Washington DC 20515-4710,false,congress-legislators
+bioguide:S001159,,phone,Office,202-225-9740,true,congress-legislators
+bioguide:S001159,,website,Official,https://strickland.house.gov,false,congress-legislators
+bioguide:S001172,,address,Office,502 Cannon House Office Building Washington DC 20515-2703,false,congress-legislators
+bioguide:S001172,,phone,Office,202-225-6435,true,congress-legislators
+bioguide:S001172,,website,Official,https://adriansmith.house.gov,false,congress-legislators
+bioguide:S001176,,address,Office,266 Cannon House Office Building Washington DC 20515-1801,false,congress-legislators
+bioguide:S001176,,phone,Office,202-225-3015,true,congress-legislators
+bioguide:S001176,,website,Official,https://scalise.house.gov,false,congress-legislators
+bioguide:S001181,,address,Office,506 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001181,,phone,Office,202-224-2841,true,congress-legislators
+bioguide:S001181,,website,Official,https://www.shaheen.senate.gov,false,congress-legislators
+bioguide:S001183,,address,Office,166 Cannon House Office Building Washington DC 20515-0301,false,congress-legislators
+bioguide:S001183,,phone,Office,202-225-2190,true,congress-legislators
+bioguide:S001183,,website,Official,https://schweikert.house.gov,false,congress-legislators
+bioguide:S001184,,address,Office,104 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001184,,phone,Office,202-224-6121,true,congress-legislators
+bioguide:S001184,,website,Official,https://www.scott.senate.gov,false,congress-legislators
+bioguide:S001185,,address,Office,1035 Longworth House Office Building Washington DC 20515-0107,false,congress-legislators
+bioguide:S001185,,phone,Office,202-225-2665,true,congress-legislators
+bioguide:S001185,,website,Official,https://sewell.house.gov,false,congress-legislators
+bioguide:S001188,,address,Office,404 Cannon House Office Building Washington DC 20515-1403,false,congress-legislators
+bioguide:S001188,,phone,Office,202-225-4436,true,congress-legislators
+bioguide:S001188,,website,Official,https://stutzman.house.gov,false,congress-legislators
+bioguide:S001189,,address,Office,2185 Rayburn House Office Building Washington DC 20515-1008,false,congress-legislators
+bioguide:S001189,,phone,Office,202-225-6531,true,congress-legislators
+bioguide:S001189,,website,Official,https://austinscott.house.gov,false,congress-legislators
+bioguide:S001190,,address,Office,300 Cannon House Office Building Washington DC 20515-1310,false,congress-legislators
+bioguide:S001190,,phone,Office,202-225-4835,true,congress-legislators
+bioguide:S001190,,website,Official,https://schneider.house.gov,false,congress-legislators
+bioguide:S001194,,address,Office,722 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001194,,phone,Office,202-224-3934,true,congress-legislators
+bioguide:S001194,,website,Official,https://www.schatz.senate.gov,false,congress-legislators
+bioguide:S001195,,address,Office,1011 Longworth House Office Building Washington DC 20515-2508,false,congress-legislators
+bioguide:S001195,,phone,Office,202-225-4404,true,congress-legislators
+bioguide:S001195,,website,Official,https://jasonsmith.house.gov,false,congress-legislators
+bioguide:S001196,,address,Office,2211 Rayburn House Office Building Washington DC 20515-3221,false,congress-legislators
+bioguide:S001196,,phone,Office,202-225-4611,true,congress-legislators
+bioguide:S001196,,website,Official,https://stefanik.house.gov,false,congress-legislators
+bioguide:S001198,,address,Office,706 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001198,,phone,Office,202-224-3004,true,congress-legislators
+bioguide:S001198,,website,Official,https://www.sullivan.senate.gov,false,congress-legislators
+bioguide:S001199,,address,Office,302 Cannon House Office Building Washington DC 20515-3811,false,congress-legislators
+bioguide:S001199,,phone,Office,202-225-2411,true,congress-legislators
+bioguide:S001199,,website,Official,https://smucker.house.gov,false,congress-legislators
+bioguide:S001200,,address,Office,2353 Rayburn House Office Building Washington DC 20515-0909,false,congress-legislators
+bioguide:S001200,,phone,Office,202-225-9889,true,congress-legislators
+bioguide:S001200,,website,Official,https://soto.house.gov,false,congress-legislators
+bioguide:S001201,,address,Office,203 Cannon House Office Building Washington DC 20515-3203,false,congress-legislators
+bioguide:S001201,,phone,Office,202-225-3335,true,congress-legislators
+bioguide:S001201,,website,Official,https://suozzi.house.gov,false,congress-legislators
+bioguide:S001203,,address,Office,720 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001203,,phone,Office,202-224-5641,true,congress-legislators
+bioguide:S001203,,website,Official,https://www.smith.senate.gov,false,congress-legislators
+bioguide:S001205,,address,Office,1214 Longworth House Office Building Washington DC 20515-3805,false,congress-legislators
+bioguide:S001205,,phone,Office,202-225-2011,true,congress-legislators
+bioguide:S001205,,website,Official,https://scanlon.house.gov,false,congress-legislators
+bioguide:S001208,,address,Office,291 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001208,,phone,Office,202-224-4822,true,congress-legislators
+bioguide:S001208,,website,Official,https://www.slotkin.senate.gov,false,congress-legislators
+bioguide:S001211,,address,Office,207 Cannon House Office Building Washington DC 20515-0304,false,congress-legislators
+bioguide:S001211,,phone,Office,202-225-9888,true,congress-legislators
+bioguide:S001211,,website,Official,https://stanton.house.gov,false,congress-legislators
+bioguide:S001212,,address,Office,145 Cannon House Office Building Washington DC 20515-2308,false,congress-legislators
+bioguide:S001212,,phone,Office,202-225-6211,true,congress-legislators
+bioguide:S001212,,website,Official,https://stauber.house.gov,false,congress-legislators
+bioguide:S001213,,address,Office,1526 Longworth House Office Building Washington DC 20515-4901,false,congress-legislators
+bioguide:S001213,,phone,Office,202-225-3031,true,congress-legislators
+bioguide:S001213,,website,Official,https://steil.house.gov,false,congress-legislators
+bioguide:S001214,,address,Office,2457 Rayburn House Office Building Washington DC 20515-0917,false,congress-legislators
+bioguide:S001214,,phone,Office,202-225-5792,true,congress-legislators
+bioguide:S001214,,website,Official,https://steube.house.gov,false,congress-legislators
+bioguide:S001215,,address,Office,2411 Rayburn House Office Building Washington DC 20515-2211,false,congress-legislators
+bioguide:S001215,,phone,Office,202-225-8171,true,congress-legislators
+bioguide:S001215,,website,Official,https://stevens.house.gov,false,congress-legislators
+bioguide:S001216,,address,Office,1110 Longworth House Office Building Washington DC 20515-4708,false,congress-legislators
+bioguide:S001216,,phone,Office,202-225-7761,true,congress-legislators
+bioguide:S001216,,website,Official,https://schrier.house.gov,false,congress-legislators
+bioguide:S001217,,address,Office,110 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001217,,phone,Office,202-224-5274,true,congress-legislators
+bioguide:S001217,,website,Official,https://www.rickscott.senate.gov,false,congress-legislators
+bioguide:S001218,,address,Office,1421 Longworth House Office Building Washington DC 20515-3101,false,congress-legislators
+bioguide:S001218,,phone,Office,202-225-6316,true,congress-legislators
+bioguide:S001218,,website,Official,https://stansbury.house.gov,false,congress-legislators
+bioguide:S001220,,address,Office,449 Cannon House Office Building Washington DC 20515-0105,false,congress-legislators
+bioguide:S001220,,phone,Office,202-225-4801,true,congress-legislators
+bioguide:S001220,,website,Official,https://strong.house.gov,false,congress-legislators
+bioguide:S001221,,address,Office,1317 Longworth House Office Building Washington DC 20515-2203,false,congress-legislators
+bioguide:S001221,,phone,Office,202-225-3831,true,congress-legislators
+bioguide:S001221,,website,Official,https://scholten.house.gov,false,congress-legislators
+bioguide:S001223,,address,Office,1217 Longworth House Office Building Washington DC 20515-3513,false,congress-legislators
+bioguide:S001223,,phone,Office,202-225-6265,true,congress-legislators
+bioguide:S001223,,website,Official,https://sykes.house.gov,false,congress-legislators
+bioguide:S001224,,address,Office,1030 Longworth House Office Building Washington DC 20515-4303,false,congress-legislators
+bioguide:S001224,,phone,Office,202-225-4201,true,congress-legislators
+bioguide:S001224,,website,Official,https://keithself.house.gov,false,congress-legislators
+bioguide:S001225,,address,Office,1314 Longworth House Office Building Washington DC 20515-1317,false,congress-legislators
+bioguide:S001225,,phone,Office,202-225-5905,true,congress-legislators
+bioguide:S001225,,website,Official,https://sorensen.house.gov,false,congress-legislators
+bioguide:S001226,,address,Office,403 Cannon House Office Building Washington DC 20515-0001,false,congress-legislators
+bioguide:S001226,,phone,Office,202-225-5643,true,congress-legislators
+bioguide:S001226,,website,Official,https://salinas.house.gov,false,congress-legislators
+bioguide:S001227,,address,Office,404 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001227,,phone,Office,202-224-5721,true,congress-legislators
+bioguide:S001227,,website,Official,https://www.schmitt.senate.gov,false,congress-legislators
+bioguide:S001228,,address,Office,1223 Longworth House Office Building Washington DC 20515-1602,false,congress-legislators
+bioguide:S001228,,phone,Office,202-225-6601,true,congress-legislators
+bioguide:S001228,,website,Official,https://schmidt.house.gov,false,congress-legislators
+bioguide:S001229,,address,Office,224 Cannon House Office Building Washington DC 20515-1406,false,congress-legislators
+bioguide:S001229,,phone,Office,202-225-3021,true,congress-legislators
+bioguide:S001229,,website,Official,https://shreve.house.gov,false,congress-legislators
+bioguide:S001230,,address,Office,1009 Longworth House Office Building Washington DC 20515-4610,false,congress-legislators
+bioguide:S001230,,phone,Office,202-225-5136,true,congress-legislators
+bioguide:S001230,,website,Official,https://subramanyam.house.gov,false,congress-legislators
+bioguide:S001231,,address,Office,1023 Longworth House Office Building Washington DC 20515-0512,false,congress-legislators
+bioguide:S001231,,phone,Office,202-225-2661,true,congress-legislators
+bioguide:S001231,,website,Official,https://simon.house.gov,false,congress-legislators
+bioguide:S001232,,address,Office,124 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:S001232,,phone,Office,202-224-2644,true,congress-legislators
+bioguide:S001232,,website,Official,https://www.sheehy.senate.gov,false,congress-legislators
+bioguide:T000165,,address,Office,451 Cannon House Office Building Washington DC 20515-4907,false,congress-legislators
+bioguide:T000165,,phone,Office,202-225-3365,true,congress-legislators
+bioguide:T000165,,website,Official,https://tiffany.house.gov,false,congress-legislators
+bioguide:T000193,,address,Office,2466 Rayburn House Office Building Washington DC 20515-2402,false,congress-legislators
+bioguide:T000193,,phone,Office,202-225-5876,true,congress-legislators
+bioguide:T000193,,website,Official,https://benniethompson.house.gov,false,congress-legislators
+bioguide:T000250,,address,Office,511 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:T000250,,phone,Office,202-224-2321,true,congress-legislators
+bioguide:T000250,,website,Official,https://www.thune.senate.gov,false,congress-legislators
+bioguide:T000278,,address,Office,455 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:T000278,,phone,Office,202-224-4124,true,congress-legislators
+bioguide:T000278,,website,Official,https://www.tuberville.senate.gov,false,congress-legislators
+bioguide:T000460,,address,Office,268 Cannon House Office Building Washington DC 20515-0504,false,congress-legislators
+bioguide:T000460,,phone,Office,202-225-3311,true,congress-legislators
+bioguide:T000460,,website,Official,https://mikethompson.house.gov,false,congress-legislators
+bioguide:T000463,,address,Office,2183 Rayburn House Office Building Washington DC 20515-3510,false,congress-legislators
+bioguide:T000463,,phone,Office,202-225-6465,true,congress-legislators
+bioguide:T000463,,website,Official,https://turner.house.gov,false,congress-legislators
+bioguide:T000467,,address,Office,400 Cannon House Office Building Washington DC 20515-3815,false,congress-legislators
+bioguide:T000467,,phone,Office,202-225-5121,true,congress-legislators
+bioguide:T000467,,website,Official,https://thompson.house.gov,false,congress-legislators
+bioguide:T000468,,address,Office,2370 Rayburn House Office Building Washington DC 20515-2801,false,congress-legislators
+bioguide:T000468,,phone,Office,202-225-5965,true,congress-legislators
+bioguide:T000468,,website,Official,https://titus.house.gov,false,congress-legislators
+bioguide:T000469,,address,Office,2269 Rayburn House Office Building Washington DC 20515-3220,false,congress-legislators
+bioguide:T000469,,phone,Office,202-225-5076,true,congress-legislators
+bioguide:T000469,,website,Official,https://tonko.house.gov,false,congress-legislators
+bioguide:T000472,,address,Office,2078 Rayburn House Office Building Washington DC 20515-0539,false,congress-legislators
+bioguide:T000472,,phone,Office,202-225-2305,true,congress-legislators
+bioguide:T000472,,website,Official,https://takano.house.gov,false,congress-legislators
+bioguide:T000474,,address,Office,2227 Rayburn House Office Building Washington DC 20515-0535,false,congress-legislators
+bioguide:T000474,,phone,Office,202-225-6161,true,congress-legislators
+bioguide:T000474,,website,Official,https://torres.house.gov,false,congress-legislators
+bioguide:T000476,,address,Office,113 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:T000476,,phone,Office,202-224-6342,true,congress-legislators
+bioguide:T000476,,website,Official,https://www.tillis.senate.gov,false,congress-legislators
+bioguide:T000478,,address,Office,2230 Rayburn House Office Building Washington DC 20515-3224,false,congress-legislators
+bioguide:T000478,,phone,Office,202-225-3665,true,congress-legislators
+bioguide:T000478,,website,Official,https://tenney.house.gov,false,congress-legislators
+bioguide:T000480,,address,Office,267 Cannon House Office Building Washington DC 20515-4004,false,congress-legislators
+bioguide:T000480,,phone,Office,202-225-6030,true,congress-legislators
+bioguide:T000480,,website,Official,https://timmons.house.gov,false,congress-legislators
+bioguide:T000481,,address,Office,2438 Rayburn House Office Building Washington DC 20515-2212,false,congress-legislators
+bioguide:T000481,,phone,Office,202-225-5126,true,congress-legislators
+bioguide:T000481,,website,Official,https://tlaib.house.gov,false,congress-legislators
+bioguide:T000482,,address,Office,2233 Rayburn House Office Building Washington DC 20515-2103,false,congress-legislators
+bioguide:T000482,,phone,Office,202-225-3411,true,congress-legislators
+bioguide:T000482,,website,Official,https://trahan.house.gov,false,congress-legislators
+bioguide:T000486,,address,Office,1414 Longworth House Office Building Washington DC 20515-3215,false,congress-legislators
+bioguide:T000486,,phone,Office,202-225-4361,true,congress-legislators
+bioguide:T000486,,website,Official,https://ritchietorres.house.gov,false,congress-legislators
+bioguide:T000487,,address,Office,1027 Longworth House Office Building Washington DC 20515-1102,false,congress-legislators
+bioguide:T000487,,phone,Office,202-225-4906,true,congress-legislators
+bioguide:T000487,,website,Official,https://tokuda.house.gov,false,congress-legislators
+bioguide:T000488,,address,Office,154 Cannon House Office Building Washington DC 20515-2213,false,congress-legislators
+bioguide:T000488,,phone,Office,202-225-5802,true,congress-legislators
+bioguide:T000488,,website,Official,https://thanedar.house.gov,false,congress-legislators
+bioguide:T000490,,address,Office,325 Cannon House Office Building Washington DC 20515-3502,false,congress-legislators
+bioguide:T000490,,phone,Office,202-225-3164,true,congress-legislators
+bioguide:T000490,,website,Official,https://taylor.house.gov,false,congress-legislators
+bioguide:T000491,,address,Office,1127 Longworth House Office Building Washington DC 20515-0545,false,congress-legislators
+bioguide:T000491,,phone,Office,202-225-2415,true,congress-legislators
+bioguide:T000491,,website,Official,https://tran.house.gov,false,congress-legislators
+bioguide:U000040,,address,Office,2228 Rayburn House Office Building Washington DC 20515-1314,false,congress-legislators
+bioguide:U000040,,phone,Office,202-225-2976,true,congress-legislators
+bioguide:U000040,,website,Official,https://underwood.house.gov,false,congress-legislators
+bioguide:V000081,,address,Office,2302 Rayburn House Office Building Washington DC 20515-3207,false,congress-legislators
+bioguide:V000081,,phone,Office,202-225-2361,true,congress-legislators
+bioguide:V000081,,website,Official,https://velazquez.house.gov,false,congress-legislators
+bioguide:V000128,,address,Office,730 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:V000128,,phone,Office,202-224-4654,true,congress-legislators
+bioguide:V000128,,website,Official,https://www.vanhollen.senate.gov,false,congress-legislators
+bioguide:V000129,,address,Office,2465 Rayburn House Office Building Washington DC 20515-0522,false,congress-legislators
+bioguide:V000129,,phone,Office,202-225-4695,true,congress-legislators
+bioguide:V000129,,website,Official,https://valadao.house.gov,false,congress-legislators
+bioguide:V000130,,address,Office,2467 Rayburn House Office Building Washington DC 20515-0552,false,congress-legislators
+bioguide:V000130,,phone,Office,202-225-8045,true,congress-legislators
+bioguide:V000130,,website,Official,https://vargas.house.gov,false,congress-legislators
+bioguide:V000131,,address,Office,2186 Rayburn House Office Building Washington DC 20515-4333,false,congress-legislators
+bioguide:V000131,,phone,Office,202-225-9897,true,congress-legislators
+bioguide:V000131,,website,Official,https://veasey.house.gov,false,congress-legislators
+bioguide:V000133,,address,Office,2447 Rayburn House Office Building Washington DC 20515-3002,false,congress-legislators
+bioguide:V000133,,phone,Office,202-225-6572,true,congress-legislators
+bioguide:V000133,,website,Official,https://vandrew.house.gov,false,congress-legislators
+bioguide:V000134,,address,Office,1725 Longworth House Office Building Washington DC 20515-4324,false,congress-legislators
+bioguide:V000134,,phone,Office,202-225-6605,true,congress-legislators
+bioguide:V000134,,website,Official,https://vanduyne.house.gov,false,congress-legislators
+bioguide:V000135,,address,Office,1513 Longworth House Office Building Washington DC 20515-4903,false,congress-legislators
+bioguide:V000135,,phone,Office,202-225-5506,true,congress-legislators
+bioguide:V000135,,website,Official,https://vanorden.house.gov,false,congress-legislators
+bioguide:V000136,,address,Office,322 Cannon House Office Building Washington DC 20515-3102,false,congress-legislators
+bioguide:V000136,,phone,Office,202-225-2365,true,congress-legislators
+bioguide:V000136,,website,Official,https://vasquez.house.gov,false,congress-legislators
+bioguide:V000138,,address,Office,1005 Longworth House Office Building Washington DC 20515-4607,false,congress-legislators
+bioguide:V000138,,phone,Office,202-225-2815,true,congress-legislators
+bioguide:V000138,,website,Official,https://vindman.house.gov,false,congress-legislators
+bioguide:V000139,,address,Office,2446 Rayburn House Office Building Washington DC 20515-4207,false,congress-legislators
+bioguide:V000139,,phone,Office,202-225-2811,true,congress-legislators
+bioguide:V000139,,website,Official,https://vanepps.house.gov,false,congress-legislators
+bioguide:W000187,,address,Office,2221 Rayburn House Office Building Washington DC 20515-0543,false,congress-legislators
+bioguide:W000187,,phone,Office,202-225-2201,true,congress-legislators
+bioguide:W000187,,website,Official,https://waters.house.gov,false,congress-legislators
+bioguide:W000437,,address,Office,425 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000437,,phone,Office,202-224-6253,true,congress-legislators
+bioguide:W000437,,website,Official,https://www.wicker.senate.gov,false,congress-legislators
+bioguide:W000779,,address,Office,221 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000779,,phone,Office,202-224-5244,true,congress-legislators
+bioguide:W000779,,website,Official,https://www.wyden.senate.gov,false,congress-legislators
+bioguide:W000788,,address,Office,1406 Longworth House Office Building Washington DC 20515-1005,false,congress-legislators
+bioguide:W000788,,phone,Office,202-225-3801,true,congress-legislators
+bioguide:W000788,,website,Official,https://nikemawilliams.house.gov,false,congress-legislators
+bioguide:W000790,,address,Office,717 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000790,,phone,Office,202-224-3643,true,congress-legislators
+bioguide:W000790,,website,Official,https://www.warnock.senate.gov,false,congress-legislators
+bioguide:W000795,,address,Office,1436 Longworth House Office Building Washington DC 20515-4002,false,congress-legislators
+bioguide:W000795,,phone,Office,202-225-2452,true,congress-legislators
+bioguide:W000795,,website,Official,https://joewilson.house.gov,false,congress-legislators
+bioguide:W000797,,address,Office,270 Cannon House Office Building Washington DC 20515-0925,false,congress-legislators
+bioguide:W000797,,phone,Office,202-225-7931,true,congress-legislators
+bioguide:W000797,,website,Official,https://wassermanschultz.house.gov,false,congress-legislators
+bioguide:W000798,,address,Office,2266 Rayburn House Office Building Washington DC 20515-2205,false,congress-legislators
+bioguide:W000798,,phone,Office,202-225-6276,true,congress-legislators
+bioguide:W000798,,website,Official,https://walberg.house.gov,false,congress-legislators
+bioguide:W000800,,address,Office,115 Russell Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000800,,phone,Office,202-224-4242,true,congress-legislators
+bioguide:W000800,,website,Official,https://www.welch.senate.gov,false,congress-legislators
+bioguide:W000802,,address,Office,530 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000802,,phone,Office,202-224-2921,true,congress-legislators
+bioguide:W000802,,website,Official,https://www.whitehouse.senate.gov,false,congress-legislators
+bioguide:W000804,,address,Office,2055 Rayburn House Office Building Washington DC 20515-4601,false,congress-legislators
+bioguide:W000804,,phone,Office,202-225-4261,true,congress-legislators
+bioguide:W000804,,website,Official,https://wittman.house.gov,false,congress-legislators
+bioguide:W000805,,address,Office,703 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000805,,phone,Office,202-224-2023,true,congress-legislators
+bioguide:W000805,,website,Official,https://www.warner.senate.gov,false,congress-legislators
+bioguide:W000806,,address,Office,2184 Rayburn House Office Building Washington DC 20515-0911,false,congress-legislators
+bioguide:W000806,,phone,Office,202-225-1002,true,congress-legislators
+bioguide:W000806,,website,Official,https://webster.house.gov,false,congress-legislators
+bioguide:W000808,,address,Office,2080 Rayburn House Office Building Washington DC 20515-0924,false,congress-legislators
+bioguide:W000808,,phone,Office,202-225-4506,true,congress-legislators
+bioguide:W000808,,website,Official,https://wilson.house.gov,false,congress-legislators
+bioguide:W000809,,address,Office,2412 Rayburn House Office Building Washington DC 20515-0403,false,congress-legislators
+bioguide:W000809,,phone,Office,202-225-4301,true,congress-legislators
+bioguide:W000809,,website,Official,https://womack.house.gov,false,congress-legislators
+bioguide:W000812,,address,Office,2350 Rayburn House Office Building Washington DC 20515-2502,false,congress-legislators
+bioguide:W000812,,phone,Office,202-225-1621,true,congress-legislators
+bioguide:W000812,,website,Official,https://wagner.house.gov,false,congress-legislators
+bioguide:W000814,,address,Office,107 Cannon House Office Building Washington DC 20515-4314,false,congress-legislators
+bioguide:W000814,,phone,Office,202-225-2831,true,congress-legislators
+bioguide:W000814,,website,Official,https://weber.house.gov,false,congress-legislators
+bioguide:W000816,,address,Office,2336 Rayburn House Office Building Washington DC 20515-4325,false,congress-legislators
+bioguide:W000816,,phone,Office,202-225-9896,true,congress-legislators
+bioguide:W000816,,website,Official,https://williams.house.gov,false,congress-legislators
+bioguide:W000817,,address,Office,311 Hart Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:W000817,,phone,Office,202-224-4543,true,congress-legislators
+bioguide:W000817,,website,Official,https://www.warren.senate.gov,false,congress-legislators
+bioguide:W000821,,address,Office,202 Cannon House Office Building Washington DC 20515-0404,false,congress-legislators
+bioguide:W000821,,phone,Office,202-225-3772,true,congress-legislators
+bioguide:W000821,,website,Official,https://westerman.house.gov,false,congress-legislators
+bioguide:W000822,,address,Office,168 Cannon House Office Building Washington DC 20515-3012,false,congress-legislators
+bioguide:W000822,,phone,Office,202-225-5801,true,congress-legislators
+bioguide:W000822,,website,Official,https://watsoncoleman.house.gov,false,congress-legislators
+bioguide:W000829,,address,Office,424 Cannon House Office Building Washington DC 20515-4908,false,congress-legislators
+bioguide:W000829,,phone,Office,202-225-5665,true,congress-legislators
+bioguide:W000829,,website,Official,https://wied.house.gov,false,congress-legislators
+bioguide:W000830,,address,Office,1504 Longworth House Office Building Washington DC 20515-0527,false,congress-legislators
+bioguide:W000830,,phone,Office,202-225-1956,true,congress-legislators
+bioguide:W000830,,website,Official,https://whitesides.house.gov,false,congress-legislators
+bioguide:W000831,,address,Office,2265 Rayburn House Office Building Washington DC 20515-4611,false,congress-legislators
+bioguide:W000831,,phone,Office,202-225-1492,true,congress-legislators
+bioguide:W000831,,website,Official,https://walkinshaw.house.gov,false,congress-legislators
+bioguide:W000832,,address,Office,174 Cannon House Office Building Washington DC 20515-0514,false,congress-legislators
+bioguide:W000832,,phone,Office,202-225-5065,true,congress-legislators
+bioguide:W000832,,website,Official,https://wahab.house.gov/,false,congress-legislators
+bioguide:Y000064,,address,Office,185 Dirksen Senate Office Building Washington DC 20510,false,congress-legislators
+bioguide:Y000064,,phone,Office,202-224-5623,true,congress-legislators
+bioguide:Y000064,,website,Official,https://www.young.senate.gov,false,congress-legislators
+bioguide:Y000067,,address,Office,349 Cannon House Office Building Washington DC 20515-1402,false,congress-legislators
+bioguide:Y000067,,phone,Office,202-225-3915,true,congress-legislators
+bioguide:Y000067,,website,Official,https://yakym.house.gov,false,congress-legislators
+bioguide:Z000018,,address,Office,512 Cannon House Office Building Washington DC 20515-2600,false,congress-legislators
+bioguide:Z000018,,phone,Office,202-225-5628,true,congress-legislators
+bioguide:Z000018,,website,Official,https://zinke.house.gov,false,congress-legislators
