@@ -6,7 +6,14 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(__dirname, '..');
-const SRC = join(process.env.HOME, 'workspace', 'civicpie-data');
+// Data workspace: set CIVICPIE_DATA_DIR, else use the sibling checkout ../civicpie-data,
+// else the old ~/workspace/civicpie-data location.
+const candidates = [
+  process.env.CIVICPIE_DATA_DIR,
+  join(repoRoot, '..', 'civicpie-data'),
+  join(process.env.HOME || '', 'workspace', 'civicpie-data'),
+].filter(Boolean);
+const SRC = candidates.find((p) => existsSync(p)) || candidates[0];
 const DEST = join(repoRoot, 'data', 'seed');
 
 const FILES = [
@@ -22,7 +29,7 @@ const FILES = [
   ['data/staged/city_districts.json', 'city_districts.json'],
   ['data/staged/city_officials.json', 'city_officials.json'],
   ['data/staged/chicago_contacts.json', 'chicago_contacts.json'],
-  ['data/raw/chicago_wards_2023.geojson', 'chicago_wards_2023.geojson'],
+  ['data/raw/chicago_wards_2023.geojson', 'chicago_wards_2023.geojson', 'optional'],
 ];
 
 if (!existsSync(SRC)) {
@@ -32,10 +39,14 @@ if (!existsSync(SRC)) {
 mkdirSync(DEST, { recursive: true });
 
 let totalBytes = 0;
-for (const [rel, name] of FILES) {
+for (const [rel, name, optional] of FILES) {
   const from = join(SRC, rel);
   const to = join(DEST, name);
   if (!existsSync(from)) {
+    if (optional) {
+      console.log(`  (skipped optional ${name}: not in data workspace, keeping repo copy)`);
+      continue;
+    }
     console.error(`MISSING: ${from}`);
     process.exit(1);
   }

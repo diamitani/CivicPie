@@ -151,7 +151,7 @@ export async function loadDistrictPageData(
     if (type === 'city') {
       const cities = await loadJson('cities.json');
       const city = cities?.find((c: any) => c.id === id);
-      if (!city) return null;
+      if (!city) return loadSweptCity(id);
       // Pull live officials for cities that have a seed district (e.g. North Liberty).
       let officials: any[] = [];
       if (city.districtId) {
@@ -252,3 +252,61 @@ export async function getDistrict(type: string, id: string) {
 
 export async function loadStates() { return loadJson('states.json'); }
 export async function loadCities() { return loadJson('cities.json'); }
+
+
+// Swept cities (the ~1.5k+ municipalities loaded from official council pages) have no
+// entry in public/data/cities.json. Their page is built live from /api/districts/[id].
+// URL id 'ia-waukee' -> district 'ia-waukee-city' (or the id as-is for collision ids).
+async function loadSweptCity(id: string): Promise<DistrictPageData | null> {
+  let d: any = null;
+  for (const candidate of [`${id}-city`, id]) {
+    try {
+      const res = await fetch(`/api/districts/${encodeURIComponent(candidate)}`);
+      if (res.ok) {
+        d = (await res.json())?.data || null;
+        if (d && d.district_type === 'city') break;
+        d = null;
+      }
+    } catch { /* try next */ }
+  }
+  if (!d) return null;
+
+  const refs = d.refs || {};
+  const stateAbbr = String(d.state_abbr || '').toUpperCase();
+  const officials = (d.officials || []).map((o: any) => ({
+    id: o.id || `${d.district_id}-${o.name}`,
+    name: o.name,
+    title: o.seat ? `${o.office_title} · ${o.seat}` : o.office_title || 'Official',
+    level: 'Local',
+    party: o.party || null,
+    contact: {
+      email: o.email || null,
+      phone: o.phone || null,
+      website: o.source_url || null, // links to the official city page it came from
+    },
+  }));
+  const pop = typeof refs.population === 'number' ? refs.population : 0;
+  const verified = refs.confidence === 'page' ? 'Official city page' : 'Unverified';
+  return {
+    displayName: d.district_name || d.city,
+    districtType: 'city',
+    description:
+      `${d.district_name || d.city}, ${stateAbbr}` +
+      (pop > 0 ? ` — population ${pop.toLocaleString()}.` : '.') +
+      ` Council and mayor information is taken from the city's official website.`,
+    city: d.city || undefined,
+    state: stateAbbr,
+    stateAbbr,
+    stats: [
+      { label: 'Population', value: pop > 0 ? pop.toLocaleString() : 'N/A' },
+      { label: 'Elected officials', value: officials.length ? String(officials.length) : 'N/A' },
+      { label: 'Data source', value: verified },
+    ],
+    officials,
+    events: [],
+    elections: [],
+    agencies: [],
+    grants: [],
+    civicGroups: [],
+  };
+}

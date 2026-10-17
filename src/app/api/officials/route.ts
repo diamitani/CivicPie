@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { serverError } from '@/lib/civic/http';
 import { searchOfficials, meta } from '@/lib/civic/db';
 
 export const dynamic = 'force-dynamic';
@@ -18,6 +19,6 @@ export async function GET(request: NextRequest) {
     });
     return NextResponse.json({ ok: true, meta: await meta(), total, data });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return serverError(e, 'officials');
   }
 }

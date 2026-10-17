@@ -3,6 +3,10 @@
 import { spawn } from 'node:child_process';
 import { setTimeout as sleep } from 'node:timers/promises';
 
+function killGroup(child) {
+  try { process.kill(-child.pid, 'SIGTERM'); } catch { try { child.kill(); } catch {} }
+}
+
 const PORT = 3210;
 const BASE = `http://localhost:${PORT}`;
 
@@ -35,6 +39,7 @@ async function waitForServer(server) {
 const server = spawn('npx', ['next', 'start', '-p', String(PORT)], {
   cwd: new URL('..', import.meta.url).pathname,
   stdio: 'ignore',
+  detached: true, // own process group so kill() reaches the next-server child, not just npx
 });
 try {
   await waitForServer(server);
@@ -43,9 +48,9 @@ try {
   let r = await get('/api/health');
   assert(r.status === 200 && r.body.ok, 'health 200');
   assert(r.body.source === 'seed', 'source=seed', JSON.stringify(r.body.source));
-  assert(r.body.counts.officials === 7988, 'officials=7988', r.body.counts?.officials);
+  assert(r.body.counts.officials >= 7988, 'officials >= 7988 (grows with city sweeps)', r.body.counts?.officials);
   assert(r.body.counts.candidates === 7077, 'candidates=7077', r.body.counts?.candidates);
-  assert(r.body.counts.districts === 107, 'districts=107', r.body.counts?.districts);
+  assert(r.body.counts.districts >= 107, 'districts >= 107 (grows with city sweeps)', r.body.counts?.districts);
   assert(r.body.counts.agencies === 15, 'agencies=15', r.body.counts?.agencies);
 
   // 2. Real Census lookup — Patrick's building, Ward 48
@@ -66,17 +71,40 @@ try {
   assert(nlNames.includes('Chris Hoffman'), 'NL mayor present', nlNames.join(','));
   assert((r.body.officials || []).length === 6, 'NL mayor + 5 council', (r.body.officials || []).length);
 
-  // 2b2. Out-of-coverage state ZIP (Los Angeles, CA) → coverage='none' with
-  // federal + state officials, NEVER a 404.
-  r = await get('/api/lookup?address=' + encodeURIComponent('90210'));
-  assert(r.status === 200, '90210 lookup 200 (no 404)', r.status);
-  assert(r.body.coverage === 'none', "90210 coverage='none'", r.body.coverage);
-  assert(r.body.state_abbr === 'CA', 'state_abbr=CA', r.body.state_abbr);
-  const caFed = (r.body.federal_officials || []).map((o) => o.name);
-  assert(caFed.includes('Alex Padilla') && caFed.includes('Adam B. Schiff'), 'CA senators present', caFed.slice(0, 4).join(','));
-  assert((r.body.state_officials || []).length > 0, 'CA state officials present', (r.body.state_officials || []).length);
-  assert(r.body.state_officials_total > 0, 'CA state total present', r.body.state_officials_total);
+  // 2b2. Out-of-coverage ZIP → coverage='none' with federal + state officials, NEVER a 404.
+  // Sun City, AZ is a Census-designated place (no municipal government), so it
+  // stays uncovered no matter how many city sweeps we load.
+  r = await get('/api/lookup?address=' + encodeURIComponent('85351'));
+  assert(r.status === 200, '85351 lookup 200 (no 404)', r.status);
+  assert(r.body.coverage === 'none', "85351 coverage='none'", r.body.coverage);
+  assert(r.body.state_abbr === 'AZ', 'state_abbr=AZ', r.body.state_abbr);
+  const azFed = (r.body.federal_officials || []).map((o) => o.name);
+  assert(azFed.some((n) => /Kelly/.test(n)) && azFed.some((n) => /Gallego/.test(n)), 'AZ senators present', azFed.slice(0, 4).join(','));
+  assert((r.body.state_officials || []).length > 0, 'AZ state officials present', (r.body.state_officials || []).length);
+  assert(r.body.state_officials_total > 0, 'AZ state total present', r.body.state_officials_total);
   assert(typeof r.body.message === 'string' && r.body.message.includes('hyperlocal'), 'coverage message present');
+
+  // 2b3. City-sweep coverage: a city outside Chicago resolves to its own council.
+  r = await get('/api/lookup?address=' + encodeURIComponent('98101'));
+  assert(r.status === 200 && r.body.coverage === 'local', '98101 (Seattle) coverage=local', r.body.coverage);
+  assert(r.body.district_id === 'wa-seattle-city', '98101 → wa-seattle-city', r.body.district_id);
+  assert((r.body.officials || []).length >= 5, 'Seattle council officials present', (r.body.officials || []).length);
+  r = await get('/api/districts?type=city');
+  assert(r.body.total >= 1500 && (r.body.data || []).length === 500, 'city districts: total >= 1500, page capped at 500', `${r.body.total}/${(r.body.data || []).length}`);
+  r = await get('/api/districts?type=city&limit=10&offset=1000');
+  assert((r.body.data || []).length === 10 && r.body.total >= 1500, 'districts paging (limit/offset) works');
+  r = await get('/api/districts/zz-does-not-exist');
+  assert(r.status === 404, 'unknown district -> 404');
+
+  // 2b4. Swept-city district detail carries source links + page-verified confidence.
+  r = await get('/api/districts/pa-west-chester-city');
+  assert(r.status === 200, 'west-chester district 200', r.status);
+  const wc = r.body.data || {};
+  assert((wc.officials || []).some((o) => o.name === 'Brian McGinnis'), 'West Chester has McGinnis (fixed vs snippet)');
+  assert((wc.officials || []).every((o) => o.source_url), 'every West Chester official has a source_url');
+  assert(wc.refs?.confidence === 'page', "West Chester confidence='page'", wc.refs?.confidence);
+  r = await get('/api/lookup?address=' + encodeURIComponent('19380'));
+  assert(r.body.coverage === 'local' && r.body.district_href === '/city/pa-west-chester', 'West Chester lookup links to /city/pa-west-chester', r.body.district_href);
 
   // 2c. Chicago ZIP → local coverage, ward 48 (unchanged behavior + coverage flag)
   r = await get('/api/lookup?address=' + encodeURIComponent('60660'));
@@ -127,6 +155,7 @@ try {
   const server2 = spawn('npx', ['next', 'start', '-p', String(PORT2)], {
     cwd: new URL('..', import.meta.url).pathname,
     stdio: 'ignore',
+    detached: true,
     env: { ...process.env, DATABASE_URL: 'postgres://localhost:54399/civicpie' },
   });
   try {
@@ -141,19 +170,19 @@ try {
     r = await g2('/api/health');
     assert(r.status === 200 && r.body.ok, 'broken-db health 200');
     assert(r.body.source === 'seed', 'broken-db falls back to seed', JSON.stringify(r.body.source));
-    assert(r.body.counts.officials === 7988, 'broken-db officials=7988', r.body.counts?.officials);
+    assert(r.body.counts.officials >= 7988, 'broken-db officials >= 7988', r.body.counts?.officials);
     r = await g2('/api/lookup?address=' + encodeURIComponent('52317'));
     assert(r.status === 200 && r.body.coverage === 'local', 'broken-db 52317 → city coverage', r.status);
     r = await g2('/api/lookup?address=' + encodeURIComponent('60660'));
     assert(r.status === 200 && r.body.coverage === 'local', 'broken-db 60660 → ward', r.body.coverage);
     assert(r.body.district_id === 'il-chicago-ward-48', 'broken-db ward 48', r.body.district_id);
   } finally {
-    server2.kill('SIGTERM');
-    setTimeout(() => server2.kill('SIGKILL'), 3000);
+    killGroup(server2);
+    setTimeout(() => killGroup(server2), 3000);
   }
 
   console.log(process.exitCode ? '\nSOME TESTS FAILED' : '\nALL TESTS PASSED');
 } finally {
-  server.kill('SIGTERM');
-  setTimeout(() => server.kill('SIGKILL'), 3000);
+  killGroup(server);
+  setTimeout(() => killGroup(server), 3000);
 }

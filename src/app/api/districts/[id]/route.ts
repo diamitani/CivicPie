@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { serverError } from '@/lib/civic/http';
 import { getDistrict, meta } from '@/lib/civic/db';
 
 export const dynamic = 'force-dynamic';
@@ -16,6 +17,6 @@ export async function GET(
     }
     return NextResponse.json({ ok: true, meta: await meta(), data: district });
   } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    return serverError(e, 'districts/[id]');
   }
 }

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { serverError } from '@/lib/civic/http';
 import { lookupAddress, meta } from '@/lib/civic/db';
 
 export const dynamic = 'force-dynamic';
@@ -16,6 +17,6 @@ export async function GET(request: NextRequest) {
     if (e.status === 404) {
       return NextResponse.json({ error: e.message, meta: await meta() }, { status: 404 });
     }
-    return NextResponse.json({ error: e.message }, { status: 502 });
+    return serverError(e, 'lookup', 502, 'Address lookup is temporarily unavailable');
   }
 }

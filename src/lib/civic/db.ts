@@ -184,11 +184,15 @@ function seedOfficials(): Official[] {
       party: r.party || null,
       term_start: r.term_start || null,
       term_end: r.term_end || null,
-      incumbent: !!r.incumbent,
+      incumbent: !!(r.incumbent ?? r.is_incumbent),
       email: r.email || null,
       photo_url: r.photo_url || r.external_ids?.photo_url || null,
       contacts: contactsFor(seed, key),
       source: r.source || 'seed',
+      phone: r.external_ids?.phone || null,
+      seat: r.external_ids?.seat || null,
+      source_url: r.external_ids?.source_url || null,
+      confidence: r.external_ids?.confidence || null,
     };
   });
 }
@@ -222,6 +226,7 @@ function seedDistricts(): District[] {
     district_number: r.district_number ?? null,
     city: r.city || null,
     state_abbr: r.state_abbr || null,
+    refs: r.external_refs || null,
   }));
 }
 
@@ -392,6 +397,15 @@ export async function searchCandidates(f: {
 }
 
 export async function searchDistricts(f: { type?: string; city?: string; state?: string }) {
+  return (await searchDistrictsPaged({ ...f, limit: 500, offset: 0 })).data;
+}
+
+// Paged variant: `total` is the full match count (the page itself is capped at 500).
+export async function searchDistrictsPaged(f: {
+  type?: string; city?: string; state?: string; limit?: number; offset?: number;
+}): Promise<{ data: District[]; total: number }> {
+  const limit = Math.min(Math.max(1, Math.floor(f.limit ?? 500)), 500);
+  const offset = Math.max(0, Math.floor(f.offset ?? 0));
   const fromDb = async () => {
     const p = getPool();
     const where: string[] = [];
@@ -406,26 +420,46 @@ export async function searchDistricts(f: { type?: string; city?: string; state?:
     if (f.type) add('district_type = ?', f.type);
     if (f.city) add('city ILIKE ?', f.city);
     if (f.state) add('state_abbr ILIKE ?', f.state);
+    const w = where.length ? 'WHERE ' + where.join(' AND ') : '';
+    const count = await p.query(`SELECT COUNT(*) c FROM districts ${w}`, args);
     const { rows } = await p.query(
       `SELECT district_id, district_type, district_name, district_number, city, state_abbr
-       FROM districts ${where.length ? 'WHERE ' + where.join(' AND ') : ''}
-       ORDER BY district_name ASC LIMIT 500`,
+       FROM districts ${w} ORDER BY district_name ASC, district_id ASC
+       LIMIT ${limit} OFFSET ${offset}`,
       args
     );
-    return rows;
+    return { data: rows as District[], total: Number(count.rows[0].c) };
   };
   const fromSeed = () => {
     let out = seedDistricts();
     if (f.type) out = out.filter((d) => d.district_type === f.type);
     if (f.city) out = out.filter((d) => d.city?.toLowerCase() === f.city!.toLowerCase());
     if (f.state) out = out.filter((d) => d.state_abbr?.toLowerCase() === f.state!.toLowerCase());
-    return out.sort((a, b) => a.district_name.localeCompare(b.district_name)).slice(0, 500);
+    out = out.sort(
+      (a, b) => a.district_name.localeCompare(b.district_name) || a.district_id.localeCompare(b.district_id)
+    );
+    return { data: out.slice(offset, offset + limit), total: out.length };
   };
   return withDbFallback(fromDb, fromSeed);
 }
 
+// Direct by-id lookup. (searchDistricts() is capped at 500 rows, so scanning it for
+// an id silently 404s every district past the first 500 alphabetically.)
+async function findDistrict(id: string): Promise<District | null> {
+  const fromDb = async () => {
+    const { rows } = await getPool().query(
+      `SELECT district_id, district_type, district_name, district_number, city, state_abbr
+       FROM districts WHERE district_id = $1 LIMIT 1`,
+      [id]
+    );
+    return (rows[0] as District) || null;
+  };
+  const fromSeed = () => seedDistricts().find((d) => d.district_id === id) || null;
+  return withDbFallback(fromDb, fromSeed);
+}
+
 export async function getDistrict(id: string): Promise<DistrictDetail | null> {
-  const district = (await searchDistricts({})).find((d) => d.district_id === id);
+  const district = await findDistrict(id);
   if (!district) return null;
   const [{ data: officials, total: official_count }, { total: candidate_count }] =
     await Promise.all([
@@ -524,7 +558,11 @@ function describeDistrict(district_id: string): { label: string; href: string | 
     const stateName = US_STATES[String(d.state_abbr || '').toUpperCase()] || d.state_abbr || '';
     const label = `${d.city} · ${stateName}`.trim();
     const slug = citySlug(String(d.district_name || d.city));
-    const href = cityPageSlugs().has(slug) ? `/city/${slug}` : null;
+    // Curated city pages keep their short slug (/city/north-liberty); every other
+    // swept city gets /city/<st>-<name> (the district id minus its '-city' suffix).
+    const href = cityPageSlugs().has(slug)
+      ? `/city/${slug}`
+      : `/city/${district_id.replace(/-city$/, '')}`;
     return { label, href };
   }
   return { label: district_id, href: null };
