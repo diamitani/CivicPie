@@ -21,6 +21,7 @@ const FILES = [
   ['data/staged/congress_terms.json', 'congress_terms.json'],
   ['data/staged/executive_officials.json', 'executive_officials.json'],
   ['data/staged/executive_agencies.json', 'executive_agencies.json'],
+  ['data/staged/state_agencies.json', 'state_agencies.json', 'optional'],
   ['data/staged/xlsx_officials.json', 'xlsx_officials.json'],
   ['data/staged/xlsx_candidates.json', 'xlsx_candidates.json'],
   ['data/staged/chicago_officials.json', 'chicago_officials.json'],
@@ -56,3 +57,11 @@ for (const [rel, name, optional] of FILES) {
   console.log(`  ${name} (${(size / 1024 / 1024).toFixed(1)} MB)`);
 }
 console.log(`✓ Seed data copied to data/seed/ (${(totalBytes / 1024 / 1024).toFixed(1)} MB total)`);
+
+// Meetings seed is built (not copied) from the scraper snapshots.
+try {
+  const { execFileSync } = await import('node:child_process');
+  execFileSync(process.execPath, [join(repoRoot, 'scripts', 'build-meetings-seed.mjs')], { stdio: 'inherit' });
+} catch {
+  console.log('  (meetings seed build failed — keeping existing data/seed/meetings.json)');
+}

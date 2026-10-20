@@ -1,13 +1,62 @@
-import type { Metadata } from 'next';
-import ContentShell, { ContentSection, P, PageLink } from '@/components/ContentShell';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Elections — CivicPie',
-  description:
-    'Nonpartisan election information: upcoming election dates, how to check your registration, and where to find your polling place. Free from CivicPie.',
-};
+import { useState } from 'react';
+import ContentShell, { ContentSection, P, PageLink } from '@/components/ContentShell';
+import { SearchRow, Badge, partyBadgeVariant } from '@/components/ui';
+
+interface CandidateHit {
+  id: string;
+  name: string;
+  office_title?: string;
+  district_id?: string | null;
+  state_abbr?: string | null;
+  party?: string | null;
+  incumbent?: boolean;
+}
+
+const STATES = [
+  'AK','AL','AR','AZ','CA','CO','CT','DC','DE','FL','GA','HI','IA','ID','IL','IN','KS','KY','LA',
+  'MA','MD','ME','MI','MN','MO','MS','MT','NC','ND','NE','NH','NJ','NM','NV','NY','OH','OK','OR',
+  'PA','RI','SC','SD','TN','TX','UT','VA','VT','WA','WI','WV','WY',
+];
+
+// FEC filings store names as "Last, First" — flip them for display.
+function displayName(raw: string): string {
+  const i = raw.indexOf(', ');
+  if (i < 0) return raw;
+  const last = raw.slice(0, i).trim();
+  const rest = raw.slice(i + 2).trim();
+  return rest ? `${rest} ${last}` : raw;
+}
 
 export default function ElectionsPage() {
+  const [q, setQ] = useState('');
+  const [state, setState] = useState('');
+  const [results, setResults] = useState<CandidateHit[]>([]);
+  const [total, setTotal] = useState(0);
+  const [searched, setSearched] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function runSearch(e?: React.FormEvent) {
+    e?.preventDefault();
+    setLoading(true);
+    try {
+      const params = new URLSearchParams({ limit: '25' });
+      if (q.trim()) params.set('q', q.trim());
+      if (state) params.set('state', state);
+      const res = await fetch(`/api/candidates?${params.toString()}`);
+      const body = await res.json().catch(() => ({}));
+      setResults(Array.isArray(body.data) ? body.data : []);
+      setTotal(typeof body.total === 'number' ? body.total : 0);
+    } catch {
+      setResults([]);
+      setTotal(0);
+    } finally {
+      setLoading(false);
+      setSearched(true);
+    }
+  }
+
   return (
     <ContentShell
       eyebrow="Civic life"
@@ -52,12 +101,75 @@ export default function ElectionsPage() {
 
       <ContentSection heading="Candidates">
         <P>
-          CivicPie is building out candidate coverage from public filings (including Federal
-          Election Commission records). Until that data is connected with verified election
-          dates, we won't list candidate fields here — an incomplete list would be worse than
-          none. Check your state election authority for the official candidate list for your
-          district.
+          Search the candidates in CivicPie's dataset — 7,077 filings from Federal Election
+          Commission records. Search by last name, narrow by state, or leave both blank and pick
+          a state to browse. Filing data is shown exactly as reported; your state election
+          authority publishes the official ballot list for your district.
         </P>
+        <form onSubmit={runSearch} className="mb-6 space-y-3">
+          <SearchRow
+            value={q}
+            onChange={setQ}
+            onSubmit={() => runSearch()}
+            placeholder="Try a last name — e.g. Smith, Garcia, Johnson"
+            buttonLabel="Search"
+            loading={loading}
+            loadingLabel="Searching…"
+          />
+          <div className="flex items-center gap-3">
+            <label htmlFor="cand-state" className="font-body text-[13px] text-white/50">
+              State
+            </label>
+            <select
+              id="cand-state"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+              className="rounded-lg border border-white/[0.12] bg-white/[0.04] px-3 py-2 font-body text-[14px] text-white"
+            >
+              <option value="">All states</option>
+              {STATES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+            {searched && !loading && (
+              <span className="font-body text-[13px] text-white/40">
+                {total.toLocaleString()} candidate{total === 1 ? '' : 's'} found
+              </span>
+            )}
+          </div>
+        </form>
+
+        {searched && !loading && results.length === 0 && (
+          <P>
+            No candidates matched that search. Try a last name only, or a different state.
+          </P>
+        )}
+
+        <div className="space-y-3">
+          {results.map((c) => (
+            <div key={c.id} className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-5">
+              <div className="flex items-start justify-between gap-4 flex-wrap">
+                <div>
+                  <div className="font-display text-[16px] font-bold text-white">{displayName(c.name)}</div>
+                  <div className="font-body text-[13px] text-gold mt-0.5">
+                    Candidate · {c.office_title || 'Office'}
+                  </div>
+                  <div className="font-body text-[12px] text-white/40 mt-1 flex items-center gap-2 flex-wrap">
+                    <span>
+                      {c.state_abbr || ''}
+                      {c.district_id ? ` · ${c.district_id}` : ''}
+                    </span>
+                    {c.party && <Badge variant={partyBadgeVariant(c.party)}>{c.party}</Badge>}
+                    {c.incumbent && <Badge variant="gold">Incumbent</Badge>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <P>
           Find your district first with a <PageLink href="/">location search</PageLink>, then
           match it against the official candidate filings for that office.

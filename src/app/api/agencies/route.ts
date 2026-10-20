@@ -4,11 +4,14 @@ import { searchAgencies, meta } from '@/lib/civic/db';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/agencies?level=federal
+// GET /api/agencies?level=federal&state=IL
 export async function GET(request: NextRequest) {
   const sp = request.nextUrl.searchParams;
   try {
-    const data = await searchAgencies({ level: sp.get('level') || undefined });
+    const data = await searchAgencies({
+      level: sp.get('level') || undefined,
+      state: sp.get('state') || undefined,
+    });
     return NextResponse.json({ ok: true, meta: await meta(), total: data.length, data });
   } catch (e: any) {
     return serverError(e, 'agencies');

@@ -21,6 +21,7 @@ export interface SeedData {
   contacts: any[];
   terms: any[];
   wards: WardPoly[];
+  meetings: any[];
 }
 
 const SEED_DIR = path.join(process.cwd(), 'data', 'seed');
@@ -67,7 +68,21 @@ export function loadSeed(): SeedData {
     ...readJson('state_districts.json'),
     ...readJsonOptional('city_districts.json'),
   ];
-  const agencies = readJson('executive_agencies.json');
+  // State agencies ship in the public-data shape (type / jurisdiction_abbr);
+  // normalize them into the executive-agency shape so the API serves one
+  // uniform agency record. 600 rows — without this the API only ever
+  // served the 15 federal cabinet departments.
+  const stateAgencies = readJsonOptional('state_agencies.json').map((r: any) => ({
+    id: r.id || null,
+    name: r.name,
+    level: r.level || 'state',
+    agency_type: r.type || r.agency_type || null,
+    description: r.description || null,
+    city: r.city || null,
+    state_abbr: r.jurisdiction_abbr || r.state_abbr || null,
+    source: 'public-data',
+  }));
+  const agencies = [...readJson('executive_agencies.json'), ...stateAgencies];
   const contacts = readJson('chicago_contacts.json');
   let terms: any[] = [];
   try {
@@ -82,7 +97,8 @@ export function loadSeed(): SeedData {
     polygons: f.geometry.coordinates,
   }));
 
-  const data: SeedData = { officials, candidates, districts, agencies, contacts, terms, wards };
+  const meetings = readJsonOptional('meetings.json');
+  const data: SeedData = { officials, candidates, districts, agencies, contacts, terms, wards, meetings };
   g.__civicpie_seed = data;
   return data;
 }

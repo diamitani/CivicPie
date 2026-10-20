@@ -4,7 +4,7 @@ import { searchCandidates, meta } from '@/lib/civic/db';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/candidates?district_id=&office=&limit=
+// GET /api/candidates?district_id=&office=&q=&state=&limit=
 // Paged (max 200 rows/page); `total` always reports the full match count.
 export async function GET(request: NextRequest) {
   const sp = request.nextUrl.searchParams;
@@ -12,6 +12,8 @@ export async function GET(request: NextRequest) {
     const { data, total } = await searchCandidates({
       district_id: sp.get('district_id') || undefined,
       office: sp.get('office') || undefined,
+      q: sp.get('q') || undefined,
+      state: sp.get('state') || undefined,
       limit: sp.get('limit') ? parseInt(sp.get('limit')!) : undefined,
     });
     return NextResponse.json({ ok: true, meta: await meta(), total, data });

@@ -51,7 +51,7 @@ try {
   assert(r.body.counts.officials >= 7988, 'officials >= 7988 (grows with city sweeps)', r.body.counts?.officials);
   assert(r.body.counts.candidates === 7077, 'candidates=7077', r.body.counts?.candidates);
   assert(r.body.counts.districts >= 107, 'districts >= 107 (grows with city sweeps)', r.body.counts?.districts);
-  assert(r.body.counts.agencies === 15, 'agencies=15', r.body.counts?.agencies);
+  assert(r.body.counts.agencies === 615, 'agencies=615 (15 federal + 600 state)', r.body.counts?.agencies);
 
   // 2. Real Census lookup — Patrick's building, Ward 48
   r = await get('/api/lookup?address=' + encodeURIComponent('6007 N Sheridan Rd, Chicago, IL'));
@@ -135,10 +135,23 @@ try {
   // 7. Candidates
   r = await get('/api/candidates?district_id=il-chicago-ward-48');
   assert(r.status === 200, 'candidates 200');
+  r = await get('/api/candidates?state=IL&limit=5');
+  assert(r.status === 200 && r.body.total >= 1 && r.body.total < 7077, 'candidates state filter narrows', r.body.total);
+  assert(r.body.data.every((c) => c.state_abbr === 'IL'), 'candidates state=IL only');
+  r = await get('/api/candidates?q=Smith&limit=5');
+  assert(r.status === 200 && r.body.total >= 1 && r.body.data.every((c) => c.name.toLowerCase().includes('smith')), 'candidates q filters by name', r.body.total);
+
+  // 7b. Meetings (scraper seed)
+  r = await get('/api/meetings?limit=5');
+  assert(r.status === 200 && r.body.total >= 90, 'meetings total >= 90', r.body.total);
+  r = await get('/api/meetings?upcoming=1&limit=5');
+  assert(r.status === 200 && Array.isArray(r.body.data), 'meetings upcoming 200');
 
   // 8. Agencies
   r = await get('/api/agencies?level=federal');
   assert(r.status === 200 && r.body.total >= 1, 'agencies found', r.body.total);
+  r = await get('/api/agencies?state=IL');
+  assert(r.status === 200 && r.body.total === 12, 'agencies state=IL (12 state agencies)', r.body.total);
 
   // 9. Malformed address → 404, not 500
   r = await get('/api/lookup?address=' + encodeURIComponent('zzz not a real place qqq'));

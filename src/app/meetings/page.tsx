@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ContentShell, { ContentSection, P, PageLink } from '@/components/ContentShell';
 import { InfoCard } from '@/components/ui';
+import MeetingsList from './MeetingsList';
 
 export const metadata: Metadata = {
   title: 'Meetings — CivicPie',
@@ -75,6 +76,10 @@ export default function MeetingsPage() {
         </div>
       </ContentSection>
 
+      <ContentSection heading="Meetings from official calendars">
+        <MeetingsList />
+      </ContentSection>
+
       <ContentSection heading="What happens at a council meeting">
         <P>
           A typical meeting opens with roll call and approval of the previous minutes, then
@@ -90,10 +95,11 @@ export default function MeetingsPage() {
 
       <ContentSection heading="A note on live feeds">
         <P>
-          CivicPie does not yet publish a live, city-by-city feed of meeting agendas — when
-          this page says a council meets on a given schedule, that schedule comes from the
-          city's own published records, and the official city website is always the
-          authoritative source for agendas, cancellations, and special sessions.
+          CivicPie's meeting feed above is built from official calendars and refreshed
+          weekly, but coverage is still growing city by city — when this page says a council
+          meets on a given schedule, that schedule comes from the city's own published
+          records, and the official city website is always the authoritative source for
+          agendas, cancellations, and special sessions.
         </P>
         <P>
           Looking for your ward or city? Start with a <PageLink href="/">location search</PageLink>{' '}

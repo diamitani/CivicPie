@@ -261,7 +261,7 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
     if (f.district_prefix) add('o.district_id LIKE ?', `${f.district_prefix}%`);
     if (f.office) add('o.office_id = ?', f.office);
     if (f.level) add('of2.level = ?', f.level);
-    if (f.q) add('(o.full_name ILIKE ? OR o.office_id ILIKE ?)', `%${f.q}%`, `%${f.q}%`);
+    if (f.q) add('(o.full_name ILIKE ? OR o.office_id ILIKE ? OR o.district_id ILIKE ?)', `%${f.q}%`, `%${f.q}%`, `%${f.q}%`);
     // Schema: civicpie-data/migrations/001_civicpie_master_schema.sql.
     // officials carries no level/email columns — level comes from offices,
     // email + contact points come from contact_points (aggregated per official).
@@ -326,7 +326,10 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
     if (f.q) {
       const q = f.q.toLowerCase();
       out = out.filter(
-        (o) => o.name.toLowerCase().includes(q) || o.office_title.toLowerCase().includes(q)
+        (o) =>
+          o.name.toLowerCase().includes(q) ||
+          o.office_title.toLowerCase().includes(q) ||
+          (o.district_id || '').toLowerCase().includes(q)
       );
     }
     out = out.sort((a, b) => a.name.localeCompare(b.name));
@@ -338,6 +341,8 @@ export async function searchOfficials(f: OfficialFilter): Promise<{ data: Offici
 export async function searchCandidates(f: {
   district_id?: string;
   office?: string;
+  q?: string;
+  state?: string;
   limit?: number;
 }): Promise<{ data: Candidate[]; total: number }> {
   const limit = clampLimit(f.limit);
@@ -354,6 +359,8 @@ export async function searchCandidates(f: {
     };
     if (f.district_id) add('c.district_id = ?', f.district_id);
     if (f.office) add('c.office_id = ?', f.office);
+    if (f.state) add('c.state_abbr ILIKE ?', f.state);
+    if (f.q) add('c.full_name ILIKE ?', `%${f.q}%`);
     // Schema: civicpie-data/migrations/001 — candidates use candidate_id/full_name
     // PKs, sources/offices join on source_id/office_id (not id).
     const sql = `SELECT c.candidate_id AS id, c.full_name AS name, c.office_id,
@@ -390,6 +397,11 @@ export async function searchCandidates(f: {
     let out = seedCandidates();
     if (f.district_id) out = out.filter((c) => c.district_id === f.district_id);
     if (f.office) out = out.filter((c) => c.office === f.office);
+    if (f.state) out = out.filter((c) => c.state_abbr?.toLowerCase() === f.state!.toLowerCase());
+    if (f.q) {
+      const q = f.q.toLowerCase();
+      out = out.filter((c) => c.name.toLowerCase().includes(q));
+    }
     out = out.sort((a, b) => a.name.localeCompare(b.name));
     return { data: out.slice(0, limit), total: out.length };
   };
@@ -469,12 +481,14 @@ export async function getDistrict(id: string): Promise<DistrictDetail | null> {
   return { ...district, officials, official_count, candidate_count };
 }
 
-export async function searchAgencies(f: { level?: string }) {
+export async function searchAgencies(f: { level?: string; state?: string }) {
   const fromDb = async () => {
     const p = getPool();
     const args: any[] = [];
-    const where = f.level ? 'WHERE level = $1' : '';
-    if (f.level) args.push(f.level);
+    const conds: string[] = [];
+    if (f.level) { args.push(f.level); conds.push(`level = $${args.length}`); }
+    if (f.state) { args.push(f.state); conds.push(`a.state_abbr ILIKE $${args.length}`); }
+    const where = conds.length ? `WHERE ${conds.join(' AND ')}` : '';
     const { rows } = await p.query(
       `SELECT a.agency_id AS id, a.name, a.level, a.agency_type, a.description, a.city, a.state_abbr,
               s.name AS source_name
@@ -496,9 +510,64 @@ export async function searchAgencies(f: { level?: string }) {
   const fromSeed = () => {
     let out = seedAgencies();
     if (f.level) out = out.filter((a) => a.level === f.level);
+    if (f.state) out = out.filter((a) => a.state_abbr?.toLowerCase() === f.state!.toLowerCase());
     return out.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 500);
   };
   return withDbFallback(fromDb, fromSeed);
+}
+
+// ---------------------------------------------------------------------------
+// Meetings — seed-only for now (weekly scraper snapshots built into
+// data/seed/meetings.json by scripts/build-meetings-seed.mjs). The DB schema
+// for meetings lives in civicpie-data/migrations/002; wire the DB path when
+// the database is loaded.
+// ---------------------------------------------------------------------------
+
+export interface Meeting {
+  id: string | null;
+  title: string;
+  body: string | null;
+  date: string;
+  start: string | null;
+  time: string | null;
+  location: string | null;
+  is_virtual: boolean;
+  status: string | null;
+  level: string | null;
+  source_url: string | null;
+  agenda_url: string | null;
+  detail_url: string | null;
+}
+
+export async function searchMeetings(f: {
+  upcoming?: boolean;
+  limit?: number;
+}): Promise<{ data: Meeting[]; total: number }> {
+  const limit = clampLimit(f.limit);
+  const seed = loadSeed();
+  let out: Meeting[] = (seed.meetings || []).map((r: any) => ({
+    id: r.id || null,
+    title: r.title,
+    body: r.body || null,
+    date: r.date,
+    start: r.start || null,
+    time: r.time || null,
+    location: r.location || null,
+    is_virtual: !!r.is_virtual,
+    status: r.status || null,
+    level: r.level || null,
+    source_url: r.source_url || null,
+    agenda_url: r.agenda_url || null,
+    detail_url: r.detail_url || null,
+  }));
+  if (f.upcoming) {
+    const today = new Date().toISOString().slice(0, 10);
+    out = out.filter((m) => m.date >= today);
+    out.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+  } else {
+    out.sort((a, b) => (a.date > b.date ? -1 : a.date < b.date ? 1 : 0));
+  }
+  return { data: out.slice(0, limit), total: out.length };
 }
 
 // ---------------------------------------------------------------------------
