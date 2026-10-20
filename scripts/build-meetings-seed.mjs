@@ -60,11 +60,13 @@ const cleaned = [...byKey.values()].map((r) => {
   .sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
 
 // Second pass: the same meeting can be scraped under different source_keys
-// when its raw title text shifts between snapshots — collapse those on the
-// cleaned title + date + start time.
+// when its raw title text shifts between snapshots (or when the Legistar
+// API and the page scrape both carry it, with different title detail) —
+// collapse those on the title core (text before " — ") + date + start.
 const seen = new Set();
 const meetings = cleaned.filter((m) => {
-  const k = `${m.title}|${m.date}|${m.start || ''}`;
+  const core = m.title.split(' — ')[0].trim().toLowerCase();
+  const k = `${core}|${m.date}|${m.start || ''}`;
   if (seen.has(k)) return false;
   seen.add(k);
   return true;
