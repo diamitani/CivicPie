@@ -171,13 +171,13 @@ function CoverageInner() {
 
               <Alert variant="red" dark title={`Want CivicPie in ${body.state_name || 'your area'}?`} className="mb-6">
                 <p className="mb-4">
-                  Sign up free and we&apos;ll notify you the moment hyperlocal coverage launches near you.
+                  Create a free account today and your dashboard already shows your U.S. senators, your representative, and your state legislators — hyperlocal coverage is expanding city by city.
                 </p>
                 <Link
                   href="/signup"
                   className="inline-block bg-red text-white font-display text-sm font-bold py-3 px-6 rounded-[10px] hover:bg-red-hover transition-colors"
                 >
-                  Notify me →
+                  Create free account →
                 </Link>
               </Alert>
 

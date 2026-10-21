@@ -106,6 +106,16 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
 // Ward 48 (the only ward with a full district page) routes directly there;
 // everything else goes to /coverage, which renders local results, federal +
 // state officials for out-of-coverage areas, or a graceful not-found.
+// Days until the Nov 3, 2026 general election — computed, never hardcoded.
+// (This page previously carried a baked-in "31 days" that went stale, while
+// the dashboard computed 13 — three different countdowns sitewide.)
+function daysToElection(): number {
+  return Math.max(
+    0,
+    Math.ceil((new Date('2026-11-03T00:00:00').getTime() - Date.now()) / 86400000)
+  );
+}
+
 async function routeAddressSearch(rawQuery: string): Promise<void> {
   const q = rawQuery.trim();
   if (!q) return;
@@ -246,9 +256,9 @@ function StatsRibbon() {
     <div className="bg-navy-800 border-t border-b border-white/[0.08] py-7 pad-x">
       <div className="grid grid-cols-4 gap-px bg-white/[0.10] rounded overflow-hidden max-w-[1200px] mx-auto max-md:grid-cols-2">
         {[
-          { num: '31', label: 'Days to General Election · Nov 3', color: 'var(--cp-red)' },
-          { num: '50k+', label: 'Government Pages Indexed', color: 'var(--cp-gold)' },
-          { num: '$12M', label: 'In Available Community Grants', color: 'var(--cp-gold)' },
+          { num: String(daysToElection()), label: 'Days to General Election · Nov 3', color: 'var(--cp-red)' },
+          { num: '20K+', label: 'Elected Officials Listed', color: 'var(--cp-gold)' },
+          { num: '1,800+', label: 'District & City Pages', color: 'var(--cp-gold)' },
           { num: '100%', label: 'Free · Nonpartisan · Public', color: 'var(--cp-gold)' },
         ].map((stat, i) => (
           <div key={i} className="py-5 px-7 bg-navy-800">
@@ -317,12 +327,12 @@ function HowItWorks() {
     },
     {
       num: '02', verb: 'Organize.', dot: true, color: 'inherit',
-      desc: 'Track upcoming meetings, set reminders for registration deadlines, and find volunteer opportunities near you. Civic participation made calendar-simple.',
-      examples: ['Save and track upcoming events', 'Sign up to volunteer as a poll worker', 'Apply for community programs and grants'],
+      desc: 'See upcoming meetings, registration deadlines, and volunteer opportunities near you — everything in one place, no account required.',
+      examples: ['See upcoming meetings near you', 'Sign up to volunteer as a poll worker', 'Browse community programs and grants'],
     },
     {
       num: '03', verb: 'Vote.', dot: true, color: 'var(--cp-red)',
-      desc: 'Check your registration status. Find your polling place. Know exactly who\'s on your ballot and what they stand for. From local judges to school boards to Congress.',
+      desc: 'Check your registration status, find your polling place through official state tools, and see who is running where you live — from local judges to school boards to Congress.',
       examples: ['Am I registered? Is my address current?', "Who's on my ballot this November?", 'Where is my polling place?'],
     },
   ];
@@ -384,12 +394,12 @@ function Manifesto() {
 // ════════════════════════════════════════════════════════════════
 function Features() {
   const features = [
-    { icon: '🗳️', title: 'Elections & Voting', body: 'Voter registration status, your complete ballot, candidate platforms, and real-time election results — sourced directly from your state\'s election board.', tag: 'Always current' },
-    { icon: '👤', title: 'Your Representatives', body: 'Every elected official from city council to Congress, with voting records, contact info, committee assignments, and upcoming public events.', tag: 'Ward-level' },
-    { icon: '🏛️', title: 'City Council & Meetings', body: 'Live agendas, full transcripts, attendance records, and vote results for every public government meeting — searchable by topic or date.', tag: 'Searchable transcripts' },
-    { icon: '🤝', title: 'Volunteer Opportunities', body: 'Civic volunteer openings near you — poll workers, community boards, advisory committees, and local nonprofits seeking help.', tag: 'Apply in-app' },
-    { icon: '💰', title: 'Grants & Programs', body: 'Government grants, small business programs, rental assistance, healthcare resources, and community services your household qualifies for.', tag: 'Eligibility matched' },
-    { icon: '🔔', title: 'Civic Alerts', body: 'Real-time notifications about zoning changes, permit filings, government decisions, and civic events that affect your specific address.', tag: 'Address-level alerts' },
+    { icon: '🗳️', title: 'Elections & Voting', body: 'Registration deadlines, early-voting dates, and candidate filings for the 2026 midterms — sourced from official state and federal records.', tag: '2026 midterms' },
+    { icon: '👤', title: 'Your Representatives', body: 'Every elected official from city council to Congress for your address — 20,000+ officials across all 50 states, from official public records.', tag: 'Address-level' },
+    { icon: '🏛️', title: 'City Council & Meetings', body: 'Upcoming council, board, and committee meetings with dates, times, and official agendas — starting with Chicago and expanding city by city.', tag: 'Official agendas' },
+    { icon: '🤝', title: 'Volunteer Opportunities', body: 'Ways to take part near you — poll work, public comment, boards, and community service — collected in one place.', tag: 'Near you' },
+    { icon: '💰', title: 'Grants & Programs', body: 'Government services, assistance programs, and grant opportunities from official sources — browse what exists in your community.', tag: 'Public programs' },
+    { icon: '📌', title: 'Your Dashboard', body: 'Create a free account and your district, your officials, real upcoming meetings, and the election countdown are pinned to one page.', tag: 'Free account' },
   ];
 
   return (
@@ -533,7 +543,7 @@ function ElectionCTA() {
         <div>
           <p className="section-eyebrow" style={{ color: 'rgba(255,255,255,0.7)' }}>Upcoming Elections</p>
           <h2 className="font-display text-[clamp(36px,4vw,56px)] font-black tracking-[-1.5px] leading-[0.95] text-white mb-5">
-            The ballot is 31 days away.<br />Do you know what&apos;s on it?
+            The ballot is {daysToElection()} days away.<br />Do you know what&apos;s on it?
           </h2>
           <p className="font-body text-base text-white/65 leading-relaxed mt-4">
             Most people vote in presidential elections. Very few know who&apos;s running for city council, school board, or local judge — the positions that affect your daily life the most.

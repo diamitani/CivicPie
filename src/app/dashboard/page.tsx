@@ -145,7 +145,7 @@ export default function DashboardPage() {
   // Every sidebar item goes to a real page — no dead tabs.
   const navItems = [
     { href: '/dashboard', icon: '🏠', label: 'Overview' },
-    { href: '/elections', icon: '🗳️', label: 'Elections', badge: '30d' },
+    { href: '/elections', icon: '🗳️', label: 'Elections', badge: `${daysToElection}d` },
     { href: '/meetings', icon: '📅', label: 'Meetings' },
     { href: '/officials', icon: '👤', label: 'Officials' },
     { href: '/services', icon: '🏛️', label: 'Services' },
