@@ -102,8 +102,19 @@ export async function geocodeAddress(address: string): Promise<GeocodeResult | n
     `${CENSUS_URL}?address=${encodeURIComponent(trimmed)}` +
     `&benchmark=Public_AR_Current&vintage=Current_Current&format=json`;
   const res = await fetch(url, { headers: { 'User-Agent': 'civicpie/2.0' } });
+  // A 400 from Census means "that string is not an address" (junk input,
+  // markup, over-long text) — that's a not-found, not a server outage.
+  // Returning null lets the lookup answer a clean 404 instead of a 502.
+  if (res.status === 400) return null;
   if (!res.ok) throw new Error(`Census geocoder returned HTTP ${res.status}`);
-  const data = await res.json();
+  // Census's WAF answers some rejected queries with HTTP 200 + an HTML
+  // "Request Rejected" page. Unparseable body = no match, not an outage.
+  let data: any;
+  try {
+    data = await res.json();
+  } catch {
+    return null;
+  }
   const match = data?.result?.addressMatches?.[0];
   if (!match) return null;
   const abbr = String(match.addressComponents?.state || '').toUpperCase();

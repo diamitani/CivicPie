@@ -429,6 +429,18 @@ function Features() {
 // LISTINGS
 // ════════════════════════════════════════════════════════════════
 function Listings() {
+  const [zip, setZip] = useState('');
+  const [searching, setSearching] = useState(false);
+  const handleSearch = async (e?: React.FormEvent) => {
+    e?.preventDefault();
+    if (searching) return;
+    setSearching(true);
+    try {
+      await routeAddressSearch(zip);
+    } finally {
+      setSearching(false);
+    }
+  };
   const listings = [
     { icon: '🏛️', title: 'City Council — Regular Meeting', meta: 'Wed Oct 21 · 10:00 AM · City Hall Council Chambers', badge: 'Meeting', badgeClass: 'badge-navy' },
     { icon: '🗳️', title: 'General Election — Voter Registration', meta: 'Grace period through Nov 3 · Register & vote in person', badge: 'Election', badgeClass: 'badge-red' },
@@ -475,19 +487,19 @@ function Listings() {
             <div className="flex items-start justify-between mb-6">
               <div>
                 <div className="font-display text-[22px] font-black text-navy tracking-[-0.5px]">Ward 3</div>
-                <div className="font-body text-[13px] text-stone mt-[3px]">Chicago, IL · 60614</div>
+                <div className="font-body text-[13px] text-stone mt-[3px]">Chicago, IL · Sample data</div>
               </div>
-              <div className="bg-navy text-white font-display text-[10px] font-bold px-3 py-1.5 rounded-full tracking-[1px] whitespace-nowrap">YOUR WARD</div>
+              <div className="bg-navy text-white font-display text-[10px] font-bold px-3 py-1.5 rounded-full tracking-[1px] whitespace-nowrap">SAMPLE</div>
             </div>
             <div className="grid grid-cols-2 gap-3 mb-6">
-              {[{ n: '30', l: 'Days to primary', c: 'var(--cp-red)' }, { n: '3', l: 'Upcoming meetings', c: 'var(--cp-navy)' }, { n: '$2.4M', l: 'Available grants', c: 'var(--cp-gold-dim)' }, { n: '18', l: 'Volunteer spots', c: 'var(--cp-navy)' }].map((s, i) => (
+              {[{ n: 'Nov 3', l: 'General Election Day', c: 'var(--cp-red)' }, { n: '50', l: 'Chicago wards covered', c: 'var(--cp-navy)' }, { n: '20K+', l: 'Officials in the directory', c: 'var(--cp-gold-dim)' }, { n: 'Free', l: 'Always, for everyone', c: 'var(--cp-navy)' }].map((s, i) => (
                 <div key={i} className="bg-white rounded-xl p-4 border border-cream-dark">
                   <Stat value={s.n} label={s.l} color={s.c} size={26} labelFirst />
                 </div>
               ))}
             </div>
             <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-stone mb-3">Your Representatives</div>
-            {['Pat Dowell · Ward 3 Alderperson', 'Brandon Johnson · Mayor, City of Chicago', 'Kelly Cassidy · State Rep · District 14'].map((rep, i) => (
+            {['Pat Dowell · Ward 3 Alderperson', 'Brandon Johnson · Mayor, City of Chicago', 'Lamont J. Robinson · State Rep · District 5'].map((rep, i) => (
               <div key={i} className="flex items-center gap-3 p-3 rounded-[10px] bg-white mb-2 border border-cream-dark hover:shadow-sm transition-shadow cursor-pointer">
                 <div className="w-9 h-9 rounded-full bg-cream-dark flex items-center justify-center text-base flex-shrink-0">👤</div>
                 <div><div className="font-display text-[13px] font-bold text-navy">{rep.split('·')[0]}</div><div className="font-body text-[11px] text-stone">{rep.split('·').slice(1).join('·')}</div></div>
@@ -498,10 +510,10 @@ function Listings() {
           <div className="bg-navy rounded-[20px] p-7 mt-4">
             <div className="font-display text-lg font-black text-white mb-1.5">Not Ward 3?</div>
             <div className="font-body text-[13px] text-white/45 mb-[18px]">Enter your zip code to see your ward.</div>
-            <div className="flex bg-white/[0.08] border-[1.5px] border-white/[0.12] rounded-xl overflow-hidden transition-colors focus-within:border-white/30">
-              <input type="text" placeholder="Your zip code…" className="flex-1 bg-transparent border-none outline-none font-body text-sm text-white py-3.5 px-4 placeholder:text-white/55" />
-              <button className="bg-red text-white font-display text-[13px] font-bold px-5 tracking-[0.3px] hover:bg-red-hover transition-colors">Go →</button>
-            </div>
+            <form onSubmit={handleSearch} className="flex bg-white/[0.08] border-[1.5px] border-white/[0.12] rounded-xl overflow-hidden transition-colors focus-within:border-white/30">
+              <input type="text" value={zip} onChange={(e) => setZip(e.target.value)} placeholder="Your zip code…" className="flex-1 bg-transparent border-none outline-none font-body text-sm text-white py-3.5 px-4 placeholder:text-white/55" />
+              <button type="submit" disabled={searching} className="bg-red text-white font-display text-[13px] font-bold px-5 tracking-[0.3px] hover:bg-red-hover transition-colors">{searching ? 'Looking up…' : 'Go →'}</button>
+            </form>
           </div>
         </div>
       </div>
@@ -564,16 +576,16 @@ function ElectionCTA() {
 // ════════════════════════════════════════════════════════════════
 function Testimonials() {
   const cards = [
-    { stars: '★★★★★', quote: '"I\'ve lived in Ward 3 for 11 years and never knew who my alderperson was. CivicPie showed me in 30 seconds — and sent me a reminder about the zoning change on my block."', name: 'Danielle M.', role: 'Homeowner, Ward 3', badge: 'Chicago, IL', avatar: '👩' },
-    { stars: '★★★★★', quote: '"Found a $15k small business grant I didn\'t know existed. Applied through CivicPie. Got funded. This is the most useful civic tool I\'ve ever seen."', name: 'Marcus T.', role: 'Small Business Owner', badge: 'Ward 3', avatar: '👨' },
-    { stars: '★★★★★', quote: '"I use this with my political science students. It\'s the only tool that shows them government at the street level — not just Congress. Genuinely changes how they see participation."', name: 'Prof. Sarah K.', role: 'Loyola University', badge: 'Educator', avatar: '👩‍🏫' },
+    { icon: '🏛️', title: 'Public records only', body: 'Every official, meeting, and deadline on CivicPie comes from official public sources. No rumors, no campaign data, no voter files.' },
+    { icon: '⚖️', title: 'Nonpartisan by design', body: 'No endorsements and no targeting. Your government, presented the same way for everyone, whichever way you vote.' },
+    { icon: '🔓', title: 'Free, no account needed', body: 'Look up your representatives in seconds. An account only personalizes your dashboard — the data itself is free for everyone.' },
   ];
 
   return (
     <section className="section-pad pad-x bg-gray-50">
       <div className="container-main">
         <div className="container-narrow text-center reveal">
-          <p className="section-eyebrow" style={{ textAlign: 'center' }}>From Real Constituents</p>
+          <p className="section-eyebrow" style={{ textAlign: 'center' }}>Why CivicPie</p>
           <h2 className="font-display text-[clamp(32px,4vw,52px)] font-black tracking-[-1.5px] leading-none text-navy mb-5 text-center">
             Government finally<br /><em className="text-red not-italic">made local.</em>
           </h2>
@@ -581,16 +593,9 @@ function Testimonials() {
         <div className="grid grid-cols-3 gap-6 max-w-[1200px] mx-auto mt-16 max-lg:grid-cols-1 reveal">
           {cards.map((card, i) => (
             <div key={i} className="bg-white rounded-[20px] border border-gray-200 p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-              <div className="text-gold text-base mb-4 tracking-[2px]">{card.stars}</div>
-              <p className="font-serif text-base text-navy leading-relaxed mb-6 italic">{card.quote}</p>
-              <div className="flex items-center gap-3">
-                <div className="w-[42px] h-[42px] rounded-full bg-cream flex items-center justify-center text-lg flex-shrink-0">{card.avatar}</div>
-                <div>
-                  <div className="font-display text-[13px] font-bold text-navy">{card.name}</div>
-                  <div className="font-body text-xs text-stone">{card.role}</div>
-                </div>
-                <span className="ml-auto px-2.5 py-1 rounded-full bg-cream font-display text-[10px] font-bold text-navy whitespace-nowrap">{card.badge}</span>
-              </div>
+              <div className="text-[26px] mb-4">{card.icon}</div>
+              <div className="font-display text-[16px] font-bold text-navy mb-2">{card.title}</div>
+              <p className="font-body text-sm text-stone leading-relaxed">{card.body}</p>
             </div>
           ))}
         </div>
