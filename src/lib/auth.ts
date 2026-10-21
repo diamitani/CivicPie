@@ -14,6 +14,9 @@ export interface User {
   zipCode: string;
   ward?: string;
   stateAbbr?: string;
+  districtId?: string;
+  districtLabel?: string;
+  districtHref?: string | null;
 }
 
 // ─── Cognito auth (real) ─────────────────────────────────────────────────────
@@ -116,7 +119,15 @@ async function cognitoGetUser(): Promise<User | null> {
 // the public site uses (ZIP → centroid → point-in-polygon). Never throws and
 // never blocks auth: on any failure the user simply has no ward yet.
 
-async function resolveWardNumber(zip: string): Promise<string | null> {
+interface ResolvedDistrict {
+  ward: string | null;
+  districtId?: string;
+  districtLabel?: string;
+  districtHref?: string | null;
+  stateAbbr?: string;
+}
+
+async function resolveDistrict(zip: string): Promise<ResolvedDistrict | null> {
   const zip5 = (zip || '').trim().slice(0, 5);
   if (!/^\d{5}$/.test(zip5)) return null;
   try {
@@ -124,24 +135,43 @@ async function resolveWardNumber(zip: string): Promise<string | null> {
     if (!res.ok) return null;
     const data = await res.json();
     const m = String(data?.ward || '').match(/(\d+)$/);
-    return m ? m[1] : null;
+    return {
+      ward: m ? m[1] : null,
+      districtId: data?.district_id || undefined,
+      districtLabel: data?.district_label || undefined,
+      districtHref: data?.district_href ?? null,
+      stateAbbr: data?.state_abbr || undefined,
+    };
   } catch {
     return null;
   }
 }
 
+// Fills the user's home district from their ZIP. The original version
+// resolved only a Chicago ward; every non-Chicago user ended up ward-less
+// and the dashboard defaulted its labels to "Chicago, IL" — an Iowa user
+// saw a Chicago dashboard. Now the lookup's district (id, label, link)
+// is persisted for ANY covered ZIP, and the ward rides along when present.
 async function ensureWard(user: User): Promise<User> {
-  if (user.ward || !user.zipCode) return user;
-  const ward = await resolveWardNumber(user.zipCode);
-  if (!ward) return user;
-  const updated: User = { ...user, ward };
+  if (!user.zipCode || user.districtId) return user;
+  const resolved = await resolveDistrict(user.zipCode);
+  if (!resolved) return user;
+  const updated: User = {
+    ...user,
+    ward: user.ward || resolved.ward || undefined,
+    districtId: user.districtId || resolved.districtId,
+    districtLabel: user.districtLabel || resolved.districtLabel,
+    districtHref: user.districtHref ?? resolved.districtHref,
+    stateAbbr: user.stateAbbr || resolved.stateAbbr,
+  };
+  if (updated === user) return user;
   try {
     const users: Record<string, User & { password: string }> = JSON.parse(
       localStorage.getItem('civicpie_users') || '{}'
     );
     const key = user.email.toLowerCase();
     if (users[key]) {
-      users[key] = { ...users[key], ward };
+      users[key] = { ...users[key], ...updated };
       localStorage.setItem('civicpie_users', JSON.stringify(users));
     }
   } catch {
