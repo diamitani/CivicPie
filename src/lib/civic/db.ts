@@ -719,6 +719,9 @@ export interface LookupResult {
   federal_officials?: Official[];
   state_officials?: Official[];
   state_officials_total?: number;
+  // Set when the ZIP->congressional-district map pinpointed the House rep.
+  congressional_district?: string | null; // e.g. "NY-12", "WY At-Large"
+  congressional_share?: number | null; // plurality land-area share of the ZIP
 }
 
 // Senators first, then House reps, then alphabetical — for the
@@ -773,17 +776,70 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
   let federal_officials: Official[] = [];
   let state_officials: Official[] = [];
   let state_officials_total = 0;
+  let congressional_district: string | null = null;
+  let congressional_share: number | null = null;
   if (st) {
     const [senate, house] = await Promise.all([
       searchOfficials({ district_prefix: `us-senate-${st}`, limit: MAX_LIMIT }),
       searchOfficials({ district_prefix: `us-house-${st}-`, limit: MAX_LIMIT }),
     ]);
-    federal_officials = [...senate.data, ...house.data].sort(sortFederalFirst);
+    // Pinpoint the visitor's own U.S. Representative via the Census
+    // ZIP->congressional-district map instead of listing the whole state
+    // delegation. Falls back to the full delegation when the ZIP is
+    // unmapped, crosses into another state, or the seat has no member
+    // in our data (vacancy).
+    let houseList = house.data;
+    const zip5 =
+      (address || '').trim().match(/^(\d{5})/)?.[1] ||
+      (geo.matchedAddress || '').match(/(\d{5})(?:-\d{4})?\s*$/)?.[1] ||
+      null;
+    if (zip5 && seedDirExists()) {
+      try {
+        const zc = loadSeed().zipCongressional[zip5];
+        if (zc && zc.d.startsWith(`us-house-${st}-`)) {
+          const mine = house.data.filter((o) => o.district_id === zc.d);
+          if (mine.length) {
+            houseList = mine;
+            congressional_share = zc.s;
+            const suffix = zc.d.split('-').pop() || '';
+            congressional_district =
+              suffix === 'al'
+                ? `${st.toUpperCase()} At-Large`
+                : `${st.toUpperCase()}-${suffix}`;
+          }
+        }
+      } catch {
+        /* map unavailable — full delegation stands */
+      }
+    }
+    federal_officials = [...senate.data, ...houseList].sort(sortFederalFirst);
     const states = await searchOfficials({ district_id: `us-state-${st}`, limit: 20 });
     state_officials = states.data;
     state_officials_total = states.total;
   }
   const place = geo.matchedAddress || 'this area';
+  let message: string;
+  if (!st) {
+    message = `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city.`;
+  } else if (congressional_district) {
+    const num = congressional_district.split('-').pop() || '';
+    const rep =
+      congressional_district.endsWith('At-Large')
+        ? 'your U.S. Representative (at-large)'
+        : `your U.S. Representative for the ${ordinal(Number(num))} Congressional District`;
+    const splitNote =
+      congressional_share !== null && congressional_share < 0.6
+        ? ' Your ZIP spans districts — most of it falls in this one.'
+        : '';
+    message =
+      `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city. ` +
+      `Here are your U.S. senators and ${rep}.${splitNote} ` +
+      `Your ${geo.state_name || st.toUpperCase()} state legislators are listed in full until district-level maps are added.`;
+  } else {
+    message =
+      `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city. ` +
+      `Here are your ${geo.state_name || st.toUpperCase()} state and federal representatives in the meantime.`;
+  }
   return {
     address: geo.matchedAddress,
     lat: geo.lat,
@@ -796,14 +852,19 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
     officials: [],
     state_abbr: geo.state_abbr || null,
     state_name: geo.state_name || null,
-    message: st
-      ? `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city. ` +
-        `Here are your ${geo.state_name || st.toUpperCase()} state and federal representatives in the meantime.`
-      : `We don't have hyperlocal coverage for ${place} yet — CivicPie is expanding city by city.`,
+    message,
     federal_officials,
     state_officials,
     state_officials_total,
+    congressional_district,
+    congressional_share,
   };
+}
+
+function ordinal(n: number): string {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 
 export { seedDirExists };

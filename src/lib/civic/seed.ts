@@ -22,6 +22,9 @@ export interface SeedData {
   terms: any[];
   wards: WardPoly[];
   meetings: any[];
+  // ZIP -> plurality congressional district (Census ZCTA->CD119 file;
+  // built by scripts/build-zip-congressional.mjs). `s` = land-area share.
+  zipCongressional: Record<string, { d: string; s: number }>;
 }
 
 const SEED_DIR = path.join(process.cwd(), 'data', 'seed');
@@ -105,7 +108,15 @@ export function loadSeed(): SeedData {
   }));
 
   const meetings = readJsonOptional('meetings.json');
-  const data: SeedData = { officials, candidates, districts, agencies, contacts, terms, wards, meetings };
+  let zipCongressional: Record<string, { d: string; s: number }> = {};
+  try {
+    zipCongressional = JSON.parse(
+      fs.readFileSync(path.join(SEED_DIR, 'zip_congressional.json'), 'utf8')
+    );
+  } catch {
+    zipCongressional = {};
+  }
+  const data: SeedData = { officials, candidates, districts, agencies, contacts, terms, wards, meetings, zipCongressional };
   g.__civicpie_seed = data;
   return data;
 }
