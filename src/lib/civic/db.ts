@@ -596,13 +596,34 @@ export type Coverage = 'local' | 'none';
 // (see data/seed/city_districts.json) covers every address whose geocoded
 // city + state match. This is how smaller cities get hyperlocal coverage
 // without a ward-boundary dataset.
+// Geocoders and the district sweep don't always name a city the same
+// way — the Census ZIP table says "New York City" where the district
+// row says "New York", which silently cost NYC its local coverage.
+// Normalize BOTH sides identically (a trailing "City" is dropped), so
+// Oklahoma City / Salt Lake City / Iowa City still match themselves
+// while "New York City" finds "New York".
+function normCity(s: string): string {
+  return s.trim().toLowerCase().replace(/\s+/g, ' ').replace(/ city$/, '');
+}
+
+// ZIP-table "cities" that are really boroughs of a covered city. Keyed
+// by state so a same-named town elsewhere is never swallowed.
+const CITY_ALIASES: Record<string, string> = {
+  'brooklyn|ny': 'new york',
+  'bronx|ny': 'new york',
+  'staten island|ny': 'new york',
+};
+
 function cityDistrictFor(city: string | undefined, stateAbbr: string | undefined): string | null {
   if (!city || !stateAbbr) return null;
-  const key = `${city.trim().toLowerCase()}|${stateAbbr.trim().toLowerCase()}`;
+  const st = stateAbbr.trim().toLowerCase();
+  const normalized = normCity(city);
+  const aliased = CITY_ALIASES[`${normalized}|${st}`] || normalized;
+  const key = `${aliased}|${st}`;
   const d = loadSeed().districts.find(
     (r: any) =>
       r.district_type === 'city' &&
-      `${String(r.city || '').toLowerCase()}|${String(r.state_abbr || '').toLowerCase()}` === key
+      `${normCity(String(r.city || ''))}|${String(r.state_abbr || '').toLowerCase()}` === key
   );
   return d?.district_id || null;
 }
