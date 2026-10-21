@@ -84,6 +84,38 @@ export default function ElectionsPage() {
         </P>
       </ContentSection>
 
+      <ContentSection heading="Key dates — Illinois & Iowa">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
+            <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-gold mb-3">
+              Illinois
+            </div>
+            <ul className="space-y-2 font-body text-[14px] text-white/70">
+              <li><strong className="text-white">Early voting:</strong> Sep 24 – Nov 2</li>
+              <li><strong className="text-white">Online registration:</strong> closed Oct 18 — but grace-period registration and voting in person runs through Election Day</li>
+              <li><strong className="text-white">Mail ballot:</strong> request by Oct 29; postmark by Nov 3</li>
+              <li><strong className="text-white">Election Day:</strong> Tue Nov 3, polls 6 AM – 7 PM</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-6">
+            <div className="font-display text-[11px] font-bold tracking-[2px] uppercase text-gold mb-3">
+              Iowa
+            </div>
+            <ul className="space-y-2 font-body text-[14px] text-white/70">
+              <li><strong className="text-white">In-person absentee voting:</strong> Oct 14 – Nov 2 at your county auditor</li>
+              <li><strong className="text-white">Pre-registration:</strong> closed Oct 19 — you can still register at your polling place on Election Day with photo ID and proof of residence</li>
+              <li><strong className="text-white">Absentee ballots:</strong> must be received by 8 PM on Nov 3</li>
+              <li><strong className="text-white">Election Day:</strong> Tue Nov 3, polls 7 AM – 8 PM</li>
+            </ul>
+          </div>
+        </div>
+        <P>
+          Dates verified against the Illinois State Board of Elections and Iowa Secretary of
+          State calendars for the November 3, 2026 general election. Your local election
+          authority is always the final word for your precinct.
+        </P>
+      </ContentSection>
+
       <ContentSection heading="Check your registration">
         <P>
           Registration deadlines and rules differ by state. The fastest way to check your status
@@ -101,10 +133,11 @@ export default function ElectionsPage() {
 
       <ContentSection heading="Candidates">
         <P>
-          Search the candidates in CivicPie's dataset — 7,077 filings from Federal Election
-          Commission records. Search by last name, narrow by state, or leave both blank and pick
-          a state to browse. Filing data is shown exactly as reported; your state election
-          authority publishes the official ballot list for your district.
+          Search the candidates in CivicPie's dataset — 3,362 candidates who filed with the
+          Federal Election Commission for the 2026 cycle. Search by last name, narrow by
+          state, or leave both blank and pick a state to browse. A filing is not the same as
+          a spot on the general-election ballot — primaries narrow the field, and your state
+          election authority publishes the official ballot list for your district.
         </P>
         <form onSubmit={runSearch} className="mb-6 space-y-3">
           <SearchRow

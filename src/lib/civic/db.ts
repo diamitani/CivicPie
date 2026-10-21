@@ -197,6 +197,18 @@ function seedOfficials(): Official[] {
   });
 }
 
+// FEC party abbreviations that survive title-casing in the source data,
+// expanded for display (codes per the FEC party codebook).
+const PARTY_LABELS: Record<string, string> = {
+  W: 'Write-in',
+  Oth: 'Other',
+  Un: 'Unknown',
+  Npa: 'No Party Affiliation',
+  Dfl: 'Democratic (DFL)',
+  Nne: 'Nonpartisan',
+  Con: 'Constitution',
+};
+
 function seedCandidates(): Candidate[] {
   const seed = loadSeed();
   return seed.candidates.map((r: any, i: number) => {
@@ -208,10 +220,14 @@ function seedCandidates(): Candidate[] {
       office_title: officeTitle(officeId),
       district_id: r.district_id || null,
       state_abbr: r.state_abbr || null,
-      party: r.party || null,
+      party: PARTY_LABELS[r.party as string] || r.party || null,
       election_year: r.election_year ?? null,
       election_date: r.election_date || null,
-      incumbent: !!r.incumbent,
+      // Source rows carry is_incumbent; the FEC block's I/C flag wins
+      // when present (the top-level flag was never backfilled, which
+      // made the API report every candidate as a non-incumbent).
+      incumbent:
+        r.fec?.incumbent_challenger === 'I' ? true : !!(r.is_incumbent ?? r.incumbent),
       source: r.source || 'seed',
     };
   });

@@ -62,7 +62,14 @@ export function loadSeed(): SeedData {
     ...readJsonOptional('city_officials.json'),
     ...readJsonOptional('territory_officials.json'),
   ];
-  const candidates = readJson('xlsx_candidates.json');
+  // Candidates: prefer the FEC-enriched file (2024+2026 bulk candidate
+  // master match, 95.8% of rows) and keep ONLY the 2026 cycle. The legacy
+  // xlsx file mixes cycles with no year tags — serving it presented
+  // ~3,400 people who ran in 2024 as current midterm candidates.
+  const fecCandidates = readJsonOptional('candidates_fec.json');
+  const candidates = fecCandidates.length
+    ? fecCandidates.filter((r: any) => Number(r.election_year) === 2026)
+    : readJson('xlsx_candidates.json');
   const districts = [
     ...readJson('chicago_districts.json'),
     ...readJson('state_districts.json'),

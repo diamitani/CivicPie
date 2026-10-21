@@ -24,6 +24,7 @@ const FILES = [
   ['data/staged/state_agencies.json', 'state_agencies.json', 'optional'],
   ['data/staged/xlsx_officials.json', 'xlsx_officials.json'],
   ['data/staged/xlsx_candidates.json', 'xlsx_candidates.json'],
+  ['data/staged/candidates_fec.json', 'candidates_fec.json', 'optional'],
   ['data/staged/chicago_officials.json', 'chicago_officials.json'],
   ['data/staged/chicago_districts.json', 'chicago_districts.json'],
   ['data/staged/state_districts.json', 'state_districts.json'],

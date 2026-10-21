@@ -49,7 +49,7 @@ try {
   assert(r.status === 200 && r.body.ok, 'health 200');
   assert(r.body.source === 'seed', 'source=seed', JSON.stringify(r.body.source));
   assert(r.body.counts.officials >= 7988, 'officials >= 7988 (grows with city sweeps)', r.body.counts?.officials);
-  assert(r.body.counts.candidates === 7077, 'candidates=7077', r.body.counts?.candidates);
+  assert(r.body.counts.candidates === 3362, 'candidates=3362 (2026 FEC cycle only)', r.body.counts?.candidates);
   assert(r.body.counts.districts >= 107, 'districts >= 107 (grows with city sweeps)', r.body.counts?.districts);
   assert(r.body.counts.agencies === 615, 'agencies=615 (15 federal + 600 state)', r.body.counts?.agencies);
 
@@ -136,7 +136,7 @@ try {
   r = await get('/api/candidates?district_id=il-chicago-ward-48');
   assert(r.status === 200, 'candidates 200');
   r = await get('/api/candidates?state=IL&limit=5');
-  assert(r.status === 200 && r.body.total >= 1 && r.body.total < 7077, 'candidates state filter narrows', r.body.total);
+  assert(r.status === 200 && r.body.total >= 1 && r.body.total < 3362, 'candidates state filter narrows', r.body.total);
   assert(r.body.data.every((c) => c.state_abbr === 'IL'), 'candidates state=IL only');
   r = await get('/api/candidates?q=Smith&limit=5');
   assert(r.status === 200 && r.body.total >= 1 && r.body.data.every((c) => c.name.toLowerCase().includes('smith')), 'candidates q filters by name', r.body.total);

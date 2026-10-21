@@ -198,7 +198,7 @@ function Hero() {
               <div className="font-display text-[22px] font-black text-white tracking-[-0.5px] mb-1">Your Ward Overview</div>
               <div className="font-body text-[13px] text-white/45 mb-6">Sample ward overview</div>
               {[
-                { icon: '🗳️', bg: 'rgba(196,18,48,0.15)', title: 'Voter Registration Deadline', meta: 'Online: Oct 18 · 15 days left' },
+                { icon: '🗳️', bg: 'rgba(196,18,48,0.15)', title: 'Voter Registration', meta: 'Grace period through Nov 3 · Register & vote in person' },
                 { icon: '🏛️', bg: 'rgba(0,27,61,0.15)', title: 'City Council Meeting', meta: 'Oct 21 · 10:00 AM · City Hall' },
                 { icon: '🤝', bg: 'rgba(16,185,129,0.12)', title: 'Poll Worker Volunteer', meta: 'Nov 3 · Election Day signup' },
                 { icon: '💰', bg: 'rgba(232,160,48,0.15)', title: 'Small Business Grant', meta: 'Rolling deadlines · Check eligibility' },
@@ -431,7 +431,7 @@ function Features() {
 function Listings() {
   const listings = [
     { icon: '🏛️', title: 'City Council — Regular Meeting', meta: 'Wed Oct 21 · 10:00 AM · City Hall Council Chambers', badge: 'Meeting', badgeClass: 'badge-navy' },
-    { icon: '🗳️', title: 'General Election — Voter Registration Deadline', meta: 'Online: Oct 18 · 15 days left', badge: 'Election', badgeClass: 'badge-red' },
+    { icon: '🗳️', title: 'General Election — Voter Registration', meta: 'Grace period through Nov 3 · Register & vote in person', badge: 'Election', badgeClass: 'badge-red' },
     { icon: '📋', title: 'Zoning Hearing', meta: 'Fridays · 10:00 AM · Public comment period open', badge: 'Meeting', badgeClass: 'badge-navy' },
     { icon: '🤝', title: 'Poll Worker Training — General Election', meta: 'Nov 3 · Election Day signup', badge: 'Volunteer', badgeClass: 'badge-green' },
     { icon: '💰', title: 'Small Business Grant Applications', meta: 'Up to $15,000 · Check eligibility', badge: 'Grant', badgeClass: 'badge-gold' },
@@ -537,7 +537,7 @@ function ElectionCTA() {
         </div>
         <div className="flex flex-col gap-3 reveal">
           {[
-            { month: 'OCT', day: '18', title: 'Voter Registration Deadline', sub: 'General Election · Online registration closes' },
+            { month: 'OCT', day: '29', title: 'Mail Ballot Request Deadline', sub: 'Illinois · Last day to request a vote-by-mail ballot' },
             { month: 'NOV', day: '02', title: 'Early Voting Ends', sub: 'Last day of early voting · Sept 24 – Nov 2' },
             { month: 'NOV', day: '03', title: 'General Election Day', sub: 'Polls open 6 AM – 7 PM · All races' },
           ].map((card, i) => (
