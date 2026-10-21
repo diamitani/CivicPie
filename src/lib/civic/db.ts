@@ -612,6 +612,34 @@ const CITY_ALIASES: Record<string, string> = {
   'brooklyn|ny': 'new york',
   'bronx|ny': 'new york',
   'staten island|ny': 'new york',
+  // Queens: the ZIP table names neighborhoods, not the city. Each of
+  // these names is unique to Queens within New York state.
+  'astoria|ny': 'new york',
+  'long island|ny': 'new york', // geocoded "Long Island City", post-normalization
+  'flushing|ny': 'new york',
+  'jamaica|ny': 'new york',
+  'forest hills|ny': 'new york',
+  'far rockaway|ny': 'new york',
+  'elmhurst|ny': 'new york',
+  'jackson heights|ny': 'new york',
+  'corona|ny': 'new york',
+  'east elmhurst|ny': 'new york',
+  'woodside|ny': 'new york',
+  'sunnyside|ny': 'new york',
+  'maspeth|ny': 'new york',
+  'middle village|ny': 'new york',
+  'ridgewood|ny': 'new york',
+  'rego park|ny': 'new york',
+  'kew gardens|ny': 'new york',
+  'richmond hill|ny': 'new york',
+  'ozone park|ny': 'new york',
+  'howard beach|ny': 'new york',
+  'woodhaven|ny': 'new york',
+  'glendale|ny': 'new york',
+  'fresh meadows|ny': 'new york',
+  'bayside|ny': 'new york',
+  'whitestone|ny': 'new york',
+  'college point|ny': 'new york',
 };
 
 function cityDistrictFor(city: string | undefined, stateAbbr: string | undefined): string | null {
