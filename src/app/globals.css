@@ -1,4 +1,8 @@
 @import "tailwindcss";
+/* Load the brand palette (navy / red / gold / cream / stone) from tailwind.config.ts.
+   Without this, Tailwind v4 ignored the JS config and every bg-red / bg-gold /
+   hover:bg-red-hover button rendered with no background. */
+@config "../../tailwind.config.ts";
 
 @layer base {
   :root {

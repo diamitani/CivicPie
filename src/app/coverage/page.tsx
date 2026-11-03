@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { PieLogo } from '@/components/Logo';
 import { OfficialRow, EmptyState, Alert } from '@/components/ui';
+import BallotCard, { type Ballot } from '@/components/BallotCard';
 
 interface LookupBody {
   coverage?: 'local' | 'none';
@@ -19,6 +20,7 @@ interface LookupBody {
   federal_officials?: any[];
   state_officials?: any[];
   state_officials_total?: number;
+  ballot_2026?: Ballot | null;
   error?: string;
 }
 
@@ -130,6 +132,12 @@ function CoverageInner() {
             </div>
           )}
 
+          {q && body && body.coverage === 'local' && body.ballot_2026 && (
+            <div className="mt-6">
+              <BallotCard ballot={body.ballot_2026} dark />
+            </div>
+          )}
+
           {q && body && body.coverage === 'none' && (
             <div className="bg-white/[0.04] border border-white/[0.10] rounded-[20px] p-8 backdrop-blur-[16px]">
               <div className="font-display text-[10px] font-bold tracking-[2.5px] uppercase text-gold mb-3">
@@ -139,6 +147,12 @@ function CoverageInner() {
                 Hyperlocal coverage for {body.address || 'this area'} is coming soon
               </h1>
               <p className="font-body text-[15px] text-white/55 leading-relaxed mb-8">{body.message}</p>
+
+              {body.ballot_2026 && (
+                <div className="mb-8 -mx-2 sm:mx-0">
+                  <BallotCard ballot={body.ballot_2026} dark />
+                </div>
+              )}
 
               {(body.federal_officials || []).length > 0 && (
                 <>

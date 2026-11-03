@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { electionPhase, type ElectionPhase } from '@/lib/electionDate';
 
 // State-specific voter registration info
 const STATE_REGISTRATION: Record<string, { url: string; deadline: string; portal: string }> = {
@@ -15,26 +16,21 @@ const STATE_REGISTRATION: Record<string, { url: string; deadline: string; portal
 // ─── Election Countdown ──────────────────────────────────────────────────────
 
 export function ElectionCountdown() {
-  const [daysLeft, setDaysLeft] = useState(0);
+  const [st, setSt] = useState<{ phase: ElectionPhase; days: number } | null>(null);
 
   useEffect(() => {
-    const target = new Date('2026-11-03T07:00:00-06:00'); // 2026 General Election
-    const calc = () => {
-      const now = new Date();
-      const diff = target.getTime() - now.getTime();
-      setDaysLeft(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
-    };
+    const calc = () => setSt(electionPhase());
     calc();
-    const iv = setInterval(calc, 3600000);
+    const iv = setInterval(calc, 60000);
     return () => clearInterval(iv);
   }, []);
 
-  if (daysLeft === 0) return null;
+  if (!st || st.phase === 'after') return null;
 
   return (
     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C41230]/10 text-[#C41230] font-body text-xs font-semibold border border-[#C41230]/20">
       <span className="w-1.5 h-1.5 rounded-full bg-[#C41230] animate-pulse" />
-      {daysLeft} days until Election Day
+      {st.phase === 'today' ? 'Election Day is today' : `${st.days} ${st.days === 1 ? 'day' : 'days'} until Election Day`}
     </span>
   );
 }
@@ -122,25 +118,28 @@ export function ElectionAlertSignup() {
 // ─── Urgency Banner ──────────────────────────────────────────────────────────
 
 export function ElectionUrgencyBanner() {
-  const [daysLeft, setDaysLeft] = useState(0);
+  const [st, setSt] = useState<{ phase: ElectionPhase; days: number } | null>(null);
 
   useEffect(() => {
-    const target = new Date('2026-11-03T07:00:00-06:00');
-    const diff = target.getTime() - Date.now();
-    setDaysLeft(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
+    const calc = () => setSt(electionPhase());
+    calc();
+    const iv = setInterval(calc, 60000);
+    return () => clearInterval(iv);
   }, []);
 
-  if (daysLeft === 0 || daysLeft > 120) return null;
+  if (!st || st.phase === 'after' || st.days > 120) return null;
 
   return (
     <div className="bg-[#C41230] text-white py-3 px-4 text-center sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
         <span className="font-display font-bold text-sm">
-          🗳️ Election Day is {daysLeft} days away. Are you registered?
+          {st.phase === 'today'
+            ? '🗳️ Election Day is today. Polls are open — find your hours and polling place.'
+            : `🗳️ Election Day is ${st.days} ${st.days === 1 ? 'day' : 'days'} away. Know your polling place and what's on your ballot.`}
         </span>
-        <a href="https://www.vote.gov" target="_blank" rel="noreferrer"
+        <a href="/elections"
           className="bg-white text-[#C41230] font-display text-xs font-bold px-4 py-1.5 rounded-full hover:bg-[#F5EDD8] transition-colors">
-          Check Now →
+          {st.phase === 'today' ? 'Find My Polls →' : 'See My Ballot →'}
         </a>
       </div>
     </div>

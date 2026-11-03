@@ -1,5 +1,6 @@
 'use client';
 
+import { electionBadgeText, electionPhase } from '@/lib/electionDate';
 import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -21,7 +22,6 @@ interface MeetingItem {
   sub: string;
 }
 
-const ELECTION_DAY = new Date('2026-11-03T00:00:00');
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -111,10 +111,9 @@ export default function DashboardPage() {
 
   if (!user) return null;
 
-  const daysToElection = Math.max(
-    0,
-    Math.ceil((ELECTION_DAY.getTime() - Date.now()) / 86400000)
-  );
+  // Computed on the viewer's local calendar date: "12 days", "Today", or "Nov 3".
+  const electionBadge = electionBadgeText();
+  const electionPhaseNow = electionPhase().phase;
   // The user's place, from their resolved district — never a hardcoded city.
   const districtLabel =
     district?.label || user.districtLabel || null;
@@ -124,7 +123,7 @@ export default function DashboardPage() {
     : districtLabel || (user.zipCode ? `ZIP ${user.zipCode}` : 'Your district');
 
   const metrics = [
-    { label: 'Days to Election Day', value: String(daysToElection), color: 'var(--cp-red)' },
+    { label: electionPhaseNow === 'before' ? 'Days to Election Day' : electionPhaseNow === 'today' ? 'Election Day' : 'General Election', value: electionPhaseNow === 'before' ? electionBadge.replace(/ days?$/, '') : electionBadge, color: 'var(--cp-red)' },
     { label: 'Upcoming Meetings', value: meetingsTotal != null ? String(meetingsTotal) : '—', color: 'var(--cp-navy)' },
     { label: 'Your Officials', value: district ? String(district.officials.length ? district.officials.length + '+' : '0') : '—', color: 'var(--cp-gold-dim)' },
     { label: 'Election Day', value: 'Nov 3', color: 'var(--cp-navy)' },
@@ -137,7 +136,7 @@ export default function DashboardPage() {
 
   const quickActions = [
     { icon: '🗳️', t: 'Check Voter Registration', d: 'Verify your status in 30 seconds', href: 'https://www.vote.gov' },
-    { icon: '📍', t: 'Find Your Polling Place', d: 'See where to vote on election day', href: user.ward ? '/state/illinois' : 'https://www.vote.gov' },
+    { icon: '📍', t: 'Find Your Polling Place', d: 'See where to vote on election day', href: '/elections' },
     { icon: '💰', t: 'Browse Available Grants', d: 'Grant programs and services near you', href: '/services' },
     { icon: '🤝', t: 'Visit Your District', d: districtLabel || 'Your local district page', href: districtHref || '/explore' },
   ];
@@ -145,7 +144,7 @@ export default function DashboardPage() {
   // Every sidebar item goes to a real page — no dead tabs.
   const navItems = [
     { href: '/dashboard', icon: '🏠', label: 'Overview' },
-    { href: '/elections', icon: '🗳️', label: 'Elections', badge: `${daysToElection}d` },
+    { href: '/elections', icon: '🗳️', label: 'Elections', badge: electionPhaseNow === 'before' ? `${electionBadge.replace(/ days?$/, '')}d` : electionBadge },
     { href: '/meetings', icon: '📅', label: 'Meetings' },
     { href: '/officials', icon: '👤', label: 'Officials' },
     { href: '/services', icon: '🏛️', label: 'Services' },
@@ -203,7 +202,7 @@ export default function DashboardPage() {
             <div className="font-body text-[13px] text-stone mt-px">{placeLine}</div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(196,18,48,0.1)] text-red font-body text-[11px] font-semibold">🗳 General Election: {daysToElection} days</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[rgba(196,18,48,0.1)] text-red font-body text-[11px] font-semibold">🗳 General Election: {electionBadge}</span>
             <a href="https://www.vote.gov" target="_blank" rel="noreferrer"
               className="bg-red text-white font-display text-[13px] font-bold px-5 py-2.5 rounded-lg hover:bg-red-hover transition-colors shadow-[0_2px_8px_rgba(196,18,48,0.35)]">
               Check Registration

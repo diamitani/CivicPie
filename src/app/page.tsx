@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { PieLogo } from '@/components/Logo';
 import FindYourReps from '@/components/FindYourReps';
 import { Stat, SearchPill } from '@/components/ui';
+import { ElectionStatValue, ElectionStatLabel, ElectionSentence } from '@/components/ElectionCountdown';
 
 export default function LandingPage() {
   const navRef = useRef<HTMLElement>(null);
@@ -106,15 +107,8 @@ function Navbar({ navRef }: { navRef: React.RefObject<HTMLElement | null> }) {
 // Ward 48 (the only ward with a full district page) routes directly there;
 // everything else goes to /coverage, which renders local results, federal +
 // state officials for out-of-coverage areas, or a graceful not-found.
-// Days until the Nov 3, 2026 general election — computed, never hardcoded.
-// (This page previously carried a baked-in "31 days" that went stale, while
-// the dashboard computed 13 — three different countdowns sitewide.)
-function daysToElection(): number {
-  return Math.max(
-    0,
-    Math.ceil((new Date('2026-11-03T00:00:00').getTime() - Date.now()) / 86400000)
-  );
-}
+// Election countdown text lives in <ElectionCountdown> (client-only, computed
+// at view time) so prerendered HTML can never carry a stale day count.
 
 async function routeAddressSearch(rawQuery: string): Promise<void> {
   const q = rawQuery.trim();
@@ -256,7 +250,7 @@ function StatsRibbon() {
     <div className="bg-navy-800 border-t border-b border-white/[0.08] py-7 pad-x">
       <div className="grid grid-cols-4 gap-px bg-white/[0.10] rounded overflow-hidden max-w-[1200px] mx-auto max-md:grid-cols-2">
         {[
-          { num: String(daysToElection()), label: 'Days to General Election · Nov 3', color: 'var(--cp-red)' },
+          { num: <ElectionStatValue />, label: <ElectionStatLabel />, color: 'var(--cp-red)' },
           { num: '20K+', label: 'Elected Officials Listed', color: 'var(--cp-gold)' },
           { num: '1,800+', label: 'District & City Pages', color: 'var(--cp-gold)' },
           { num: '100%', label: 'Free · Nonpartisan · Public', color: 'var(--cp-gold)' },
@@ -543,18 +537,18 @@ function ElectionCTA() {
         <div>
           <p className="section-eyebrow" style={{ color: 'rgba(255,255,255,0.7)' }}>Upcoming Elections</p>
           <h2 className="font-display text-[clamp(36px,4vw,56px)] font-black tracking-[-1.5px] leading-[0.95] text-white mb-5">
-            The ballot is {daysToElection()} days away.<br />Do you know what&apos;s on it?
+            <ElectionSentence /><br />Do you know what&apos;s on it?
           </h2>
           <p className="font-body text-base text-white/65 leading-relaxed mt-4">
             Most people vote in presidential elections. Very few know who&apos;s running for city council, school board, or local judge — the positions that affect your daily life the most.
           </p>
           <div className="mt-9 flex gap-3.5 flex-wrap">
-            <button className="bg-white text-red font-display text-sm font-bold py-3.5 px-7 rounded-[10px] tracking-[0.3px] hover:-translate-y-[1px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)]">
-              See My Full Ballot
-            </button>
-            <button className="bg-transparent text-white border-2 border-white/40 font-display text-sm font-semibold py-[13px] px-6 rounded-[10px] tracking-[0.3px] hover:border-white hover:bg-white/[0.08] transition-all">
-              Check Registration Status
-            </button>
+            <a href="/elections" className="inline-block bg-white text-red font-display text-sm font-bold py-3.5 px-7 rounded-[10px] tracking-[0.3px] hover:-translate-y-[1px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)]">
+              See My Ballot
+            </a>
+            <a href="https://vote.gov" target="_blank" rel="noopener noreferrer" className="inline-block bg-transparent text-white border-2 border-white/40 font-display text-sm font-semibold py-[13px] px-6 rounded-[10px] tracking-[0.3px] hover:border-white hover:bg-white/[0.08] transition-all">
+              Check Registration Status ↗
+            </a>
           </div>
         </div>
         <div className="flex flex-col gap-3 reveal">

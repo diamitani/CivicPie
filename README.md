@@ -27,6 +27,8 @@ All endpoints return `{ ok, meta: { source: "supabase" | "seed" }, … }` so cal
 | `GET /api/officials?district_id=&office=&level=&q=&limit=` | Search officials; pages capped at 200 rows, `total` reports the full match count |
 | `GET /api/candidates?district_id=&office=&limit=` | Candidates; same paging contract |
 | `GET /api/agencies?level=` | Government agencies |
+| `GET /api/elections` | Nov 3, 2026 general election: all 50 states + DC — poll hours, official polling-place lookup, mail-ballot return rule, Election Day registration, race counts |
+| `GET /api/elections?state=IL[&district=9]` | One state's Election Day facts + every 2026 U.S. Senate, Governor and U.S. House race with general-election candidates (`district=0` = at-large) |
 
 Examples:
 
@@ -36,6 +38,20 @@ curl "http://localhost:3000/api/lookup?address=6007%20N%20Sheridan%20Rd%2C%20Chi
 curl "http://localhost:3000/api/officials?level=federal&limit=1000"   # 200-row page, total=556
 curl "http://localhost:3000/api/districts?type=ward&city=Chicago&state=IL"
 ```
+
+## 2026 general election data
+
+`/api/lookup` now returns `ballot_2026` for every U.S. location: poll hours, polling-place lookup, mail deadline,
+Election Day registration, and the Senate / Governor / U.S. House races on that voter's ballot. The House district
+(and 2026 state legislative districts) come from the Census Bureau's TIGERweb **120th Congressional Districts** layer
+queried at the geocoded point, so the nine states that redrew for 2026 (AL, CA, FL, LA, NC, OH, TN, TX, UT) are right.
+Missouri is pinned to the 119th (2022) map because courts blocked its 2025 map — see `src/lib/civic/election.ts`.
+
+- `data/election-2026/raw/*.md` — verbatim Wikipedia snapshots (Nov 3, 2026, via Firecrawl)
+- `data/election-2026/build_races.py` → `data/seed/election_2026_races.json` (35 Senate, 36 Governor, 435 House; fails if counts drift)
+- `data/election-2026/build_states.py` → `data/seed/election_2026_states.json` (51 jurisdictions; every field cites Ballotpedia/NCSL/state sources)
+
+To refresh: re-scrape the three Wikipedia pages into `raw/`, then run both build scripts.
 
 ## Data layer (`src/lib/civic/`)
 

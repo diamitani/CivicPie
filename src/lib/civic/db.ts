@@ -10,6 +10,7 @@
 // know which data they are reading.
 
 import { Pool } from 'pg';
+import { ballotFor, type Ballot2026 } from './election';
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadSeed, seedDirExists, type SeedData } from '@/lib/civic/seed';
@@ -722,6 +723,19 @@ export interface LookupResult {
   // Set when the ZIP->congressional-district map pinpointed the House rep.
   congressional_district?: string | null; // e.g. "NY-12", "WY At-Large"
   congressional_share?: number | null; // plurality land-area share of the ZIP
+  // Nov. 3, 2026 general election: what's on this voter's ballot + how to vote.
+  ballot_2026?: Ballot2026 | null;
+}
+
+// Never let the election add-on break a lookup: Census/TIGER outages degrade
+// to "no ballot block", not a failed request.
+async function safeBallot(geo: { state_abbr?: string; lat: number; lng: number }, address: string) {
+  try {
+    const zipOnly = /^\d{5}(-\d{4})?$/.test(address.trim());
+    return await ballotFor(geo.state_abbr, { lat: geo.lat, lng: geo.lng }, { zipOnly });
+  } catch {
+    return null;
+  }
 }
 
 // Senators first, then House reps, then alphabetical — for the
@@ -757,7 +771,11 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
   if (district_id) {
     const { data: officials } = await searchOfficials({ district_id, limit: MAX_LIMIT });
     const { label, href } = describeDistrict(district_id);
+    const ballot_2026 = await safeBallot(geo, address);
     return {
+      ballot_2026,
+      state_abbr: geo.state_abbr || null,
+      state_name: geo.state_name || null,
       address: geo.matchedAddress,
       lat: geo.lat,
       lng: geo.lng,
@@ -817,6 +835,7 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
     state_officials = states.data;
     state_officials_total = states.total;
   }
+  const ballot_2026 = await safeBallot(geo, address);
   const place = geo.matchedAddress || 'this area';
   let message: string;
   if (!st) {
@@ -858,6 +877,7 @@ export async function lookupAddress(address: string): Promise<LookupResult> {
     state_officials_total,
     congressional_district,
     congressional_share,
+    ballot_2026,
   };
 }
 

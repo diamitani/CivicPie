@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Search, MapPin, Users, Phone, Mail, Globe, ExternalLink, X, Sparkles, Building2 } from 'lucide-react';
+import BallotCard, { type Ballot } from '@/components/BallotCard';
 
 // ─── Rep data indexed from static JSON ───────────────────────────────────────
 
@@ -28,6 +29,7 @@ interface SearchResult {
   district: { name: string; type: string; description: string };
   reps: RepResult[];
   source: string;
+  ballot?: Ballot | null;
 }
 
 // ─── Search function ─────────────────────────────────────────────────────────
@@ -95,6 +97,7 @@ async function lookupReps(query: string): Promise<SearchResult[]> {
         district: { name: districtName, type: m ? 'Ward' : 'District', description: body.address || q },
         reps: officials.map((o: any) => toRep(o, districtName)),
         source: 'CivicPie · public records',
+        ballot: body.ballot_2026 || null,
       });
     }
   } else if (body.coverage === 'none') {
@@ -110,6 +113,7 @@ async function lookupReps(query: string): Promise<SearchResult[]> {
         },
         reps,
         source: 'CivicPie · public records',
+        ballot: body.ballot_2026 || null,
       });
     }
   }
@@ -280,6 +284,12 @@ function DistrictDetail({ result, onSelectRep, onBack }: {
           </div>
         </div>
       </div>
+
+      {result.ballot && (
+        <div className="mb-6">
+          <BallotCard ballot={result.ballot} dark={false} />
+        </div>
+      )}
 
       {/* Officials grid */}
       {levels.map(level => {

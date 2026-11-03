@@ -161,6 +161,25 @@ try {
   r = await get('/api/lookup');
   assert(r.status === 400, 'missing address 400', r.status);
 
+  // 10b. Nov 3, 2026 general election
+  r = await get('/api/elections');
+  assert(r.status === 200 && r.body.states?.length === 51, 'elections: 50 states + DC', r.body.states?.length);
+  assert(r.body.meta?.counts?.house === 435 && r.body.meta?.counts?.senate === 35 && r.body.meta?.counts?.governor === 36,
+    'elections: 435 House / 35 Senate / 36 Governor races', JSON.stringify(r.body.meta?.counts));
+  r = await get('/api/elections?state=IL&district=9');
+  assert(r.status === 200 && r.body.races?.house?.length === 1 && r.body.races.house[0].district === 9, 'elections: IL-9 race', r.status);
+  r = await get('/api/elections?state=WY&district=0');
+  assert(r.status === 200 && r.body.races?.house?.[0]?.district === 0, 'elections: WY at-large race', r.status);
+  r = await get('/api/elections?state=ZZ');
+  assert(r.status === 404, 'elections: unknown state 404', r.status);
+  r = await get('/api/elections?state=IL&district=abc');
+  assert(r.status === 400, 'elections: bad district 400', r.status);
+  r = await get('/api/lookup?address=' + encodeURIComponent('6007 N Sheridan Rd, Chicago, IL'));
+  assert(r.body.ballot_2026?.house_district === 9 && r.body.ballot_2026?.house_precision === 'exact',
+    'lookup: street address -> exact 2026 district IL-9', JSON.stringify(r.body.ballot_2026 && [r.body.ballot_2026.house_district, r.body.ballot_2026.house_precision]));
+  r = await get('/api/lookup?address=' + encodeURIComponent('414 E 12th St, Kansas City, MO 64106'));
+  assert(r.body.ballot_2026?.house_district === 5, 'lookup: Missouri pinned to court-ordered 2022 map (KC City Hall = MO-5)', r.body.ballot_2026?.house_district);
+
   // 11. Broken DATABASE_URL → transparent seed fallback, never 500
   // (regression: live Vercel had DATABASE_URL set to an empty Neon DB)
   const PORT2 = 3211;
