@@ -434,3 +434,33 @@ def test_different_people_in_same_office_create_separate_persons(session, run):
     session.commit()
     assert session.query(Person).count() == 2
     assert session.query(OfficialTerm).count() == 2
+
+
+def test_reingest_with_new_officeholder_retires_the_old_one(session, run, monkeypatch):
+    """A seed that now names a different Governor must not leave the old one current."""
+    import backend.ingestion.sources.state_executives as se
+    from backend.ingestion.pipeline import run_pipeline
+
+    monkeypatch.setattr(se, "ALL_OFFICERS", [
+        se.StateOfficer("NJ", "Governor", "Phil Murphy", Party.DEMOCRAT, None, None)])
+    run_pipeline("state_executives", session=session)
+    monkeypatch.setattr(se, "ALL_OFFICERS", [
+        se.StateOfficer("NJ", "Governor", "Mikie Sherrill", Party.DEMOCRAT, None, None)])
+    run_pipeline("state_executives", session=session)
+    current = (session.query(Person).join(OfficialTerm).filter(OfficialTerm.is_current.is_(True)).all())
+    assert [p.full_name for p in current] == ["Mikie Sherrill"]
+    assert session.query(Person).count() == 2  # history kept, Murphy just not current
+
+
+def test_state_exec_seed_names_match_verified_snapshot():
+    """Guards against typos/regressions vs. the NGA/NAAG snapshot (data/verified/).
+    It cannot detect that officeholders changed AFTER the snapshot date -- re-verify
+    against the live sources on the cadence in docs/DATA_ACCURACY_PLAN.md."""
+    import json, pathlib, re
+    from backend.ingestion.sources.state_executives import ALL_OFFICERS
+    snap = json.loads((pathlib.Path(__file__).resolve().parents[2] / "data/verified/state_exec_rosters_2026-11-25.json").read_text())
+    last = lambda n: re.sub(r"[^a-z ]", "", n.lower().replace("\u00fa", "u")).split()[-1]
+    for title, key in (("Governor", "governors"), ("Attorney General", "attorneys_general")):
+        seed = {o.state_code: o.full_name for o in ALL_OFFICERS if o.office_title == title}
+        assert set(seed) == set(snap[key]) and len(seed) == 50
+        assert [s for s in seed if last(seed[s]) != last(snap[key][s])] == []

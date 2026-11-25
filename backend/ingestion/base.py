@@ -105,6 +105,9 @@ class BaseIngestor:
     description: str = ""
     coverage_levels: list[str] = []
     coverage_states: list[str] = []
+    # When True, after a successful run any OTHER current term at an office this run
+    # touched is marked not-current (use only for sources that list the full holder).
+    replaces_office_holders: bool = False
 
     def __init__(self, **params: Any) -> None:
         self.params = params

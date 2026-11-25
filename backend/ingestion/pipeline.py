@@ -71,12 +71,15 @@ def run_pipeline(
     session.flush()
 
     seen = inserted = updated = failed = 0
+    touched_offices: set[int] = set()
     run_id = run.id
     try:
         for record in ingestor.fetch():
             seen += 1
             try:
                 _term, action = upsert_term(session, record, run=run)
+                if _term is not None:
+                    touched_offices.add(_term.office_id)
                 if action == "inserted":
                     inserted += 1
                 else:
@@ -92,6 +95,16 @@ def run_pipeline(
                     source_key, seen, inserted, updated, failed,
                 )
 
+        if ingestor.replaces_office_holders and failed == 0 and touched_offices:
+            from sqlalchemy import update
+            from backend.db.models import OfficialTerm
+            session.execute(
+                update(OfficialTerm)
+                .where(OfficialTerm.office_id.in_(touched_offices),
+                       OfficialTerm.is_current.is_(True),
+                       (OfficialTerm.last_ingestion_run_id != run_id) | OfficialTerm.last_ingestion_run_id.is_(None))
+                .values(is_current=False)
+            )
         run.status = "succeeded" if failed == 0 else "partial"
     except Exception as exc:
         run.status = "failed"

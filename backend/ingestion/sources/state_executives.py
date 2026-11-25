@@ -33,7 +33,7 @@ class StateOfficer:
     state_code: str
     office_title: str
     full_name: str
-    party: Party
+    party: Optional[Party]
     start_date: Optional[date] = None
     end_date: Optional[date] = None
     term_length_years: Optional[int] = 4
@@ -56,7 +56,8 @@ STATE_NAMES = {
 }
 
 
-# Governors, verified as of 2026-05.
+# Governors. NAMES verified against NGA (nga.org/governors) on 2026-11-25. Party and
+# term dates are NOT independently verified; None = unknown (never guessed).
 GOVERNORS: list[StateOfficer] = [
     StateOfficer("AL", "Governor", "Kay Ivey", Party.REPUBLICAN, date(2023, 1, 16), date(2027, 1, 18)),
     StateOfficer("AK", "Governor", "Mike Dunleavy", Party.REPUBLICAN, date(2022, 12, 5), date(2026, 12, 7)),
@@ -87,7 +88,7 @@ GOVERNORS: list[StateOfficer] = [
     StateOfficer("NE", "Governor", "Jim Pillen", Party.REPUBLICAN, date(2023, 1, 5), date(2027, 1, 7)),
     StateOfficer("NV", "Governor", "Joe Lombardo", Party.REPUBLICAN, date(2023, 1, 2), date(2027, 1, 4)),
     StateOfficer("NH", "Governor", "Kelly Ayotte", Party.REPUBLICAN, date(2025, 1, 9), date(2027, 1, 7)),
-    StateOfficer("NJ", "Governor", "Phil Murphy", Party.DEMOCRAT, date(2022, 1, 18), date(2026, 1, 20)),
+    StateOfficer("NJ", "Governor", "Mikie Sherrill", Party.DEMOCRAT, None, None),
     StateOfficer("NM", "Governor", "Michelle Lujan Grisham", Party.DEMOCRAT, date(2023, 1, 1), date(2027, 1, 3)),
     StateOfficer("NY", "Governor", "Kathy Hochul", Party.DEMOCRAT, date(2023, 1, 1), date(2027, 1, 3)),
     StateOfficer("NC", "Governor", "Josh Stein", Party.DEMOCRAT, date(2025, 1, 1), date(2029, 1, 1)),
@@ -103,7 +104,7 @@ GOVERNORS: list[StateOfficer] = [
     StateOfficer("TX", "Governor", "Greg Abbott", Party.REPUBLICAN, date(2023, 1, 17), date(2027, 1, 19)),
     StateOfficer("UT", "Governor", "Spencer Cox", Party.REPUBLICAN, date(2025, 1, 6), date(2029, 1, 1)),
     StateOfficer("VT", "Governor", "Phil Scott", Party.REPUBLICAN, date(2025, 1, 9), date(2027, 1, 7)),
-    StateOfficer("VA", "Governor", "Glenn Youngkin", Party.REPUBLICAN, date(2022, 1, 15), date(2026, 1, 17)),
+    StateOfficer("VA", "Governor", "Abigail Spanberger", Party.DEMOCRAT, None, None),
     StateOfficer("WA", "Governor", "Bob Ferguson", Party.DEMOCRAT, date(2025, 1, 15), date(2029, 1, 17)),
     StateOfficer("WV", "Governor", "Patrick Morrisey", Party.REPUBLICAN, date(2025, 1, 13), date(2029, 1, 8)),
     StateOfficer("WI", "Governor", "Tony Evers", Party.DEMOCRAT, date(2023, 1, 3), date(2027, 1, 5)),
@@ -111,10 +112,11 @@ GOVERNORS: list[StateOfficer] = [
 ]
 
 
-# Attorneys General, verified as of 2026-05.
+# Attorneys General. NAMES verified against NAAG (naag.org/find-my-ag) on 2026-11-25.
+# Party and term dates are NOT independently verified; None = unknown (never guessed).
 ATTORNEYS_GENERAL: list[StateOfficer] = [
     StateOfficer("AL", "Attorney General", "Steve Marshall", Party.REPUBLICAN, date(2023, 1, 16), date(2027, 1, 18)),
-    StateOfficer("AK", "Attorney General", "Treg Taylor", Party.REPUBLICAN, date(2021, 1, 29), None),
+    StateOfficer("AK", "Attorney General", "Cori Mills", None, None, None),  # acting per NAAG
     StateOfficer("AZ", "Attorney General", "Kris Mayes", Party.DEMOCRAT, date(2023, 1, 2), date(2027, 1, 4)),
     StateOfficer("AR", "Attorney General", "Tim Griffin", Party.REPUBLICAN, date(2023, 1, 10), date(2027, 1, 12)),
     StateOfficer("CA", "Attorney General", "Rob Bonta", Party.DEMOCRAT, date(2023, 1, 2), date(2027, 1, 4)),
@@ -137,17 +139,17 @@ ATTORNEYS_GENERAL: list[StateOfficer] = [
     StateOfficer("MI", "Attorney General", "Dana Nessel", Party.DEMOCRAT, date(2023, 1, 1), date(2027, 1, 3)),
     StateOfficer("MN", "Attorney General", "Keith Ellison", Party.DEMOCRAT, date(2023, 1, 2), date(2027, 1, 4)),
     StateOfficer("MS", "Attorney General", "Lynn Fitch", Party.REPUBLICAN, date(2024, 1, 9), date(2028, 1, 11)),
-    StateOfficer("MO", "Attorney General", "Andrew Bailey", Party.REPUBLICAN, date(2023, 1, 3), date(2029, 1, 8)),
+    StateOfficer("MO", "Attorney General", "Catherine Hanaway", Party.REPUBLICAN, None, None),
     StateOfficer("MT", "Attorney General", "Austin Knudsen", Party.REPUBLICAN, date(2025, 1, 6), date(2029, 1, 1)),
     StateOfficer("NE", "Attorney General", "Mike Hilgers", Party.REPUBLICAN, date(2023, 1, 5), date(2027, 1, 7)),
     StateOfficer("NV", "Attorney General", "Aaron Ford", Party.DEMOCRAT, date(2023, 1, 2), date(2027, 1, 4)),
     StateOfficer("NH", "Attorney General", "John Formella", Party.REPUBLICAN, date(2021, 4, 21), None),
-    StateOfficer("NJ", "Attorney General", "Matthew Platkin", Party.DEMOCRAT, date(2022, 2, 14), None),
+    StateOfficer("NJ", "Attorney General", "Jennifer Davenport", None, None, None),
     StateOfficer("NM", "Attorney General", "Raul Torrez", Party.DEMOCRAT, date(2023, 1, 1), date(2027, 1, 3)),
     StateOfficer("NY", "Attorney General", "Letitia James", Party.DEMOCRAT, date(2023, 1, 1), date(2027, 1, 3)),
     StateOfficer("NC", "Attorney General", "Jeff Jackson", Party.DEMOCRAT, date(2025, 1, 1), date(2029, 1, 1)),
     StateOfficer("ND", "Attorney General", "Drew Wrigley", Party.REPUBLICAN, date(2022, 2, 8), date(2027, 1, 1)),
-    StateOfficer("OH", "Attorney General", "Dave Yost", Party.REPUBLICAN, date(2023, 1, 9), date(2027, 1, 11)),
+    StateOfficer("OH", "Attorney General", "Andy Wilson", None, None, None),
     StateOfficer("OK", "Attorney General", "Gentner Drummond", Party.REPUBLICAN, date(2023, 1, 9), date(2027, 1, 11)),
     StateOfficer("OR", "Attorney General", "Dan Rayfield", Party.DEMOCRAT, date(2025, 1, 6), date(2029, 1, 1)),
     StateOfficer("PA", "Attorney General", "Dave Sunday", Party.REPUBLICAN, date(2025, 1, 21), date(2029, 1, 16)),
@@ -158,11 +160,11 @@ ATTORNEYS_GENERAL: list[StateOfficer] = [
     StateOfficer("TX", "Attorney General", "Ken Paxton", Party.REPUBLICAN, date(2023, 1, 17), date(2027, 1, 19)),
     StateOfficer("UT", "Attorney General", "Derek Brown", Party.REPUBLICAN, date(2025, 1, 6), date(2029, 1, 1)),
     StateOfficer("VT", "Attorney General", "Charity Clark", Party.DEMOCRAT, date(2023, 1, 5), date(2027, 1, 7)),
-    StateOfficer("VA", "Attorney General", "Jason Miyares", Party.REPUBLICAN, date(2022, 1, 15), date(2026, 1, 17)),
+    StateOfficer("VA", "Attorney General", "Jay Jones", Party.DEMOCRAT, None, None),
     StateOfficer("WA", "Attorney General", "Nick Brown", Party.DEMOCRAT, date(2025, 1, 15), date(2029, 1, 17)),
     StateOfficer("WV", "Attorney General", "JB McCuskey", Party.REPUBLICAN, date(2025, 1, 13), date(2029, 1, 8)),
     StateOfficer("WI", "Attorney General", "Josh Kaul", Party.DEMOCRAT, date(2023, 1, 3), date(2027, 1, 5)),
-    StateOfficer("WY", "Attorney General", "Bridget Hill", Party.REPUBLICAN, date(2019, 3, 4), None),
+    StateOfficer("WY", "Attorney General", "Keith Kautz", None, None, None),
 ]
 
 
@@ -178,6 +180,7 @@ class StateExecutivesIngestor(BaseIngestor):
     )
     coverage_levels = [GovernmentLevel.STATE.value]
     coverage_states = ["ALL"]
+    replaces_office_holders = True  # a re-run retires prior holders of these offices
 
     def fetch(self) -> Iterable[IngestedRecord]:
         for officer in ALL_OFFICERS:
@@ -199,5 +202,7 @@ class StateExecutivesIngestor(BaseIngestor):
                 end_date=officer.end_date,
                 is_current=True,
                 office_state=officer.state_code,
-                extra_data={"seed_source": "state_executives_seed"},
+                extra_data={"seed_source": "state_executives_seed",
+                            "name_verified": {"source": "NGA" if officer.office_title == "Governor" else "NAAG",
+                                              "checked": "2026-11-25"}},
             )
